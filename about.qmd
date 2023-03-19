@@ -1,5 +1,5 @@
 ---
-title: "Omnis tempus datum"
+title: "About me"
 image: headshot_29072022.png
 about:
   template: jolla
@@ -13,7 +13,12 @@ about:
     - icon: github
       text: Github
       href: https://github.com/pgg1610
-
+    - icon: envelope
+      text: Email
+      href: mailto:pushkarghanekar1610@gmail.com
+    - icon: laptop
+      text: Personal Website
+      href: https://pushkarghanekar.com/
 ---
 
 Blog documenting the tinkerings and helpful tips I have accumulated in the area of data science and machine learning, with some flavor of chemical science sprinkled sporadically.
