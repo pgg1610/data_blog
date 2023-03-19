@@ -1,0 +1,19 @@
+project:
+  type: website
+
+website:
+  title: "Omnis tempus datum"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/pgg1610
+      - icon: twitter
+        href: https://twitter.com/mepgg
+format:
+  html:
+    theme: cyborg
+    css: styles.css
+
+
+

@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Omnis tempus datum - Cheminformatics Basics Doodling - getting the dataset(s)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@*/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Omnis tempus datum</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">Omnis tempus datum</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pgg1610"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/mepgg"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Cheminformatics Basics Doodling - getting the dataset(s)</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="dataset" class="level1">
+<h1>Dataset</h1>
+<p>In this notebook I will be exclusively looking at the QM9 dataset.</p>
+<section id="qm9-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="qm9-dataset">QM9 dataset</h3>
+<p>QM9 provides quantum chemical properties for a relevant, consistent, and comprehensive chemical space of small organic molecules. This dataset consists of 130,831 molecules with 12 regression targets.</p>
+<p>There are different ways of getting this dataset.</p>
+<ol type="1">
+<li>Get it directly from source using <code>wget</code> in Linux / MacOS:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://deepchem.io.s3-website-us-west-1.amazonaws.com/datasets/gdb9.tar.gz </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> xvzf gdb9.tar.gz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you dont have <code>wget</code>, follow this <a href="https://www.fossmint.com/install-and-use-wget-on-mac/">blog</a> to install <code>wget</code> on macOS using <code>Homebrew</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using Homebrew</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install wget</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Using convenience functions implemented in packages like <code>DeepChem</code> or <code>PyTorch Geometric</code>.</li>
+</ol>
+<p>Below is the method to get QM9 data from PyTorch Geometric. More information on the script to start using the dataset can be found on the <a href="https://pytorch-geometric.readthedocs.io/en/latest/_modules/torch_geometric/datasets/qm9.html">official documentation</a></p>
+<p>To setup <code>PyTorch Geometric</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#create a new conda env with python 3.7</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">--name</span> torch_rdkit python=3.7</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># To active the env: conda activate torch_rdkit</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># RDKIT installation: </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install cmake cairo pillow eigen pkg-config</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install boost-cpp boost py-boost</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install rdkit</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># install latest Pytorch version for MacOS:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="ex">pip3</span> install torch torchvision torchaudio</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#install Torch Geometric: </span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch-scatter <span class="at">-f</span> https://pytorch-geometric.com/whl/torch-1.8.0+cpu.html</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch-sparse <span class="at">-f</span> https://pytorch-geometric.com/whl/torch-1.8.0+cpu.html</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch-cluster <span class="at">-f</span> https://pytorch-geometric.com/whl/torch-1.8.0+cpu.html</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch-spline-conv <span class="at">-f</span> https://pytorch-geometric.com/whl/torch-1.8.0+cpu.html</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install torch-geometric</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Check PyTorch Geometric installation: </span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import torch_geometric; print(torch.__version__)"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="to-get-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="to-get-the-dataset">To get the dataset:</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch_geometric.datasets <span class="im">import</span> QM9</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> QM9(root<span class="op">=</span><span class="st">'&lt;set_dir_path&gt;'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch_geometric.datasets <span class="im">import</span> QM9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>QM9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>torch_geometric.datasets.qm9.QM9</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>root_dir <span class="op">=</span> <span class="st">'/Users/pghaneka/Documents/Personal/blog_fastpages/_notebooks/data/QM9_dataset'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> QM9(root<span class="op">=</span>root_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>dataset</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>QM9(130831)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>torch_geometric.datasets.qm9.QM9</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dataset?</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">Type:</span>        QM9
+<span class="ansi-red-fg">String form:</span> QM9(130831)
+<span class="ansi-red-fg">Length:</span>      130831
+<span class="ansi-red-fg">File:</span>        ~/miniconda3/envs/torch_38/lib/python3.7/site-packages/torch_geometric/datasets/qm9.py
+<span class="ansi-red-fg">Docstring:</span>  
+The QM9 dataset from the `"MoleculeNet: A Benchmark for Molecular
+Machine Learning" &lt;https://arxiv.org/abs/1703.00564&gt;`_ paper, consisting of
+about 130,000 molecules with 19 regression targets.
+Each molecule includes complete spatial information for the single low
+energy conformation of the atoms in the molecule.
+In addition, we provide the atom features from the `"Neural Message
+Passing for Quantum Chemistry" &lt;https://arxiv.org/abs/1704.01212&gt;`_ paper.
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| Target | Property                         | Description                                                                       | Unit                                        |
++========+==================================+===================================================================================+=============================================+
+| 0      | :math:`\mu`                      | Dipole moment                                                                     | :math:`\textrm{D}`                          |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 1      | :math:`\alpha`                   | Isotropic polarizability                                                          | :math:`{a_0}^3`                             |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 2      | :math:`\epsilon_{\textrm{HOMO}}` | Highest occupied molecular orbital energy                                         | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 3      | :math:`\epsilon_{\textrm{LUMO}}` | Lowest unoccupied molecular orbital energy                                        | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 4      | :math:`\Delta \epsilon`          | Gap between :math:`\epsilon_{\textrm{HOMO}}` and :math:`\epsilon_{\textrm{LUMO}}` | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 5      | :math:`\langle R^2 \rangle`      | Electronic spatial extent                                                         | :math:`{a_0}^2`                             |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 6      | :math:`\textrm{ZPVE}`            | Zero point vibrational energy                                                     | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 7      | :math:`U_0`                      | Internal energy at 0K                                                             | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 8      | :math:`U`                        | Internal energy at 298.15K                                                        | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 9      | :math:`H`                        | Enthalpy at 298.15K                                                               | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 10     | :math:`G`                        | Free energy at 298.15K                                                            | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 11     | :math:`c_{\textrm{v}}`           | Heat capavity at 298.15K                                                          | :math:`\frac{\textrm{cal}}{\textrm{mol K}}` |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 12     | :math:`U_0^{\textrm{ATOM}}`      | Atomization energy at 0K                                                          | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 13     | :math:`U^{\textrm{ATOM}}`        | Atomization energy at 298.15K                                                     | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 14     | :math:`H^{\textrm{ATOM}}`        | Atomization enthalpy at 298.15K                                                   | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 15     | :math:`G^{\textrm{ATOM}}`        | Atomization free energy at 298.15K                                                | :math:`\textrm{eV}`                         |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 16     | :math:`A`                        | Rotational constant                                                               | :math:`\textrm{GHz}`                        |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 17     | :math:`B`                        | Rotational constant                                                               | :math:`\textrm{GHz}`                        |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+| 18     | :math:`C`                        | Rotational constant                                                               | :math:`\textrm{GHz}`                        |
++--------+----------------------------------+-----------------------------------------------------------------------------------+---------------------------------------------+
+Args:
+    root (string): Root directory where the dataset should be saved.
+    transform (callable, optional): A function/transform that takes in an
+        :obj:`torch_geometric.data.Data` object and returns a transformed
+        version. The data object will be transformed before every access.
+        (default: :obj:`None`)
+    pre_transform (callable, optional): A function/transform that takes in
+        an :obj:`torch_geometric.data.Data` object and returns a
+        transformed version. The data object will be transformed before
+        being saved to disk. (default: :obj:`None`)
+    pre_filter (callable, optional): A function that takes in an
+        :obj:`torch_geometric.data.Data` object and returns a boolean
+        value, indicating whether the data object should be included in the
+        final dataset. (default: :obj:`None`)
+</pre>
+</div>
+</div>
+</div>
+<p>Look at the mean of target <code>2</code> which is the <span class="math inline">\(\epsilon_{\textrm{HOMO}}\)</span>:</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>dataset.mean(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>-6.536452770233154</code></pre>
+</div>
+</div>
+<p>Convenience function to get the graph object for a molecule</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>molecule_graph_entry <span class="op">=</span> dataset.get(<span class="dv">1234</span>) <span class="co">#Get graph object for molecule id 1234</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>molecule_graph_entry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>Data(edge_attr=[32, 4], edge_index=[2, 32], idx=[1], name="gdb_1269", pos=[17, 3], x=[17, 11], y=[1, 19], z=[17])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>molecule_graph_entry.keys</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>['x', 'edge_index', 'edge_attr', 'y', 'pos', 'z', 'name', 'idx']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>molecule_graph_entry.y.numpy()[:,<span class="dv">2</span>] <span class="co"># 2nd target property value for 1234 entry </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<pre><code>array([-6.7674713], dtype=float32)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>molecule_graph_entry.name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>'gdb_1269'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at raw files for the QM9 dataset. This can be used with Pandas. </span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dataset.raw_file_names</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>['gdb9.sdf', 'gdb9.sdf.csv', 'uncharacterized.txt']</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the path where it will be saved</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>dataset.processed_paths</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>['/Users/pghaneka/Documents/Personal/blog_fastpages/_notebooks/data/QM9_dataset/processed/data_v2.pt']</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="using-pandas-rdkit" class="level1">
+<h1>Using Pandas + RDkit</h1>
+<p>Henceforth we will switch to Pandas and RDkit. I will be using the <code>gdb9.sdf</code>, <code>gdb9.sdf.csv</code> files for processing and checking the RDkit molecules</p>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> tqdm.notebook <span class="im">as</span> tqdm</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># RDkit imports</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> rdkit</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit <span class="im">import</span> Chem</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> Draw</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit.Chem.Draw <span class="im">import</span> IPythonConsole <span class="co">#Needed to show molecules</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rdkit.__version__)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>Chem.WrapLogs()</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>lg <span class="op">=</span> rdkit.RDLogger.logger() </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>lg.setLevel(rdkit.RDLogger.CRITICAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2019.03.2</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>qm9_data_csv <span class="op">=</span> pd.read_csv(os.path.join(root_dir,<span class="st">'raw/gdb9.sdf.csv'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>qm9_data_csv.head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>mol_id</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>mu</th>
+      <th>alpha</th>
+      <th>homo</th>
+      <th>lumo</th>
+      <th>gap</th>
+      <th>r2</th>
+      <th>zpve</th>
+      <th>u0</th>
+      <th>u298</th>
+      <th>h298</th>
+      <th>g298</th>
+      <th>cv</th>
+      <th>u0_atom</th>
+      <th>u298_atom</th>
+      <th>h298_atom</th>
+      <th>g298_atom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gdb_1</td>
+      <td>157.71180</td>
+      <td>157.70997</td>
+      <td>157.70699</td>
+      <td>0.0000</td>
+      <td>13.21</td>
+      <td>-0.3877</td>
+      <td>0.1171</td>
+      <td>0.5048</td>
+      <td>35.3641</td>
+      <td>0.044749</td>
+      <td>-40.478930</td>
+      <td>-40.476062</td>
+      <td>-40.475117</td>
+      <td>-40.498597</td>
+      <td>6.469</td>
+      <td>-395.999595</td>
+      <td>-398.643290</td>
+      <td>-401.014647</td>
+      <td>-372.471772</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gdb_2</td>
+      <td>293.60975</td>
+      <td>293.54111</td>
+      <td>191.39397</td>
+      <td>1.6256</td>
+      <td>9.46</td>
+      <td>-0.2570</td>
+      <td>0.0829</td>
+      <td>0.3399</td>
+      <td>26.1563</td>
+      <td>0.034358</td>
+      <td>-56.525887</td>
+      <td>-56.523026</td>
+      <td>-56.522082</td>
+      <td>-56.544961</td>
+      <td>6.316</td>
+      <td>-276.861363</td>
+      <td>-278.620271</td>
+      <td>-280.399259</td>
+      <td>-259.338802</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>gdb_3</td>
+      <td>799.58812</td>
+      <td>437.90386</td>
+      <td>282.94545</td>
+      <td>1.8511</td>
+      <td>6.31</td>
+      <td>-0.2928</td>
+      <td>0.0687</td>
+      <td>0.3615</td>
+      <td>19.0002</td>
+      <td>0.021375</td>
+      <td>-76.404702</td>
+      <td>-76.401867</td>
+      <td>-76.400922</td>
+      <td>-76.422349</td>
+      <td>6.002</td>
+      <td>-213.087624</td>
+      <td>-213.974294</td>
+      <td>-215.159658</td>
+      <td>-201.407171</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>qm9_data_csv.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>(133885, 20)</code></pre>
+</div>
+</div>
+<p>Use the docstring above the refer column names.</p>
+<p>To get molecules in RDkit from SD file: More on reading and molecules can be found on the <a href="https://www.rdkit.org/docs/GettingStartedInPython.html#reading-sets-of-molecules">RDkit blog</a></p>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>QM9_SDF_path <span class="op">=</span> os.path.join(root_dir,<span class="st">'raw/gdb9.sdf'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get Rdkit molecules from SDFile: </span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>suppl <span class="op">=</span> Chem.SDMolSupplier(QM9_SDF_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>temp_mol <span class="op">=</span> <span class="bu">next</span>(suppl)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>temp_mol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="21">
+<p><img src="QM9_data_exploration_files/figure-html/cell-22-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(temp_mol)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+<pre><code>rdkit.Chem.rdchem.Mol</code></pre>
+</div>
+</div>
+<p>We can generate a list of molecules. This will take time and is not recommended if the dataset is larger than what we are using right now</p>
+<div class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>mols <span class="op">=</span> [x <span class="cf">for</span> x <span class="kw">in</span> suppl]</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span> (<span class="st">'No. of mols'</span>,<span class="bu">len</span>(mols))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>No. of mols 133885</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>mols[:<span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>[&lt;rdkit.Chem.rdchem.Mol at 0x7fdf8e01ce90&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x7fdf8e01cee0&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x7fdf8e01cf30&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x7fdf8e01cf80&gt;,
+ &lt;rdkit.Chem.rdchem.Mol at 0x7fdf8e01e030&gt;]</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mols[<span class="dv">1234</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="25">
+<p><img src="QM9_data_exploration_files/figure-html/cell-26-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>mols[<span class="dv">1234</span>].GetNumAtoms()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="26">
+<pre><code>7</code></pre>
+</div>
+</div>
+<p>Convert the RDkit Mol data to Canonical SMILE</p>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>Chem.MolToSmiles(mols[<span class="dv">1234</span>], canonical<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>'C#CC#CC(C)O'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>mol_block <span class="op">=</span> Chem.MolToMolBlock(mols[<span class="dv">1234</span>])</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(mol_block)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>gdb_1235
+     RDKit          3D
+
+  7  6  0  0  1  0  0  0  0  0999 V2000
+    0.0513    1.5589   -0.0209 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.0393    0.0228   -0.0260 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8127   -0.5176    1.0408 O   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.3293   -0.5021   -0.0211 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -2.4634   -0.9241    0.0197 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -3.7381   -1.3982    0.0628 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -4.8694   -1.8185    0.1023 C   0  0  0  0  0  0  0  0  0  0  0  0
+  2  4  1  0
+  1  2  1  0
+  2  3  1  0
+  4  5  3  0
+  5  6  1  0
+  6  7  3  0
+M  END
+</code></pre>
+</div>
+</div>
+<p>Visualize multiple molecules together</p>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>Chem.Draw.MolsToGridImage(mols[<span class="dv">100</span>:<span class="dv">110</span>], molsPerRow<span class="op">=</span><span class="dv">4</span>, subImgSize<span class="op">=</span>(<span class="dv">200</span>,<span class="dv">200</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="29">
+<p><img src="QM9_data_exploration_files/figure-html/cell-30-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="78">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(mols[<span class="dv">316</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="78">
+<pre><code>NoneType</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="59">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>SMILE_dict <span class="op">=</span> {<span class="st">'id'</span>:[], <span class="st">'SMILES'</span>:[]}</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>error_id <span class="op">=</span> []</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, entry <span class="kw">in</span> <span class="bu">enumerate</span>(tqdm.tqdm(mols)):</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> entry <span class="op">!=</span> <span class="va">None</span>:</span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>        smile_string <span class="op">=</span> Chem.MolToSmiles(entry)</span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>        SMILE_dict[<span class="st">'id'</span>].append(<span class="st">'gdb_</span><span class="sc">{}</span><span class="st">'</span>.<span class="bu">format</span>(<span class="bu">int</span>(i<span class="op">+</span><span class="dv">1</span>)))</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>        SMILE_dict[<span class="st">'SMILES'</span>].append(smile_string)</span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>        error_id.append(i)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id":"c248393a2d1a4435a9998eb3a377406a","version_major":2,"version_minor":0}
+</script>
+</div>
+</div>
+<div class="cell" data-execution_count="79">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(error_id) <span class="op">/</span> <span class="bu">len</span>(mols) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="79">
+<pre><code>0.47652836389438696</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>SMILE_dict.keys()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="69">
+<pre><code>dict_keys(['id', 'SMILES'])</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>SMILES_df <span class="op">=</span> pd.DataFrame(SMILE_dict, columns<span class="op">=</span>[<span class="st">'id'</span>,<span class="st">'SMILES'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>SMILES_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="71">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>id</th>
+      <th>SMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gdb_1</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gdb_2</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>gdb_3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>gdb_4</td>
+      <td>C#C</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gdb_5</td>
+      <td>C#N</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>133242</th>
+      <td>gdb_133879</td>
+      <td>C1C2C3C2[NH+]2C4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133243</th>
+      <td>gdb_133880</td>
+      <td>C1C2C3C4C5OC13C2C54</td>
+    </tr>
+    <tr>
+      <th>133244</th>
+      <td>gdb_133883</td>
+      <td>C1[NH+]2C3C2C2[NH+]4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133245</th>
+      <td>gdb_133884</td>
+      <td>C1C2C3C2C2[NH+]4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133246</th>
+      <td>gdb_133885</td>
+      <td>C1[NH+]2C3C4C5OC13C2C54</td>
+    </tr>
+  </tbody>
+</table>
+<p>133247 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>qm9_with_smiles <span class="op">=</span> qm9_data_csv.merge(SMILES_df, left_on<span class="op">=</span><span class="st">'mol_id'</span>, right_on<span class="op">=</span><span class="st">'id'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(qm9_with_smiles.shape, qm9_data_csv.shape, SMILES_df.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(133247, 22) (133885, 20) (133247, 2)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>qm9_with_smiles</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="82">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>mol_id</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>mu</th>
+      <th>alpha</th>
+      <th>homo</th>
+      <th>lumo</th>
+      <th>gap</th>
+      <th>r2</th>
+      <th>...</th>
+      <th>u298</th>
+      <th>h298</th>
+      <th>g298</th>
+      <th>cv</th>
+      <th>u0_atom</th>
+      <th>u298_atom</th>
+      <th>h298_atom</th>
+      <th>g298_atom</th>
+      <th>id</th>
+      <th>SMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gdb_1</td>
+      <td>157.71180</td>
+      <td>157.709970</td>
+      <td>157.706990</td>
+      <td>0.0000</td>
+      <td>13.21</td>
+      <td>-0.3877</td>
+      <td>0.1171</td>
+      <td>0.5048</td>
+      <td>35.3641</td>
+      <td>...</td>
+      <td>-40.476062</td>
+      <td>-40.475117</td>
+      <td>-40.498597</td>
+      <td>6.469</td>
+      <td>-395.999595</td>
+      <td>-398.643290</td>
+      <td>-401.014647</td>
+      <td>-372.471772</td>
+      <td>gdb_1</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gdb_2</td>
+      <td>293.60975</td>
+      <td>293.541110</td>
+      <td>191.393970</td>
+      <td>1.6256</td>
+      <td>9.46</td>
+      <td>-0.2570</td>
+      <td>0.0829</td>
+      <td>0.3399</td>
+      <td>26.1563</td>
+      <td>...</td>
+      <td>-56.523026</td>
+      <td>-56.522082</td>
+      <td>-56.544961</td>
+      <td>6.316</td>
+      <td>-276.861363</td>
+      <td>-278.620271</td>
+      <td>-280.399259</td>
+      <td>-259.338802</td>
+      <td>gdb_2</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>gdb_3</td>
+      <td>799.58812</td>
+      <td>437.903860</td>
+      <td>282.945450</td>
+      <td>1.8511</td>
+      <td>6.31</td>
+      <td>-0.2928</td>
+      <td>0.0687</td>
+      <td>0.3615</td>
+      <td>19.0002</td>
+      <td>...</td>
+      <td>-76.401867</td>
+      <td>-76.400922</td>
+      <td>-76.422349</td>
+      <td>6.002</td>
+      <td>-213.087624</td>
+      <td>-213.974294</td>
+      <td>-215.159658</td>
+      <td>-201.407171</td>
+      <td>gdb_3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>gdb_4</td>
+      <td>0.00000</td>
+      <td>35.610036</td>
+      <td>35.610036</td>
+      <td>0.0000</td>
+      <td>16.28</td>
+      <td>-0.2845</td>
+      <td>0.0506</td>
+      <td>0.3351</td>
+      <td>59.5248</td>
+      <td>...</td>
+      <td>-77.305527</td>
+      <td>-77.304583</td>
+      <td>-77.327429</td>
+      <td>8.574</td>
+      <td>-385.501997</td>
+      <td>-387.237686</td>
+      <td>-389.016047</td>
+      <td>-365.800724</td>
+      <td>gdb_4</td>
+      <td>C#C</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gdb_5</td>
+      <td>0.00000</td>
+      <td>44.593883</td>
+      <td>44.593883</td>
+      <td>2.8937</td>
+      <td>12.99</td>
+      <td>-0.3604</td>
+      <td>0.0191</td>
+      <td>0.3796</td>
+      <td>48.7476</td>
+      <td>...</td>
+      <td>-93.409370</td>
+      <td>-93.408425</td>
+      <td>-93.431246</td>
+      <td>6.278</td>
+      <td>-301.820534</td>
+      <td>-302.906752</td>
+      <td>-304.091489</td>
+      <td>-288.720028</td>
+      <td>gdb_5</td>
+      <td>C#N</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>133242</th>
+      <td>gdb_133879</td>
+      <td>3.52243</td>
+      <td>2.185850</td>
+      <td>1.902520</td>
+      <td>1.4529</td>
+      <td>77.63</td>
+      <td>-0.2229</td>
+      <td>0.0977</td>
+      <td>0.3206</td>
+      <td>796.9713</td>
+      <td>...</td>
+      <td>-364.728220</td>
+      <td>-364.727276</td>
+      <td>-364.762857</td>
+      <td>24.820</td>
+      <td>-1802.904893</td>
+      <td>-1815.522844</td>
+      <td>-1825.598756</td>
+      <td>-1678.637403</td>
+      <td>gdb_133879</td>
+      <td>C1C2C3C2[NH+]2C4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133243</th>
+      <td>gdb_133880</td>
+      <td>3.56068</td>
+      <td>2.195510</td>
+      <td>1.920670</td>
+      <td>1.3774</td>
+      <td>73.24</td>
+      <td>-0.2427</td>
+      <td>0.0904</td>
+      <td>0.3331</td>
+      <td>777.3913</td>
+      <td>...</td>
+      <td>-384.604306</td>
+      <td>-384.603362</td>
+      <td>-384.638652</td>
+      <td>23.968</td>
+      <td>-1737.300710</td>
+      <td>-1749.148080</td>
+      <td>-1758.630996</td>
+      <td>-1619.706151</td>
+      <td>gdb_133880</td>
+      <td>C1C2C3C4C5OC13C2C54</td>
+    </tr>
+    <tr>
+      <th>133244</th>
+      <td>gdb_133883</td>
+      <td>3.67118</td>
+      <td>2.143140</td>
+      <td>1.895010</td>
+      <td>1.2480</td>
+      <td>73.60</td>
+      <td>-0.2233</td>
+      <td>0.0720</td>
+      <td>0.2953</td>
+      <td>780.3553</td>
+      <td>...</td>
+      <td>-380.748619</td>
+      <td>-380.747675</td>
+      <td>-380.783148</td>
+      <td>23.972</td>
+      <td>-1667.045429</td>
+      <td>-1678.830048</td>
+      <td>-1688.312964</td>
+      <td>-1549.143391</td>
+      <td>gdb_133883</td>
+      <td>C1[NH+]2C3C2C2[NH+]4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133245</th>
+      <td>gdb_133884</td>
+      <td>3.52845</td>
+      <td>2.151310</td>
+      <td>1.865820</td>
+      <td>1.9576</td>
+      <td>77.40</td>
+      <td>-0.2122</td>
+      <td>0.0881</td>
+      <td>0.3003</td>
+      <td>803.1904</td>
+      <td>...</td>
+      <td>-364.714974</td>
+      <td>-364.714030</td>
+      <td>-364.749650</td>
+      <td>24.796</td>
+      <td>-1794.600439</td>
+      <td>-1807.210860</td>
+      <td>-1817.286772</td>
+      <td>-1670.349892</td>
+      <td>gdb_133884</td>
+      <td>C1C2C3C2C2[NH+]4CC12C34</td>
+    </tr>
+    <tr>
+      <th>133246</th>
+      <td>gdb_133885</td>
+      <td>3.64015</td>
+      <td>2.217640</td>
+      <td>1.937930</td>
+      <td>0.8626</td>
+      <td>69.48</td>
+      <td>-0.2316</td>
+      <td>0.0742</td>
+      <td>0.3058</td>
+      <td>756.3557</td>
+      <td>...</td>
+      <td>-400.627892</td>
+      <td>-400.626948</td>
+      <td>-400.662186</td>
+      <td>23.434</td>
+      <td>-1603.471865</td>
+      <td>-1614.455155</td>
+      <td>-1623.345075</td>
+      <td>-1492.247150</td>
+      <td>gdb_133885</td>
+      <td>C1[NH+]2C3C4C5OC13C2C54</td>
+    </tr>
+  </tbody>
+</table>
+<p>133247 rows × 22 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="84">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>qm9_with_smiles.to_csv(<span class="st">'./QM9_cleaned_SMILES_data.csv'</span>, sep<span class="op">=</span><span class="st">','</span>,columns<span class="op">=</span>qm9_with_smiles.columns, index<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="little-more-on-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="little-more-on-the-dataset">Little more on the dataset</h3>
+<p>The QM9 dataset from the <a href="https://arxiv.org/abs/1703.00564">MoleculeNet: A Benchmark for Molecular Machine Learning</a> paper, consisting of about 130,000 molecules with 19 regression targets.</p>
+<p>Each molecule includes complete spatial information for the single low energy conformation of the atoms in the molecule.</p>
+<p>More information on each descriptor <a href="https://www.kaggle.com/zaharch/quantum-machine-9-qm9">here</a></p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jpca.0c05969">Recent paper on exploring the QM9 dataset</a></li>
+</ul>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>QM9_df <span class="op">=</span> pd.read_csv(<span class="st">'./QM9_dataset/QM9_cleaned_SMILES_data.csv'</span>, sep<span class="op">=</span><span class="st">','</span>).drop(columns<span class="op">=</span>[<span class="st">'id'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>QM9_df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>mol_id</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>mu</th>
+      <th>alpha</th>
+      <th>homo</th>
+      <th>lumo</th>
+      <th>gap</th>
+      <th>r2</th>
+      <th>...</th>
+      <th>u0</th>
+      <th>u298</th>
+      <th>h298</th>
+      <th>g298</th>
+      <th>cv</th>
+      <th>u0_atom</th>
+      <th>u298_atom</th>
+      <th>h298_atom</th>
+      <th>g298_atom</th>
+      <th>SMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gdb_1</td>
+      <td>157.71180</td>
+      <td>157.709970</td>
+      <td>157.706990</td>
+      <td>0.0000</td>
+      <td>13.21</td>
+      <td>-0.3877</td>
+      <td>0.1171</td>
+      <td>0.5048</td>
+      <td>35.3641</td>
+      <td>...</td>
+      <td>-40.478930</td>
+      <td>-40.476062</td>
+      <td>-40.475117</td>
+      <td>-40.498597</td>
+      <td>6.469</td>
+      <td>-395.999595</td>
+      <td>-398.643290</td>
+      <td>-401.014647</td>
+      <td>-372.471772</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gdb_2</td>
+      <td>293.60975</td>
+      <td>293.541110</td>
+      <td>191.393970</td>
+      <td>1.6256</td>
+      <td>9.46</td>
+      <td>-0.2570</td>
+      <td>0.0829</td>
+      <td>0.3399</td>
+      <td>26.1563</td>
+      <td>...</td>
+      <td>-56.525887</td>
+      <td>-56.523026</td>
+      <td>-56.522082</td>
+      <td>-56.544961</td>
+      <td>6.316</td>
+      <td>-276.861363</td>
+      <td>-278.620271</td>
+      <td>-280.399259</td>
+      <td>-259.338802</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>gdb_3</td>
+      <td>799.58812</td>
+      <td>437.903860</td>
+      <td>282.945450</td>
+      <td>1.8511</td>
+      <td>6.31</td>
+      <td>-0.2928</td>
+      <td>0.0687</td>
+      <td>0.3615</td>
+      <td>19.0002</td>
+      <td>...</td>
+      <td>-76.404702</td>
+      <td>-76.401867</td>
+      <td>-76.400922</td>
+      <td>-76.422349</td>
+      <td>6.002</td>
+      <td>-213.087624</td>
+      <td>-213.974294</td>
+      <td>-215.159658</td>
+      <td>-201.407171</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>gdb_4</td>
+      <td>0.00000</td>
+      <td>35.610036</td>
+      <td>35.610036</td>
+      <td>0.0000</td>
+      <td>16.28</td>
+      <td>-0.2845</td>
+      <td>0.0506</td>
+      <td>0.3351</td>
+      <td>59.5248</td>
+      <td>...</td>
+      <td>-77.308427</td>
+      <td>-77.305527</td>
+      <td>-77.304583</td>
+      <td>-77.327429</td>
+      <td>8.574</td>
+      <td>-385.501997</td>
+      <td>-387.237686</td>
+      <td>-389.016047</td>
+      <td>-365.800724</td>
+      <td>C#C</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>gdb_5</td>
+      <td>0.00000</td>
+      <td>44.593883</td>
+      <td>44.593883</td>
+      <td>2.8937</td>
+      <td>12.99</td>
+      <td>-0.3604</td>
+      <td>0.0191</td>
+      <td>0.3796</td>
+      <td>48.7476</td>
+      <td>...</td>
+      <td>-93.411888</td>
+      <td>-93.409370</td>
+      <td>-93.408425</td>
+      <td>-93.431246</td>
+      <td>6.278</td>
+      <td>-301.820534</td>
+      <td>-302.906752</td>
+      <td>-304.091489</td>
+      <td>-288.720028</td>
+      <td>C#N</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 21 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>QM9_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="28">
+<pre><code>(133247, 21)</code></pre>
+</div>
+</div>
+</section>
+<section id="visualize-the-smile-string" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-the-smile-string">Visualize the SMILE string</h3>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>mol_temp <span class="op">=</span> QM9_df.iloc[<span class="dv">125559</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>mol_temp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="30">
+<pre><code>mol_id          gdb_126190
+A                  1.86888
+B                  1.78713
+C                  0.99314
+mu                  2.5328
+alpha                86.42
+homo               -0.2178
+lumo                0.0285
+gap                 0.2463
+r2               1261.0619
+zpve               0.18249
+u0             -383.308785
+u298           -383.298647
+h298           -383.297702
+g298           -383.344953
+cv                  35.514
+u0_atom       -2014.544226
+u298_atom      -2026.84654
+h298_atom     -2038.700812
+g298_atom     -1874.253921
+SMILES       CCc1c(C)cnn1C
+Name: 125559, dtype: object</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>mol_obj <span class="op">=</span> Chem.MolFromSmiles(mol_temp[<span class="st">'SMILES'</span>])</span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>mol_obj</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="31">
+<p><img src="QM9_data_exploration_files/figure-html/cell-46-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To output x y z of the molecule </span></span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Chem.MolToMolBlock(mol_obj))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     RDKit          2D
+
+  9  9  0  0  0  0  0  0  0  0999 V2000
+    3.5260   -1.2990    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.7760    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2760    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.3943    1.2135    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8578    2.6401    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0323    0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+   -1.0323   -0.7500    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    0.3943   -1.2135    0.0000 N   0  0  0  0  0  0  0  0  0  0  0  0
+    0.8578   -2.6401    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+  3  4  2  0
+  4  5  1  0
+  4  6  1  0
+  6  7  2  0
+  7  8  1  0
+  8  9  1  0
+  8  3  1  0
+M  END
+</code></pre>
+</div>
+</div>
+<p>Take a small sample from QM9 dataset</p>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol <span class="op">=</span> QM9_df.sample(<span class="dv">10</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol.head(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="34">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>mol_id</th>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+      <th>mu</th>
+      <th>alpha</th>
+      <th>homo</th>
+      <th>lumo</th>
+      <th>gap</th>
+      <th>r2</th>
+      <th>...</th>
+      <th>u0</th>
+      <th>u298</th>
+      <th>h298</th>
+      <th>g298</th>
+      <th>cv</th>
+      <th>u0_atom</th>
+      <th>u298_atom</th>
+      <th>h298_atom</th>
+      <th>g298_atom</th>
+      <th>SMILES</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>gdb_6054</td>
+      <td>2.99737</td>
+      <td>1.48687</td>
+      <td>1.26642</td>
+      <td>2.2886</td>
+      <td>74.10</td>
+      <td>-0.2539</td>
+      <td>0.0634</td>
+      <td>0.3172</td>
+      <td>1099.7467</td>
+      <td>...</td>
+      <td>-387.352042</td>
+      <td>-387.341825</td>
+      <td>-387.340880</td>
+      <td>-387.386054</td>
+      <td>38.570</td>
+      <td>-1969.393071</td>
+      <td>-1982.533737</td>
+      <td>-1994.981633</td>
+      <td>-1823.610180</td>
+      <td>CCC(C)(O)C(C)O</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>gdb_105582</td>
+      <td>1.88587</td>
+      <td>1.65405</td>
+      <td>1.28010</td>
+      <td>3.2414</td>
+      <td>75.11</td>
+      <td>-0.2440</td>
+      <td>-0.0391</td>
+      <td>0.2049</td>
+      <td>1087.1141</td>
+      <td>...</td>
+      <td>-421.792588</td>
+      <td>-421.783422</td>
+      <td>-421.782478</td>
+      <td>-421.826637</td>
+      <td>33.805</td>
+      <td>-1715.510460</td>
+      <td>-1724.868501</td>
+      <td>-1734.351417</td>
+      <td>-1600.736553</td>
+      <td>C#CC1(CO)CCC1=O</td>
+    </tr>
+  </tbody>
+</table>
+<p>2 rows × 21 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="35">
+<pre><code>(10, 21)</code></pre>
+</div>
+</div>
+<p><code>PandasTools</code> module helps add <code>mol</code> molecule objects from RDKit as per the SMILES in the dataframe</p>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>PandasTools.AddMoleculeColumnToFrame(QM9_df_smol, smilesCol<span class="op">=</span><span class="st">'SMILES'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Check the new <code>ROMol</code> columns being appended in the dataframe</p>
+<div class="cell" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="37">
+<pre><code>Index(['mol_id', 'A', 'B', 'C', 'mu', 'alpha', 'homo', 'lumo', 'gap', 'r2',
+       'zpve', 'u0', 'u298', 'h298', 'g298', 'cv', 'u0_atom', 'u298_atom',
+       'h298_atom', 'g298_atom', 'SMILES', 'ROMol'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol[<span class="st">'ROMol'</span>][<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="38">
+<p><img src="QM9_data_exploration_files/figure-html/cell-53-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<p>Visualize the dataframe, add properties of interest at the bottom, you can add index too if need</p>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>PandasTools.FrameToGridImage(QM9_df_smol, legendsCol<span class="op">=</span><span class="st">'gap'</span>, molsPerRow<span class="op">=</span><span class="dv">3</span>, subImgSize<span class="op">=</span>(<span class="dv">200</span>,<span class="dv">200</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="39">
+<p><img src="QM9_data_exploration_files/figure-html/cell-54-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="fingerprints" class="level2">
+<h2 class="anchored" data-anchor-id="fingerprints">Fingerprints</h2>
+<p>Compress molecules into vectors for mathetical operations and comparisons. First we will look at <code>MorganFingerprint</code> method. For this method we have to define the radius and the size of the vector being used. More information on Morgan Fingerprints can be read at this <a href="https://depth-first.com/articles/2019/01/11/extended-connectivity-fingerprints/">blogpost</a></p>
+<ul>
+<li><a href="https://www.rdkit.org/UGM/2012/Landrum_RDKit_UGM.Fingerprints.Final.pptx.pdf">Presentation by Gregory Landrum (creator of RDkit) on Fingerprints</a></li>
+</ul>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fingerprints</span></span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit.Chem <span class="im">import</span> AllChem</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>radius <span class="op">=</span> <span class="dv">3</span> </span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>nBits <span class="op">=</span> <span class="dv">1024</span></span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>ECFP6 <span class="op">=</span> [AllChem.GetMorganFingerprint(m, radius) <span class="cf">for</span> m <span class="kw">in</span> QM9_df_smol[<span class="st">'ROMol'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(ECFP6)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>10</code></pre>
+</div>
+</div>
+</section>
+<section id="similarity" class="level2">
+<h2 class="anchored" data-anchor-id="similarity">Similarity</h2>
+<p>RDKit provides tools for different kinds of similarity search, including Tanimoto, Dice, Cosine, Sokal, Russel… and more. Tanimoto is a very widely use similarity search metric because it incorporates substructure matching. Here is an example</p>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>ref_mol <span class="op">=</span> QM9_df_smol.iloc[<span class="dv">3</span>][<span class="st">'ROMol'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>ref_mol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="44">
+<p><img src="QM9_data_exploration_files/figure-html/cell-59-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate finger print based representation for that molecule </span></span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>ref_ECFP4_fps <span class="op">=</span> AllChem.GetMorganFingerprintAsBitVect(ref_mol, radius<span class="op">=</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>QM9_smol_ECFP4_fps <span class="op">=</span> [AllChem.GetMorganFingerprintAsBitVect(x,<span class="dv">2</span>) <span class="cf">for</span> x <span class="kw">in</span> QM9_df_smol[<span class="st">'ROMol'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit <span class="im">import</span> DataStructs</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>similarity_efcp4 <span class="op">=</span> [DataStructs.FingerprintSimilarity(ref_ECFP4_fps, x) <span class="cf">for</span> x <span class="kw">in</span> QM9_smol_ECFP4_fps]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol[<span class="st">'Tanimoto_Similarity (ECFP4)'</span>] <span class="op">=</span> similarity_efcp4</span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a>PandasTools.FrameToGridImage(QM9_df_smol, legendsCol<span class="op">=</span><span class="st">"Tanimoto_Similarity (ECFP4)"</span>, molsPerRow<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<p><img src="QM9_data_exploration_files/figure-html/cell-63-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>QM9_df_smol <span class="op">=</span> QM9_df_smol.sort_values([<span class="st">'Tanimoto_Similarity (ECFP4)'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>PandasTools.FrameToGridImage(QM9_df_smol, legendsCol<span class="op">=</span><span class="st">"Tanimoto_Similarity (ECFP4)"</span>, molsPerRow<span class="op">=</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="49">
+<p><img src="QM9_data_exploration_files/figure-html/cell-64-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

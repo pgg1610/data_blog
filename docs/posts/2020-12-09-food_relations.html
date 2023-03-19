@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2020-12-09">
+
+<title>Omnis tempus datum - Relational analysis of spices used in Indian cuisine</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Omnis tempus datum</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">
+ <span class="menu-text">Omnis tempus datum</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pgg1610"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/mepgg"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Relational analysis of spices used in Indian cuisine</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 9, 2020</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="find-out-which-relations-between-different-indian-spices" class="level1">
+<h1>Find out which relations between different Indian spices</h1>
+<p>Spices are central to Indian cuisine. What is referred to colloquially as ‘Indian’ food is made of many different sub-cuisines. As a result, there are a plethora of spices usually brought up when considering ‘Indian’ food. Knowing which spices are most frequently used can help cooks novice or seasoned to make an informed decision about spices that promise the most bang for the buck.</p>
+<p>I use a Kaggle dataset containing 6000+ recipes from https://www.archanaskitchen.com/. Using this data as base collection of recipes representing most of the indian food, I analyze which spices occur most freqeuntly and which spices are most connected to each other.</p>
+<ul>
+<li>Dataset for Indian recipe: This dataset 6000+ recipe scrapped from | <a href="https://www.kaggle.com/kanishk307/6000-indian-food-recipes-dataset">Link to the dataset</a></li>
+</ul>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----- PLOTTING PARAMS ----# </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> cm</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.figure_format <span class="op">=</span> <span class="st">'retina'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config InlineBackend.print_figure_kwargs<span class="op">=</span>{<span class="st">'facecolor'</span> : <span class="st">"w"</span>}</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plot_params <span class="op">=</span> {</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">'font.size'</span> : <span class="dv">22</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">'axes.titlesize'</span> : <span class="dv">24</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">'axes.labelsize'</span> : <span class="dv">20</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">'xtick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">'ytick.labelsize'</span> : <span class="dv">16</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.rcParams.update(plot_params)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="read-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="read-the-dataset">Read the dataset</h3>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>food_df <span class="op">=</span> pd.read_csv(<span class="st">'./data/IndianFoodDatasetCSV.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>food_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>Index(['Srno', 'RecipeName', 'TranslatedRecipeName', 'Ingredients',
+       'TranslatedIngredients', 'PrepTimeInMins', 'CookTimeInMins',
+       'TotalTimeInMins', 'Servings', 'Cuisine', 'Course', 'Diet',
+       'Instructions', 'TranslatedInstructions', 'URL'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>food_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>(6871, 15)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># dropping miscellaneous columns and NaN entries</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>columns_to_drop <span class="op">=</span> [<span class="st">'CookTimeInMins'</span>, <span class="st">'Servings'</span>, <span class="st">'Course'</span>, <span class="st">'Diet'</span>, <span class="st">'Instructions'</span>, <span class="st">'TranslatedInstructions'</span>, <span class="st">'URL'</span>]</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>food_df <span class="op">=</span> food_df.drop(columns <span class="op">=</span> columns_to_drop).dropna()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data has indian-inspired international cuisines which are not what we are interested in</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>cuisines_to_drop <span class="op">=</span> [<span class="st">'Mexican'</span>, <span class="st">'Italian Recipes'</span>, <span class="st">'Thai'</span>, <span class="st">'Chinese'</span>, <span class="st">'Asian'</span>, <span class="st">'Middle Eastern'</span>, <span class="st">'European'</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Arab'</span>, <span class="st">'Japanese'</span>, <span class="st">'Vietnamese'</span>, <span class="st">'British'</span>, <span class="st">'Greek'</span>, <span class="st">'French'</span>, <span class="st">'Mediterranean'</span>, <span class="st">'Sri Lankan'</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Indonesian'</span>, <span class="st">'African'</span>, <span class="st">'Korean'</span>, <span class="st">'American'</span>, <span class="st">'Carribbean'</span>, <span class="st">'World Breakfast'</span>, <span class="st">'Malaysian'</span>, <span class="st">'Dessert'</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">'Afghan'</span>, <span class="st">'Snack'</span>, <span class="st">'Jewish'</span>, <span class="st">'Brunch'</span>, <span class="st">'Lunch'</span>, <span class="st">'Continental'</span>, <span class="st">'Fusion'</span>]</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>food_df <span class="op">=</span> food_df.loc[ <span class="op">~</span> food_df[<span class="st">'Cuisine'</span>].isin(cuisines_to_drop) ] <span class="co">#Dropping entries in `food_df` which have non-indian cuisines </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>food_df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>(4881, 8)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>food_df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Srno</th>
+      <th>RecipeName</th>
+      <th>TranslatedRecipeName</th>
+      <th>Ingredients</th>
+      <th>TranslatedIngredients</th>
+      <th>PrepTimeInMins</th>
+      <th>TotalTimeInMins</th>
+      <th>Cuisine</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Masala Karela Recipe</td>
+      <td>Masala Karela Recipe</td>
+      <td>6 Karela (Bitter Gourd/ Pavakkai) - deseeded,S...</td>
+      <td>6 Karela (Bitter Gourd/ Pavakkai) - deseeded,S...</td>
+      <td>15</td>
+      <td>45</td>
+      <td>Indian</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>टमाटर पुलियोगरे रेसिपी - Spicy Tomato Rice (Re...</td>
+      <td>Spicy Tomato Rice (Recipe)</td>
+      <td>2-1/2 कप चावल - पका ले,3 टमाटर,3 छोटा चमच्च बी...</td>
+      <td>2-1 / 2 cups rice - cooked, 3 tomatoes, 3 teas...</td>
+      <td>5</td>
+      <td>15</td>
+      <td>South Indian Recipes</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Ragi Semiya Upma Recipe - Ragi Millet Vermicel...</td>
+      <td>Ragi Semiya Upma Recipe - Ragi Millet Vermicel...</td>
+      <td>1-1/2 cups Rice Vermicelli Noodles (Thin),1 On...</td>
+      <td>1-1/2 cups Rice Vermicelli Noodles (Thin),1 On...</td>
+      <td>20</td>
+      <td>50</td>
+      <td>South Indian Recipes</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Gongura Chicken Curry Recipe - Andhra Style Go...</td>
+      <td>Gongura Chicken Curry Recipe - Andhra Style Go...</td>
+      <td>500 grams Chicken,2 Onion - chopped,1 Tomato -...</td>
+      <td>500 grams Chicken,2 Onion - chopped,1 Tomato -...</td>
+      <td>15</td>
+      <td>45</td>
+      <td>Andhra</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>आंध्रा स्टाइल आलम पचड़ी रेसिपी - Adrak Chutney ...</td>
+      <td>Andhra Style Alam Pachadi Recipe - Adrak Chutn...</td>
+      <td>1 बड़ा चमच्च चना दाल,1 बड़ा चमच्च सफ़ेद उरद दाल,2...</td>
+      <td>1 tablespoon chana dal, 1 tablespoon white ura...</td>
+      <td>10</td>
+      <td>30</td>
+      <td>Andhra</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="drop-non-english-entries-for-consistency" class="level2">
+<h2 class="anchored" data-anchor-id="drop-non-english-entries-for-consistency">Drop non-english entries for consistency</h2>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Some entries in the `TranslatedIngredients` have non-english entries </span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filter_english(string):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>        string.encode(<span class="st">'utf-8'</span>).decode(<span class="st">'ascii'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">UnicodeDecodeError</span>: </span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>        out <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> out</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Droping columns in the dataset having ingredients in language other than english </span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> food_df.loc[ food_df[<span class="st">'TranslatedIngredients'</span>].<span class="bu">apply</span>(filter_english) ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
+<pre><code>(4273, 8)</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.reset_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generate-a-consistent-list-of-indian-spices-for-better-tabulation" class="level2">
+<h2 class="anchored" data-anchor-id="generate-a-consistent-list-of-indian-spices-for-better-tabulation">Generate a consistent list of Indian spices for better tabulation</h2>
+<p>Next for consistent tabulation I needed a list of spices to look for. Wikipedia has a page on Indian spices which lists various spices used in Indian cuisine. I use this list to search names of spices in the recipe entries.</p>
+<div class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">#read file of all indian spices on wikipedia</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>wiki_file_pd <span class="op">=</span> pd.read_html(<span class="st">'https://en.wikipedia.org/wiki/List_of_Indian_spices'</span>)</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>spices_list <span class="op">=</span> wiki_file_pd[<span class="dv">0</span>][<span class="st">'Standard English'</span>].copy().<span class="bu">str</span>.lower()</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="co">#some important spices to add</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>spices_to_add <span class="op">=</span> pd.Series([<span class="st">'black salt'</span>, <span class="st">'green chillies'</span>, <span class="st">'chilli powder'</span>])</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#some spices are too common (such as pepper) or not a spice, but a vegetable, or are otherwise corrupted (for example,</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="co">#cardamom is often listed as "cardamom" nto specifying whether it is black or green)</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>spices_to_drop <span class="op">=</span> [<span class="st">'black pepper'</span>, <span class="st">'capers'</span>, <span class="st">'chili pepper powder'</span>, <span class="st">'cinnamon buds'</span>, <span class="st">'citric acid'</span>, <span class="st">'garlic'</span>, <span class="st">'capsicum'</span>, <span class="st">'charoli'</span>, <span class="st">'garcinia gummi-gutta'</span>, <span class="st">'inknut'</span>, <span class="st">'garcinia indica'</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'black mustard seeds/raee'</span>, <span class="st">'cumin seed ground into balls'</span>, <span class="st">'dried ginger'</span>, <span class="st">'green chili pepper'</span>, <span class="st">'long pepper'</span>, <span class="st">'four seeds'</span>, <span class="st">'cubeb'</span>, <span class="st">'gum tragacanth'</span>, <span class="st">'jakhya'</span>, <span class="st">'licorice powder'</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>                  <span class="st">'indian bedellium tree'</span>, <span class="st">'mango extract'</span>, <span class="st">'coriander powder'</span>, <span class="st">'saffron pulp'</span>, <span class="st">'black cardamom'</span>, <span class="st">'brown mustard seed'</span>, <span class="st">'black cumin'</span>, <span class="st">'panch phoron'</span>]</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>spices_list <span class="op">=</span> spices_list.loc[ <span class="op">~</span>spices_list.isin(spices_to_drop) ].append(spices_to_add).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>spices_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>0                      alkanet root
+1                           amchoor
+2                        asafoetida
+3             celery / radhuni seed
+4         bay leaf, indian bay leaf
+5                          cinnamon
+6                            cloves
+7                    coriander seed
+8                        cumin seed
+9     curry tree or sweet neem leaf
+10                      fennel seed
+11                   fenugreek leaf
+12                   fenugreek seed
+13                     garam masala
+14                           ginger
+15                   green cardamom
+16                indian gooseberry
+17                          kalpasi
+18                     mustard seed
+19                     nigella seed
+20                           nutmeg
+21                             mace
+22                 pomegranate seed
+23                       poppy seed
+24                          saffron
+25                      sesame seed
+26                      star aniseh
+27                         tamarind
+28                thymol/carom seed
+29                         turmeric
+30                     white pepper
+31                       black salt
+32                   green chillies
+33                    chilli powder
+dtype: object</code></pre>
+</div>
+</div>
+<p>One more step is editing the spices so that my string counter can find different versions of the same spice.</p>
+<div class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#editing the spices so that my string counter can find different versions of the same spice</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>spices_list <span class="op">=</span> spices_list.<span class="bu">str</span>.replace(<span class="st">'amchoor'</span>, <span class="st">'amchur/amchoor/mango extract'</span>) <span class="op">\</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'asafoetida'</span>, <span class="st">'asafetida/asafoetida/hing'</span>) <span class="op">\</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'thymol/carom seed'</span>, <span class="st">'ajwain/thymol/carom seed'</span>) <span class="op">\</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'alkanet root'</span>, <span class="st">'alkanet/alkanet root'</span>) <span class="op">\</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'chilli powder'</span>, <span class="st">'red chilli powder/chilli powder/kashmiri red chilli powder'</span>) <span class="op">\</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'celery / radhuni seed'</span>, <span class="st">'celery/radhuni seed'</span>) <span class="op">\</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'bay leaf, indian bay leaf'</span>, <span class="st">'bay leaf/bay leaves/tej patta'</span>) <span class="op">\</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'curry tree or sweet neem leaf'</span>, <span class="st">'curry leaf/curry leaves'</span>) <span class="op">\</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'fenugreek leaf'</span>, <span class="st">'fenugreek/kasoori methi'</span>) <span class="op">\</span></span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'nigella seed'</span>, <span class="st">'nigella/black cumin'</span>) <span class="op">\</span></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'ginger'</span>, <span class="st">'dried ginger/ginger powder'</span>) <span class="op">\</span></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'cloves'</span>, <span class="st">'cloves/laung'</span>) <span class="op">\</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'green cardamom'</span>, <span class="st">'cardamom/green cardamom/black cardamom'</span>)<span class="op">\</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'indian gooseberry'</span>, <span class="st">'indian gooseberry/amla'</span>)<span class="op">\</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'coriander seed'</span>, <span class="st">'coriander seed/coriander powder'</span>)<span class="op">\</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'star aniseh'</span>, <span class="st">'star anise'</span>)<span class="op">\</span></span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                    .replace(<span class="st">'cumin seed'</span>, <span class="st">'cumin powder/cumin seeds/cumin/jeera'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>spices_list</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>0                                  alkanet/alkanet root
+1                          amchur/amchoor/mango extract
+2                             asafetida/asafoetida/hing
+3                                   celery/radhuni seed
+4                         bay leaf/bay leaves/tej patta
+5                                              cinnamon
+6                                          cloves/laung
+7                       coriander seed/coriander powder
+8                  cumin powder/cumin seeds/cumin/jeera
+9                               curry leaf/curry leaves
+10                                          fennel seed
+11                              fenugreek/kasoori methi
+12                                       fenugreek seed
+13                                         garam masala
+14                           dried ginger/ginger powder
+15               cardamom/green cardamom/black cardamom
+16                               indian gooseberry/amla
+17                                              kalpasi
+18                                         mustard seed
+19                                  nigella/black cumin
+20                                               nutmeg
+21                                                 mace
+22                                     pomegranate seed
+23                                           poppy seed
+24                                              saffron
+25                                          sesame seed
+26                                           star anise
+27                                             tamarind
+28                             ajwain/thymol/carom seed
+29                                             turmeric
+30                                         white pepper
+31                                           black salt
+32                                       green chillies
+33    red chilli powder/chilli powder/kashmiri red c...
+dtype: object</code></pre>
+</div>
+</div>
+</section>
+<section id="ingredients-in-the-recipes" class="level2">
+<h2 class="anchored" data-anchor-id="ingredients-in-the-recipes">Ingredients in the recipes</h2>
+<div class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>ingredients_series <span class="op">=</span> df[[<span class="st">'TranslatedRecipeName'</span>,<span class="st">'TranslatedIngredients'</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>ingredients_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>TranslatedRecipeName</th>
+      <th>TranslatedIngredients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Masala Karela Recipe</td>
+      <td>6 Karela (Bitter Gourd/ Pavakkai) - deseeded,S...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Spicy Tomato Rice (Recipe)</td>
+      <td>2-1 / 2 cups rice - cooked, 3 tomatoes, 3 teas...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ragi Semiya Upma Recipe - Ragi Millet Vermicel...</td>
+      <td>1-1/2 cups Rice Vermicelli Noodles (Thin),1 On...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Gongura Chicken Curry Recipe - Andhra Style Go...</td>
+      <td>500 grams Chicken,2 Onion - chopped,1 Tomato -...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andhra Style Alam Pachadi Recipe - Adrak Chutn...</td>
+      <td>1 tablespoon chana dal, 1 tablespoon white ura...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4268</th>
+      <td>One Pot Punjabi Rajma Masala Recipe In Preethi...</td>
+      <td>1 cup Rajma (Large Kidney Beans),1 inch Ginger...</td>
+    </tr>
+    <tr>
+      <th>4269</th>
+      <td>Saffron Paneer Peda Recipe</td>
+      <td>2 cups Paneer (Homemade Cottage Cheese) - crum...</td>
+    </tr>
+    <tr>
+      <th>4270</th>
+      <td>Quinoa Phirnee Recipe (Quinoa Milk Pudding)</td>
+      <td>1 cup Quinoa,3/4 cup Sugar,1 teaspoon Cardamom...</td>
+    </tr>
+    <tr>
+      <th>4271</th>
+      <td>Ullikadala Pulusu Recipe | Spring Onion Curry</td>
+      <td>150 grams Spring Onion (Bulb &amp; Greens) - chopp...</td>
+    </tr>
+    <tr>
+      <th>4272</th>
+      <td>Kashmiri Style Kokur Yakhni Recipe-Chicken Coo...</td>
+      <td>1 kg Chicken - medium pieces,1/2 cup Mustard o...</td>
+    </tr>
+  </tbody>
+</table>
+<p>4273 rows × 2 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>spices_list_column_to_add <span class="op">=</span> {i: np.zeros(<span class="bu">len</span>(ingredients_series)) <span class="cf">for</span> i <span class="kw">in</span> spices_list.to_list()}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>ingredients_series <span class="op">=</span> ingredients_series.join(pd.DataFrame(spices_list_column_to_add))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ingredients_series</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="22">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>TranslatedRecipeName</th>
+      <th>TranslatedIngredients</th>
+      <th>alkanet/alkanet root</th>
+      <th>amchur/amchoor/mango extract</th>
+      <th>asafetida/asafoetida/hing</th>
+      <th>celery/radhuni seed</th>
+      <th>bay leaf/bay leaves/tej patta</th>
+      <th>cinnamon</th>
+      <th>cloves/laung</th>
+      <th>coriander seed/coriander powder</th>
+      <th>...</th>
+      <th>saffron</th>
+      <th>sesame seed</th>
+      <th>star anise</th>
+      <th>tamarind</th>
+      <th>ajwain/thymol/carom seed</th>
+      <th>turmeric</th>
+      <th>white pepper</th>
+      <th>black salt</th>
+      <th>green chillies</th>
+      <th>red chilli powder/chilli powder/kashmiri red chilli powder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Masala Karela Recipe</td>
+      <td>6 Karela (Bitter Gourd/ Pavakkai) - deseeded,S...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Spicy Tomato Rice (Recipe)</td>
+      <td>2-1 / 2 cups rice - cooked, 3 tomatoes, 3 teas...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Ragi Semiya Upma Recipe - Ragi Millet Vermicel...</td>
+      <td>1-1/2 cups Rice Vermicelli Noodles (Thin),1 On...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Gongura Chicken Curry Recipe - Andhra Style Go...</td>
+      <td>500 grams Chicken,2 Onion - chopped,1 Tomato -...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Andhra Style Alam Pachadi Recipe - Adrak Chutn...</td>
+      <td>1 tablespoon chana dal, 1 tablespoon white ura...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>4268</th>
+      <td>One Pot Punjabi Rajma Masala Recipe In Preethi...</td>
+      <td>1 cup Rajma (Large Kidney Beans),1 inch Ginger...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4269</th>
+      <td>Saffron Paneer Peda Recipe</td>
+      <td>2 cups Paneer (Homemade Cottage Cheese) - crum...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4270</th>
+      <td>Quinoa Phirnee Recipe (Quinoa Milk Pudding)</td>
+      <td>1 cup Quinoa,3/4 cup Sugar,1 teaspoon Cardamom...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4271</th>
+      <td>Ullikadala Pulusu Recipe | Spring Onion Curry</td>
+      <td>150 grams Spring Onion (Bulb &amp; Greens) - chopp...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4272</th>
+      <td>Kashmiri Style Kokur Yakhni Recipe-Chicken Coo...</td>
+      <td>1 kg Chicken - medium pieces,1/2 cup Mustard o...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>4273 rows × 36 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="using-the-spice_list-to-find-spice-name-in-the-recipe" class="level2">
+<h2 class="anchored" data-anchor-id="using-the-spice_list-to-find-spice-name-in-the-recipe">Using the <code>spice_list</code> to find spice name in the recipe</h2>
+<p>I used regular expression to search for spice names in the entries</p>
+<div class="cell" data-execution_count="53">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convenience function to search a given ingredient list for spice names</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> search_spice(ingredient_string, spice_string):</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co">    Check if a spice exists in the list of ingredients for a recipe </span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    spice_list <span class="op">=</span> spice_string.split(<span class="st">'/'</span>)</span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _spice <span class="kw">in</span> spice_list:</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> re.search(_spice.lower(), ingredient_string.lower()):</span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row, values <span class="kw">in</span> ingredients_series.iterrows():</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> spice_entry <span class="kw">in</span> spices_list:</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> search_spice(values[<span class="st">'TranslatedIngredients'</span>], spice_entry):</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>            ingredients_series.loc[row, spice_entry] <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>            ingredients_series.loc[row, spice_entry] <span class="op">=</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>food_spice_mix <span class="op">=</span> ingredients_series.drop([<span class="st">'TranslatedIngredients'</span>], axis<span class="op">=</span><span class="dv">1</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co">#editing the spices so that my string counter can find different versions of the same spice</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>food_spice_mix.rename(columns<span class="op">=</span>{<span class="st">'amchur/amchoor/mango extract'</span>:<span class="st">'amchoor'</span>, <span class="op">\</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'asafetida/asafoetida/hing'</span>: <span class="st">'asafoetida'</span>, <span class="op">\</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'ajwain/thymol/carom seed'</span>: <span class="st">'ajwain'</span>, <span class="op">\</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'alkanet/alkanet root'</span>: <span class="st">'alkanet root'</span>, <span class="op">\</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'red chilli powder/chilli powder/kashmiri red chilli powder'</span>: <span class="st">'chilli powder'</span>, <span class="op">\</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'celery/radhuni seed'</span>: <span class="st">'celery seeds'</span>,<span class="op">\</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'bay leaf/bay leaves/tej patta'</span>: <span class="st">'bay leaf'</span>, <span class="op">\</span></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'curry leaf/curry leaves'</span>: <span class="st">'curry leaves'</span>,<span class="op">\</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'fenugreek/kasoori methi'</span>: <span class="st">'fenugreek leaf'</span>, <span class="op">\</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'nigella/black cumin'</span>: <span class="st">'nigella seed'</span>, <span class="op">\</span></span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'ginger'</span>: <span class="st">'dried ginger'</span>,<span class="op">\</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'cloves/laung'</span>: <span class="st">'cloves'</span>, <span class="op">\</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'cardamom/green cardamom/black cardamom'</span>: <span class="st">'cardamom'</span>,<span class="op">\</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'indian gooseberry/amla'</span>: <span class="st">'indian gooseberry'</span>,<span class="op">\</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'coriander seed/coriander powder'</span>: <span class="st">'coriander seeds/powder'</span>,<span class="op">\</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'cumin powder/cumin seeds/cumin/jeera'</span>: <span class="st">'cumin seeds/powder'</span>,<span class="op">\</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>                    <span class="st">'dried ginger/ginger powder'</span>: <span class="st">'ginger powder'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>food_spice_mix.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="27">
+<pre><code>Index(['TranslatedRecipeName', 'alkanet root', 'amchoor', 'asafoetida',
+       'celery seeds', 'bay leaf', 'cinnamon', 'cloves',
+       'coriander seeds/powder', 'cumin seeds/powder', 'curry leaves',
+       'fennel seed', 'fenugreek leaf', 'fenugreek seed', 'garam masala',
+       'ginger powder', 'cardamom', 'indian gooseberry', 'kalpasi',
+       'mustard seed', 'nigella seed', 'nutmeg', 'mace', 'pomegranate seed',
+       'poppy seed', 'saffron', 'sesame seed', 'star anise', 'tamarind',
+       'ajwain', 'turmeric', 'white pepper', 'black salt', 'green chillies',
+       'chilli powder'],
+      dtype='object')</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>food_spice_mix <span class="op">=</span> food_spice_mix.sort_index(axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generating-a-spice-adjacency-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="generating-a-spice-adjacency-matrix">Generating a spice adjacency matrix</h2>
+<div class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>num_spice <span class="op">=</span> <span class="bu">len</span>(spices_list)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>spice_col_name <span class="op">=</span> [i <span class="cf">for</span> i <span class="kw">in</span> food_spice_mix.columns[<span class="dv">1</span>:].to_list()]</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>spice_adj <span class="op">=</span> pd.DataFrame(np.zeros(shape<span class="op">=</span>(<span class="bu">len</span>(spices_list),<span class="bu">len</span>(spices_list))), columns<span class="op">=</span> spice_col_name, index<span class="op">=</span>spice_col_name)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>spice_adj_freq <span class="op">=</span> pd.DataFrame(np.zeros(shape<span class="op">=</span>(<span class="bu">len</span>(spices_list),<span class="bu">len</span>(spices_list))), columns<span class="op">=</span> spice_col_name, index<span class="op">=</span>spice_col_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row, value <span class="kw">in</span> food_spice_mix.iterrows():</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> spice_col_name:</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> spice_col_name:</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> (value[i] <span class="op">==</span> <span class="dv">1</span>) <span class="op">&amp;</span> (value[j] <span class="op">==</span> <span class="dv">1</span>):</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>                spice_adj_freq.loc[i,j] <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>                spice_adj.loc[i,j] <span class="op">=</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Normalize the spice occurance frequency with the total entries in the main dataset</p>
+<div class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>spice_adj_freq <span class="op">=</span> spice_adj_freq <span class="op">/</span> <span class="bu">len</span>(food_spice_mix) <span class="op">*</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>spice_adj_freq.<span class="bu">round</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="32">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>ajwain</th>
+      <th>alkanet root</th>
+      <th>amchoor</th>
+      <th>asafoetida</th>
+      <th>bay leaf</th>
+      <th>black salt</th>
+      <th>cardamom</th>
+      <th>celery seeds</th>
+      <th>chilli powder</th>
+      <th>cinnamon</th>
+      <th>...</th>
+      <th>nigella seed</th>
+      <th>nutmeg</th>
+      <th>pomegranate seed</th>
+      <th>poppy seed</th>
+      <th>saffron</th>
+      <th>sesame seed</th>
+      <th>star anise</th>
+      <th>tamarind</th>
+      <th>turmeric</th>
+      <th>white pepper</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>ajwain</th>
+      <td>5.22</td>
+      <td>0.00</td>
+      <td>0.70</td>
+      <td>1.45</td>
+      <td>0.98</td>
+      <td>0.07</td>
+      <td>1.05</td>
+      <td>0.00</td>
+      <td>3.49</td>
+      <td>1.33</td>
+      <td>...</td>
+      <td>0.16</td>
+      <td>0.16</td>
+      <td>0.09</td>
+      <td>0.23</td>
+      <td>0.21</td>
+      <td>0.40</td>
+      <td>0.23</td>
+      <td>0.37</td>
+      <td>2.97</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>alkanet root</th>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.05</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>amchoor</th>
+      <td>0.70</td>
+      <td>0.00</td>
+      <td>4.98</td>
+      <td>1.54</td>
+      <td>0.37</td>
+      <td>0.21</td>
+      <td>0.35</td>
+      <td>0.02</td>
+      <td>3.86</td>
+      <td>0.47</td>
+      <td>...</td>
+      <td>0.35</td>
+      <td>0.00</td>
+      <td>0.14</td>
+      <td>0.02</td>
+      <td>0.05</td>
+      <td>0.26</td>
+      <td>0.05</td>
+      <td>0.33</td>
+      <td>3.51</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>asafoetida</th>
+      <td>1.45</td>
+      <td>0.07</td>
+      <td>1.54</td>
+      <td>24.60</td>
+      <td>1.33</td>
+      <td>0.30</td>
+      <td>1.61</td>
+      <td>0.21</td>
+      <td>9.69</td>
+      <td>1.87</td>
+      <td>...</td>
+      <td>0.30</td>
+      <td>0.14</td>
+      <td>0.09</td>
+      <td>0.54</td>
+      <td>0.28</td>
+      <td>1.57</td>
+      <td>0.26</td>
+      <td>5.17</td>
+      <td>15.05</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>bay leaf</th>
+      <td>0.98</td>
+      <td>0.05</td>
+      <td>0.37</td>
+      <td>1.33</td>
+      <td>10.70</td>
+      <td>0.09</td>
+      <td>6.04</td>
+      <td>0.07</td>
+      <td>6.72</td>
+      <td>6.65</td>
+      <td>...</td>
+      <td>0.26</td>
+      <td>0.61</td>
+      <td>0.12</td>
+      <td>0.75</td>
+      <td>0.66</td>
+      <td>0.16</td>
+      <td>1.10</td>
+      <td>0.26</td>
+      <td>7.54</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>black salt</th>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.21</td>
+      <td>0.30</td>
+      <td>0.09</td>
+      <td>1.64</td>
+      <td>0.09</td>
+      <td>0.02</td>
+      <td>0.61</td>
+      <td>0.09</td>
+      <td>...</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.09</td>
+      <td>0.00</td>
+      <td>0.09</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.28</td>
+      <td>0.33</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>cardamom</th>
+      <td>1.05</td>
+      <td>0.07</td>
+      <td>0.35</td>
+      <td>1.61</td>
+      <td>6.04</td>
+      <td>0.09</td>
+      <td>17.79</td>
+      <td>0.14</td>
+      <td>6.13</td>
+      <td>7.98</td>
+      <td>...</td>
+      <td>0.07</td>
+      <td>1.08</td>
+      <td>0.23</td>
+      <td>1.47</td>
+      <td>3.14</td>
+      <td>0.35</td>
+      <td>1.29</td>
+      <td>0.42</td>
+      <td>6.60</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>celery seeds</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.21</td>
+      <td>0.07</td>
+      <td>0.02</td>
+      <td>0.14</td>
+      <td>0.80</td>
+      <td>0.37</td>
+      <td>0.19</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.09</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.51</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>chilli powder</th>
+      <td>3.49</td>
+      <td>0.07</td>
+      <td>3.86</td>
+      <td>9.69</td>
+      <td>6.72</td>
+      <td>0.61</td>
+      <td>6.13</td>
+      <td>0.37</td>
+      <td>37.96</td>
+      <td>7.04</td>
+      <td>...</td>
+      <td>0.84</td>
+      <td>0.44</td>
+      <td>0.47</td>
+      <td>1.38</td>
+      <td>0.68</td>
+      <td>1.59</td>
+      <td>0.82</td>
+      <td>3.58</td>
+      <td>28.39</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>cinnamon</th>
+      <td>1.33</td>
+      <td>0.07</td>
+      <td>0.47</td>
+      <td>1.87</td>
+      <td>6.65</td>
+      <td>0.09</td>
+      <td>7.98</td>
+      <td>0.19</td>
+      <td>7.04</td>
+      <td>13.13</td>
+      <td>...</td>
+      <td>0.14</td>
+      <td>0.96</td>
+      <td>0.19</td>
+      <td>1.40</td>
+      <td>0.84</td>
+      <td>0.23</td>
+      <td>1.38</td>
+      <td>0.89</td>
+      <td>8.10</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>cloves</th>
+      <td>2.01</td>
+      <td>0.07</td>
+      <td>1.43</td>
+      <td>5.05</td>
+      <td>6.58</td>
+      <td>0.16</td>
+      <td>7.65</td>
+      <td>0.19</td>
+      <td>14.14</td>
+      <td>9.29</td>
+      <td>...</td>
+      <td>0.35</td>
+      <td>0.70</td>
+      <td>0.23</td>
+      <td>1.59</td>
+      <td>0.80</td>
+      <td>0.96</td>
+      <td>1.43</td>
+      <td>3.93</td>
+      <td>17.29</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>coriander seeds/powder</th>
+      <td>1.76</td>
+      <td>0.00</td>
+      <td>2.41</td>
+      <td>5.13</td>
+      <td>4.91</td>
+      <td>0.26</td>
+      <td>4.31</td>
+      <td>0.47</td>
+      <td>16.26</td>
+      <td>4.35</td>
+      <td>...</td>
+      <td>0.35</td>
+      <td>0.30</td>
+      <td>0.28</td>
+      <td>0.70</td>
+      <td>0.33</td>
+      <td>0.56</td>
+      <td>0.59</td>
+      <td>1.85</td>
+      <td>16.78</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>cumin seeds/powder</th>
+      <td>2.15</td>
+      <td>0.00</td>
+      <td>3.28</td>
+      <td>13.27</td>
+      <td>5.87</td>
+      <td>1.19</td>
+      <td>5.20</td>
+      <td>0.35</td>
+      <td>21.55</td>
+      <td>6.67</td>
+      <td>...</td>
+      <td>0.89</td>
+      <td>0.54</td>
+      <td>0.51</td>
+      <td>1.24</td>
+      <td>0.54</td>
+      <td>1.92</td>
+      <td>0.91</td>
+      <td>5.87</td>
+      <td>27.45</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>curry leaves</th>
+      <td>0.61</td>
+      <td>0.00</td>
+      <td>0.44</td>
+      <td>12.54</td>
+      <td>1.01</td>
+      <td>0.12</td>
+      <td>1.17</td>
+      <td>0.05</td>
+      <td>8.64</td>
+      <td>2.04</td>
+      <td>...</td>
+      <td>0.16</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.66</td>
+      <td>0.02</td>
+      <td>1.73</td>
+      <td>0.28</td>
+      <td>7.33</td>
+      <td>16.52</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>fennel seed</th>
+      <td>0.75</td>
+      <td>0.05</td>
+      <td>0.82</td>
+      <td>1.68</td>
+      <td>1.45</td>
+      <td>0.16</td>
+      <td>1.99</td>
+      <td>0.07</td>
+      <td>3.77</td>
+      <td>2.46</td>
+      <td>...</td>
+      <td>0.70</td>
+      <td>0.26</td>
+      <td>0.09</td>
+      <td>0.91</td>
+      <td>0.42</td>
+      <td>0.37</td>
+      <td>0.75</td>
+      <td>0.82</td>
+      <td>4.21</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>fenugreek leaf</th>
+      <td>0.87</td>
+      <td>0.00</td>
+      <td>0.80</td>
+      <td>4.54</td>
+      <td>1.64</td>
+      <td>0.12</td>
+      <td>1.52</td>
+      <td>0.12</td>
+      <td>6.39</td>
+      <td>1.73</td>
+      <td>...</td>
+      <td>0.70</td>
+      <td>0.02</td>
+      <td>0.16</td>
+      <td>0.37</td>
+      <td>0.07</td>
+      <td>0.89</td>
+      <td>0.26</td>
+      <td>3.23</td>
+      <td>8.71</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>fenugreek seed</th>
+      <td>0.14</td>
+      <td>0.00</td>
+      <td>0.47</td>
+      <td>3.16</td>
+      <td>0.35</td>
+      <td>0.07</td>
+      <td>0.37</td>
+      <td>0.07</td>
+      <td>2.36</td>
+      <td>0.61</td>
+      <td>...</td>
+      <td>0.61</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.30</td>
+      <td>0.02</td>
+      <td>0.59</td>
+      <td>0.07</td>
+      <td>2.93</td>
+      <td>4.52</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>garam masala</th>
+      <td>1.43</td>
+      <td>0.00</td>
+      <td>2.29</td>
+      <td>3.18</td>
+      <td>4.40</td>
+      <td>0.26</td>
+      <td>3.98</td>
+      <td>0.28</td>
+      <td>14.07</td>
+      <td>4.00</td>
+      <td>...</td>
+      <td>0.33</td>
+      <td>0.14</td>
+      <td>0.30</td>
+      <td>0.63</td>
+      <td>0.49</td>
+      <td>0.42</td>
+      <td>0.44</td>
+      <td>0.49</td>
+      <td>13.25</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>ginger powder</th>
+      <td>0.21</td>
+      <td>0.02</td>
+      <td>0.05</td>
+      <td>0.44</td>
+      <td>0.35</td>
+      <td>0.05</td>
+      <td>0.84</td>
+      <td>0.02</td>
+      <td>0.59</td>
+      <td>0.49</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.19</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.12</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.47</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>green chillies</th>
+      <td>1.80</td>
+      <td>0.00</td>
+      <td>1.59</td>
+      <td>7.61</td>
+      <td>4.61</td>
+      <td>0.28</td>
+      <td>3.96</td>
+      <td>0.21</td>
+      <td>12.22</td>
+      <td>4.84</td>
+      <td>...</td>
+      <td>0.77</td>
+      <td>0.19</td>
+      <td>0.33</td>
+      <td>1.19</td>
+      <td>0.33</td>
+      <td>1.08</td>
+      <td>0.66</td>
+      <td>2.36</td>
+      <td>17.11</td>
+      <td>0.07</td>
+    </tr>
+    <tr>
+      <th>indian gooseberry</th>
+      <td>0.05</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.30</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.16</td>
+      <td>0.00</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.21</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>kalpasi</th>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>mace</th>
+      <td>0.37</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.09</td>
+      <td>0.82</td>
+      <td>0.00</td>
+      <td>1.08</td>
+      <td>0.05</td>
+      <td>0.80</td>
+      <td>1.05</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>0.49</td>
+      <td>0.02</td>
+      <td>0.26</td>
+      <td>0.14</td>
+      <td>0.00</td>
+      <td>0.30</td>
+      <td>0.00</td>
+      <td>0.89</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>mustard seed</th>
+      <td>0.75</td>
+      <td>0.00</td>
+      <td>0.87</td>
+      <td>12.71</td>
+      <td>1.15</td>
+      <td>0.07</td>
+      <td>0.73</td>
+      <td>0.02</td>
+      <td>8.03</td>
+      <td>1.59</td>
+      <td>...</td>
+      <td>0.70</td>
+      <td>0.09</td>
+      <td>0.07</td>
+      <td>0.80</td>
+      <td>0.05</td>
+      <td>1.64</td>
+      <td>0.28</td>
+      <td>6.74</td>
+      <td>15.35</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>nigella seed</th>
+      <td>0.16</td>
+      <td>0.00</td>
+      <td>0.35</td>
+      <td>0.30</td>
+      <td>0.26</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.84</td>
+      <td>0.14</td>
+      <td>...</td>
+      <td>1.66</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.16</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>1.26</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>nutmeg</th>
+      <td>0.16</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.14</td>
+      <td>0.61</td>
+      <td>0.00</td>
+      <td>1.08</td>
+      <td>0.09</td>
+      <td>0.44</td>
+      <td>0.96</td>
+      <td>...</td>
+      <td>0.00</td>
+      <td>1.52</td>
+      <td>0.00</td>
+      <td>0.30</td>
+      <td>0.23</td>
+      <td>0.07</td>
+      <td>0.28</td>
+      <td>0.05</td>
+      <td>0.56</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>pomegranate seed</th>
+      <td>0.09</td>
+      <td>0.00</td>
+      <td>0.14</td>
+      <td>0.09</td>
+      <td>0.12</td>
+      <td>0.09</td>
+      <td>0.23</td>
+      <td>0.00</td>
+      <td>0.47</td>
+      <td>0.19</td>
+      <td>...</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.77</td>
+      <td>0.05</td>
+      <td>0.07</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.33</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>poppy seed</th>
+      <td>0.23</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.54</td>
+      <td>0.75</td>
+      <td>0.00</td>
+      <td>1.47</td>
+      <td>0.00</td>
+      <td>1.38</td>
+      <td>1.40</td>
+      <td>...</td>
+      <td>0.16</td>
+      <td>0.30</td>
+      <td>0.05</td>
+      <td>3.25</td>
+      <td>0.19</td>
+      <td>0.26</td>
+      <td>0.37</td>
+      <td>0.42</td>
+      <td>1.80</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>saffron</th>
+      <td>0.21</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.28</td>
+      <td>0.66</td>
+      <td>0.09</td>
+      <td>3.14</td>
+      <td>0.02</td>
+      <td>0.68</td>
+      <td>0.84</td>
+      <td>...</td>
+      <td>0.02</td>
+      <td>0.23</td>
+      <td>0.07</td>
+      <td>0.19</td>
+      <td>4.03</td>
+      <td>0.07</td>
+      <td>0.14</td>
+      <td>0.00</td>
+      <td>0.59</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>sesame seed</th>
+      <td>0.40</td>
+      <td>0.00</td>
+      <td>0.26</td>
+      <td>1.57</td>
+      <td>0.16</td>
+      <td>0.02</td>
+      <td>0.35</td>
+      <td>0.00</td>
+      <td>1.59</td>
+      <td>0.23</td>
+      <td>...</td>
+      <td>0.07</td>
+      <td>0.07</td>
+      <td>0.02</td>
+      <td>0.26</td>
+      <td>0.07</td>
+      <td>4.19</td>
+      <td>0.07</td>
+      <td>0.82</td>
+      <td>1.61</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>star anise</th>
+      <td>0.23</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.26</td>
+      <td>1.10</td>
+      <td>0.02</td>
+      <td>1.29</td>
+      <td>0.02</td>
+      <td>0.82</td>
+      <td>1.38</td>
+      <td>...</td>
+      <td>0.02</td>
+      <td>0.28</td>
+      <td>0.02</td>
+      <td>0.37</td>
+      <td>0.14</td>
+      <td>0.07</td>
+      <td>1.73</td>
+      <td>0.14</td>
+      <td>0.89</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>tamarind</th>
+      <td>0.37</td>
+      <td>0.00</td>
+      <td>0.33</td>
+      <td>5.17</td>
+      <td>0.26</td>
+      <td>0.28</td>
+      <td>0.42</td>
+      <td>0.00</td>
+      <td>3.58</td>
+      <td>0.89</td>
+      <td>...</td>
+      <td>0.07</td>
+      <td>0.05</td>
+      <td>0.07</td>
+      <td>0.42</td>
+      <td>0.00</td>
+      <td>0.82</td>
+      <td>0.14</td>
+      <td>11.96</td>
+      <td>7.21</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>turmeric</th>
+      <td>2.97</td>
+      <td>0.00</td>
+      <td>3.51</td>
+      <td>15.05</td>
+      <td>7.54</td>
+      <td>0.33</td>
+      <td>6.60</td>
+      <td>0.51</td>
+      <td>28.39</td>
+      <td>8.10</td>
+      <td>...</td>
+      <td>1.26</td>
+      <td>0.56</td>
+      <td>0.33</td>
+      <td>1.80</td>
+      <td>0.59</td>
+      <td>1.61</td>
+      <td>0.89</td>
+      <td>7.21</td>
+      <td>48.47</td>
+      <td>0.05</td>
+    </tr>
+    <tr>
+      <th>white pepper</th>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.02</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.07</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.07</td>
+      <td>...</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.02</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.05</td>
+      <td>0.16</td>
+    </tr>
+  </tbody>
+</table>
+<p>34 rows × 34 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>temp_name <span class="op">=</span> [i.title() <span class="cf">for</span> i <span class="kw">in</span> spice_adj_freq.index.to_list()]</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>spice_adj_freq[<span class="st">'Plot_name'</span>] <span class="op">=</span> temp_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>spice_adj_freq <span class="op">=</span> spice_adj_freq.set_index(<span class="st">'Plot_name'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>spice_adj_freq.columns <span class="op">=</span> temp_name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>spice_adj_freq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="36">
+
+<div>
+
+<table class="dataframe table table-sm table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Ajwain</th>
+      <th>Alkanet Root</th>
+      <th>Amchoor</th>
+      <th>Asafoetida</th>
+      <th>Bay Leaf</th>
+      <th>Black Salt</th>
+      <th>Cardamom</th>
+      <th>Celery Seeds</th>
+      <th>Chilli Powder</th>
+      <th>Cinnamon</th>
+      <th>...</th>
+      <th>Nigella Seed</th>
+      <th>Nutmeg</th>
+      <th>Pomegranate Seed</th>
+      <th>Poppy Seed</th>
+      <th>Saffron</th>
+      <th>Sesame Seed</th>
+      <th>Star Anise</th>
+      <th>Tamarind</th>
+      <th>Turmeric</th>
+      <th>White Pepper</th>
+    </tr>
+    <tr>
+      <th>Plot_name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Ajwain</th>
+      <td>5.218816</td>
+      <td>0.000000</td>
+      <td>0.702083</td>
+      <td>1.450971</td>
+      <td>0.982916</td>
+      <td>0.070208</td>
+      <td>1.053124</td>
+      <td>0.000000</td>
+      <td>3.487011</td>
+      <td>1.333957</td>
+      <td>...</td>
+      <td>0.163819</td>
+      <td>0.163819</td>
+      <td>0.093611</td>
+      <td>0.234028</td>
+      <td>0.210625</td>
+      <td>0.397847</td>
+      <td>0.234028</td>
+      <td>0.374444</td>
+      <td>2.972151</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Alkanet Root</th>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.046806</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.070208</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Amchoor</th>
+      <td>0.702083</td>
+      <td>0.000000</td>
+      <td>4.984788</td>
+      <td>1.544582</td>
+      <td>0.374444</td>
+      <td>0.210625</td>
+      <td>0.351041</td>
+      <td>0.023403</td>
+      <td>3.861456</td>
+      <td>0.468055</td>
+      <td>...</td>
+      <td>0.351041</td>
+      <td>0.000000</td>
+      <td>0.140417</td>
+      <td>0.023403</td>
+      <td>0.046806</td>
+      <td>0.257430</td>
+      <td>0.046806</td>
+      <td>0.327639</td>
+      <td>3.510414</td>
+      <td>0.023403</td>
+    </tr>
+    <tr>
+      <th>Asafoetida</th>
+      <td>1.450971</td>
+      <td>0.070208</td>
+      <td>1.544582</td>
+      <td>24.596302</td>
+      <td>1.333957</td>
+      <td>0.304236</td>
+      <td>1.614791</td>
+      <td>0.210625</td>
+      <td>9.688743</td>
+      <td>1.872221</td>
+      <td>...</td>
+      <td>0.304236</td>
+      <td>0.140417</td>
+      <td>0.093611</td>
+      <td>0.538264</td>
+      <td>0.280833</td>
+      <td>1.567985</td>
+      <td>0.257430</td>
+      <td>5.172010</td>
+      <td>15.047976</td>
+      <td>0.023403</td>
+    </tr>
+    <tr>
+      <th>Bay Leaf</th>
+      <td>0.982916</td>
+      <td>0.046806</td>
+      <td>0.374444</td>
+      <td>1.333957</td>
+      <td>10.695062</td>
+      <td>0.093611</td>
+      <td>6.037912</td>
+      <td>0.070208</td>
+      <td>6.716593</td>
+      <td>6.646384</td>
+      <td>...</td>
+      <td>0.257430</td>
+      <td>0.608472</td>
+      <td>0.117014</td>
+      <td>0.748888</td>
+      <td>0.655277</td>
+      <td>0.163819</td>
+      <td>1.099930</td>
+      <td>0.257430</td>
+      <td>7.535689</td>
+      <td>0.070208</td>
+    </tr>
+    <tr>
+      <th>Black Salt</th>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.210625</td>
+      <td>0.304236</td>
+      <td>0.093611</td>
+      <td>1.638193</td>
+      <td>0.093611</td>
+      <td>0.023403</td>
+      <td>0.608472</td>
+      <td>0.093611</td>
+      <td>...</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.093611</td>
+      <td>0.000000</td>
+      <td>0.093611</td>
+      <td>0.023403</td>
+      <td>0.023403</td>
+      <td>0.280833</td>
+      <td>0.327639</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Cardamom</th>
+      <td>1.053124</td>
+      <td>0.070208</td>
+      <td>0.351041</td>
+      <td>1.614791</td>
+      <td>6.037912</td>
+      <td>0.093611</td>
+      <td>17.786099</td>
+      <td>0.140417</td>
+      <td>6.131524</td>
+      <td>7.980342</td>
+      <td>...</td>
+      <td>0.070208</td>
+      <td>1.076527</td>
+      <td>0.234028</td>
+      <td>1.474374</td>
+      <td>3.135970</td>
+      <td>0.351041</td>
+      <td>1.287152</td>
+      <td>0.421250</td>
+      <td>6.599579</td>
+      <td>0.070208</td>
+    </tr>
+    <tr>
+      <th>Celery Seeds</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.210625</td>
+      <td>0.070208</td>
+      <td>0.023403</td>
+      <td>0.140417</td>
+      <td>0.795694</td>
+      <td>0.374444</td>
+      <td>0.187222</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.093611</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.514861</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Chilli Powder</th>
+      <td>3.487011</td>
+      <td>0.070208</td>
+      <td>3.861456</td>
+      <td>9.688743</td>
+      <td>6.716593</td>
+      <td>0.608472</td>
+      <td>6.131524</td>
+      <td>0.374444</td>
+      <td>37.959279</td>
+      <td>7.044231</td>
+      <td>...</td>
+      <td>0.842499</td>
+      <td>0.444652</td>
+      <td>0.468055</td>
+      <td>1.380763</td>
+      <td>0.678680</td>
+      <td>1.591388</td>
+      <td>0.819097</td>
+      <td>3.580623</td>
+      <td>28.387550</td>
+      <td>0.046806</td>
+    </tr>
+    <tr>
+      <th>Cinnamon</th>
+      <td>1.333957</td>
+      <td>0.070208</td>
+      <td>0.468055</td>
+      <td>1.872221</td>
+      <td>6.646384</td>
+      <td>0.093611</td>
+      <td>7.980342</td>
+      <td>0.187222</td>
+      <td>7.044231</td>
+      <td>13.128949</td>
+      <td>...</td>
+      <td>0.140417</td>
+      <td>0.959513</td>
+      <td>0.187222</td>
+      <td>1.404166</td>
+      <td>0.842499</td>
+      <td>0.234028</td>
+      <td>1.380763</td>
+      <td>0.889305</td>
+      <td>8.097355</td>
+      <td>0.070208</td>
+    </tr>
+    <tr>
+      <th>Cloves</th>
+      <td>2.012637</td>
+      <td>0.070208</td>
+      <td>1.427568</td>
+      <td>5.054996</td>
+      <td>6.576176</td>
+      <td>0.163819</td>
+      <td>7.652703</td>
+      <td>0.187222</td>
+      <td>14.135268</td>
+      <td>9.290896</td>
+      <td>...</td>
+      <td>0.351041</td>
+      <td>0.702083</td>
+      <td>0.234028</td>
+      <td>1.591388</td>
+      <td>0.795694</td>
+      <td>0.959513</td>
+      <td>1.427568</td>
+      <td>3.931664</td>
+      <td>17.294641</td>
+      <td>0.023403</td>
+    </tr>
+    <tr>
+      <th>Coriander Seeds/Powder</th>
+      <td>1.755207</td>
+      <td>0.000000</td>
+      <td>2.410484</td>
+      <td>5.125205</td>
+      <td>4.914580</td>
+      <td>0.257430</td>
+      <td>4.306108</td>
+      <td>0.468055</td>
+      <td>16.264919</td>
+      <td>4.352914</td>
+      <td>...</td>
+      <td>0.351041</td>
+      <td>0.304236</td>
+      <td>0.280833</td>
+      <td>0.702083</td>
+      <td>0.327639</td>
+      <td>0.561666</td>
+      <td>0.585069</td>
+      <td>1.848818</td>
+      <td>16.779780</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Cumin Seeds/Powder</th>
+      <td>2.153054</td>
+      <td>0.000000</td>
+      <td>3.276387</td>
+      <td>13.269366</td>
+      <td>5.874093</td>
+      <td>1.193541</td>
+      <td>5.195413</td>
+      <td>0.351041</td>
+      <td>21.553943</td>
+      <td>6.669787</td>
+      <td>...</td>
+      <td>0.889305</td>
+      <td>0.538264</td>
+      <td>0.514861</td>
+      <td>1.240346</td>
+      <td>0.538264</td>
+      <td>1.919026</td>
+      <td>0.912708</td>
+      <td>5.874093</td>
+      <td>27.451439</td>
+      <td>0.070208</td>
+    </tr>
+    <tr>
+      <th>Curry Leaves</th>
+      <td>0.608472</td>
+      <td>0.000000</td>
+      <td>0.444652</td>
+      <td>12.543880</td>
+      <td>1.006319</td>
+      <td>0.117014</td>
+      <td>1.170138</td>
+      <td>0.046806</td>
+      <td>8.635619</td>
+      <td>2.036040</td>
+      <td>...</td>
+      <td>0.163819</td>
+      <td>0.070208</td>
+      <td>0.070208</td>
+      <td>0.655277</td>
+      <td>0.023403</td>
+      <td>1.731804</td>
+      <td>0.280833</td>
+      <td>7.325064</td>
+      <td>16.522350</td>
+      <td>0.046806</td>
+    </tr>
+    <tr>
+      <th>Fennel Seed</th>
+      <td>0.748888</td>
+      <td>0.046806</td>
+      <td>0.819097</td>
+      <td>1.684999</td>
+      <td>1.450971</td>
+      <td>0.163819</td>
+      <td>1.989235</td>
+      <td>0.070208</td>
+      <td>3.767845</td>
+      <td>2.457290</td>
+      <td>...</td>
+      <td>0.702083</td>
+      <td>0.257430</td>
+      <td>0.093611</td>
+      <td>0.912708</td>
+      <td>0.421250</td>
+      <td>0.374444</td>
+      <td>0.748888</td>
+      <td>0.819097</td>
+      <td>4.212497</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Fenugreek Leaf</th>
+      <td>0.865902</td>
+      <td>0.000000</td>
+      <td>0.795694</td>
+      <td>4.540136</td>
+      <td>1.638193</td>
+      <td>0.117014</td>
+      <td>1.521179</td>
+      <td>0.117014</td>
+      <td>6.388954</td>
+      <td>1.731804</td>
+      <td>...</td>
+      <td>0.702083</td>
+      <td>0.023403</td>
+      <td>0.163819</td>
+      <td>0.374444</td>
+      <td>0.070208</td>
+      <td>0.889305</td>
+      <td>0.257430</td>
+      <td>3.229581</td>
+      <td>8.705827</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Fenugreek Seed</th>
+      <td>0.140417</td>
+      <td>0.000000</td>
+      <td>0.468055</td>
+      <td>3.159373</td>
+      <td>0.351041</td>
+      <td>0.070208</td>
+      <td>0.374444</td>
+      <td>0.070208</td>
+      <td>2.363679</td>
+      <td>0.608472</td>
+      <td>...</td>
+      <td>0.608472</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.304236</td>
+      <td>0.023403</td>
+      <td>0.585069</td>
+      <td>0.070208</td>
+      <td>2.925345</td>
+      <td>4.516733</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Garam Masala</th>
+      <td>1.427568</td>
+      <td>0.000000</td>
+      <td>2.293471</td>
+      <td>3.182776</td>
+      <td>4.399719</td>
+      <td>0.257430</td>
+      <td>3.978469</td>
+      <td>0.280833</td>
+      <td>14.065060</td>
+      <td>4.001872</td>
+      <td>...</td>
+      <td>0.327639</td>
+      <td>0.140417</td>
+      <td>0.304236</td>
+      <td>0.631875</td>
+      <td>0.491458</td>
+      <td>0.421250</td>
+      <td>0.444652</td>
+      <td>0.491458</td>
+      <td>13.245963</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Ginger Powder</th>
+      <td>0.210625</td>
+      <td>0.023403</td>
+      <td>0.046806</td>
+      <td>0.444652</td>
+      <td>0.351041</td>
+      <td>0.046806</td>
+      <td>0.842499</td>
+      <td>0.023403</td>
+      <td>0.585069</td>
+      <td>0.491458</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.187222</td>
+      <td>0.023403</td>
+      <td>0.023403</td>
+      <td>0.117014</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.468055</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Green Chillies</th>
+      <td>1.802013</td>
+      <td>0.000000</td>
+      <td>1.591388</td>
+      <td>7.605897</td>
+      <td>4.610344</td>
+      <td>0.280833</td>
+      <td>3.955067</td>
+      <td>0.210625</td>
+      <td>12.216242</td>
+      <td>4.844372</td>
+      <td>...</td>
+      <td>0.772291</td>
+      <td>0.187222</td>
+      <td>0.327639</td>
+      <td>1.193541</td>
+      <td>0.327639</td>
+      <td>1.076527</td>
+      <td>0.655277</td>
+      <td>2.363679</td>
+      <td>17.107419</td>
+      <td>0.070208</td>
+    </tr>
+    <tr>
+      <th>Indian Gooseberry</th>
+      <td>0.046806</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.304236</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.163819</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.210625</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Kalpasi</th>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Mace</th>
+      <td>0.374444</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.093611</td>
+      <td>0.819097</td>
+      <td>0.000000</td>
+      <td>1.076527</td>
+      <td>0.046806</td>
+      <td>0.795694</td>
+      <td>1.053124</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.491458</td>
+      <td>0.023403</td>
+      <td>0.257430</td>
+      <td>0.140417</td>
+      <td>0.000000</td>
+      <td>0.304236</td>
+      <td>0.000000</td>
+      <td>0.889305</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Mustard Seed</th>
+      <td>0.748888</td>
+      <td>0.000000</td>
+      <td>0.865902</td>
+      <td>12.707700</td>
+      <td>1.146735</td>
+      <td>0.070208</td>
+      <td>0.725486</td>
+      <td>0.023403</td>
+      <td>8.027147</td>
+      <td>1.591388</td>
+      <td>...</td>
+      <td>0.702083</td>
+      <td>0.093611</td>
+      <td>0.070208</td>
+      <td>0.795694</td>
+      <td>0.046806</td>
+      <td>1.638193</td>
+      <td>0.280833</td>
+      <td>6.739995</td>
+      <td>15.352212</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Nigella Seed</th>
+      <td>0.163819</td>
+      <td>0.000000</td>
+      <td>0.351041</td>
+      <td>0.304236</td>
+      <td>0.257430</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.842499</td>
+      <td>0.140417</td>
+      <td>...</td>
+      <td>1.661596</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.163819</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>1.263749</td>
+      <td>0.023403</td>
+    </tr>
+    <tr>
+      <th>Nutmeg</th>
+      <td>0.163819</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.140417</td>
+      <td>0.608472</td>
+      <td>0.000000</td>
+      <td>1.076527</td>
+      <td>0.093611</td>
+      <td>0.444652</td>
+      <td>0.959513</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>1.521179</td>
+      <td>0.000000</td>
+      <td>0.304236</td>
+      <td>0.234028</td>
+      <td>0.070208</td>
+      <td>0.280833</td>
+      <td>0.046806</td>
+      <td>0.561666</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Pomegranate Seed</th>
+      <td>0.093611</td>
+      <td>0.000000</td>
+      <td>0.140417</td>
+      <td>0.093611</td>
+      <td>0.117014</td>
+      <td>0.093611</td>
+      <td>0.234028</td>
+      <td>0.000000</td>
+      <td>0.468055</td>
+      <td>0.187222</td>
+      <td>...</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.772291</td>
+      <td>0.046806</td>
+      <td>0.070208</td>
+      <td>0.023403</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>0.327639</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Poppy Seed</th>
+      <td>0.234028</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.538264</td>
+      <td>0.748888</td>
+      <td>0.000000</td>
+      <td>1.474374</td>
+      <td>0.000000</td>
+      <td>1.380763</td>
+      <td>1.404166</td>
+      <td>...</td>
+      <td>0.163819</td>
+      <td>0.304236</td>
+      <td>0.046806</td>
+      <td>3.252984</td>
+      <td>0.187222</td>
+      <td>0.257430</td>
+      <td>0.374444</td>
+      <td>0.421250</td>
+      <td>1.802013</td>
+      <td>0.023403</td>
+    </tr>
+    <tr>
+      <th>Saffron</th>
+      <td>0.210625</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.280833</td>
+      <td>0.655277</td>
+      <td>0.093611</td>
+      <td>3.135970</td>
+      <td>0.023403</td>
+      <td>0.678680</td>
+      <td>0.842499</td>
+      <td>...</td>
+      <td>0.023403</td>
+      <td>0.234028</td>
+      <td>0.070208</td>
+      <td>0.187222</td>
+      <td>4.025275</td>
+      <td>0.070208</td>
+      <td>0.140417</td>
+      <td>0.000000</td>
+      <td>0.585069</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Sesame Seed</th>
+      <td>0.397847</td>
+      <td>0.000000</td>
+      <td>0.257430</td>
+      <td>1.567985</td>
+      <td>0.163819</td>
+      <td>0.023403</td>
+      <td>0.351041</td>
+      <td>0.000000</td>
+      <td>1.591388</td>
+      <td>0.234028</td>
+      <td>...</td>
+      <td>0.070208</td>
+      <td>0.070208</td>
+      <td>0.023403</td>
+      <td>0.257430</td>
+      <td>0.070208</td>
+      <td>4.189094</td>
+      <td>0.070208</td>
+      <td>0.819097</td>
+      <td>1.614791</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Star Anise</th>
+      <td>0.234028</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.257430</td>
+      <td>1.099930</td>
+      <td>0.023403</td>
+      <td>1.287152</td>
+      <td>0.023403</td>
+      <td>0.819097</td>
+      <td>1.380763</td>
+      <td>...</td>
+      <td>0.023403</td>
+      <td>0.280833</td>
+      <td>0.023403</td>
+      <td>0.374444</td>
+      <td>0.140417</td>
+      <td>0.070208</td>
+      <td>1.731804</td>
+      <td>0.140417</td>
+      <td>0.889305</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Tamarind</th>
+      <td>0.374444</td>
+      <td>0.000000</td>
+      <td>0.327639</td>
+      <td>5.172010</td>
+      <td>0.257430</td>
+      <td>0.280833</td>
+      <td>0.421250</td>
+      <td>0.000000</td>
+      <td>3.580623</td>
+      <td>0.889305</td>
+      <td>...</td>
+      <td>0.070208</td>
+      <td>0.046806</td>
+      <td>0.070208</td>
+      <td>0.421250</td>
+      <td>0.000000</td>
+      <td>0.819097</td>
+      <td>0.140417</td>
+      <td>11.958811</td>
+      <td>7.208051</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>Turmeric</th>
+      <td>2.972151</td>
+      <td>0.000000</td>
+      <td>3.510414</td>
+      <td>15.047976</td>
+      <td>7.535689</td>
+      <td>0.327639</td>
+      <td>6.599579</td>
+      <td>0.514861</td>
+      <td>28.387550</td>
+      <td>8.097355</td>
+      <td>...</td>
+      <td>1.263749</td>
+      <td>0.561666</td>
+      <td>0.327639</td>
+      <td>1.802013</td>
+      <td>0.585069</td>
+      <td>1.614791</td>
+      <td>0.889305</td>
+      <td>7.208051</td>
+      <td>48.467119</td>
+      <td>0.046806</td>
+    </tr>
+    <tr>
+      <th>White Pepper</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.023403</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.070208</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.070208</td>
+      <td>...</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.023403</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046806</td>
+      <td>0.163819</td>
+    </tr>
+  </tbody>
+</table>
+<p>34 rows × 34 columns</p>
+</div>
+</div>
+</div>
+<div class="cell" data-execution_count="51">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>sns.heatmap(spice_adj_freq.<span class="bu">round</span>(<span class="dv">2</span>).corr(), ax<span class="op">=</span>ax)</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("heatmap.png", format="PNG", dpi=300)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="51">
+<pre><code>&lt;AxesSubplot:&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="2020-12-09-food_relations_files/figure-html/cell-38-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Using frequency adjacency matrix we can plot a heatmap showing the pair-wise occurence for a given pair of spices. The idea with such an analysis is that if we can check the variation of Spice 1 with all the other spices in the list and compare that to Spice 2’s variation with all the other spices in the list, if spice 1 and spice 2 should have similar variation.</p>
+<p>This map itself is quite interesting. The color intensity of each title shows the frequency that pair of spice occurred together in a recipe. Brighter the color higher their occurence together.</p>
+<p>Some prominent spice pairs which show similarity are:</p>
+<ul>
+<li><p>Curry leaves and Mustard seeds</p></li>
+<li><p>Tumeric and Chilli Powder</p></li>
+</ul>
+<p>Some pair of spices never occur together:</p>
+<ul>
+<li><p>Saffron and Fenugreek seeds</p></li>
+<li><p>Nutmeg and Mustard Seeds</p></li>
+</ul>
+<p>Those who cook or know indian recipes would see that these pairs make sense and thereby validate the correlation seen from corpus of Indian recipes.</p>
+<p>With that analysis, we can go a step further and analyze this information in form of a circular network graph. Using this method of plotting, we can see the interactions between different spices.</p>
+<p>#hide spice_dict = {i : spice_adj_freq.loc[i, i] for i in spice_col_name } top_10_spices = list({k: v for k, v in sorted(spice_dict.items(), reverse=True, key=lambda item: item[1])}.keys())[:10] spice_adj_10 = spice_adj_freq.loc[top_10_spices, top_10_spices]</p>
+<p>#hide top_10_spices</p>
+<section id="creating-network" class="level3">
+<h3 class="anchored" data-anchor-id="creating-network">Creating network</h3>
+<div class="cell" data-execution_count="38">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="39">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>nodes_data <span class="op">=</span> [(i, {<span class="st">'count'</span>:spice_adj_freq.loc[i, i]}) <span class="cf">for</span> i <span class="kw">in</span> temp_name]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="40">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="co"># most binary interactions </span></span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>binary_int <span class="op">=</span> []</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> temp_name:</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    binary_int.append((i, spice_adj_freq.loc[i].sort_values(ascending<span class="op">=</span><span class="va">False</span>).index[<span class="dv">1</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="41">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>spice_dict <span class="op">=</span> {i : spice_adj_freq.loc[i, i] <span class="cf">for</span> i <span class="kw">in</span> temp_name }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="42">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>spice_dict</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="42">
+<pre><code>{'Ajwain': 5.218815820266792,
+ 'Alkanet Root': 0.07020828457758016,
+ 'Amchoor': 4.984788205008191,
+ 'Asafoetida': 24.596302363678916,
+ 'Bay Leaf': 10.695062017318044,
+ 'Black Salt': 1.6381933068102035,
+ 'Cardamom': 17.78609875965364,
+ 'Celery Seeds': 0.7956938918792418,
+ 'Chilli Powder': 37.959279194945005,
+ 'Cinnamon': 13.128949216007488,
+ 'Cloves': 28.34074420781652,
+ 'Coriander Seeds/Powder': 20.336999765972386,
+ 'Cumin Seeds/Powder': 43.59934472267727,
+ 'Curry Leaves': 27.615258600514856,
+ 'Fennel Seed': 7.208050549964897,
+ 'Fenugreek Leaf': 12.965129885326467,
+ 'Fenugreek Seed': 7.208050549964897,
+ 'Garam Masala': 18.34776503627428,
+ 'Ginger Powder': 1.357360168499883,
+ 'Green Chillies': 29.815118183945703,
+ 'Indian Gooseberry': 0.3978469459396209,
+ 'Kalpasi': 0.07020828457758016,
+ 'Mace': 1.2403463608705827,
+ 'Mustard Seed': 24.315469225368595,
+ 'Nigella Seed': 1.6615960683360638,
+ 'Nutmeg': 1.5211794991809033,
+ 'Pomegranate Seed': 0.7722911303533817,
+ 'Poppy Seed': 3.2529838520945473,
+ 'Saffron': 4.025274982447929,
+ 'Sesame Seed': 4.189094313128949,
+ 'Star Anise': 1.7318043529136438,
+ 'Tamarind': 11.958811139714488,
+ 'Turmeric': 48.46711912005617,
+ 'White Pepper': 0.16381933068102036}</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="43">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>edges_data <span class="op">=</span> [] </span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> temp_name:</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> temp_name:</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">!=</span> j:</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> spice_adj_freq.loc[i,j] <span class="op">!=</span> <span class="fl">0.0</span>:</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>                edges_data.append((i, j, {<span class="st">'weight'</span>:spice_adj_freq.loc[i,j], <span class="st">'distance'</span>:<span class="dv">1</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="44">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#G = nx.from_pandas_adjacency(spice_adj_freq)</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co">#BUILD THE INITIAL FULL GRAPH</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>G<span class="op">=</span>nx.Graph()</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>G.add_nodes_from(nodes_data)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>G.add_edges_from(edges_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="45">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(nx.info(G))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Name: 
+Type: Graph
+Number of nodes: 34
+Number of edges: 471
+Average degree:  27.7059</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="46">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>deg_l <span class="op">=</span> {i:G.degree(i) <span class="cf">for</span> i <span class="kw">in</span> temp_name} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="47">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>highest_centrality_node <span class="op">=</span> <span class="bu">max</span>(deg_l.items(), key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>])[<span class="dv">0</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell" data-execution_count="48">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>highest_centrality_node</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="48">
+<pre><code>'Asafoetida'</code></pre>
+</div>
+</div>
+<div class="cell" data-execution_count="49">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Adopted from: https://stackoverflow.com/questions/43894987/networkx-node-labels-relative-position</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">len</span>(nodes_data)</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>edges <span class="op">=</span> G.edges()</span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>weights <span class="op">=</span> [G[u][v][<span class="st">'weight'</span>] <span class="cf">for</span> u,v <span class="kw">in</span> edges]</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>w_arr <span class="op">=</span> np.array(weights)</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>norm_weight <span class="op">=</span>  (w_arr <span class="op">-</span> w_arr.<span class="bu">min</span>())<span class="op">/</span>(w_arr.<span class="bu">max</span>() <span class="op">-</span> w_arr.<span class="bu">min</span>())</span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>angle <span class="op">=</span> []</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>angle_dict <span class="op">=</span> {}</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>node_list <span class="op">=</span> <span class="bu">sorted</span>(G.nodes())</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i, node <span class="kw">in</span> <span class="bu">zip</span>(np.arange(n),node_list):</span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>    theta <span class="op">=</span> <span class="fl">2.0</span><span class="op">*</span>np.pi<span class="op">*</span>i<span class="op">/</span>n</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>    angle.append((np.cos(theta),np.sin(theta)))</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>    angle_dict[node] <span class="op">=</span> theta</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> {}</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node_i, node <span class="kw">in</span> <span class="bu">enumerate</span>(node_list):</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>    pos[node] <span class="op">=</span> angle[node_i]</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">20</span>))</span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>margin<span class="op">=</span><span class="fl">0.33</span></span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>fig.subplots_adjust(margin, margin, <span class="fl">1.</span><span class="op">-</span>margin, <span class="fl">1.</span><span class="op">-</span>margin)</span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a>ax.axis(<span class="st">'equal'</span>)</span>
+<span id="cb60-25"><a href="#cb60-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-26"><a href="#cb60-26" aria-hidden="true" tabindex="-1"></a>nx.draw(G,pos<span class="op">=</span>pos,with_labels<span class="op">=</span><span class="va">False</span>, node_size<span class="op">=</span>[spice_dict[k]<span class="op">*</span><span class="dv">20</span> <span class="cf">for</span> k <span class="kw">in</span> spice_dict], width<span class="op">=</span>norm_weight<span class="op">*</span><span class="fl">2.0</span>, node_color<span class="op">=</span>np.arange(n), cmap<span class="op">=</span>plt.cm.viridis, ax<span class="op">=</span>ax)</span>
+<span id="cb60-27"><a href="#cb60-27" aria-hidden="true" tabindex="-1"></a>description <span class="op">=</span> nx.draw_networkx_labels(G,pos)</span>
+<span id="cb60-28"><a href="#cb60-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-29"><a href="#cb60-29" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> fig.canvas.get_renderer()</span>
+<span id="cb60-30"><a href="#cb60-30" aria-hidden="true" tabindex="-1"></a>trans <span class="op">=</span> plt.gca().transData.inverted()</span>
+<span id="cb60-31"><a href="#cb60-31" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> node, t <span class="kw">in</span> description.items():</span>
+<span id="cb60-32"><a href="#cb60-32" aria-hidden="true" tabindex="-1"></a>    bb <span class="op">=</span> t.get_window_extent(renderer<span class="op">=</span>r)</span>
+<span id="cb60-33"><a href="#cb60-33" aria-hidden="true" tabindex="-1"></a>    bbdata <span class="op">=</span> bb.transformed(trans)</span>
+<span id="cb60-34"><a href="#cb60-34" aria-hidden="true" tabindex="-1"></a>    radius <span class="op">=</span> <span class="fl">1.1</span><span class="op">+</span>bbdata.width<span class="op">/</span><span class="dv">2</span></span>
+<span id="cb60-35"><a href="#cb60-35" aria-hidden="true" tabindex="-1"></a>    position <span class="op">=</span> (radius<span class="op">*</span>np.cos(angle_dict[node]),radius<span class="op">*</span> np.sin(angle_dict[node]))</span>
+<span id="cb60-36"><a href="#cb60-36" aria-hidden="true" tabindex="-1"></a>    t.set_position(position)</span>
+<span id="cb60-37"><a href="#cb60-37" aria-hidden="true" tabindex="-1"></a>    t.set_rotation(angle_dict[node]<span class="op">*</span><span class="fl">360.0</span><span class="op">/</span>(<span class="fl">2.0</span><span class="op">*</span>np.pi))</span>
+<span id="cb60-38"><a href="#cb60-38" aria-hidden="true" tabindex="-1"></a>    t.set_clip_on(<span class="va">False</span>)</span>
+<span id="cb60-39"><a href="#cb60-39" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb60-40"><a href="#cb60-40" aria-hidden="true" tabindex="-1"></a><span class="co">#plt.savefig("Graph.png", format="PNG", dpi=300)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="2020-12-09-food_relations_files/figure-html/cell-50-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Finally a networkx circular graph is made where each node is a spice entry. Each edge between a pair of spice is a connection provided those two spices are found together in a recipe. The size of the node is the frequency of that spice to occur in all of 6000 food recipes. The thickness of the edge connecting a give spice-pair is the normalized frequency that pair occured among 6000 recipes.</p>
+<p>Representing the analysis this way we find few key takeaways: * Tumeric, Mustard Seeds, Chilli Powder, Corriander Seeds, Cumin Seeds, Curry Leaves, Green Chillies, Asafoetida are the key spices in the Indian cuisine.</p>
+<ul>
+<li>Most recipes use Tumeric + Chilli Powder + Cumin Powder (Seeds) in them.</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
