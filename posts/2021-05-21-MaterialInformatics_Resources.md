@@ -8,7 +8,6 @@ categories:
 date: '2021-05-21'
 description: List of resources and state-of-the-art for Material Informatics
 layout: post
-sticky_rank: 3
 title: Material-informatics Literature and Resources
 toc: true
 

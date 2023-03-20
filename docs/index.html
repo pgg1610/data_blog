@@ -37,10 +37,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      page: 25,
+      valueNames: ['listing-title','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      page: 30,
     pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -93,7 +95,6 @@ ul.task-list li input[type="checkbox"] {
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -127,6 +128,9 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"></span></a>
   </li>  
 </ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
               <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -154,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(47)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="chemical-science">chemical-science <span class="quarto-category-count">(8)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="data-analysis">data-analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="data-visualization">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="exploratory-data-analysis">exploratory-data-analysis <span class="quarto-category-count">(6)</span></div><div class="category" data-category="machine-learning">machine-learning <span class="quarto-category-count">(10)</span></div><div class="category" data-category="markdown">markdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(6)</span></div><div class="category" data-category="pytorch">pytorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="resources">resources <span class="quarto-category-count">(7)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(43)</span></div><div class="category" data-category="chemical-science">chemical-science <span class="quarto-category-count">(8)</span></div><div class="category" data-category="data-analysis">data-analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="data-visualization">data-visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="exploratory-data-analysis">exploratory-data-analysis <span class="quarto-category-count">(6)</span></div><div class="category" data-category="machine-learning">machine-learning <span class="quarto-category-count">(10)</span></div><div class="category" data-category="markdown">markdown <span class="quarto-category-count">(1)</span></div><div class="category" data-category="python">python <span class="quarto-category-count">(6)</span></div><div class="category" data-category="pytorch">pytorch <span class="quarto-category-count">(1)</span></div><div class="category" data-category="resources">resources <span class="quarto-category-count">(7)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -165,1548 +169,486 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1679107639573" data-listing-reading-time-sort="2.57">
-<div class="thumbnail">
-<a href="./posts/temp/qm9_data_exploration.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/temp/qm9_data_exploration.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/temp/qm9_data_exploration.html">
-<h3 class="no-anchor listing-title">
-Cheminformatics Basics Doodling - getting the dataset(s)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-In this notebook I will be exclusively looking at the QM9 dataset.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/temp/qm9_data_exploration.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1679107639582" data-listing-reading-time-sort="1.59">
-<div class="thumbnail">
-<a href="./posts/temp/fingerprints.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/temp/fingerprints.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/temp/fingerprints.html">
-<h3 class="no-anchor listing-title">
-Fingerprints
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-The QM9 dataset from the MoleculeNet: A Benchmark for Molecular Machine Learning paper, consisting of about 130,000 molecules with multiple regression targets.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/temp/fingerprints.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="python,chemical-science,data-analysis" data-listing-file-modified-sort="1679107638945" data-listing-reading-time-sort="3.495">
-<div class="thumbnail">
-<a href="./posts/10_04-fingerprints.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/10_04-fingerprints.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/10_04-fingerprints.html">
-<h3 class="no-anchor listing-title">
-Fingerprints on fingertips
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data-analysis'); return false;">
-data-analysis
-</div>
-</div>
-<a href="./posts/10_04-fingerprints.html">
-<div class="listing-description">
-Fingerprints are a low resolution representations of molecules. Historically they were devised, primarily, as a representation scheme to better…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/10_04-fingerprints.html">
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1679107639586" data-listing-reading-time-sort="0.005">
-<div class="thumbnail">
-<a href="./posts/IMDB-files/bollywood_imdb_scrapper.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/IMDB-files/bollywood_imdb_scrapper.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/IMDB-files/bollywood_imdb_scrapper.html">
-<h3 class="no-anchor listing-title">
-Web-scraping Hindi (Bollywood) movies from IMDb
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/IMDB-files/bollywood_imdb_scrapper.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="python,chemical-science,data-analysis" data-listing-file-modified-sort="1679107639265" data-listing-reading-time-sort="2.78">
-<div class="thumbnail">
-<a href="./posts/07_28-uspto_rxn.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/07_28-uspto_rxn.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/07_28-uspto_rxn.html">
-<h3 class="no-anchor listing-title">
-Classifying reactions using machine-learning
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data-analysis'); return false;">
-data-analysis
-</div>
-</div>
-<a href="./posts/07_28-uspto_rxn.html">
-<div class="listing-description">
-Using data-driven methods to classify reactions in different categories.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/07_28-uspto_rxn.html">
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-listing-file-modified-sort="1679107639593" data-listing-reading-time-sort="1.59">
-<div class="thumbnail">
-<a href="./posts/data/fingerprints.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/data/fingerprints.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/data/fingerprints.html">
-<h3 class="no-anchor listing-title">
-Fingerprints
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-The QM9 dataset from the MoleculeNet: A Benchmark for Molecular Machine Learning paper, consisting of about 130,000 molecules with multiple regression targets.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/data/fingerprints.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="news,code,analysis" data-listing-date-sort="1679025600000" data-listing-file-modified-sort="1679106562971" data-listing-reading-time-sort="0.035">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/post-with-code/index.html">
-<h3 class="no-anchor listing-title">
-Post With Code
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post-with-code/index.html">
-<div class="listing-description">
-This is a post with executable code.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html">
-<div class="listing-date">
-Mar 17, 2023
-</div>
-<div class="listing-author">
-Harlow Malloc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="news" data-listing-date-sort="1678766400000" data-listing-file-modified-sort="1679106562968" data-listing-reading-time-sort="0.16">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <img src="./posts/welcome/thumbnail.jpg" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Welcome To My Blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-Mar 14, 2023
-</div>
-<div class="listing-author">
-Tristan O’Malley
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-listing-date-sort="1673845200000" data-listing-file-modified-sort="1679107639122" data-listing-reading-time-sort="0.94">
-<div class="thumbnail">
-<a href="./posts/2023-01-16-auto3d.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2023-01-16-auto3d.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2023-01-16-auto3d.html">
-<h3 class="no-anchor listing-title">
-Auto3D to make optimize tautomers and 3D conformers
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Playthrough on using Auto3D.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2023-01-16-auto3d.html">
-<div class="listing-date">
-Jan 16, 2023
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="chemical-science,machine-learning,resources" data-listing-date-sort="1672203600000" data-listing-file-modified-sort="1679107639489" data-listing-reading-time-sort="39.425">
-<div class="thumbnail">
-<a href="./posts/2022-12-28-Computational_drug_discovery.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-12-28-Computational_drug_discovery.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-12-28-Computational_drug_discovery.html">
-<h3 class="no-anchor listing-title">
-Small Molecules Resources
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-</div>
-<a href="./posts/2022-12-28-Computational_drug_discovery.html">
-<div class="listing-description">
-<p>Compendium of recent articles, resources, and blogs in the area of chemical science and drug discovery</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2022-12-28-Computational_drug_discovery.html">
-<div class="listing-date">
-Dec 28, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="10" data-listing-date-sort="1668920400000" data-listing-file-modified-sort="1679107639304" data-listing-reading-time-sort="0.26">
-<div class="thumbnail">
-<a href="./posts/2022-11-20-cheminfo-clustering.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-11-20-cheminfo-clustering.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-11-20-cheminfo-clustering.html">
-<h3 class="no-anchor listing-title">
-Cheminformatics basics - Clustering molecules
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough on clustering molecules. This notebook is made using an eclectic collection of different walkthroughs and tutorials found on various blogs</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2022-11-20-cheminfo-clustering.html">
-<div class="listing-date">
-Nov 20, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="11" data-listing-date-sort="1661918400000" data-listing-file-modified-sort="1679107639375" data-listing-reading-time-sort="3.585">
-<div class="thumbnail">
-<a href="./posts/2022-08-31-cheminfo_smirks.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-08-31-cheminfo_smirks.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-08-31-cheminfo_smirks.html">
-<h3 class="no-anchor listing-title">
-Cheminformatics basics - Why the SMIRKS?
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough about what are SMIRKS, and how they can be used for reaction filtering and molecule enumeration</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2022-08-31-cheminfo_smirks.html">
-<div class="listing-date">
-Aug 31, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="12" data-listing-date-sort="1641790800000" data-listing-file-modified-sort="1679107638856" data-listing-reading-time-sort="7.36">
-<div class="thumbnail">
-<a href="./posts/2022-01-10-cheminfo_basics_smarts.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2022-01-10-cheminfo_basics_smarts.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2022-01-10-cheminfo_basics_smarts.html">
-<h3 class="no-anchor listing-title">
-Cheminformatics basics - A SMARTS way to filter molecules
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough about what are SMARTS and how they can be used for substructure filtering</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2022-01-10-cheminfo_basics_smarts.html">
-<div class="listing-date">
-Jan 10, 2022
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="13" data-categories="exploratory-data-analysis,machine-learning,resources,chemical-science" data-listing-date-sort="1638680400000" data-listing-file-modified-sort="1679107638661" data-listing-reading-time-sort="1.675">
-<div class="thumbnail">
-<a href="./posts/2021-12-05-ML_interpretability.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-12-05-ML_interpretability.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-12-05-ML_interpretability.html">
-<h3 class="no-anchor listing-title">
-On machine learning model interpretability
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-</div>
-<a href="./posts/2021-12-05-ML_interpretability.html">
-<div class="listing-description">
-<p>Curated list of resources for data, science, and navigating life</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-12-05-ML_interpretability.html">
-<div class="listing-date">
-Dec 5, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="14" data-categories="chemical-science,exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1633838400000" data-listing-file-modified-sort="1679107639088" data-listing-reading-time-sort="2.84">
-<div class="thumbnail">
-<a href="./posts/2021-10-10-Rdkit.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-10-10-Rdkit.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-10-10-Rdkit.html">
-<h3 class="no-anchor listing-title">
-Rdkit quick tips
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-</div>
-<a href="./posts/2021-10-10-Rdkit.html">
-<div class="listing-description">
-<p>Rdkit code snippets and recipes that I revisit now and again.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-10-10-Rdkit.html">
-<div class="listing-date">
-Oct 10, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="15" data-categories="exploratory-data-analysis,machine-learning,resources,chemical-science" data-listing-date-sort="1631246400000" data-listing-file-modified-sort="1679107639452" data-listing-reading-time-sort="2.185">
-<div class="thumbnail">
-<a href="./posts/2021-09-10-ML_checklit.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-09-10-ML_checklit.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-09-10-ML_checklit.html">
-<h3 class="no-anchor listing-title">
-Model building checklist
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-</div>
-<a href="./posts/2021-09-10-ML_checklit.html">
-<div class="listing-description">
-<p>Curated list of resources for data, science, and navigating life</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-09-10-ML_checklit.html">
-<div class="listing-date">
-Sep 10, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="16" data-categories="exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1624593600000" data-listing-file-modified-sort="1679107638646" data-listing-reading-time-sort="5.37">
-<div class="thumbnail">
-<a href="./posts/2021-06-25-ML_resources.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-06-25-ML_resources.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-06-25-ML_resources.html">
-<h3 class="no-anchor listing-title">
-Resources list
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-</div>
-<a href="./posts/2021-06-25-ML_resources.html">
-<div class="listing-description">
-<p>Curated list of resources for data, science, and navigating life</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-06-25-ML_resources.html">
-<div class="listing-date">
-Jun 25, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="17" data-categories="exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1623556800000" data-listing-file-modified-sort="1679107639343" data-listing-reading-time-sort="6.985">
-<div class="thumbnail">
-<a href="./posts/2021-06-13-pandas_resources.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-06-13-pandas_resources.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-06-13-pandas_resources.html">
-<h3 class="no-anchor listing-title">
-Pandas cookbook
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-</div>
-<a href="./posts/2021-06-13-pandas_resources.html">
-<div class="listing-description">
-<p>Pandas code snippets and recipes that I revisit now and again.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-06-13-pandas_resources.html">
-<div class="listing-date">
-Jun 13, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="18" data-listing-date-sort="1621742400000" data-listing-file-modified-sort="1679107639327" data-listing-reading-time-sort="3.08">
-<div class="thumbnail">
-<a href="./posts/2021-05-23-brfss_eda.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-05-23-brfss_eda.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-05-23-brfss_eda.html">
-<h3 class="no-anchor listing-title">
-Exploratory Data Analysis on Behavioral Risk Factor Surveillance System (BRFSS) dataset
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Before beginning with any sort of model building work it is important you get to know the…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-23-brfss_eda.html">
-<div class="listing-date">
-May 23, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="19" data-categories="chemical-science,machine-learning,resources" data-listing-date-sort="1621569600000" data-listing-file-modified-sort="1679107639074" data-listing-reading-time-sort="16.525">
-<div class="thumbnail">
-<a href="./posts/2021-05-21-MaterialInformatics_Resources.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-05-21-MaterialInformatics_Resources.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-05-21-MaterialInformatics_Resources.html">
-<h3 class="no-anchor listing-title">
-Material-informatics Literature and Resources
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('resources'); return false;">
-resources
-</div>
-</div>
-<a href="./posts/2021-05-21-MaterialInformatics_Resources.html">
-<div class="listing-description">
-<p>List of resources and state-of-the-art for Material Informatics</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-21-MaterialInformatics_Resources.html">
-<div class="listing-date">
-May 21, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="20" data-listing-date-sort="1620705600000" data-listing-file-modified-sort="1679107639058" data-listing-reading-time-sort="4.715">
-<div class="thumbnail">
-<a href="./posts/2021-05-11-cheminfo_basics_rdkit.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-05-11-cheminfo_basics_rdkit.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-05-11-cheminfo_basics_rdkit.html">
-<h3 class="no-anchor listing-title">
-Cheminformatics basics - RDkit, regression models, similarity
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough on reading, visualizing, manipulating molecules and their properties for Cheminformatics-related tasks</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-05-11-cheminfo_basics_rdkit.html">
-<div class="listing-date">
-May 11, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="21" data-categories="chemical-science,python,machine-learning" data-listing-date-sort="1619582400000" data-listing-file-modified-sort="1679107639407" data-listing-reading-time-sort="1.68">
-<div class="thumbnail">
-<a href="./posts/2021-04-28-material_prop_walkthrough.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-04-28-material_prop_walkthrough.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-04-28-material_prop_walkthrough.html">
-<h3 class="no-anchor listing-title">
-Mateiral informatics sample project
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('chemical-science'); return false;">
-chemical-science
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-</div>
-<a href="./posts/2021-04-28-material_prop_walkthrough.html">
-<div class="listing-description">
-<p>Sample project covering various steps necessary for developing a model for material property prediction</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-04-28-material_prop_walkthrough.html">
-<div class="listing-date">
-Apr 28, 2021
-</div>
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="22" data-listing-date-sort="1617854400000" data-listing-file-modified-sort="1679107639533" data-listing-reading-time-sort="0.09">
-<div class="thumbnail">
-<a href="./posts/2021-04-08-matplotlib-equal-aspect.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-04-08-matplotlib-equal-aspect.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-04-08-matplotlib-equal-aspect.html">
-<h3 class="no-anchor listing-title">
-Making equal spaces parity plots using Matplotlib
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Quick guide on plotting equal axis scatter plot in matplotlib</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-04-08-matplotlib-equal-aspect.html">
-<div class="listing-date">
-Apr 8, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="23" data-listing-date-sort="1616040000000" data-listing-file-modified-sort="1679107639167" data-listing-reading-time-sort="2.66">
-<div class="thumbnail">
-<p><a href="./posts/2021-03-18-autoencoder.html"> <img src="./posts/images/autoencoder_schematic.png " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-03-18-autoencoder.html">
-<h3 class="no-anchor listing-title">
-Anamoly detection using autoencoders
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Vanilla autoencoder to learn a distributed representation of MNIST data, generate new instances, and estimate anomalies</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-03-18-autoencoder.html">
-<div class="listing-date">
-Mar 18, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="24" data-categories="python,pytorch,machine-learning" data-listing-date-sort="1612501200000" data-listing-file-modified-sort="1679107639203" data-listing-reading-time-sort="4.145">
-<div class="thumbnail">
-<p><a href="./posts/2021-02-05-nn_classification_from_scratch.html"> <img src="./posts/NN_classification/classification_kiank.png " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-02-05-nn_classification_from_scratch.html">
-<h3 class="no-anchor listing-title">
-Implement neural network from scratch for binary classification
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('pytorch'); return false;">
-pytorch
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-</div>
-<a href="./posts/2021-02-05-nn_classification_from_scratch.html">
-<div class="listing-description">
-<p>Build a single-layer neural network model for binary data classification</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-02-05-nn_classification_from_scratch.html">
-<div class="listing-date">
-Feb 5, 2021
-</div>
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="25" data-categories="python,data-visualization" data-listing-date-sort="1612328400000" data-listing-file-modified-sort="1679107639364" data-listing-reading-time-sort="1.105">
-<div class="thumbnail">
-<a href="./posts/2021-02-03-tsnevsumap.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-02-03-tsnevsumap.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-02-03-tsnevsumap.html">
-<h3 class="no-anchor listing-title">
-t-SNE and UMAP - Effect of initialization on the dimensionality reduction
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('data-visualization'); return false;">
-data-visualization
-</div>
-</div>
-<a href="./posts/2021-02-03-tsnevsumap.html">
-<div class="listing-description">
-Recreating the dataset explored in the recent publication looking at the effect of random initializations and sub-methods in well-known dimensionality reduction techniques: Initialization is critical for preserving global data structure in both t-SNE and…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-02-03-tsnevsumap.html">
-<div class="listing-date">
-Feb 3, 2021
-</div>
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="26" data-listing-date-sort="1611723600000" data-listing-file-modified-sort="1679107639482" data-listing-reading-time-sort="3.51">
-<div class="thumbnail">
-<a href="./posts/2021-01-27-bayesian_optimization.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-01-27-bayesian_optimization.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-01-27-bayesian_optimization.html">
-<h3 class="no-anchor listing-title">
-Bayesian optimisation implementation
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough on implementing a modular bayesian optimization routine</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-01-27-bayesian_optimization.html">
-<div class="listing-date">
-Jan 27, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="27" data-listing-date-sort="1610341200000" data-listing-file-modified-sort="1679107638903" data-listing-reading-time-sort="2.23">
-<div class="thumbnail">
-<a href="./posts/2021-01-11-simple_dropout.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-01-11-simple_dropout.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-01-11-simple_dropout.html">
-<h3 class="no-anchor listing-title">
-Estimating prediction confidence through dropout
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Another notebook which uses PyTorch dropout: Link
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-01-11-simple_dropout.html">
-<div class="listing-date">
-Jan 11, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="28" data-listing-date-sort="1610254800000" data-listing-file-modified-sort="1679107639278" data-listing-reading-time-sort="1.295">
-<div class="thumbnail">
-<a href="./posts/2021-01-10-pncbirthday.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2021-01-10-pncbirthday.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2021-01-10-pncbirthday.html">
-<h3 class="no-anchor listing-title">
-Solving the birthday problem using simple counting
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Counting trials instead of using a PnC formula</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2021-01-10-pncbirthday.html">
-<div class="listing-date">
-Jan 10, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="29" data-listing-date-sort="1608526800000" data-listing-file-modified-sort="1679107639339" data-listing-reading-time-sort="3.375">
-<div class="thumbnail">
-<a href="./posts/2020-12-21-central_limit_theorem.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-12-21-central_limit_theorem.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-12-21-central_limit_theorem.html">
-<h3 class="no-anchor listing-title">
-Central limit theorem
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Visual proof of the central limit theorem</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-12-21-central_limit_theorem.html">
-<div class="listing-date">
-Dec 21, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="30" data-listing-date-sort="1607490000000" data-listing-file-modified-sort="1679107639525" data-listing-reading-time-sort="2.86">
-<div class="thumbnail">
-<a href="./posts/2020-12-09-food_relations.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-12-09-food_relations.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-12-09-food_relations.html">
-<h3 class="no-anchor listing-title">
-Relational analysis of spices used in Indian cuisine
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Spices are central to Indian cuisine. What is referred to colloquially as ‘Indian’ food is made of many different sub-cuisines. As a result, there are a plethora of spices…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-12-09-food_relations.html">
-<div class="listing-date">
-Dec 9, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="31" data-listing-date-sort="1604811600000" data-listing-file-modified-sort="1679107639463" data-listing-reading-time-sort="3.48">
-<div class="thumbnail">
-<a href="./posts/2020-11-08-network_analysis_basics.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-11-08-network_analysis_basics.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-11-08-network_analysis_basics.html">
-<h3 class="no-anchor listing-title">
-Network analysis hands-on
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Good resource to learn basics of Network science: - http://networksciencebook.com/chapter/0
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-11-08-network_analysis_basics.html">
-<div class="listing-date">
-Nov 8, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="32" data-listing-date-sort="1603080000000" data-listing-file-modified-sort="1679107639239" data-listing-reading-time-sort="2.805">
-<div class="thumbnail">
-<a href="./posts/2020-10-19-pytorch_transfer_learning_basics.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-10-19-pytorch_transfer_learning_basics.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-10-19-pytorch_transfer_learning_basics.html">
-<h3 class="no-anchor listing-title">
-Transfer learning walkthrough using Pytorch
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Implement transfer learning using pre-trained CNN</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-10-19-pytorch_transfer_learning_basics.html">
-<div class="listing-date">
-Oct 19, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="33" data-listing-date-sort="1600401600000" data-listing-file-modified-sort="1679107639083" data-listing-reading-time-sort="0.755">
-<div class="thumbnail">
-<a href="./posts/2020-09-18-smiles_from_pubchem.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-09-18-smiles_from_pubchem.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-09-18-smiles_from_pubchem.html">
-<h3 class="no-anchor listing-title">
-Get SMILES from PubChem using DASK
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Use parallelized DASK methods to find SMILE and InChI keys for molecules</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-09-18-smiles_from_pubchem.html">
-<div class="listing-date">
-Sep 18, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="34" data-listing-date-sort="1598155200000" data-listing-file-modified-sort="1679107638888" data-listing-reading-time-sort="1.595">
-<div class="thumbnail">
-<a href="./posts/2020-08-23-imdb_bollywood.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-08-23-imdb_bollywood.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-08-23-imdb_bollywood.html">
-<h3 class="no-anchor listing-title">
-Analyze Bollywood movie ratings (1950-2020)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Analyze IMDb Bollywood movie data to find average ratings and number of bollywood movie releases over time.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-08-23-imdb_bollywood.html">
-<div class="listing-date">
-Aug 23, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="35" data-listing-date-sort="1597204800000" data-listing-file-modified-sort="1679107639505" data-listing-reading-time-sort="9.43">
-<div class="thumbnail">
-<a href="./posts/2020-08-12-mnist_scikit_learn-classification.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-08-12-mnist_scikit_learn-classification.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-08-12-mnist_scikit_learn-classification.html">
-<h3 class="no-anchor listing-title">
-Classification-based algorithms walkthrough
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Look at different types of classification types and metric implemented in scikit-learn by building a MNIST digit classifier</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-08-12-mnist_scikit_learn-classification.html">
-<div class="listing-date">
-Aug 12, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="36" data-listing-date-sort="1596254400000" data-listing-file-modified-sort="1679107639387" data-listing-reading-time-sort="0.64">
-<div class="thumbnail">
-<a href="./posts/2020-08-01-sp_500.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-08-01-sp_500.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-08-01-sp_500.html">
-<h3 class="no-anchor listing-title">
-S&amp;P 500 analysis using beautifulsoup and pandas
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-To extract stock information we will use <code>yfinance</code> module which is a convenient way to download data from…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-08-01-sp_500.html">
-<div class="listing-date">
-Aug 1, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="37" data-listing-date-sort="1595044800000" data-listing-file-modified-sort="1679107639069" data-listing-reading-time-sort="1.11">
-<div class="thumbnail">
-<a href="./posts/2020-07-18-creating_meshes.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-07-18-creating_meshes.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-07-18-creating_meshes.html">
-<h3 class="no-anchor listing-title">
-Plotting surface in matplotlib
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Simple notebook looking at meshes in matplotlib</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-07-18-creating_meshes.html">
-<div class="listing-date">
-Jul 18, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="38" data-listing-date-sort="1587528000000" data-listing-file-modified-sort="1679107639470" data-listing-reading-time-sort="1.21">
-<div class="thumbnail">
-<a href="./posts/2020-04-22-activation_functions.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-04-22-activation_functions.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-04-22-activation_functions.html">
-<h3 class="no-anchor listing-title">
-Activation functions
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Function that activates the particular neuron or node if the value across a particular threshold. These functions add the necessary non-linearity in the ANNs. Each…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-04-22-activation_functions.html">
-<div class="listing-date">
-Apr 22, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="39" data-listing-date-sort="1584417600000" data-listing-file-modified-sort="1679107639449" data-listing-reading-time-sort="2.605">
-<div class="thumbnail">
-<p><a href="./posts/2020-03-17-cnn_pytorch_tutorial.html"> <img data-src="./posts/images/cnn_architecture.jpeg " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-03-17-cnn_pytorch_tutorial.html">
-<h3 class="no-anchor listing-title">
-Convolutional neural network example
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough on implementing a convolutional neural network using Pytorch and predicting CIFAR-10 data labels</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-03-17-cnn_pytorch_tutorial.html">
-<div class="listing-date">
-Mar 17, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="40" data-listing-date-sort="1582088400000" data-listing-file-modified-sort="1679107639147" data-listing-reading-time-sort="5.67">
-<div class="thumbnail">
-<a href="./posts/2020-02-19-svm_example.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2020-02-19-svm_example.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-02-19-svm_example.html">
-<h3 class="no-anchor listing-title">
-Implement Support Vector Machines in scikit-learn
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-This tutorial is borrowed from Jake VanderPlas’s example of SVM in his notebook: Python Data Science Handbook
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-02-19-svm_example.html">
-<div class="listing-date">
-Feb 19, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="41" data-categories="markdown" data-listing-date-sort="1578978000000" data-listing-file-modified-sort="1679107639473" data-listing-reading-time-sort="1.195">
-<div class="thumbnail">
-<p><a href="./posts/2020-01-14-test-markdown-post.html"> <img data-src="./posts/{{ site.baseurl }}/images/logo.png " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2020-01-14-test-markdown-post.html">
-<h3 class="no-anchor listing-title">
-An Example Markdown Post
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('markdown'); return false;">
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+Categories
+</th>
+<th>
+Reading Time
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="python,chemical-science,data-analysis" data-listing-file-modified-sort="1679107638945" data-listing-reading-time-sort="3.495" data-listing-title-sort="Fingerprints on fingertips" data-listing-filename-sort="2021_10_04-fingerprints.ipynb">
+<td class="listing-title">
+<a href="./posts/10_04-fingerprints.html" class="title">Fingerprints on fingertips</a>
+</td>
+<td class="listing-categories">
+python,chemical-science,data-analysis
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1679107639586" data-listing-reading-time-sort="0.005" data-listing-title-sort="Web-scraping Hindi (Bollywood) movies from IMDb" data-listing-filename-sort="bollywood_IMDb_scrapper.ipynb">
+<td class="listing-title">
+<a href="./posts/IMDB-files/bollywood_imdb_scrapper.html" class="title">Web-scraping Hindi (Bollywood) movies from IMDb</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="2" data-categories="python,chemical-science,data-analysis" data-listing-file-modified-sort="1679107639265" data-listing-reading-time-sort="2.78" data-listing-title-sort="Classifying reactions using machine-learning" data-listing-filename-sort="2021_07_28-USPTO_rxn.ipynb">
+<td class="listing-title">
+<a href="./posts/07_28-uspto_rxn.html" class="title">Classifying reactions using machine-learning</a>
+</td>
+<td class="listing-categories">
+python,chemical-science,data-analysis
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1679107639593" data-listing-reading-time-sort="1.59" data-listing-title-sort="Fingerprints" data-listing-filename-sort="Fingerprints.ipynb">
+<td class="listing-title">
+<a href="./posts/data/fingerprints.html" class="title">Fingerprints</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="4" data-listing-date-sort="1673845200000" data-listing-file-modified-sort="1679107639122" data-listing-reading-time-sort="0.94" data-listing-title-sort="Auto3D to make optimize tautomers and 3D conformers" data-listing-filename-sort="2023-01-16-auto3D.ipynb">
+<td class="listing-title">
+<a href="./posts/2023-01-16-auto3d.html" class="title">Auto3D to make optimize tautomers and 3D conformers</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="5" data-categories="chemical-science,machine-learning,resources" data-listing-date-sort="1672203600000" data-listing-file-modified-sort="1679107639489" data-listing-reading-time-sort="39.425" data-listing-title-sort="Small Molecules Resources" data-listing-filename-sort="2022-12-28-Computational_drug_discovery.md">
+<td class="listing-title">
+<a href="./posts/2022-12-28-Computational_drug_discovery.html" class="title">Small Molecules Resources</a>
+</td>
+<td class="listing-categories">
+chemical-science,machine-learning,resources
+</td>
+<td class="listing-reading-time">
+39 min
+</td>
+</tr>
+<tr data-index="6" data-listing-date-sort="1668920400000" data-listing-file-modified-sort="1679107639304" data-listing-reading-time-sort="0.26" data-listing-title-sort="Cheminformatics basics - Clustering molecules" data-listing-filename-sort="2022-11-20-cheminfo-clustering.ipynb">
+<td class="listing-title">
+<a href="./posts/2022-11-20-cheminfo-clustering.html" class="title">Cheminformatics basics - Clustering molecules</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="7" data-listing-date-sort="1661918400000" data-listing-file-modified-sort="1679107639375" data-listing-reading-time-sort="3.585" data-listing-title-sort="Cheminformatics basics - Why the SMIRKS?" data-listing-filename-sort="2022-08-31-cheminfo_smirks.ipynb">
+<td class="listing-title">
+<a href="./posts/2022-08-31-cheminfo_smirks.html" class="title">Cheminformatics basics - Why the SMIRKS?</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="8" data-listing-date-sort="1641790800000" data-listing-file-modified-sort="1679107638856" data-listing-reading-time-sort="7.36" data-listing-title-sort="Cheminformatics basics - A SMARTS way to filter molecules" data-listing-filename-sort="2022-01-10-cheminfo_basics_smarts.ipynb">
+<td class="listing-title">
+<a href="./posts/2022-01-10-cheminfo_basics_smarts.html" class="title">Cheminformatics basics - A SMARTS way to filter molecules</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+7 min
+</td>
+</tr>
+<tr data-index="9" data-categories="exploratory-data-analysis,machine-learning,resources,chemical-science" data-listing-date-sort="1638680400000" data-listing-file-modified-sort="1679107638661" data-listing-reading-time-sort="1.675" data-listing-title-sort="On machine learning model interpretability" data-listing-filename-sort="2021-12-05-ML_interpretability.md">
+<td class="listing-title">
+<a href="./posts/2021-12-05-ML_interpretability.html" class="title">On machine learning model interpretability</a>
+</td>
+<td class="listing-categories">
+exploratory-data-analysis,machine-learning,resources,chemical-science
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="10" data-categories="chemical-science,exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1633838400000" data-listing-file-modified-sort="1679107639088" data-listing-reading-time-sort="2.84" data-listing-title-sort="Rdkit quick tips" data-listing-filename-sort="2021-10-10-Rdkit.md">
+<td class="listing-title">
+<a href="./posts/2021-10-10-Rdkit.html" class="title">Rdkit quick tips</a>
+</td>
+<td class="listing-categories">
+chemical-science,exploratory-data-analysis,machine-learning,resources
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="11" data-categories="exploratory-data-analysis,machine-learning,resources,chemical-science" data-listing-date-sort="1631246400000" data-listing-file-modified-sort="1679107639452" data-listing-reading-time-sort="2.185" data-listing-title-sort="Model building checklist" data-listing-filename-sort="2021-09-10-ML_checklit.md">
+<td class="listing-title">
+<a href="./posts/2021-09-10-ML_checklit.html" class="title">Model building checklist</a>
+</td>
+<td class="listing-categories">
+exploratory-data-analysis,machine-learning,resources,chemical-science
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="12" data-categories="exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1624593600000" data-listing-file-modified-sort="1679107638646" data-listing-reading-time-sort="5.37" data-listing-title-sort="Resources list" data-listing-filename-sort="2021-06-25-ML_resources.md">
+<td class="listing-title">
+<a href="./posts/2021-06-25-ML_resources.html" class="title">Resources list</a>
+</td>
+<td class="listing-categories">
+exploratory-data-analysis,machine-learning,resources
+</td>
+<td class="listing-reading-time">
+5 min
+</td>
+</tr>
+<tr data-index="13" data-categories="exploratory-data-analysis,machine-learning,resources" data-listing-date-sort="1623556800000" data-listing-file-modified-sort="1679107639343" data-listing-reading-time-sort="6.985" data-listing-title-sort="Pandas cookbook" data-listing-filename-sort="2021-06-13-pandas_resources.md">
+<td class="listing-title">
+<a href="./posts/2021-06-13-pandas_resources.html" class="title">Pandas cookbook</a>
+</td>
+<td class="listing-categories">
+exploratory-data-analysis,machine-learning,resources
+</td>
+<td class="listing-reading-time">
+6 min
+</td>
+</tr>
+<tr data-index="14" data-listing-date-sort="1621742400000" data-listing-file-modified-sort="1679107639327" data-listing-reading-time-sort="3.08" data-listing-title-sort="Exploratory Data Analysis on Behavioral Risk Factor Surveillance System (BRFSS) dataset" data-listing-filename-sort="2021-05-23-brfss_eda.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-05-23-brfss_eda.html" class="title">Exploratory Data Analysis on Behavioral Risk Factor Surveillance System (BRFSS) dataset</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="15" data-categories="chemical-science,machine-learning,resources" data-listing-date-sort="1621569600000" data-listing-file-modified-sort="1679276767654" data-listing-reading-time-sort="16.525" data-listing-title-sort="Material-informatics Literature and Resources" data-listing-filename-sort="2021-05-21-MaterialInformatics_Resources.md">
+<td class="listing-title">
+<a href="./posts/2021-05-21-MaterialInformatics_Resources.html" class="title">Material-informatics Literature and Resources</a>
+</td>
+<td class="listing-categories">
+chemical-science,machine-learning,resources
+</td>
+<td class="listing-reading-time">
+16 min
+</td>
+</tr>
+<tr data-index="16" data-listing-date-sort="1620705600000" data-listing-file-modified-sort="1679107639058" data-listing-reading-time-sort="4.715" data-listing-title-sort="Cheminformatics basics - RDkit, regression models, similarity" data-listing-filename-sort="2021-05-11-cheminfo_basics_rdkit.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-05-11-cheminfo_basics_rdkit.html" class="title">Cheminformatics basics - RDkit, regression models, similarity</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+4 min
+</td>
+</tr>
+<tr data-index="17" data-categories="chemical-science,python,machine-learning" data-listing-date-sort="1619582400000" data-listing-file-modified-sort="1679107639407" data-listing-reading-time-sort="1.68" data-listing-title-sort="Mateiral informatics sample project" data-listing-filename-sort="2021-04-28-material_prop_walkthrough.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-04-28-material_prop_walkthrough.html" class="title">Mateiral informatics sample project</a>
+</td>
+<td class="listing-categories">
+chemical-science,python,machine-learning
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="18" data-listing-date-sort="1617854400000" data-listing-file-modified-sort="1679107639533" data-listing-reading-time-sort="0.09" data-listing-title-sort="Making equal spaces parity plots using Matplotlib" data-listing-filename-sort="2021-04-08-matplotlib-equal-aspect.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-04-08-matplotlib-equal-aspect.html" class="title">Making equal spaces parity plots using Matplotlib</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="19" data-listing-date-sort="1616040000000" data-listing-file-modified-sort="1679107639167" data-listing-reading-time-sort="2.66" data-listing-title-sort="Anamoly detection using autoencoders" data-listing-filename-sort="2021-03-18-autoencoder.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-03-18-autoencoder.html" class="title">Anamoly detection using autoencoders</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="20" data-categories="python,pytorch,machine-learning" data-listing-date-sort="1612501200000" data-listing-file-modified-sort="1679107639203" data-listing-reading-time-sort="4.145" data-listing-title-sort="Implement neural network from scratch for binary classification" data-listing-filename-sort="2021-02-05-NN_classification_from_scratch.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-02-05-nn_classification_from_scratch.html" class="title">Implement neural network from scratch for binary classification</a>
+</td>
+<td class="listing-categories">
+python,pytorch,machine-learning
+</td>
+<td class="listing-reading-time">
+4 min
+</td>
+</tr>
+<tr data-index="21" data-categories="python,data-visualization" data-listing-date-sort="1612328400000" data-listing-file-modified-sort="1679107639364" data-listing-reading-time-sort="1.105" data-listing-title-sort="t-SNE and UMAP - Effect of initialization on the dimensionality reduction" data-listing-filename-sort="2021-02-03-tSNEvsUMAP.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-02-03-tsnevsumap.html" class="title">t-SNE and UMAP - Effect of initialization on the dimensionality reduction</a>
+</td>
+<td class="listing-categories">
+python,data-visualization
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="22" data-listing-date-sort="1611723600000" data-listing-file-modified-sort="1679107639482" data-listing-reading-time-sort="3.51" data-listing-title-sort="Bayesian optimisation implementation" data-listing-filename-sort="2021-01-27-Bayesian_Optimization.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-01-27-bayesian_optimization.html" class="title">Bayesian optimisation implementation</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="23" data-listing-date-sort="1610341200000" data-listing-file-modified-sort="1679107638903" data-listing-reading-time-sort="2.23" data-listing-title-sort="Estimating prediction confidence through dropout" data-listing-filename-sort="2021-01-11-Simple_Dropout.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-01-11-simple_dropout.html" class="title">Estimating prediction confidence through dropout</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="24" data-listing-date-sort="1610254800000" data-listing-file-modified-sort="1679107639278" data-listing-reading-time-sort="1.295" data-listing-title-sort="Solving the birthday problem using simple counting" data-listing-filename-sort="2021-01-10-PnCbirthday.ipynb">
+<td class="listing-title">
+<a href="./posts/2021-01-10-pncbirthday.html" class="title">Solving the birthday problem using simple counting</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="25" data-listing-date-sort="1608526800000" data-listing-file-modified-sort="1679107639339" data-listing-reading-time-sort="3.375" data-listing-title-sort="Central limit theorem" data-listing-filename-sort="2020-12-21-Central_limit_theorem.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-12-21-central_limit_theorem.html" class="title">Central limit theorem</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="26" data-listing-date-sort="1607490000000" data-listing-file-modified-sort="1679107639525" data-listing-reading-time-sort="2.86" data-listing-title-sort="Relational analysis of spices used in Indian cuisine" data-listing-filename-sort="2020-12-09-food_relations.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-12-09-food_relations.html" class="title">Relational analysis of spices used in Indian cuisine</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="27" data-listing-date-sort="1604811600000" data-listing-file-modified-sort="1679107639463" data-listing-reading-time-sort="3.48" data-listing-title-sort="Network analysis hands-on" data-listing-filename-sort="2020-11-08-network_analysis_basics.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-11-08-network_analysis_basics.html" class="title">Network analysis hands-on</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+3 min
+</td>
+</tr>
+<tr data-index="28" data-listing-date-sort="1603080000000" data-listing-file-modified-sort="1679107639239" data-listing-reading-time-sort="2.805" data-listing-title-sort="Transfer learning walkthrough using Pytorch" data-listing-filename-sort="2020-10-19-pytorch_transfer_learning_basics.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-10-19-pytorch_transfer_learning_basics.html" class="title">Transfer learning walkthrough using Pytorch</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="29" data-listing-date-sort="1600401600000" data-listing-file-modified-sort="1679107639083" data-listing-reading-time-sort="0.755" data-listing-title-sort="Get SMILES from PubChem using DASK" data-listing-filename-sort="2020-09-18-SMILES_from_pubchem.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-09-18-smiles_from_pubchem.html" class="title">Get SMILES from PubChem using DASK</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="30" data-listing-date-sort="1598155200000" data-listing-file-modified-sort="1679107638888" data-listing-reading-time-sort="1.595" data-listing-title-sort="Analyze Bollywood movie ratings (1950-2020)" data-listing-filename-sort="2020-08-23-IMDB_bollywood.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-08-23-imdb_bollywood.html" class="title">Analyze Bollywood movie ratings (1950-2020)</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="31" data-listing-date-sort="1597204800000" data-listing-file-modified-sort="1679107639505" data-listing-reading-time-sort="9.43" data-listing-title-sort="Classification-based algorithms walkthrough" data-listing-filename-sort="2020-08-12-MNIST_Scikit_learn-Classification.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-08-12-mnist_scikit_learn-classification.html" class="title">Classification-based algorithms walkthrough</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+9 min
+</td>
+</tr>
+<tr data-index="32" data-listing-date-sort="1596254400000" data-listing-file-modified-sort="1679107639387" data-listing-reading-time-sort="0.64" data-listing-title-sort="S&amp;P 500 analysis using beautifulsoup and pandas" data-listing-filename-sort="2020-08-01-SP_500.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-08-01-sp_500.html" class="title">S&amp;P 500 analysis using beautifulsoup and pandas</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="33" data-listing-date-sort="1595044800000" data-listing-file-modified-sort="1679107639069" data-listing-reading-time-sort="1.11" data-listing-title-sort="Plotting surface in matplotlib" data-listing-filename-sort="2020-07-18-creating_meshes.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-07-18-creating_meshes.html" class="title">Plotting surface in matplotlib</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="34" data-listing-date-sort="1587528000000" data-listing-file-modified-sort="1679107639470" data-listing-reading-time-sort="1.21" data-listing-title-sort="Activation functions" data-listing-filename-sort="2020-04-22-activation_functions.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-04-22-activation_functions.html" class="title">Activation functions</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="35" data-listing-date-sort="1584417600000" data-listing-file-modified-sort="1679107639449" data-listing-reading-time-sort="2.605" data-listing-title-sort="Convolutional neural network example" data-listing-filename-sort="2020-03-17-cnn_pytorch_tutorial.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-03-17-cnn_pytorch_tutorial.html" class="title">Convolutional neural network example</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+2 min
+</td>
+</tr>
+<tr data-index="36" data-listing-date-sort="1582088400000" data-listing-file-modified-sort="1679107639147" data-listing-reading-time-sort="5.67" data-listing-title-sort="Implement Support Vector Machines in scikit-learn" data-listing-filename-sort="2020-02-19-SVM_example.ipynb">
+<td class="listing-title">
+<a href="./posts/2020-02-19-svm_example.html" class="title">Implement Support Vector Machines in scikit-learn</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+5 min
+</td>
+</tr>
+<tr data-index="37" data-categories="markdown" data-listing-date-sort="1578978000000" data-listing-file-modified-sort="1679107639473" data-listing-reading-time-sort="1.195" data-listing-title-sort="An Example Markdown Post" data-listing-filename-sort="2020-01-14-test-markdown-post.md">
+<td class="listing-title">
+<a href="./posts/2020-01-14-test-markdown-post.html" class="title">An Example Markdown Post</a>
+</td>
+<td class="listing-categories">
 markdown
-</div>
-</div>
-<a href="./posts/2020-01-14-test-markdown-post.html">
-<div class="listing-description">
-<p>A minimal example of using markdown with fastpages.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2020-01-14-test-markdown-post.html">
-<div class="listing-date">
-Jan 14, 2020
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="42" data-listing-date-sort="1570766400000" data-listing-file-modified-sort="1679107639246" data-listing-reading-time-sort="0.56">
-<div class="thumbnail">
-<a href="./posts/2019-10-11-vectorisation_and_tf_example.html">
-<div class="thumbnail-image">
+</td>
+<td class="listing-reading-time">
+1 min
+</td>
+</tr>
+<tr data-index="38" data-listing-date-sort="1570766400000" data-listing-file-modified-sort="1679107639246" data-listing-reading-time-sort="0.56" data-listing-title-sort="Vectorisation in python using numpy" data-listing-filename-sort="2019-10-11-Vectorisation_and_TF_example.ipynb">
+<td class="listing-title">
+<a href="./posts/2019-10-11-vectorisation_and_tf_example.html" class="title">Vectorisation in python using numpy</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="39" data-listing-date-sort="1570161600000" data-listing-file-modified-sort="1679107638912" data-listing-reading-time-sort="0.405" data-listing-title-sort="Lambda, Filter, and Map functions in Python" data-listing-filename-sort="2019-10-04-Lambda_Map.ipynb">
+<td class="listing-title">
+<a href="./posts/2019-10-04-lambda_map.html" class="title">Lambda, Filter, and Map functions in Python</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="40" data-listing-date-sort="1567828800000" data-listing-file-modified-sort="1679107639221" data-listing-reading-time-sort="6.285" data-listing-title-sort="Principal component analysis" data-listing-filename-sort="2019-09-07-PCA_tutorial.ipynb">
+<td class="listing-title">
+<a href="./posts/2019-09-07-pca_tutorial.html" class="title">Principal component analysis</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+6 min
+</td>
+</tr>
+<tr data-index="41" data-listing-date-sort="1565668800000" data-listing-file-modified-sort="1679107638822" data-listing-reading-time-sort="0.38" data-listing-title-sort="Neural network implementation in PyTorch" data-listing-filename-sort="2019-08-13-PyTorch_MNIST_classification.ipynb">
+<td class="listing-title">
+<a href="./posts/2019-08-13-pytorch_mnist_classification.html" class="title">Neural network implementation in PyTorch</a>
+</td>
+<td class="listing-categories">
+</td>
+<td class="listing-reading-time">
+0 min
+</td>
+</tr>
+<tr data-index="42" data-categories="python,exploratory-data-analysis,machine-learning" data-listing-date-sort="1564718400000" data-listing-file-modified-sort="1679107639437" data-listing-reading-time-sort="16.06" data-listing-title-sort="End-to-end Machine Learning Project" data-listing-filename-sort="2019-08-02-end2endML_housing.ipynb">
+<td class="listing-title">
+<a href="./posts/2019-08-02-end2endml_housing.html" class="title">End-to-end Machine Learning Project</a>
+</td>
+<td class="listing-categories">
+python,exploratory-data-analysis,machine-learning
+</td>
+<td class="listing-reading-time">
+16 min
+</td>
+</tr>
+</tbody>
 
-</div>
-</a><p><a href="./posts/2019-10-11-vectorisation_and_tf_example.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2019-10-11-vectorisation_and_tf_example.html">
-<h3 class="no-anchor listing-title">
-Vectorisation in python using numpy
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-(m,n) matrix with (+, -, *, /) with (1,n) or (m,1) lead of copying it to (m,n) before conducting computing.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2019-10-11-vectorisation_and_tf_example.html">
-<div class="listing-date">
-Oct 11, 2019
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="43" data-listing-date-sort="1570161600000" data-listing-file-modified-sort="1679107638912" data-listing-reading-time-sort="0.405">
-<div class="thumbnail">
-<a href="./posts/2019-10-04-lambda_map.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2019-10-04-lambda_map.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2019-10-04-lambda_map.html">
-<h3 class="no-anchor listing-title">
-Lambda, Filter, and Map functions in Python
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Lambda is an important function/operator to create anonymous in-line functions in pyhton.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2019-10-04-lambda_map.html">
-<div class="listing-date">
-Oct 4, 2019
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="44" data-listing-date-sort="1567828800000" data-listing-file-modified-sort="1679107639221" data-listing-reading-time-sort="6.285">
-<div class="thumbnail">
-<p><a href="./posts/2019-09-07-pca_tutorial.html"> <img data-src="./posts/data/iris_schematic.png " class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/2019-09-07-pca_tutorial.html">
-<h3 class="no-anchor listing-title">
-Principal component analysis
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Introduction to the math behind PCA with applications to MNIST and Iris dataset</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2019-09-07-pca_tutorial.html">
-<div class="listing-date">
-Sep 7, 2019
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="45" data-listing-date-sort="1565668800000" data-listing-file-modified-sort="1679107638822" data-listing-reading-time-sort="0.38">
-<div class="thumbnail">
-<a href="./posts/2019-08-13-pytorch_mnist_classification.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2019-08-13-pytorch_mnist_classification.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2019-08-13-pytorch_mnist_classification.html">
-<h3 class="no-anchor listing-title">
-Neural network implementation in PyTorch
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-<p>Walkthrough on implementing a vanilla feed-forward neural network using Pytorch and predicting MNIST digits</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2019-08-13-pytorch_mnist_classification.html">
-<div class="listing-date">
-Aug 13, 2019
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="46" data-categories="python,exploratory-data-analysis,machine-learning" data-listing-date-sort="1564718400000" data-listing-file-modified-sort="1679107639437" data-listing-reading-time-sort="16.06">
-<div class="thumbnail">
-<a href="./posts/2019-08-02-end2endml_housing.html">
-<div class="thumbnail-image">
-
-</div>
-</a><p><a href="./posts/2019-08-02-end2endml_housing.html"></a></p>
-</div>
-<div class="body">
-<a href="./posts/2019-08-02-end2endml_housing.html">
-<h3 class="no-anchor listing-title">
-End-to-end Machine Learning Project
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('python'); return false;">
-python
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('exploratory-data-analysis'); return false;">
-exploratory-data-analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('machine-learning'); return false;">
-machine-learning
-</div>
-</div>
-<a href="./posts/2019-08-02-end2endml_housing.html">
-<div class="listing-description">
-<p>Exploratory data analysis and machine leanring model development for property price prediction</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/2019-08-02-end2endml_housing.html">
-<div class="listing-date">
-Aug 2, 2019
-</div>
-<div class="listing-author">
-Pushkar G. Ghanekar
-</div>
-</a>
-</div>
-</div>
-</div>
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
@@ -1734,6 +676,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {

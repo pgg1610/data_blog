@@ -13,8 +13,8 @@ website:
         href: https://twitter.com/mepgg
 format:
   html:
-    theme: cyborg
-    css: styles.css
-
-
+    theme:
+      light: cosmo
+      dark: [cosmo, theme-dark.scss]
+    toc: true
 

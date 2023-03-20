@@ -2,14 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/temp/qm9_data_exploration.html",
-      "/posts/temp/fingerprints.html",
       "/posts/10_04-fingerprints.html",
       "/posts/IMDB-files/bollywood_imdb_scrapper.html",
       "/posts/07_28-uspto_rxn.html",
       "/posts/data/fingerprints.html",
-      "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html",
       "/posts/2023-01-16-auto3d.html",
       "/posts/2022-12-28-Computational_drug_discovery.html",
       "/posts/2022-11-20-cheminfo-clustering.html",
