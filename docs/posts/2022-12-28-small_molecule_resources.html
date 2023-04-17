@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Last update: 8th February 2023</p>
+<p>Last update: 16th April 2023</p>
 <section id="noteworthy-blogs-to-follow" class="level2">
 <h2 class="anchored" data-anchor-id="noteworthy-blogs-to-follow">Noteworthy blogs to follow:</h2>
 <ol type="1">
@@ -342,9 +342,25 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5">Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c00224">Warr, Wendy A., et al.&nbsp;“Exploration of ultralarge compound collections for drug discovery.” Journal of Chemical Information and Modeling 62.9 (2022): 2021-2034.</a></p></li>
-<li><p>SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.</p></li>
-<li><p>PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space. https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367</p></li>
+<li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01378?casa_token=Lo0YQQrtkcAAAAAA%3AhKiuAJ0GpAhXiNC-2cVO6Ixv0aCnf0J7mrr03mOxpCgH8OpVhaCnDxAkHPNvfm36VsDl8NxvtzusqQ">Bellmann, Louis, et al.&nbsp;“Comparison of combinatorial fragment spaces and its application to ultralarge make-on-demand compound catalogs.” Journal of Chemical Information and Modeling 62.3 (2022): 553-566.</a></p></li>
 </ul>
+<p>SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367">Konze, Kyle D., et al.&nbsp;“Reaction-based enumeration, active learning, and free energy calculations to rapidly explore synthetically tractable chemical space and optimize potency of cyclin-dependent kinase 2 inhibitors.” Journal of chemical information and modeling 59.9 (2019): 3782-3793.</a></li>
+</ul>
+<p>PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.0c00675">Irwin, John J., et al.&nbsp;“ZINC20—a free ultralarge-scale chemical database for ligand discovery.” Journal of chemical information and modeling 60.12 (2020): 6065-6073.</a></li>
+</ul>
+<p>New version of ZINC with two major new features: billions of new molecules and new methods to search them. As a fully enumerated database, ZINC can be searched precisely using explicit atomic-level graph-based methods. Over 97% of the core Bemis–Murcko scaffolds in make-on-demand libraries are unavailable from “in-stock” collections. Correspondingly, the number of new Bemis–Murcko scaffolds is rising almost as a linear fraction of the elaborated molecules. Thus, an 88-fold increase in the number of molecules in the make-on-demand versus the in-stock sets is built upon a 16-fold increase in the number of Bemis–Murcko scaffolds. The make-on-demand library is also more structurally diverse than physical libraries</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acsmedchemlett.3c00021">Neumann, Alexander, Lester Marrison, and Raphael Klein. “Relevance of the Trillion-Sized Chemical Space “eXplore” as a Source for Drug Discovery.” ACS Medicinal Chemistry Letters (2023).</a></li>
+</ul>
+<p>The authors examine the composition of the recently published and, so far, biggest chemical space, “eXplore”, which comprises approximately 2.8 trillion virtual product molecules. The utility of eXplore to retrieve interesting chemistry around approved drugs and common Bemis Murcko scaffolds has been assessed with several methods (FTrees, SpaceLight, SpaceMACS). Further, the overlap between several vendor chemical spaces and a physicochemical property distribution analysis has been performed. Despite the straightforward chemical reactions underlying its setup, eXplore is demonstrated to provide relevant and, most importantly, easily accessible molecules for drug discovery campaigns.</p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2304.05386.pdf">Medina, Jorge, and Andrew D. White. “Bloom filters for molecules.” arXiv preprint arXiv:2304.05386 (2023).</a></li>
+</ul>
+<p>This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.</p>
 </section>
 <section id="binding-free-energetic-calculations" class="level2">
 <h2 class="anchored" data-anchor-id="binding-free-energetic-calculations">Binding free energetic calculations</h2>
@@ -604,6 +620,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Here the idea is to constraint the molecules generated by the transformations amenable to a particular platform, like automated synthesis workflow.</p>
 <ul>
 <li><p><a href="https://onlinelibrary.wiley.com/doi/10.1002/advs.202206674?utm_source=pocket_saves">Seo, Seonghwan, Jaechang Lim, and Woo Youn Kim. “Molecular Generative Model via Retrosynthetically Prepared Chemical Building Block Assembly.” Advanced Science (2023): 2206674.</a></p></li>
+<li><p><a href="https://arxiv.org/pdf/2012.11522.pdf">Bradshaw, John, et al.&nbsp;“Barking up the right tree: an approach to search over molecule synthesis dags.” Advances in neural information processing systems 33 (2020): 6852-6866.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00469">Fialková, Vendy, et al.&nbsp;“LibINVENT: reaction-based generative scaffold decoration for in silico library design.” Journal of Chemical Information and Modeling 62.9 (2021): 2046-2063.</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2106.03394.pdf">Nguyen, Dai Hai, and Koji Tsuda. “A generative model for molecule generation based on chemical reaction trees.” arXiv preprint arXiv:2106.03394 (2021).</a></p></li>
 </ul>
@@ -830,6 +847,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
 <ul>
 <li><p><a href="https://github.com/MolecularAI">Molecular AI department at AstraZeneca R&amp;D</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s41598-023-30089-x">Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules</a></p></li>
 <li><p><a href="https://github.com/rinikerlab/GHOST">GHOST: Generalized threshold shifting procedure</a>. <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160">Paper</a>. <a href="https://greglandrum.github.io/rdkit-blog/exploratory/machinelearning/2021/12/23/ternary-ghost.html#Synthetic-datasets">Blogpost</a></p></li>
 </ul>
 <p>Automates the selection of decision threshold for imbalanced classification task. The assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data.</p>
@@ -881,7 +899,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://github.com/wjm41/molplotly">molplotly</a></li>
 </ul>
-<p>Spotfire like capabilities to jupyter notebook.</p>
+<p>Spotfire like capabilities to jupyter notebook. Medium article on explaining the MolPlotly. <a href="https://medium.com/@qcojuandavidmarin/molplotly-a-wonderful-tool-for-the-scientist-5ddb9a42c037?utm_source=pocket_saves">Link</a></p>
+<ul>
+<li><a href="https://github.com/hesther/espsim">ESPsim</a></li>
+</ul>
+<p>Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. <a href="https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/">blog</a></p>
 </section>
 <section id="datasets-chemical-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="datasets-chemical-libraries">Datasets &amp; Chemical libraries</h2>
@@ -889,8 +911,10 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>PubChem: public sourced molecules</p></li>
 <li><p>ChEMBL: bioactive molecules (most synthetic)</p></li>
+<li><p>SUREChEMBL: small molecules appearing in Patents</p></li>
 <li><p>ZINC: collection of synthetic molecules (not all are bioactive)</p></li>
 <li><p>QM 7/8/9: small molecules having not more than 7/8/9 heavy atoms</p></li>
+<li><p>GDB-11</p></li>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0">Papyrus</a></p></li>
 <li><p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9">COCONUT</a>: NP 400k there are some which are not NP</p></li>
 <li><p><a href="https://mcule.com/database/">Mcule</a>: Used in DEL enumerations</p></li>
@@ -908,7 +932,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Commericial (building block) vendors</strong></p>
 <ul>
 <li><p>eMolecules building blocks</p></li>
-<li><p>Enamine REAL Space</p></li>
+<li><p>Enamine Fragments</p></li>
 <li><p>WuXi GalaXi space</p></li>
 <li><p>Otava’s CHEMriya</p></li>
 </ul>

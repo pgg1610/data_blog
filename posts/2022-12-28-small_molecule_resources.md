@@ -9,13 +9,12 @@ date: '2022-12-28'
 description: Compendium of recent articles, resources, and blogs in the area of chemical
   science and drug discovery
 layout: post
-sticky_rank: 2
 title: Small Molecules Resources
 toc: true
 
 ---
 
-Last update: 8th February 2023
+Last update: 16th April 2023
 
 ## Noteworthy blogs to follow:
 
@@ -185,10 +184,27 @@ Over the past few years several entites offering ultra-large ensembles of chemic
 
 * [Warr, Wendy A., et al. "Exploration of ultralarge compound collections for drug discovery." Journal of Chemical Information and Modeling 62.9 (2022): 2021-2034.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00224)
 
-* SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.
+* [Bellmann, Louis, et al. "Comparison of combinatorial fragment spaces and its application to ultralarge make-on-demand compound catalogs." Journal of Chemical Information and Modeling 62.3 (2022): 553-566.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01378?casa_token=Lo0YQQrtkcAAAAAA%3AhKiuAJ0GpAhXiNC-2cVO6Ixv0aCnf0J7mrr03mOxpCgH8OpVhaCnDxAkHPNvfm36VsDl8NxvtzusqQ)
 
-* PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space.
-https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367
+SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.
+
+* [Konze, Kyle D., et al. "Reaction-based enumeration, active learning, and free energy calculations to rapidly explore synthetically tractable chemical space and optimize potency of cyclin-dependent kinase 2 inhibitors." Journal of chemical information and modeling 59.9 (2019): 3782-3793.](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367)
+
+PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space.
+
+
+* [Irwin, John J., et al. "ZINC20—a free ultralarge-scale chemical database for ligand discovery." Journal of chemical information and modeling 60.12 (2020): 6065-6073.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c00675)
+
+New version of ZINC with two major new features: billions of new molecules and new methods to search them. As a fully enumerated database, ZINC can be searched precisely using explicit atomic-level graph-based methods. Over 97% of the core Bemis–Murcko scaffolds in make-on-demand libraries are unavailable from “in-stock” collections. Correspondingly, the number of new Bemis–Murcko scaffolds is rising almost as a linear fraction of the elaborated molecules. Thus, an 88-fold increase in the number of molecules in the make-on-demand versus the in-stock sets is built upon a 16-fold increase in the number of Bemis–Murcko scaffolds. The make-on-demand library is also more structurally diverse than physical libraries
+
+* [Neumann, Alexander, Lester Marrison, and Raphael Klein. "Relevance of the Trillion-Sized Chemical Space “eXplore” as a Source for Drug Discovery." ACS Medicinal Chemistry Letters (2023).](https://pubs.acs.org/doi/10.1021/acsmedchemlett.3c00021)
+
+The authors examine the composition of the recently published and, so far, biggest chemical space, “eXplore”, which comprises approximately 2.8 trillion virtual product molecules. The utility of eXplore to retrieve interesting chemistry around approved drugs and common Bemis Murcko scaffolds has been assessed with several methods (FTrees, SpaceLight, SpaceMACS). Further, the overlap between several vendor chemical spaces and a physicochemical property distribution analysis has been performed. Despite the straightforward chemical reactions underlying its setup, eXplore is demonstrated to provide relevant and, most importantly, easily accessible molecules for drug discovery campaigns.
+
+* [Medina, Jorge, and Andrew D. White. "Bloom filters for molecules." arXiv preprint arXiv:2304.05386 (2023).](https://arxiv.org/pdf/2304.05386.pdf)
+
+This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.
+
 
 ## Binding free energetic calculations 
 
@@ -474,6 +490,8 @@ Here the idea is to constraint the molecules generated by the transformations am
 
 * [Seo, Seonghwan, Jaechang Lim, and Woo Youn Kim. "Molecular Generative Model via Retrosynthetically Prepared Chemical Building Block Assembly." Advanced Science (2023): 2206674.](https://onlinelibrary.wiley.com/doi/10.1002/advs.202206674?utm_source=pocket_saves)
 
+* [Bradshaw, John, et al. "Barking up the right tree: an approach to search over molecule synthesis dags." Advances in neural information processing systems 33 (2020): 6852-6866.](https://arxiv.org/pdf/2012.11522.pdf)
+
 * [Fialková, Vendy, et al. "LibINVENT: reaction-based generative scaffold decoration for in silico library design." Journal of Chemical Information and Modeling 62.9 (2021): 2046-2063.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00469)
 
 * [Nguyen, Dai Hai, and Koji Tsuda. "A generative model for molecule generation based on chemical reaction trees." arXiv preprint arXiv:2106.03394 (2021).](https://arxiv.org/pdf/2106.03394.pdf)
@@ -737,6 +755,8 @@ DNA encodings for discovery of novel small-molecule protein inhibitors. Outline 
 
 * [Molecular AI department at AstraZeneca R&D](https://github.com/MolecularAI)
 
+* [Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules](https://www.nature.com/articles/s41598-023-30089-x)
+
 * [GHOST: Generalized threshold shifting procedure](https://github.com/rinikerlab/GHOST). [Paper](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160). [Blogpost](https://greglandrum.github.io/rdkit-blog/exploratory/machinelearning/2021/12/23/ternary-ghost.html#Synthetic-datasets)
 
 Automates the selection of decision threshold for imbalanced classification task. The assumption for this method to work is the similar characteristics (like imbalance ratio) of training and test data. 
@@ -797,8 +817,11 @@ Interactive chemical viewer for small molecules (RDKit wrapper)
 
 * [molplotly](https://github.com/wjm41/molplotly)
 
-Spotfire like capabilities to jupyter notebook. 
+Spotfire like capabilities to jupyter notebook. Medium article on explaining the MolPlotly. [Link](https://medium.com/@qcojuandavidmarin/molplotly-a-wonderful-tool-for-the-scientist-5ddb9a42c037?utm_source=pocket_saves)
 
+* [ESPsim](https://github.com/hesther/espsim)
+
+Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. [blog](https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/)
 
 ## Datasets & Chemical libraries 
 
@@ -809,9 +832,13 @@ Spotfire like capabilities to jupyter notebook.
 
 * ChEMBL: bioactive molecules (most synthetic)
 
+* SUREChEMBL: small molecules appearing in Patents 
+
 * ZINC: collection of synthetic molecules (not all are bioactive) 
 
 * QM 7/8/9: small molecules having not more than 7/8/9 heavy atoms 
+
+* GDB-11
 
 * [Papyrus](https://chemrxiv.org/engage/chemrxiv/article-details/617aa2467a002162403d71f0)
 
@@ -836,7 +863,7 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 * eMolecules building blocks 
 
-* Enamine REAL Space 
+* Enamine Fragments 
 
 * WuXi GalaXi space 
 
