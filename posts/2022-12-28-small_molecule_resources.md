@@ -205,7 +205,6 @@ The authors examine the composition of the recently published and, so far, bigge
 
 This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.
 
-
 ## Binding free energetic calculations 
 
 * [Xu, Huafeng. "The slow but steady rise of binding free energy calculations in drug discovery." Journal of Computer-Aided Molecular Design (2022): 1-8.](https://link.springer.com/article/10.1007/s10822-022-00494-x)
@@ -221,6 +220,14 @@ This paper proposes and studies Bloom filters for testing if a molecule is prese
 Catalog of recent reviews and manuscripts I have found useful when learning more about the state-of-the-art in Cheminformatics. I've tried to categorize them roughly based on their area of application: 
 
 ### Representation
+
+Small molecules to be understood by computers and used for model training have to represented in a form amenable for optimization. In addition, this form of abstraction much capture appropriate level of chemical properties so as to imbue the data-driven models with necessary chemistry and physics for modeling. A lot of times different properties of the molecules are 'lost in translation' or obfuscated when converting them into machine-ready forms. Formerly the process of converting molecules from one form to another is called featurization. There are different forms, methods, theories to encode the molecules. Broadly there are as follows: 
+* Fingerprints
+* Descriptors
+* Pharmacophores 
+* Graph-based 
+* Natural language-based 
+* Shape-based 
 
 **Reviews**
 
@@ -289,6 +296,10 @@ Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with na
 ### Explainable/Interpretable Machine Learning 
 
 **Reviews/Perspectives**
+
+* [Wellawatte, Geemi P., et al. "A Perspective on Explanations of Molecular Prediction Models." (2022).](https://pubs.acs.org/doi/10.1021/acs.jctc.2c01235)
+
+
 
 * [Rodríguez-Pérez, Raquel, and Jürgen Bajorath. "Explainable Machine Learning for Property Predictions in Compound Optimization." Journal of medicinal chemistry 64.24 (2021): 17744-17752](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01789)
 
@@ -693,10 +704,13 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 ### Data-driven chemistry modeling and reaction optimization
 
-**Review**
+**Review / Perspectives**
 
 * [Williams, Wendy L., et al. "The evolution of data-driven modeling in organic chemistry." ACS central science 7.10 (2021): 1622-1637.](https://pubs.acs.org/doi/full/10.1021/acscentsci.1c00535)
 
+* [Maloney, Michael P., et al. "Negative Data in Data Sets for Machine Learning Training." Organic Letters (2023).](https://pubs.acs.org/doi/10.1021/acs.joc.3c00844)
+
+Thoughts from industry practioners on how to label low/no yield reactions in electronic lab notebooks (eLNs). This is important when building ML model for reaction outcomes. 
 
 **Articles**
 
@@ -704,7 +718,7 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 Experimental design using Bayesian Optimization. Look at 3 rxn class with multiple reaction parameters - temp solvent ligand. Algorithm identifies the optimal conditions. Variables looked into: ligands, bases, solvents, temperatures, concentrations. Algorithm arrived at 99% yields consistently - which was possible by using unusual ligand not known to work well (cognitive bias).
 
-* [Torres, Jose Garrido, et al. "A Multi-Objective Active Learning Platform and Web App for Reaction Optimization." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/62f6966269f3a5df46b5584b)
+* [Torres, Jose Garrido, et al. "A Multi-Objective Active Learning Platform and Web App for Reaction Optimization." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/62f6966269f3a5df46b5584b). [Follow-up Version 2.0](https://pubs.acs.org/doi/full/10.1021/jacs.2c08592?ref=recommended)
 
 * [Hickman, Riley J., et al. "Bayesian optimization with known experimental and design constraints for chemistry applications." arXiv preprint arXiv:2203.17241 (2022).](https://arxiv.org/abs/2203.17241)
 
@@ -717,6 +731,17 @@ Multi-objective optimization of catalytic reactions that employ chiral bisphosph
 * [Zhang, Ying, et al. "Descriptor-Free Design of Multicomponent Catalysts." ACS Catalysis 12 (2022): 10562-10571.](https://pubs.acs.org/doi/10.1021/acscatal.2c02807#.YvpbIMo0Ovw.linkedin)
 
 Bayesian optimization (BO) to improve the experimental measured activity as a direct function of compositional variables without educating physical knowledge to the machine. We applied BO in screening spinel Cr<sub>a</sub>Mn<sub>b</sub>Fe<sub>c</sub>Co<sub>d</sub>Ni<sub>e</sub>Cu<sub>f</sub>Zn<sub>3–a–b–c–d–e–f</sub>O<sub>4</sub> for the decomposition of nitric oxide into environmentally friendly nitrogen.
+
+**Yield prediction**
+
+* [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)
+
+**Generate catalysts**
+
+* [Schilter, Oliver, et al. "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions." Digital Discovery (2023).](https://pubs.rsc.org/en/content/articlelanding/2023/DD/D2DD00125J)
+
+Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The trained models are used to find catalyst's binding energy and find high percentage of novel and valid designs. 
+
 
 **Databases**
 
@@ -750,6 +775,10 @@ DNA encodings for discovery of novel small-molecule protein inhibitors. Outline 
 * [Martín, A., et al. (2020). "Navigating the DNA encoded libraries chemical space." Communications Chemistry 3(1).](https://www.nature.com/articles/s42004-020-00374-1?error=cookies_not_supported&code=2d1394f8-2e1b-46ef-b926-9441292aea56)
 
 * [Zabolotna, Y., Pikalyova, R., Volochnyuk, D., Horvath, D., Marcou, G., & Varnek, A. (2021). Exploration of the chemical space of DNA-encoded libraries.](https://chemrxiv.org/engage/chemrxiv/article-details/60fac8718804431689e3155b)
+
+* [Shmilovich, Kirill, et al. "DEL-Dock: Molecular Docking-Enabled Modeling of DNA-Encoded Libraries." arXiv preprint arXiv:2212.00136 (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01608)
+
+Propose a way to incoporate 3D-spatial information in the DEL read outs to denoise the data. 
 
 ## Code / Packages:
 
@@ -823,6 +852,8 @@ Spotfire like capabilities to jupyter notebook. Medium article on explaining the
 
 Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. [blog](https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/)
 
+* [Generative Toolkit 4 Scientific Discovery](https://github.com/GT4SD/gt4sd-core)
+
 ## Datasets & Chemical libraries 
 
 
@@ -881,3 +912,4 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
 "Therapeutics Data Commons is an open-science platform with AI/ML-ready datasets and learning tasks for therapeutics, spanning the discovery and development of safe and effective medicines. TDC also provides an ecosystem of tools, libraries, leaderboards, and community resources, including data functions, strategies for systematic model evaluation, meaning"
+
