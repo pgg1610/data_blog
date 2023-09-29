@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chemical-modalities" id="toc-chemical-modalities" class="nav-link" data-scroll-target="#chemical-modalities">Chemical modalities</a></li>
   <li><a href="#meta-themes-on-optimizing-small-molecules" id="toc-meta-themes-on-optimizing-small-molecules" class="nav-link" data-scroll-target="#meta-themes-on-optimizing-small-molecules">Meta themes on optimizing small molecules</a></li>
   <li><a href="#synthesis-chemistry" id="toc-synthesis-chemistry" class="nav-link" data-scroll-target="#synthesis-chemistry">Synthesis Chemistry</a></li>
-  <li><a href="#large-chemical-libraries" id="toc-large-chemical-libraries" class="nav-link" data-scroll-target="#large-chemical-libraries">Large chemical libraries</a></li>
+  <li><a href="#large-chemical-libraries-and-virtual-screening" id="toc-large-chemical-libraries-and-virtual-screening" class="nav-link" data-scroll-target="#large-chemical-libraries-and-virtual-screening">Large chemical libraries and Virtual Screening</a></li>
   <li><a href="#binding-free-energetic-calculations" id="toc-binding-free-energetic-calculations" class="nav-link" data-scroll-target="#binding-free-energetic-calculations">Binding free energetic calculations</a></li>
   <li><a href="#cheminformatics-focus" id="toc-cheminformatics-focus" class="nav-link" data-scroll-target="#cheminformatics-focus">Cheminformatics-focus</a>
   <ul class="collapse">
@@ -165,18 +165,23 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#predictive-modeling" id="toc-predictive-modeling" class="nav-link" data-scroll-target="#predictive-modeling">Predictive modeling</a></li>
   <li><a href="#qsar-benchmarks" id="toc-qsar-benchmarks" class="nav-link" data-scroll-target="#qsar-benchmarks">QSAR benchmarks</a></li>
   <li><a href="#enumeration-of-chemical-space" id="toc-enumeration-of-chemical-space" class="nav-link" data-scroll-target="#enumeration-of-chemical-space">Enumeration of chemical space</a></li>
+  <li><a href="#chemical-space-exploration" id="toc-chemical-space-exploration" class="nav-link" data-scroll-target="#chemical-space-exploration">Chemical-space exploration</a></li>
+  <li><a href="#matched-molecular-pair" id="toc-matched-molecular-pair" class="nav-link" data-scroll-target="#matched-molecular-pair">Matched molecular-pair*</a></li>
   <li><a href="#explainableinterpretable-machine-learning" id="toc-explainableinterpretable-machine-learning" class="nav-link" data-scroll-target="#explainableinterpretable-machine-learning">Explainable/Interpretable Machine Learning</a></li>
   <li><a href="#uncertainty-quantification" id="toc-uncertainty-quantification" class="nav-link" data-scroll-target="#uncertainty-quantification">Uncertainty quantification</a></li>
   <li><a href="#active-learning" id="toc-active-learning" class="nav-link" data-scroll-target="#active-learning">Active Learning</a></li>
   <li><a href="#transfer-learning" id="toc-transfer-learning" class="nav-link" data-scroll-target="#transfer-learning">Transfer Learning</a></li>
   <li><a href="#meta-learning" id="toc-meta-learning" class="nav-link" data-scroll-target="#meta-learning">Meta Learning</a></li>
   <li><a href="#federated-learning" id="toc-federated-learning" class="nav-link" data-scroll-target="#federated-learning">Federated Learning</a></li>
-  <li><a href="#generative-models" id="toc-generative-models" class="nav-link" data-scroll-target="#generative-models">Generative models</a></li>
+  </ul></li>
+  <li><a href="#generative-design" id="toc-generative-design" class="nav-link" data-scroll-target="#generative-design">Generative design</a>
+  <ul class="collapse">
   <li><a href="#computer-aided-synthesis-planning-casp" id="toc-computer-aided-synthesis-planning-casp" class="nav-link" data-scroll-target="#computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</a></li>
   <li><a href="#data-driven-chemistry-modeling-and-reaction-optimization" id="toc-data-driven-chemistry-modeling-and-reaction-optimization" class="nav-link" data-scroll-target="#data-driven-chemistry-modeling-and-reaction-optimization">Data-driven chemistry modeling and reaction optimization</a></li>
   <li><a href="#automated-chemistry-workflows" id="toc-automated-chemistry-workflows" class="nav-link" data-scroll-target="#automated-chemistry-workflows">Automated chemistry workflows</a></li>
   <li><a href="#dna-encoded-libraries" id="toc-dna-encoded-libraries" class="nav-link" data-scroll-target="#dna-encoded-libraries">DNA-encoded Libraries</a></li>
   </ul></li>
+  <li><a href="#protein-ligand-interactions" id="toc-protein-ligand-interactions" class="nav-link" data-scroll-target="#protein-ligand-interactions">Protein-ligand interactions</a></li>
   <li><a href="#code-packages" id="toc-code-packages" class="nav-link" data-scroll-target="#code-packages">Code / Packages:</a></li>
   <li><a href="#datasets-chemical-libraries" id="toc-datasets-chemical-libraries" class="nav-link" data-scroll-target="#datasets-chemical-libraries">Datasets &amp; Chemical libraries</a></li>
   <li><a href="#helpful-utilities" id="toc-helpful-utilities" class="nav-link" data-scroll-target="#helpful-utilities">Helpful utilities:</a></li>
@@ -189,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Last update: 16th April 2023</p>
+<p>Last update: 15th August 2023</p>
 <section id="noteworthy-blogs-to-follow" class="level2">
 <h2 class="anchored" data-anchor-id="noteworthy-blogs-to-follow">Noteworthy blogs to follow:</h2>
 <ol type="1">
@@ -321,6 +326,19 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://www.sciencedirect.com/science/article/pii/S1367593118300176#bib0030">Poongavanam, Vasanthanathan, Bradley C. Doak, and Jan Kihlberg. “Opportunities and guidelines for discovery of orally absorbed drugs in beyond rule of 5 space.” Current Opinion in Chemical Biology 44 (2018): 23-29.</a></li>
 </ul>
 <p>Hueristics for oral bioavailability of molecules that are violating the rule of 5. MW may reach up to approximately 1000 Da provided that TPSA increases proportionally up to 250 Å2. In contrast, cLogP and HBDs must be carefully controlled at high MW. Our lack of ability to predict compound conformations and flexibility is currently a hurdle that is critical to overcome to enable further prospective design in oral bRo5 space.</p>
+<ul>
+<li><p>Taylor, R. D.; MacCoss, M.; Lawson, A. D. G. Rings in Drugs. J. Med. Chem. 2014, 57 (14), 5845–5859. https://doi.org/10.1021/jm4017625.</p></li>
+<li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01215">Subbaiah, Murugaiah AM, and Nicholas A. Meanwell. “Bioisosteres of the phenyl ring: Recent strategic applications in lead optimization and drug design.” Journal of Medicinal Chemistry 64.19 (2021): 14046-14128.</a></p></li>
+</ul>
+<p>Looks at biosteric replacements for the phenyl rings in the lead optimization phase. Phenyl rings results in improve potency but have poor solubility and lipophilicitty. Find biosteres can be used to improve them.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00761">Ertl, Peter. “Magic Rings: Navigation in the Ring Chemical Space Guided by the Bioactive Rings.” Journal of Chemical Information and Modeling (2021).</a></li>
+</ul>
+<p>Analyze the nature of rings which appear in bioactive compounds. Ring systems are systematically extracted from one billion molecules and are analyzed to discover a structure or correlation in the bioactivity and type of rings. No simple set of structural descriptors separating active and inactive rings could be identified, the separation is best described by a neural network model taking into account a complex combination of many substructure features.</p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41570-022-00451-0">Hartung, Ingo V., Bayard R. Huck, and Alejandro Crespo. “Rules were made to be broken.” Nature Reviews Chemistry 7.1 (2023): 3-4.</a></li>
+</ul>
+<p>Longitudinal analysis of physico-chemical properties for approved drugs in the clinic. They show that most of the drugs flout most of the Lipinski’s rule of 5 except the HBD which is always consistently less 4. In addition, they show that in recent times, by categorizing the drugs in different time-bound classes, the mean MW and HBA has increased but mean HBD has constantly stayed less than 2.</p>
 </section>
 <section id="synthesis-chemistry" class="level2">
 <h2 class="anchored" data-anchor-id="synthesis-chemistry">Synthesis Chemistry</h2>
@@ -336,12 +354,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://doi.org/10.1002/cbic.201800751">Lenci, Elena, and Andrea Trabocchi. “Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics.” ChemBioChem 20.9 (2019): 1115-1123.</a></p></li>
 </ul>
 </section>
-<section id="large-chemical-libraries" class="level2">
-<h2 class="anchored" data-anchor-id="large-chemical-libraries">Large chemical libraries</h2>
+<section id="large-chemical-libraries-and-virtual-screening" class="level2">
+<h2 class="anchored" data-anchor-id="large-chemical-libraries-and-virtual-screening">Large chemical libraries and Virtual Screening</h2>
 <p>Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field.</p>
 <ul>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5">Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c00224">Warr, Wendy A., et al.&nbsp;“Exploration of ultralarge compound collections for drug discovery.” Journal of Chemical Information and Modeling 62.9 (2022): 2021-2034.</a></p></li>
+<li><p><a href="https://www.sciencedirect.com/science/article/pii/S1359644618304471">The next level in chemical space navigation: going far beyond enumerable compound libraries</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01378?casa_token=Lo0YQQrtkcAAAAAA%3AhKiuAJ0GpAhXiNC-2cVO6Ixv0aCnf0J7mrr03mOxpCgH8OpVhaCnDxAkHPNvfm36VsDl8NxvtzusqQ">Bellmann, Louis, et al.&nbsp;“Comparison of combinatorial fragment spaces and its application to ultralarge make-on-demand compound catalogs.” Journal of Chemical Information and Modeling 62.3 (2022): 553-566.</a></p></li>
 </ul>
 <p>SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial fragment spaces, utilizes topological fingerprints and the combinatorial character of these chemical spaces. Enamine’s REAL Space, WuXi’s GalaXi Space, and Otava’s CHEMriya. The overlap of the commercial make-on-demand catalogs is only in the low single-digit percent range, despite their large overall size.</p>
@@ -361,6 +380,19 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://arxiv.org/pdf/2304.05386.pdf">Medina, Jorge, and Andrew D. White. “Bloom filters for molecules.” arXiv preprint arXiv:2304.05386 (2023).</a></li>
 </ul>
 <p>This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.</p>
+<p><strong>Virtual screeening</strong></p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41586-019-0917-9">Lyu, Jiankun, et al.&nbsp;“Ultra-large library docking for discovering new chemotypes.” Nature 566.7743 (2019): 224-229.</a></li>
+</ul>
+<p>Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets.</p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41586-023-05905-z">Sadybekov, Anastasiia V., and Vsevolod Katritch. “Computational approaches streamlining drug discovery.” Nature 616.7958 (2023): 673-685.</a></li>
+</ul>
+<p>Nice review on virtual screening workflow for streamlining drug discovery</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813">Müller, Janis, et al.&nbsp;“Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces.” Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.</a>. <a href="https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist">Blog</a></li>
+</ul>
+<p>The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.</p>
 </section>
 <section id="binding-free-energetic-calculations" class="level2">
 <h2 class="anchored" data-anchor-id="binding-free-energetic-calculations">Binding free energetic calculations</h2>
@@ -403,6 +435,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://arxiv.org/abs/2107.10402">Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402</a></li>
 </ul>
 <p>Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962">Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties</a></li>
+</ul>
+<p>Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs.</p>
 </section>
 <section id="qsar-benchmarks" class="level3">
 <h3 class="anchored" data-anchor-id="qsar-benchmarks">QSAR benchmarks</h3>
@@ -419,23 +455,29 @@ ul.task-list li input[type="checkbox"] {
 <section id="enumeration-of-chemical-space" class="level3">
 <h3 class="anchored" data-anchor-id="enumeration-of-chemical-space">Enumeration of chemical space</h3>
 <ul>
-<li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01215">Subbaiah, Murugaiah AM, and Nicholas A. Meanwell. “Bioisosteres of the phenyl ring: Recent strategic applications in lead optimization and drug design.” Journal of Medicinal Chemistry 64.19 (2021): 14046-14128.</a></li>
-</ul>
-<p>Looks at biosteric replacements for the phenyl rings in the lead optimization phase. Phenyl rings results in improve potency but have poor solubility and lipophilicitty. Find biosteres can be used to improve them.</p>
-<ul>
-<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00761">Ertl, Peter. “Magic Rings: Navigation in the Ring Chemical Space Guided by the Bioactive Rings.” Journal of Chemical Information and Modeling (2021).</a></li>
-</ul>
-<p>Analyze the nature of rings which appear in bioactive compounds. Ring systems are systematically extracted from one billion molecules and are analyzed to discover a structure or correlation in the bioactivity and type of rings. No simple set of structural descriptors separating active and inactive rings could be identified, the separation is best described by a neural network model taking into account a complex combination of many substructure features.</p>
-<ul>
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01378">Bellmann, Louis, et al.&nbsp;“Comparison of Combinatorial Fragment Spaces and Its Application to Ultralarge Make-on-Demand Compound Catalogs.” Journal of Chemical Information and Modeling (2022).</a></li>
 </ul>
 <p>Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.</p>
 <ul>
+<li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173">Nicolaou, Christos A., et al.&nbsp;“The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space.” Journal of chemical information and modeling 56.7 (2016): 1253-1266.</a></p></li>
+<li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754">Zabolotna, Y., et al.&nbsp;(2021). “SynthI: A New Open-Source Tool for Synthon-Based Library Design.” Journal of Chemical Information and Modeling.</a></p></li>
+</ul>
+<p>Interesting work on de-novo design of molecules wherein, the molecules being created are made up from the fragments that is known to exist and are available to the user. New molecules are generated based on the fragmented (synthons) made available in the dataset.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01041">Fully Automated Creation of Virtual Chemical Fragment Spaces Using the Open-Source Library OpenChemLib</a></li>
+</ul>
+<p>Open-source tool to generate synthetically accessible chemical spaces using reaction definitions and building blocks. Virtual fragments are generated using one-step reaction and real-world building blocks - the workflow also support 2-3 steps creation.</p>
+</section>
+<section id="chemical-space-exploration" class="level3">
+<h3 class="anchored" data-anchor-id="chemical-space-exploration">Chemical-space exploration</h3>
+<ul>
 <li><a href="https://onlinelibrary.wiley.com/doi/10.1002/minf.202100068">Zabolotna, Yuliana, et al.&nbsp;“NP navigator: a new look at the natural product chemical space.” Molecular informatics 40.9 (2021): 2100068.</a>.</li>
 </ul>
 <p>Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found <a href="https://www.sciencedirect.com/science/article/pii/S1740674920300044">here</a></p>
+</section>
+<section id="matched-molecular-pair" class="level3">
+<h3 class="anchored" data-anchor-id="matched-molecular-pair">Matched molecular-pair*</h3>
 <ul>
-<li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173">Nicolaou, Christos A., et al.&nbsp;“The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space.” Journal of chemical information and modeling 56.7 (2016): 1253-1266.</a></p></li>
 <li><p><a href="https://link.springer.com/article/10.1023/A:1021271615909">Raymond, John W., and Peter Willett. “Maximum common subgraph isomorphism algorithms for the matching of chemical structures.” Journal of computer-aided molecular design 16.7 (2002): 521-533.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173">Dalke, Andrew, Jerome Hert, and Christian Kramer. “mmpdb: An open-source matched molecular pair platform for large multiproperty data sets.” Journal of chemical information and modeling 58.5 (2018): 902-910.</a></p></li>
 </ul>
@@ -479,6 +521,14 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="active-learning">Active Learning</h3>
 <p>Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.</p>
 <ul>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e">Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. “Accelerating high-throughput virtual screening through molecular pool-based active learning.” Chemical science 12.22 (2021): 7866-7881.</a></li>
+</ul>
+<p>Article talks about MolPAL as an active learning methodology. The team explores the application of these techniques to computational docking datasets and assess the impact of surrogate model architecture, acquisition function, and acquisition batch size on optimization performance. We observe significant reductions in computational costs; for example, using a directedmessage passing neural network we can identify 94.8% or 89.3% of the top-50 000 ligands in a 100M member library after testing only 2.4% of candidate ligands using an upper confidence bound or greedy acquisition strategy, respectively.</p>
+<ul>
+<li><a href="https://www.sciencedirect.com/science/article/pii/S2667318522000204">Thompson, James, et al.&nbsp;“Optimizing active learning for free energy calculations.” Artificial Intelligence in the Life Sciences 2 (2022): 100050.</a></li>
+</ul>
+<p>Article exploring different active learning strategies for looking at sampling the congeneric RBFE calculations. The paper explores the impact of several AL design choices. They show that in their case, the overall AL performance is largely insensitive to the specific ML method and acquisition functions used. The significant factor affecting the performance was the number of molecules sampled at each iteration.</p>
+<ul>
 <li><p><a href="https://doi.org/10.1016/j.ddtec.2020.06.001">Reker, D. Practical Considerations for Active Machine Learning in Drug Discovery. Drug Discov. Today Technol. 2020</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/abs/10.1021/acscentsci.0c00026">Janet, J. P., Ramesh, S., Duan, C., &amp; Kulik, H. J. (2020). Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimization. ACS central science, 6(4), 513-524.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.1c00546">A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul.&nbsp;2021.</a>. <a href="https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery">Slideshare</a></p></li>
@@ -519,8 +569,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Consortia comprising of leading resarch labs and companies working on decentralized datasets and predictive modeling of biochemical and cellular activity.</p>
 </section>
-<section id="generative-models" class="level3">
-<h3 class="anchored" data-anchor-id="generative-models">Generative models</h3>
+</section>
+<section id="generative-design" class="level2">
+<h2 class="anchored" data-anchor-id="generative-design">Generative design</h2>
 <p><strong>Reviews</strong></p>
 <ul>
 <li><p><a href="https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html">Comment about generative design from Patrick Walters</a></p></li>
@@ -654,7 +705,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.9b01120">Imrie, Fergus, et al.&nbsp;“Deep generative models for 3D linker design.” Journal of chemical information and modeling 60.4 (2020): 1983-1995.</a>. <a href="https://iwatobipen.wordpress.com/2020/05/09/replace-core-with-delinker-rdkit-chemoinformatics-deeplearning/">Blogpost</a></p></li>
 <li><p><a href="https://arxiv.org/abs/2211.02660">Nori, Divya, Connor W. Coley, and Rocío Mercado. “De novo PROTAC design using graph-based deep generative models.” arXiv preprint arXiv:2211.02660 (2022).</a></p></li>
 </ul>
-</section>
 <section id="computer-aided-synthesis-planning-casp" class="level3">
 <h3 class="anchored" data-anchor-id="computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</h3>
 <p><strong>Reviews:</strong></p>
@@ -735,10 +785,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Retrosynthetic routes:</strong></p>
 <ul>
-<li><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754">Zabolotna, Y., et al.&nbsp;(2021). “SynthI: A New Open-Source Tool for Synthon-Based Library Design.” Journal of Chemical Information and Modeling.</a></li>
-</ul>
-<p>Interesting work on de-novo design of molecules wherein, the molecules being created are made up from the fragments that is known to exist and are available to the user. New molecules are generated based on the fragmented (synthons) made available in the dataset.</p>
-<ul>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h">Schwaller, P., et al.&nbsp;(2020). “Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy.” Chemical Science 11(12): 3316-3325.</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s41586-020-2855-y">Computational planning of the synthesis of complex natural products</a></p></li>
 <li><p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-018-0323-6">Watson, I. A., et al.&nbsp;(2019). “A retrosynthetic analysis algorithm implementation.” J Cheminform 11(1)</a></p></li>
@@ -817,7 +863,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Bayesian optimization (BO) to improve the experimental measured activity as a direct function of compositional variables without educating physical knowledge to the machine. We applied BO in screening spinel Cr<sub>a</sub>Mn<sub>b</sub>Fe<sub>c</sub>Co<sub>d</sub>Ni<sub>e</sub>Cu<sub>f</sub>Zn<sub>3–a–b–c–d–e–f</sub>O<sub>4</sub> for the decomposition of nitric oxide into environmentally friendly nitrogen.</p>
 <p><strong>Yield prediction</strong></p>
 <ul>
-<li><a href="https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&amp;rfr_id=ori:rid:crossref.org&amp;rfr_dat=cr_pub%20%200pubmed">Predicting reaction performance in C–N cross-coupling using machine learning</a></li>
+<li><p><a href="https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&amp;rfr_id=ori:rid:crossref.org&amp;rfr_dat=cr_pub%20%200pubmed">Predicting reaction performance in C–N cross-coupling using machine learning</a></p></li>
+<li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.0c01234">Multilabel Classification Models for the Prediction of Cross-Coupling Reaction Conditions</a></p></li>
 </ul>
 <p><strong>Generate catalysts</strong></p>
 <ul>
@@ -856,7 +903,18 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c01608">Shmilovich, Kirill, et al.&nbsp;“DEL-Dock: Molecular Docking-Enabled Modeling of DNA-Encoded Libraries.” arXiv preprint arXiv:2212.00136 (2022).</a></p></li>
 </ul>
 <p>Propose a way to incoporate 3D-spatial information in the DEL read outs to denoise the data.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c00588">Zhang, Chris, et al.&nbsp;“Building Block-Based Binding Predictions for DNA-Encoded Libraries.” (2023).</a> <a href="https://github.com/MobleyLab/DEL_analysis">Github</a></li>
+</ul>
+<p>Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering.</p>
 </section>
+</section>
+<section id="protein-ligand-interactions" class="level2">
+<h2 class="anchored" data-anchor-id="protein-ligand-interactions">Protein-ligand interactions</h2>
+<ul>
+<li><p><a href="">DiffDock</a></p></li>
+<li><p><a href="https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon">MatchMaker</a></p></li>
+</ul>
 </section>
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
@@ -920,8 +978,14 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. <a href="https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/">blog</a></p>
 <ul>
-<li><a href="https://github.com/GT4SD/gt4sd-core">Generative Toolkit 4 Scientific Discovery</a></li>
+<li><p><a href="https://github.com/GT4SD/gt4sd-core">Generative Toolkit 4 Scientific Discovery</a></p></li>
+<li><p><a href="https://github.com/AstraZeneca/jazzy">Jazzy</a></p></li>
 </ul>
+<p>Fast calculation of H-bond strength and free energy of hydration of small molecules</p>
+<ul>
+<li><a href="https://github.com/ghiander/chemprop-jazzy">Jazzy + Chemprop</a></li>
+</ul>
+<p>Chemprop version that combines Jazzy (AZ’s workflow for predicting H-bond strength)</p>
 </section>
 <section id="datasets-chemical-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="datasets-chemical-libraries">Datasets &amp; Chemical libraries</h2>

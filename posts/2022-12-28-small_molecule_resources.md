@@ -14,7 +14,7 @@ toc: true
 
 ---
 
-Last update: 16th April 2023
+Last update: 15th August 2023
 
 ## Noteworthy blogs to follow:
 
@@ -160,6 +160,20 @@ AB-MPS calculated using cLogD, the number of aromatic rings (nAr), and the numbe
 
 Hueristics for oral bioavailability of molecules that are violating the rule of 5. MW may reach up to approximately 1000 Da provided that TPSA increases proportionally up to 250 Å2. In contrast, cLogP and HBDs must be carefully controlled at high MW. Our lack of ability to predict compound conformations and flexibility is currently a hurdle that is critical to overcome to enable further prospective design in oral bRo5 space.
 
+* Taylor, R. D.; MacCoss, M.; Lawson, A. D. G. Rings in Drugs. J. Med. Chem. 2014, 57 (14), 5845–5859. https://doi.org/10.1021/jm4017625.
+
+* [Subbaiah, Murugaiah AM, and Nicholas A. Meanwell. "Bioisosteres of the phenyl ring: Recent strategic applications in lead optimization and drug design." Journal of Medicinal Chemistry 64.19 (2021): 14046-14128.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01215)
+
+Looks at biosteric replacements for the phenyl rings in the lead optimization phase. Phenyl rings results in improve potency but have poor solubility and lipophilicitty. Find biosteres can be used to improve them.
+
+* [Ertl, Peter. "Magic Rings: Navigation in the Ring Chemical Space Guided by the Bioactive Rings." Journal of Chemical Information and Modeling (2021).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00761)
+
+Analyze the nature of rings which appear in bioactive compounds. Ring systems are systematically extracted from one billion molecules and are analyzed to discover a structure or correlation in the bioactivity and type of rings.  No simple set of structural descriptors separating active and inactive rings could be identified, the separation is best described by a neural network model taking into account a complex combination of many substructure features.
+
+* [Hartung, Ingo V., Bayard R. Huck, and Alejandro Crespo. "Rules were made to be broken." Nature Reviews Chemistry 7.1 (2023): 3-4.](https://www.nature.com/articles/s41570-022-00451-0)
+
+Longitudinal analysis of physico-chemical properties for approved drugs in the clinic. They show that most of the drugs flout most of the Lipinski's rule of 5 except the HBD which is always consistently less 4. In addition, they show that in recent times, by categorizing the drugs in different time-bound classes, the mean MW and HBA has increased but mean HBD has constantly stayed less than 2. 
+
 ## Synthesis Chemistry 
 
 Catalog of recent research articles that look at synthesis chemistry from a point of view of computational workflows, how traditional synthetic chemistry methods can be combined with informatics to augment drug discovery and synthesis processes. 
@@ -176,13 +190,15 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
 
-## Large chemical libraries 
+## Large chemical libraries and Virtual Screening
 
 Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
 
 * [Warr, W. (2021). Report on an NIH Workshop on Ultralarge Chemistry Databases.](https://chemrxiv.org/engage/chemrxiv/article-details/60c75883bdbb89984ea3ada5)
 
 * [Warr, Wendy A., et al. "Exploration of ultralarge compound collections for drug discovery." Journal of Chemical Information and Modeling 62.9 (2022): 2021-2034.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00224)
+
+* [The next level in chemical space navigation: going far beyond enumerable compound libraries](https://www.sciencedirect.com/science/article/pii/S1359644618304471)
 
 * [Bellmann, Louis, et al. "Comparison of combinatorial fragment spaces and its application to ultralarge make-on-demand compound catalogs." Journal of Chemical Information and Modeling 62.3 (2022): 553-566.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01378?casa_token=Lo0YQQrtkcAAAAAA%3AhKiuAJ0GpAhXiNC-2cVO6Ixv0aCnf0J7mrr03mOxpCgH8OpVhaCnDxAkHPNvfm36VsDl8NxvtzusqQ)
 
@@ -191,7 +207,6 @@ SpaceCompare: calculation of the overlap of large, nonenumerable combinatorial f
 * [Konze, Kyle D., et al. "Reaction-based enumeration, active learning, and free energy calculations to rapidly explore synthetically tractable chemical space and optimize potency of cyclin-dependent kinase 2 inhibitors." Journal of chemical information and modeling 59.9 (2019): 3782-3793.](https://pubs.acs.org/doi/10.1021/acs.jcim.9b00367)
 
 PathFinder uses retrosynthetic analysis followed by combinatorial synthesis to generate novel compounds in synthetically accessible chemical space.
-
 
 * [Irwin, John J., et al. "ZINC20—a free ultralarge-scale chemical database for ligand discovery." Journal of chemical information and modeling 60.12 (2020): 6065-6073.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c00675)
 
@@ -204,6 +219,20 @@ The authors examine the composition of the recently published and, so far, bigge
 * [Medina, Jorge, and Andrew D. White. "Bloom filters for molecules." arXiv preprint arXiv:2304.05386 (2023).](https://arxiv.org/pdf/2304.05386.pdf)
 
 This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.
+
+**Virtual screeening**
+
+* [Lyu, Jiankun, et al. "Ultra-large library docking for discovering new chemotypes." Nature 566.7743 (2019): 224-229.](https://www.nature.com/articles/s41586-019-0917-9)
+
+Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets. 
+
+* [Sadybekov, Anastasiia V., and Vsevolod Katritch. "Computational approaches streamlining drug discovery." Nature 616.7958 (2023): 673-685.](https://www.nature.com/articles/s41586-023-05905-z)
+
+Nice review on virtual screening workflow for streamlining drug discovery 
+
+* [Müller, Janis, et al. "Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces." Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813). [Blog](https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist)
+
+The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.
 
 ## Binding free energetic calculations 
 
@@ -257,6 +286,10 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
+* [Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties](https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962)
+
+Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs. 
+
 ### QSAR benchmarks 
 
 * [Exposing the Limitations of Molecular Machine Learning with Activity Cliffs](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
@@ -271,23 +304,28 @@ Account on how to treat and analyze activity cliffs in context of developing a p
 
 ### Enumeration of chemical space
 
-* [Subbaiah, Murugaiah AM, and Nicholas A. Meanwell. "Bioisosteres of the phenyl ring: Recent strategic applications in lead optimization and drug design." Journal of Medicinal Chemistry 64.19 (2021): 14046-14128.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01215)
-
-Looks at biosteric replacements for the phenyl rings in the lead optimization phase. Phenyl rings results in improve potency but have poor solubility and lipophilicitty. Find biosteres can be used to improve them.
-
-* [Ertl, Peter. "Magic Rings: Navigation in the Ring Chemical Space Guided by the Bioactive Rings." Journal of Chemical Information and Modeling (2021).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00761)
-
-Analyze the nature of rings which appear in bioactive compounds. Ring systems are systematically extracted from one billion molecules and are analyzed to discover a structure or correlation in the bioactivity and type of rings.  No simple set of structural descriptors separating active and inactive rings could be identified, the separation is best described by a neural network model taking into account a complex combination of many substructure features.
-
 * [Bellmann, Louis, et al. "Comparison of Combinatorial Fragment Spaces and Its Application to Ultralarge Make-on-Demand Compound Catalogs." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01378)
 
 Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.
+
+
+* [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
+
+* [Zabolotna, Y., et al. (2021). "SynthI: A New Open-Source Tool for Synthon-Based Library Design." Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754)
+
+Interesting work on de-novo design of molecules wherein, the molecules being created are made up from the fragments that is known to exist and are available to the user. New molecules are generated based on the fragmented (synthons) made available in the dataset. 
+
+* [Fully Automated Creation of Virtual Chemical Fragment Spaces Using the Open-Source Library OpenChemLib](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01041)
+
+Open-source tool to generate synthetically accessible chemical spaces using reaction definitions and building blocks. Virtual fragments are generated using one-step reaction and real-world building blocks - the workflow also support 2-3 steps creation. 
+
+### Chemical-space exploration
 
 * [Zabolotna, Yuliana, et al. "NP navigator: a new look at the natural product chemical space." Molecular informatics 40.9 (2021): 2100068.](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100068).
 
 Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
 
-* [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
+### Matched molecular-pair*
 
 * [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
 
@@ -298,8 +336,6 @@ Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with na
 **Reviews/Perspectives**
 
 * [Wellawatte, Geemi P., et al. "A Perspective on Explanations of Molecular Prediction Models." (2022).](https://pubs.acs.org/doi/10.1021/acs.jctc.2c01235)
-
-
 
 * [Rodríguez-Pérez, Raquel, and Jürgen Bajorath. "Explainable Machine Learning for Property Predictions in Compound Optimization." Journal of medicinal chemistry 64.24 (2021): 17744-17752](https://pubs.acs.org/doi/10.1021/acs.jmedchem.1c01789)
 
@@ -339,6 +375,14 @@ Distance from available data in NN latent space is used as a variable for low-co
 ### Active Learning 
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
+
+* [Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. "Accelerating high-throughput virtual screening through molecular pool-based active learning." Chemical science 12.22 (2021): 7866-7881.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e)
+
+Article talks about MolPAL as an active learning methodology. The team explores the application of these techniques to computational docking datasets and assess the impact of surrogate model architecture, acquisition function, and acquisition batch size on optimization performance. We observe significant reductions in computational costs; for example, using a directedmessage passing neural network we can identify 94.8% or 89.3% of the top-50 000 ligands in a 100M member library after testing only 2.4% of candidate ligands using an upper confidence bound or greedy acquisition strategy, respectively.
+
+* [Thompson, James, et al. "Optimizing active learning for free energy calculations." Artificial Intelligence in the Life Sciences 2 (2022): 100050.](https://www.sciencedirect.com/science/article/pii/S2667318522000204)
+
+Article exploring different active learning strategies for looking at sampling the congeneric RBFE calculations. The paper explores the impact of several AL design choices. They show that in their case, the overall AL performance is largely insensitive to the specific ML method and acquisition functions used. The significant factor affecting the performance was the number of molecules sampled at each iteration. 
 
 * [Reker, D. Practical Considerations for Active Machine Learning in Drug Discovery. Drug Discov. Today Technol. 2020](https://doi.org/10.1016/j.ddtec.2020.06.001)
 
@@ -381,7 +425,7 @@ Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction a
 
 Consortia comprising of leading resarch labs and companies working on decentralized datasets and predictive modeling of biochemical and cellular activity. 
 
-### Generative models
+## Generative design
 
 **Reviews** 
 
@@ -529,7 +573,6 @@ Interesting work on designing linkers using conformation aware generative design
 
 * [Zhang, Jie, and Hongming Chen. "De novo molecule design using molecular generative models constrained by ligand–protein interactions." Journal of Chemical Information and Modeling 62.14 (2022): 3291-3306.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.2c00177)
 
-
 **Linker design**
 
 * [Igashov, Ilia, et al. "Equivariant 3d-conditional diffusion models for molecular linker design." arXiv preprint arXiv:2210.05274 (2022).](https://arxiv.org/abs/2210.05274)
@@ -579,13 +622,11 @@ Technical details of various algorithms being implemented for reaction mechanism
 
 Article from Varnek group on best practices on processing data for reaction informatics. 
 
-
 **Benchmarking**
 
 * [Genheden S, Bjerrum E. PaRoutes: a framework for benchmarking retrosynthesis route predictions. ChemRxiv. Cambridge: Cambridge Open Engage; 2022](https://chemrxiv.org/engage/chemrxiv/article-details/621c86f3c3e9da4f737b0047). [Github](https://github.com/MolecularAI/PaRoutes)
 
 Benchmarking framework for comparing different multi-step retrosynthesis methods from researchers at AstraZeneca R&D. Provides 10k synthetic routes which can be used as a validation set for different methodologies, providing a platform for systematic comparison of different methods being proposed in the community. 
-
 
 **Classifying chemical reactions:**
 
@@ -634,10 +675,6 @@ Template-free prediction of organic reaction outcomes using graph convolutional 
 * [Schwaller, P., et al. (2021). "Prediction of chemical reaction yields using deep learning." Machine Learning: Science and Technology 2(1)](https://iopscience.iop.org/article/10.1088/2632-2153/abc81d)
 
 **Retrosynthetic routes:** 
-
-* [Zabolotna, Y., et al. (2021). "SynthI: A New Open-Source Tool for Synthon-Based Library Design." Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754)
-
-Interesting work on de-novo design of molecules wherein, the molecules being created are made up from the fragments that is known to exist and are available to the user. New molecules are generated based on the fragmented (synthons) made available in the dataset. 
 
 * [Schwaller, P., et al. (2020). "Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy." Chemical Science 11(12): 3316-3325.](https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h)
 
@@ -736,6 +773,8 @@ Bayesian optimization (BO) to improve the experimental measured activity as a di
 
 * [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)
 
+* [Multilabel Classification Models for the Prediction of Cross-Coupling Reaction Conditions](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01234)
+
 **Generate catalysts**
 
 * [Schilter, Oliver, et al. "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions." Digital Discovery (2023).](https://pubs.rsc.org/en/content/articlelanding/2023/DD/D2DD00125J)
@@ -779,6 +818,17 @@ DNA encodings for discovery of novel small-molecule protein inhibitors. Outline 
 * [Shmilovich, Kirill, et al. "DEL-Dock: Molecular Docking-Enabled Modeling of DNA-Encoded Libraries." arXiv preprint arXiv:2212.00136 (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01608)
 
 Propose a way to incoporate 3D-spatial information in the DEL read outs to denoise the data. 
+
+* [Zhang, Chris, et al. "Building Block-Based Binding Predictions for DNA-Encoded Libraries." (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00588) [Github](https://github.com/MobleyLab/DEL_analysis)
+
+Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering.  
+
+## Protein-ligand interactions 
+
+* [DiffDock]()
+
+* [MatchMaker](https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon)
+
 
 ## Code / Packages:
 
@@ -853,6 +903,14 @@ Spotfire like capabilities to jupyter notebook. Medium article on explaining the
 Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. [blog](https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/)
 
 * [Generative Toolkit 4 Scientific Discovery](https://github.com/GT4SD/gt4sd-core)
+
+* [Jazzy](https://github.com/AstraZeneca/jazzy)
+
+Fast calculation of H-bond strength and free energy of hydration of small molecules 
+
+* [Jazzy + Chemprop](https://github.com/ghiander/chemprop-jazzy)
+
+Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond strength)
 
 ## Datasets & Chemical libraries 
 

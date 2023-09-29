@@ -348,81 +348,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> diclofenac <span class="op">=</span> <span class="st">'O=C(O)Cc1ccccc1Nc1c(Cl)cccc1Cl'</span></span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> substruct_smarts <span class="op">=</span> <span class="st">'O=CCccN'</span></span>
 <span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> viz_substruct(diclofenac, substruct_smarts)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Quick substructure filter in-line to Pandas df</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> NO_NO(smile):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">''' Detects a Tau binder fragment'''</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    mol <span class="op">=</span> Chem.MolFromSmiles(smile)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    smt1<span class="op">=</span> Chem.MolFromSmarts(<span class="st">'[NR1][OR1]'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> mol.HasSubstructMatch(smt1):</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="va">True</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;</span> linker_2_stereos[<span class="st">'Ring_NO'</span>] <span class="op">=</span> linker_2_stereos[<span class="st">'SMILES'</span>].<span class="bu">apply</span>(NO_NO)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Standardize molecules</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit.Chem.MolStandardize <span class="im">import</span> rdMolStandardize</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> standardize(mol):</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># follows the steps in</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># https://github.com/greglandrum/RSC_OpenScience_Standardization_202104/blob/main/MolStandardize%20pieces.ipynb</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># as described **excellently** (by Greg) in</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># https://www.youtube.com/watch?v=eWTApNX8dJQ</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># removeHs, disconnect metal atoms, normalize the molecule, reionize the molecule</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    clean_mol <span class="op">=</span> rdMolStandardize.Cleanup(mol) </span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if many fragments, get the "parent" (the actual mol we are interested in) </span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    parent_clean_mol <span class="op">=</span> rdMolStandardize.FragmentParent(clean_mol)</span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>         </span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try to neutralize molecule</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    uncharger <span class="op">=</span> rdMolStandardize.Uncharger() <span class="co"># annoying, but necessary as no convenience method exists</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    uncharged_parent_clean_mol <span class="op">=</span> uncharger.uncharge(parent_clean_mol)</span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># note that no attempt is made at reionization at this step</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># nor at ionization at some pH (rdkit has no pKa caculator)</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the main aim to to represent all molecules from different sources</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># in a (single) standard way, for use in ML, catalogue, etc.</span></span>
-<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a>    te <span class="op">=</span> rdMolStandardize.TautomerEnumerator() <span class="co"># idem</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>    taut_uncharged_parent_clean_mol <span class="op">=</span> te.Canonicalize(uncharged_parent_clean_mol)</span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> taut_uncharged_parent_clean_mol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Borrowed from <a href="https://bitsilla.com/blog/2021/06/standardizing-a-molecule-using-rdkit/">here</a></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> rdkit.Chem.MolStandardize <span class="im">import</span> rdMolStandardize</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> standardize(mol):</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># follows the steps in</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># https://github.com/greglandrum/RSC_OpenScience_Standardization_202104/blob/main/MolStandardize%20pieces.ipynb</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># as described **excellently** (by Greg) in</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># https://www.youtube.com/watch?v=eWTApNX8dJQ</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># removeHs, disconnect metal atoms, normalize the molecule, reionize the molecule</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    clean_mol <span class="op">=</span> rdMolStandardize.Cleanup(mol) </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># if many fragments, get the "parent" (the actual mol we are interested in) </span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    parent_clean_mol <span class="op">=</span> rdMolStandardize.FragmentParent(clean_mol)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>         </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># try to neutralize molecule</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>    uncharger <span class="op">=</span> rdMolStandardize.Uncharger() <span class="co"># annoying, but necessary as no convenience method exists</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>    uncharged_parent_clean_mol <span class="op">=</span> uncharger.uncharge(parent_clean_mol)</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># note that no attempt is made at reionization at this step</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># nor at ionization at some pH (rdkit has no pKa caculator)</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># the main aim to to represent all molecules from different sources</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># in a (single) standard way, for use in ML, catalogue, etc.</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    te <span class="op">=</span> rdMolStandardize.TautomerEnumerator() <span class="co"># idem</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    taut_uncharged_parent_clean_mol <span class="op">=</span> te.Canonicalize(uncharged_parent_clean_mol)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> taut_uncharged_parent_clean_mol</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Find and change atoms in the molecule</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_UI_change_to_12(smile, attach_type<span class="op">=</span><span class="st">'UI'</span>):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  mol1 <span class="op">=</span> Chem.MolFromSmiles(smile)</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  sub_pattern <span class="op">=</span> Chem.MolFromSmarts(<span class="st">'[U]*.[I]*'</span>)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  hit_ats <span class="op">=</span> <span class="bu">list</span>(mol1.GetSubstructMatch(sub_pattern))</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  emol <span class="op">=</span> Chem.EditableMol(mol1) <span class="co">#Chem.RWMol()</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  emol.RemoveBond(hit_ats[<span class="dv">0</span>], hit_ats[<span class="dv">1</span>])</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  emol.RemoveBond(hit_ats[<span class="dv">2</span>], hit_ats[<span class="dv">3</span>])</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  mol2 <span class="op">=</span> emol.GetMol()</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> attach_type <span class="op">==</span> <span class="st">'UI'</span>:</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to U </span></span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">1</span>]).SetIsotope(<span class="dv">2</span>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to I </span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">3</span>]).SetIsotope(<span class="dv">1</span>)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to U </span></span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">1</span>]).SetIsotope(<span class="dv">1</span>)</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to I</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">3</span>]).SetIsotope(<span class="dv">2</span>)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>  mol2 <span class="op">=</span> standardize(mol2)</span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span>(mol2, Chem.MolToSmiles(mol2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_UI_change_to_12(smile, attach_type<span class="op">=</span><span class="st">'UI'</span>):</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  mol1 <span class="op">=</span> Chem.MolFromSmiles(smile)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  sub_pattern <span class="op">=</span> Chem.MolFromSmarts(<span class="st">'[U]*.[I]*'</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  hit_ats <span class="op">=</span> <span class="bu">list</span>(mol1.GetSubstructMatch(sub_pattern))</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  emol <span class="op">=</span> Chem.EditableMol(mol1) <span class="co">#Chem.RWMol()</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  emol.RemoveBond(hit_ats[<span class="dv">0</span>], hit_ats[<span class="dv">1</span>])</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  emol.RemoveBond(hit_ats[<span class="dv">2</span>], hit_ats[<span class="dv">3</span>])</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>  mol2 <span class="op">=</span> emol.GetMol()</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> attach_type <span class="op">==</span> <span class="st">'UI'</span>:</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to U </span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">1</span>]).SetIsotope(<span class="dv">2</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to I </span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">3</span>]).SetIsotope(<span class="dv">1</span>)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to U </span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">1</span>]).SetIsotope(<span class="dv">1</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Attached to I</span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    mol2.GetAtomWithIdx(hit_ats[<span class="dv">3</span>]).SetIsotope(<span class="dv">2</span>)</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>  mol2 <span class="op">=</span> standardize(mol2)</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span>(mol2, Chem.MolToSmiles(mol2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="reactions" class="level3">
 <h3 class="anchored" data-anchor-id="reactions">Reactions</h3>
 <p><strong>View a reaction</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>rxn <span class="op">=</span> AllChem.ReactionFromSmarts(<span class="st">'[C:1]=[C:2].[C:3]=[*:4][*:5]=[C:6]&gt;&gt;[C:1]1[C:2][C:3][*:4]=[*:5][C:6]1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rxn <span class="op">=</span> AllChem.ReactionFromSmarts(<span class="st">'[C:1]=[C:2].[C:3]=[*:4][*:5]=[C:6]&gt;&gt;[C:1]1[C:2][C:3][*:4]=[*:5][C:6]1'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Get changed atoms in a reaction: https://greglandrum.github.io/rdkit-blog/tutorial/reactions/2021/11/26/highlighting-changed-bonds-in-reactions.html</p>
 <p><strong>Run enumerations</strong></p>
 <p>Borrowed and inspired from Pat Walters <a href="https://gist.github.com/PatWalters/7439099598b4f08a331a81b209f88baa#file-reaction_example-ipynb">gist</a></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>rxn <span class="op">=</span> AllChem.ReactionFromSmarts(<span class="st">"[#6:10]-[#7H2:9].[#7]-[c:4]1[c:5][c:6][c:7][c:8][c:3]1-[#6](-[OH])=O.[#6H:1](-[#6:2])=O&gt;&gt;[#6:10]-[#7:9]-c1n[c:1](-[#6:2])n[c:4]2[c:5][c:6][c:7][c:8][c:3]12"</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>react_dict <span class="op">=</span> {<span class="st">'R1'</span>:[],<span class="st">'R2'</span>:[],<span class="st">'R3'</span>:[], <span class="st">'product'</span>:[]}</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r1, r2, r3 <span class="kw">in</span> product( <span class="op">*</span>[primary_amines_list, amino_benzoic_list, aldehyde_list]):</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R1'</span>].append(r1)</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R2'</span>].append(r2)</span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R3'</span>].append(r3)</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  r1_mol <span class="op">=</span> Chem.MolFromSmiles(r1)</span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  r2_mol <span class="op">=</span> Chem.MolFromSmiles(r2)</span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  r3_mol <span class="op">=</span> Chem.MolFromSmiles(r3)</span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> prod <span class="kw">in</span> rxn.RunReactants([r1_mol,r2_mol,r3_mol]):</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    prod_mol <span class="op">=</span> prod[<span class="dv">0</span>]</span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    Chem.SanitizeMol(prod_mol)</span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    react_dict[<span class="st">'product'</span>].append(Chem.MolToSmiles(prod_mol))</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>react_df <span class="op">=</span> pd.DataFrame(react_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>rxn <span class="op">=</span> AllChem.ReactionFromSmarts(<span class="st">"[#6:10]-[#7H2:9].[#7]-[c:4]1[c:5][c:6][c:7][c:8][c:3]1-[#6](-[OH])=O.[#6H:1](-[#6:2])=O&gt;&gt;[#6:10]-[#7:9]-c1n[c:1](-[#6:2])n[c:4]2[c:5][c:6][c:7][c:8][c:3]12"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>react_dict <span class="op">=</span> {<span class="st">'R1'</span>:[],<span class="st">'R2'</span>:[],<span class="st">'R3'</span>:[], <span class="st">'product'</span>:[]}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r1, r2, r3 <span class="kw">in</span> product( <span class="op">*</span>[primary_amines_list, amino_benzoic_list, aldehyde_list]):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R1'</span>].append(r1)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R2'</span>].append(r2)</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  react_dict[<span class="st">'R3'</span>].append(r3)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  r1_mol <span class="op">=</span> Chem.MolFromSmiles(r1)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  r2_mol <span class="op">=</span> Chem.MolFromSmiles(r2)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  r3_mol <span class="op">=</span> Chem.MolFromSmiles(r3)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> prod <span class="kw">in</span> rxn.RunReactants([r1_mol,r2_mol,r3_mol]):</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    prod_mol <span class="op">=</span> prod[<span class="dv">0</span>]</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>    Chem.SanitizeMol(prod_mol)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    react_dict[<span class="st">'product'</span>].append(Chem.MolToSmiles(prod_mol))</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>react_df <span class="op">=</span> pd.DataFrame(react_dict)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Zip molecules</strong></p>
+<p><code>molzip</code> lets you take a molecule containing multiple fragments and ‘zip’ them together. Atoms which should be bonded to the final molecule are labelled by connecting them to dummy atoms. The code looks at matching dummy atoms (with same isotopic labels) in the fragment and adds bonds between them.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>sample <span class="op">=</span> Chem.MolFromSmiles(<span class="st">'[*:1]c1nc([*:2])nc([*:3])c1.CO[*:1].[*:2]N(CO)C.Cl[*:3]'</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sample</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>Chem.molzip(sample)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://greglandrum.github.io/rdkit-blog/posts/2022-03-14-rgd-and-molzip.html">RDKit documentation on Molzip and R-group decomposition</a></p>
+<p>MolZip documentation and early version <a href="https://gist.github.com/bp-kelley/73f5e2f5e4823943258f69bcdfab5be4">here</a></p>
 <p>More examples <a href="https://pgg1610.github.io/blog_fastpages/chemical-science/python/data-analysis/2022/08/31/cheminfo_smirks.html">here</a></p>
 <p><strong>Edit, merge, react molecules</strong></p>
 <p>Molecule tinkering using Rdkit: http://asteeves.github.io/blog/2015/01/14/editing-in-rdkit/</p>
@@ -431,6 +451,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="https://practicalcheminformatics.blogspot.com/2021/10/exploratory-data-analysis-with.html">Jupyter notebook explaining simple application</a></li>
 </ul>
+<p><strong>Useful set of functions in RDkit</strong></p>
+<p>Pat Walters has made a GitHub repo collecting useful RDKit functions <a href="https://github.com/PatWalters/useful_rdkit_utils/blob/master/useful_rdkit_utils/useful_rdkit_utils.py">here</a>.</p>
 
 
 </section>
