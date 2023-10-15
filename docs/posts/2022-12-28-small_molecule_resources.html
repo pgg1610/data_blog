@@ -157,6 +157,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chemical-modalities" id="toc-chemical-modalities" class="nav-link" data-scroll-target="#chemical-modalities">Chemical modalities</a></li>
   <li><a href="#meta-themes-on-optimizing-small-molecules" id="toc-meta-themes-on-optimizing-small-molecules" class="nav-link" data-scroll-target="#meta-themes-on-optimizing-small-molecules">Meta themes on optimizing small molecules</a></li>
   <li><a href="#synthesis-chemistry" id="toc-synthesis-chemistry" class="nav-link" data-scroll-target="#synthesis-chemistry">Synthesis Chemistry</a></li>
+  <li><a href="#large-language-models-llms" id="toc-large-language-models-llms" class="nav-link" data-scroll-target="#large-language-models-llms">Large Language Models (LLMs)</a></li>
   <li><a href="#large-chemical-libraries-and-virtual-screening" id="toc-large-chemical-libraries-and-virtual-screening" class="nav-link" data-scroll-target="#large-chemical-libraries-and-virtual-screening">Large chemical libraries and Virtual Screening</a></li>
   <li><a href="#binding-free-energetic-calculations" id="toc-binding-free-energetic-calculations" class="nav-link" data-scroll-target="#binding-free-energetic-calculations">Binding free energetic calculations</a></li>
   <li><a href="#cheminformatics-focus" id="toc-cheminformatics-focus" class="nav-link" data-scroll-target="#cheminformatics-focus">Cheminformatics-focus</a>
@@ -354,6 +355,23 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://doi.org/10.1002/cbic.201800751">Lenci, Elena, and Andrea Trabocchi. “Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics.” ChemBioChem 20.9 (2019): 1115-1123.</a></p></li>
 </ul>
 </section>
+<section id="large-language-models-llms" class="level2">
+<h2 class="anchored" data-anchor-id="large-language-models-llms">Large Language Models (LLMs)</h2>
+<p><strong>Reviews</strong></p>
+<ul>
+<li><p><a href="https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2">Blogpost on different LLMs in chemistry</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2310.06083">Bran, Andres M., and Philippe Schwaller. “Transformers and Large Language Models for Chemistry and Drug Discovery.” arXiv preprint arXiv:2310.06083 (2023).</a></p></li>
+</ul>
+<p><strong>Agents</strong></p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2304.05376">Bran, Andres M., et al.&nbsp;“ChemCrow: Augmenting large-language models with chemistry tools.” arXiv preprint arXiv:2304.05376 (2023).</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2304.05332">Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. “Emergent autonomous scientific research capabilities of large language models.” arXiv preprint arXiv:2304.05332 (2023).</a></p></li>
+</ul>
+<p><strong>Predictive modeling</strong></p>
+<ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/63eb5a669da0bc6b33e97a35">Jablonka, Kevin Maik, et al.&nbsp;“Is GPT-3 all you need for low-data discovery in chemistry?.” (2023).</a></li>
+</ul>
+</section>
 <section id="large-chemical-libraries-and-virtual-screening" class="level2">
 <h2 class="anchored" data-anchor-id="large-chemical-libraries-and-virtual-screening">Large chemical libraries and Virtual Screening</h2>
 <p>Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field.</p>
@@ -439,6 +457,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962">Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties</a></li>
 </ul>
 <p>Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.3c01083">Beckers, Maximilian, et al.&nbsp;“Prediction of Small-Molecule Developability Using Large-Scale In Silico ADMET Models.” Journal of Medicinal Chemistry (2023).</a></li>
+</ul>
+<p>The paper presents a novel deep learning approach to predict the developability of small molecules based on their predicted ADMET properties. The authors use a large-scale data set of compounds from the Novartis pipeline and train a neural network to rank compounds according to their potential to progress beyond in vivo PK studies. The resulting score, called bPK, outperforms other compound scoring methods and shows strong generalization ability on public data. The authors demonstrate the usefulness of bPK for series prioritization and optimization in drug discovery projects.</p>
 </section>
 <section id="qsar-benchmarks" class="level3">
 <h3 class="anchored" data-anchor-id="qsar-benchmarks">QSAR benchmarks</h3>
@@ -521,7 +543,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="active-learning">Active Learning</h3>
 <p>Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.</p>
 <ul>
-<li><a href="https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e">Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. “Accelerating high-throughput virtual screening through molecular pool-based active learning.” Chemical science 12.22 (2021): 7866-7881.</a></li>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e">Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. “Accelerating high-throughput virtual screening through molecular pool-based active learning.” Chemical science 12.22 (2021): 7866-7881.</a>. <a href="https://github.com/coleygroup/molpal">GitHub</a></li>
 </ul>
 <p>Article talks about MolPAL as an active learning methodology. The team explores the application of these techniques to computational docking datasets and assess the impact of surrogate model architecture, acquisition function, and acquisition batch size on optimization performance. We observe significant reductions in computational costs; for example, using a directedmessage passing neural network we can identify 94.8% or 89.3% of the top-50 000 ligands in a 100M member library after testing only 2.4% of candidate ligands using an upper confidence bound or greedy acquisition strategy, respectively.</p>
 <ul>
@@ -574,6 +596,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="generative-design">Generative design</h2>
 <p><strong>Reviews</strong></p>
 <ul>
+<li><p><a href="https://pubs.acs.org/doi/full/10.1021/jacs.2c13467">Anstine, Dylan M., and Olexandr Isayev. “Generative Models as an Emerging Paradigm in the Chemical Sciences.” Journal of the American Chemical Society 145.16 (2023): 8736-8750.</a></p></li>
 <li><p><a href="https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html">Comment about generative design from Patrick Walters</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s41587-020-0418-2">Walters, W. Patrick, and Mark Murcko. “Assessing the impact of generative AI on medicinal chemistry.” Nature biotechnology 38.2 (2020): 143-145.</a></p></li>
 </ul>
@@ -784,6 +807,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://iopscience.iop.org/article/10.1088/2632-2153/abc81d">Schwaller, P., et al.&nbsp;(2021). “Prediction of chemical reaction yields using deep learning.” Machine Learning: Science and Technology 2(1)</a></p></li>
 </ul>
 <p><strong>Retrosynthetic routes:</strong></p>
+<ul>
+<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/minf.202300128">Westerlund, Annie, et al.&nbsp;“Data-driven approaches for identifying hyperparameters in multi-step retrosynthesis.” (2023).</a></li>
+</ul>
+<p>Meta analysis on the best set of hyperparameters for retrosynthesis routines. Here the authors explore different parameters of the retrosynthesis workflow and their impact on the performance of the route scoping. They propose new set of parameters, other than the default, to assist in improving the odds of the software finding a route for diverse of set of molecules. First of its kind look into an approach to identify such a set.</p>
 <ul>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h">Schwaller, P., et al.&nbsp;(2020). “Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy.” Chemical Science 11(12): 3316-3325.</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s41586-020-2855-y">Computational planning of the synthesis of complex natural products</a></p></li>

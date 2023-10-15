@@ -190,6 +190,24 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
 
+## Large Language Models (LLMs)
+
+**Reviews**
+
+* [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
+
+* [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
+
+**Agents**
+
+* [Bran, Andres M., et al. "ChemCrow: Augmenting large-language models with chemistry tools." arXiv preprint arXiv:2304.05376 (2023).](https://arxiv.org/abs/2304.05376)
+
+* [Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. "Emergent autonomous scientific research capabilities of large language models." arXiv preprint arXiv:2304.05332 (2023).](https://arxiv.org/abs/2304.05332)
+
+**Predictive modeling**
+
+* [Jablonka, Kevin Maik, et al. "Is GPT-3 all you need for low-data discovery in chemistry?." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/63eb5a669da0bc6b33e97a35)
+
 ## Large chemical libraries and Virtual Screening
 
 Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
@@ -290,6 +308,10 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 
 Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs. 
 
+* [Beckers, Maximilian, et al. "Prediction of Small-Molecule Developability Using Large-Scale In Silico ADMET Models." Journal of Medicinal Chemistry (2023).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.3c01083)
+
+The paper presents a novel deep learning approach to predict the developability of small molecules based on their predicted ADMET properties. The authors use a large-scale data set of compounds from the Novartis pipeline and train a neural network to rank compounds according to their potential to progress beyond in vivo PK studies. The resulting score, called bPK, outperforms other compound scoring methods and shows strong generalization ability on public data. The authors demonstrate the usefulness of bPK for series prioritization and optimization in drug discovery projects.
+
 ### QSAR benchmarks 
 
 * [Exposing the Limitations of Molecular Machine Learning with Activity Cliffs](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
@@ -376,7 +398,7 @@ Distance from available data in NN latent space is used as a variable for low-co
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
 
-* [Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. "Accelerating high-throughput virtual screening through molecular pool-based active learning." Chemical science 12.22 (2021): 7866-7881.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e)
+* [Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. "Accelerating high-throughput virtual screening through molecular pool-based active learning." Chemical science 12.22 (2021): 7866-7881.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e). [GitHub](https://github.com/coleygroup/molpal)
 
 Article talks about MolPAL as an active learning methodology. The team explores the application of these techniques to computational docking datasets and assess the impact of surrogate model architecture, acquisition function, and acquisition batch size on optimization performance. We observe significant reductions in computational costs; for example, using a directedmessage passing neural network we can identify 94.8% or 89.3% of the top-50 000 ligands in a 100M member library after testing only 2.4% of candidate ligands using an upper confidence bound or greedy acquisition strategy, respectively.
 
@@ -428,6 +450,8 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 ## Generative design
 
 **Reviews** 
+
+* [Anstine, Dylan M., and Olexandr Isayev. "Generative Models as an Emerging Paradigm in the Chemical Sciences." Journal of the American Chemical Society 145.16 (2023): 8736-8750.](https://pubs.acs.org/doi/full/10.1021/jacs.2c13467)
 
 * [Comment about generative design from Patrick Walters](https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html)
 
@@ -675,6 +699,10 @@ Template-free prediction of organic reaction outcomes using graph convolutional 
 * [Schwaller, P., et al. (2021). "Prediction of chemical reaction yields using deep learning." Machine Learning: Science and Technology 2(1)](https://iopscience.iop.org/article/10.1088/2632-2153/abc81d)
 
 **Retrosynthetic routes:** 
+
+* [Westerlund, Annie, et al. "Data-driven approaches for identifying hyperparameters in multi-step retrosynthesis." (2023).](https://onlinelibrary.wiley.com/doi/10.1002/minf.202300128)
+
+Meta analysis on the best set of hyperparameters for retrosynthesis routines. Here the authors explore different parameters of the retrosynthesis workflow and their impact on the performance of the route scoping. They propose new set of parameters, other than the default, to assist in improving the odds of the software finding a route for diverse of set of molecules. First of its kind look into an approach to identify such a set. 
 
 * [Schwaller, P., et al. (2020). "Predicting retrosynthetic pathways using transformer-based models and a hyper-graph exploration strategy." Chemical Science 11(12): 3316-3325.](https://pubs.rsc.org/en/content/articlelanding/2020/sc/c9sc05704h)
 
