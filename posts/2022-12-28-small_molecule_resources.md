@@ -292,6 +292,10 @@ Comparative study of descriptor-based and graph-based models using public data s
 
 ### Predictive modeling 
 
+* [Boulougouri, Maria, Pierre Vandergheynst, and Daniel Probst. "Molecular set representation learning." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/6525acea45aaa5fdbbb87ac2?utm_source=pocket_saves)
+
+The authors propose a new way to represent molecules, not as chemical bonds, but rather set representations. They show the set representation scheme can be alternative to SOTA graph-models and performs at par to the predictive tasks such as reaction yields and protein-ligand affinities.  
+
 * [Fang, Xiaomin, et al. "Geometry-enhanced molecular representation learning for property prediction." Nature Machine Intelligence (2022): 1-8.](https://www.nature.com/articles/s42256-021-00438-4)
 
 Self-supervised learning using special type of GNN architecture (GeoGNN) that includes molecule geometric / spatial information. Geometry-enhanced molecular representation learning method (GEM). The model achieves SOTA performance on 14 of 15 public classification and regression datasets.  
