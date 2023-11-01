@@ -49,6 +49,11 @@ Last update: 15th August 2023
 
 * [Chem LibreText collection from ACS Division of Chemical Education](https://bit.ly/2SxItoc)
 
+* [RDkit blogpost from Greg Landrum](https://greglandrum.github.io/rdkit-blog/)
+
+* [Jeremy Monat's blogpost](https://bertiewooster.github.io/)
+
+
 ## Books
 
 * [Bajorath, 2011. Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology.](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
@@ -206,7 +211,11 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 **Predictive modeling**
 
-* [Jablonka, Kevin Maik, et al. "Is GPT-3 all you need for low-data discovery in chemistry?." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/63eb5a669da0bc6b33e97a35)
+* [Jablonka, Kevin Maik, et al. "Leveraging Large Language Models for Predictive Chemistry." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/652e50b98bab5d2055852dde)
+
+**Data curation**
+
+* [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
 
 ## Large chemical libraries and Virtual Screening
 
@@ -351,7 +360,7 @@ Open-source tool to generate synthetically accessible chemical spaces using reac
 
 Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
 
-### Matched molecular-pair*
+### Matched molecular-pair
 
 * [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
 
@@ -702,6 +711,10 @@ Template-free prediction of organic reaction outcomes using graph convolutional 
 
 * [Schwaller, P., et al. (2021). "Prediction of chemical reaction yields using deep learning." Machine Learning: Science and Technology 2(1)](https://iopscience.iop.org/article/10.1088/2632-2153/abc81d)
 
+* [Multi-Instance Learning Approach to the Modeling of Enantioselectivity of Conformationally Flexible Organic Catalysts](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00393)
+
+Conformational sampling and designing of chiral organic catalysts. 
+
 **Retrosynthetic routes:** 
 
 * [Westerlund, Annie, et al. "Data-driven approaches for identifying hyperparameters in multi-step retrosynthesis." (2023).](https://onlinelibrary.wiley.com/doi/10.1002/minf.202300128)
@@ -781,6 +794,8 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 Thoughts from industry practioners on how to label low/no yield reactions in electronic lab notebooks (eLNs). This is important when building ML model for reaction outcomes. 
 
+* [Machine Learning Strategies for Reaction Development: Toward the Low-Data Limit](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00577)
+
 **Articles**
 
 * [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
@@ -803,6 +818,8 @@ Bayesian optimization (BO) to improve the experimental measured activity as a di
 
 **Yield prediction**
 
+* [Voinarovska, Varvara, et al. "When yield prediction does not yield prediction: an overview of the current challenges." (2023](https://chemrxiv.org/engage/chemrxiv/article-details/6509a987ed7d0eccc3d2b2c7)
+
 * [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)
 
 * [Multilabel Classification Models for the Prediction of Cross-Coupling Reaction Conditions](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01234)
@@ -818,7 +835,21 @@ Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The 
 
 * [Kearnes, S. M., et al. (2021). "The Open Reaction Database." Journal of the American Chemical Society.](https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist)
 
+* [Data Sharing in Chemistry: Lessons Learned and a Case for Mandating Structured Reaction Data](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00607)
+
 * [Rohrbach, Simon, et al. "Digitization and validation of a chemical synthesis literature database in the ChemPU." Science 377.6602 (2022): 172-180.](https://www.science.org/doi/10.1126/science.abo0058)
+
+* [CGRdb2.0: A Python Database Management System for Molecules, Reactions, and Chemical Data](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01105)
+
+**Reaction sanitization** 
+
+* [ORDerly: Datasets and benchmarks for chemical reaction data](https://chemrxiv.org/engage/api-gateway/chemrxiv/assets/orp/resource/item/64ca5d3e4a3f7d0c0d78ca42/original/or-derly-datasets-and-benchmarks-for-chemical-reaction-data.pdf)
+
+* [Reaction Data Curation I: Chemical Structures and Transformations Standardization](https://onlinelibrary.wiley.com/doi/full/10.1002/minf.202100119)
+
+**Reaction data extraction** 
+
+* [ReactionDataExtractor 2.0: A Deep Learning Approach for Data Extraction from Chemical Reaction Schemes](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00422)
 
 ### Automated chemistry workflows 
 
@@ -857,9 +888,27 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 ## Protein-ligand interactions 
 
-* [DiffDock]()
+**Docking models**
+
+* [DiffDock](https://arxiv.org/abs/2210.01776)
 
 * [MatchMaker](https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon)
+
+* [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
+
+## Conformer generators
+
+**Benchmarks**
+
+* [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
+* [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
+
+**Datasets**
+
+* [Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." arXiv preprint arXiv:2308.05777 (2023).](https://arxiv.org/abs/2308.05777)
+
+**Methods**
+
 
 
 ## Code / Packages:
