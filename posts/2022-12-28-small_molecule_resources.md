@@ -14,7 +14,7 @@ toc: true
 
 ---
 
-Last update: 15th August 2023
+Last update: 21st November 2023
 
 ## Noteworthy blogs to follow:
 
@@ -70,6 +70,11 @@ Nice account outlining guidelines for evaluating different AI/ML methodologies i
 
 Set of rules, considerations, and caveats to keep in mind when designing ML model for chemical science. The authors propose a checklist when evaluating ML models, while intuitive at first, when lot of the new ML papers are scanned through that lens, you can identify the shortcommings of the proposed model. This checklist is especially helpful for those entering just entering the field. 
 
+## Pharma R&D Business 
+
+* [Schuhmacher, Alexander, et al. "Analysis of pharma R&D productivity–a new perspective needed." Drug Discovery Today (2023): 103726.](https://www.sciencedirect.com/science/article/pii/S1359644623002428?via%3Dihub)
+
+* [Paul, Steven M., et al. "How to improve R&D productivity: the pharmaceutical industry's grand challenge." Nature reviews Drug discovery 9.3 (2010): 203-214.](https://www.nature.com/articles/nrd3078)
 
 ## Reviews
 
@@ -849,6 +854,8 @@ Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The 
 
 **Reaction data extraction** 
 
+* [Dong, Qingyang, and Jacqueline M. Cole. "Snowball 2.0: Generic Material Data Parser for ChemDataExtractor." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c01281)
+
 * [ReactionDataExtractor 2.0: A Deep Learning Approach for Data Extraction from Chemical Reaction Schemes](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00422)
 
 ### Automated chemistry workflows 
@@ -884,7 +891,7 @@ Propose a way to incoporate 3D-spatial information in the DEL read outs to denoi
 
 * [Zhang, Chris, et al. "Building Block-Based Binding Predictions for DNA-Encoded Libraries." (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00588) [Github](https://github.com/MobleyLab/DEL_analysis)
 
-Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering.  
+Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering. Good workflow for implementing 3D-based ROCs filtering. 
 
 ## Protein-ligand interactions 
 
@@ -900,7 +907,10 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 **Benchmarks**
 
+* [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
+
 * [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
+
 * [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
 
 **Datasets**
@@ -908,7 +918,6 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 * [Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." arXiv preprint arXiv:2308.05777 (2023).](https://arxiv.org/abs/2308.05777)
 
 **Methods**
-
 
 
 ## Code / Packages:
