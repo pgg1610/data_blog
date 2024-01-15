@@ -5,16 +5,15 @@ categories:
 - chemical-science
 - machine-learning
 - resources
-date: '2022-12-28'
-description: Compendium of recent articles, resources, and blogs in the area of chemical
-  science and drug discovery
+date: '2024-01-10'
+description: Compendium of recent articles, resources, and blogs in the area of drug discovery and AI
 layout: post
 title: Small Molecules Resources
 toc: true
 
 ---
 
-Last update: 21st November 2023
+Last update: 10th January 2024
 
 ## Noteworthy blogs to follow:
 
@@ -23,7 +22,7 @@ Last update: 21st November 2023
     
 2. [Is Life Worth Living](https://iwatobipen.wordpress.com/)
 
-3. [Andrew White's ML for Molecules and Materials Online Book](https://whitead.github.io/dmol-book/intro.html)
+3. [Andrew White's Deep Learning for Molecule and Material](https://whitead.github.io/dmol-book/intro.html) 
 
 4. [Cheminformia](http://www.cheminformania.com)
 
@@ -76,7 +75,7 @@ Set of rules, considerations, and caveats to keep in mind when designing ML mode
 
 * [Paul, Steven M., et al. "How to improve R&D productivity: the pharmaceutical industry's grand challenge." Nature reviews Drug discovery 9.3 (2010): 203-214.](https://www.nature.com/articles/nrd3078)
 
-## Reviews
+## Overviews and Reviews
 
 * [F. Strieth-Kalthoff, F. Sandfort, M. H. S. Segler, and F. Glorius, Machine learning the ropes: principles, applications and directions in synthetic chemistry, Chem. Soc. Rev](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1)
 
@@ -100,10 +99,6 @@ In-depth account of the machine learning and computational methods used in mater
 
 * [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
 
-* [Applications of Deep learning in molecular generation and molecular property prediction](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00699)
-
-* [Utilising Graph Machine Learning within Drug Discovery and Development](https://arxiv.org/pdf/2012.05716.pdf)
-
 * [Machine learning directed drug formulation development](https://www.sciencedirect.com/science/article/pii/S0169409X21001800?via%3Dihub) 
 
 Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various tasks in drug formulation tasks. 
@@ -124,7 +119,6 @@ Overview of methods and scope of computational methods used in the drug developm
 
 * [J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.](https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032)
 
-* [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
 
 * [Congreve, Miles, et al. "Recent developments in fragment-based drug discovery." Journal of medicinal chemistry 51.13 (2008): 3661-3680.](https://pubs.acs.org/doi/10.1021/jm8000373)
 
@@ -202,6 +196,8 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 ## Large Language Models (LLMs)
 
+It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.  The other area where LLMs appear to be making inroads is workflow management.  Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate.  While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step.  LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective.  While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon. 
+
 **Reviews**
 
 * [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
@@ -210,9 +206,17 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 **Agents**
 
+* [PaperQA: Retrieval-Augmented Generative Agent for Scientific Research](https://arxiv.org/abs/2312.07559)
+
+PaperQA, a Retrieval-Augmented Generation (RAG) agent for the scientific literature.  PaperQA begins by constructing LLM search queries from a set of keywords.  The results of these searches are aggregated into a vector database and combined with a pre-trained LLM to create a summary of the search results. In benchmark comparisons, the differences between answers provided by PaperQA and human evaluators were similar to differences between individual human evaluators.  Encouragingly, unlike many other LLMs, PaperQA didn’t hallucinate citations. 
+
 * [Bran, Andres M., et al. "ChemCrow: Augmenting large-language models with chemistry tools." arXiv preprint arXiv:2304.05376 (2023).](https://arxiv.org/abs/2304.05376)
 
+ChemCrow provides software tools for performing domain-specific tasks, including web searches, file format conversions, and similarity searches.  Compared with GPT-4, ChemCrow provided superior performance on tasks like synthetic route planning.  The authors also point to potential misuse of LLMs and suggest mitigation strategies. 
+
 * [Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. "Emergent autonomous scientific research capabilities of large language models." arXiv preprint arXiv:2304.05332 (2023).](https://arxiv.org/abs/2304.05332)
+
+Coscientist, a set of LLMs for designing and executing organic syntheses.  Coscientist consists of four components designed to search the web, write Python code, extract information from documentation, and program laboratory robotics.  The authors test Coscientist using several open and closed-source LLMs and present examples of the system's ability to plan and execute simple organic syntheses. 
 
 **Predictive modeling**
 
@@ -298,6 +302,10 @@ Small molecules to be understood by computers and used for model training have t
 
 **Articles** 
 
+* [Boulougouri, Maria, Pierre Vandergheynst, and Daniel Probst. "Molecular set representation learning." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/6525acea45aaa5fdbbb87ac2?utm_source=pocket_saves)
+
+The authors propose a new way to represent molecules, not as chemical bonds, but rather set representations. They show the set representation scheme can be alternative to SOTA graph-models and performs at par to the predictive tasks such as reaction yields and protein-ligand affinities.  
+
 * [M. Krenn, F. Hase, A. Nigam, P. Friederich, and A. Aspuru-Guzik, “Self-Referencing Embedded Strings (SELFIES): A 100% robust molecular string representation,” Mach. Learn. Sci. Technol., pp. 1–9, 2020](https://arxiv.org/abs/1905.13741)
 
 * [Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8)
@@ -306,13 +314,20 @@ Comparative study of descriptor-based and graph-based models using public data s
 
 ### Predictive modeling 
 
-* [Boulougouri, Maria, Pierre Vandergheynst, and Daniel Probst. "Molecular set representation learning." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/6525acea45aaa5fdbbb87ac2?utm_source=pocket_saves)
+***Reviews**
 
-The authors propose a new way to represent molecules, not as chemical bonds, but rather set representations. They show the set representation scheme can be alternative to SOTA graph-models and performs at par to the predictive tasks such as reaction yields and protein-ligand affinities.  
 
-* [Fang, Xiaomin, et al. "Geometry-enhanced molecular representation learning for property prediction." Nature Machine Intelligence (2022): 1-8.](https://www.nature.com/articles/s42256-021-00438-4)
+* [Chemical complexity challenge: Is multi-instance machine learning a solution](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1698)
 
-Self-supervised learning using special type of GNN architecture (GeoGNN) that includes molecule geometric / spatial information. Geometry-enhanced molecular representation learning method (GEM). The model achieves SOTA performance on 14 of 15 public classification and regression datasets.  
+Traditional ML uses the relationship between a single instance (a chemical structure) and a single label (a property). It doesn’t provide a facility for mapping multiple instances (an ensemble of conformers) to a label. There has recently been renewed interest in multiple instance learning (MIL), a technique developed over 30 years ago. MIL provides a framework that enables the mapping of conformational ensembles to properties. A recent review by Zankov from Hokkaido University and coworkers at other institutions provides an excellent overview of the challenges and opportunities associated with MIL in QSAR, genomics, and several other areas. The paper also provides links to several software packages for building MIL models.
+
+* [Current Methods for Drug Property Prediction in the Real World](https://arxiv.org/abs/2309.17161)
+
+Overview of the field and some factors that complicate current benchmarking efforts.  The authors compared several molecular representations and ML algorithms in evaluating model accuracy and uncertainty.  These evaluations highlighted the strengths of different QSAR modeling and ADME prediction methods.  Consistent with other papers published in 2023, 2D descriptors performed best for ADME prediction, while Gaussian Process Regression with fingerprints was the method of choice when predicting biological activity. 
+
+* [Rationalizing general limitations in assessing and comparing methods for compound potency prediction](https://www.nature.com/articles/s41598-023-45086-3)
+
+A paper by Janela and Bajorath outlines several limitations in current benchmarking strategies.  The authors used sound statistical methodologies to examine the impact of compound potency value distributions on performance metrics associated with regression models.  They found that across several different ML algorithms, there was a consistent relationship between model performance and the activity range of the dataset.  These findings enabled the authors to define bounds for prediction accuracy. The method used in this paper should be informative to those designing future benchmarks. 
 
 * [Yang, K., Swanson, K., Jin, W., Coley, C., Eiden, P., Gao, H., Guzman-Perez, A., Hopper, T., Kelley, B., Mathea, M. and Palmer, A., 2019. Analyzing learned molecular representations for property prediction. Journal of chemical information and modeling, 59(8), pp.3370-3388](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237)
 
@@ -322,25 +337,47 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
-* [Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties](https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962)
+### QSAR benchmarks 
 
-Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs. 
+* [Deng, Jianyuan, et al. "A systematic study of key elements underlying molecular property prediction." Nature Communications 14.1 (2023): 6395.](https://www.nature.com/articles/s41467-023-41948-6)
+
+Deng and coworkers from Stony Brook University compared many popular ML algorithms and representations, curated new datasets, and performed statistical analysis on the results. This paper provides one of the best comparisons of ML methods published to date. The authors compare fixed representations, such as molecular fingerprints, with representations learned from SMILES strings and molecular graphs and conclude that, in most cases, the fixed representations provide the best performance.  Another interesting aspect of this paper was an attempt to establish a relationship between dataset size and the performance of different molecular representations.  While fixed representations performed well on smaller datasets, learned representations didn’t become competitive until between 6K and 100K datapoints were available. 
+
+* [Fang, Cheng, et al. "Prospective Validation of Machine Learning Algorithms for Absorption, Distribution, Metabolism, and Excretion Prediction: An Industrial Perspective." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00160)
+
+A paper from Fang and coworkers at Biogen introduced several new ADME datasets. Unlike most literature benchmarks, which contain data collected from dozens of papers, these experiments were consistently performed by the same people in the same lab.  The authors provided prospective comparisons of several widely used ML methods, including random forest, SVM, XGBoost, LightGBM, and message-passing neural networks (MPNNs) on several relevant endpoints, including aqueous solubility, metabolic stability, membrane permeability, and plasma protein binding. 
 
 * [Beckers, Maximilian, et al. "Prediction of Small-Molecule Developability Using Large-Scale In Silico ADMET Models." Journal of Medicinal Chemistry (2023).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.3c01083)
 
 The paper presents a novel deep learning approach to predict the developability of small molecules based on their predicted ADMET properties. The authors use a large-scale data set of compounds from the Novartis pipeline and train a neural network to rank compounds according to their potential to progress beyond in vivo PK studies. The resulting score, called bPK, outperforms other compound scoring methods and shows strong generalization ability on public data. The authors demonstrate the usefulness of bPK for series prioritization and optimization in drug discovery projects.
 
-### QSAR benchmarks 
-
-* [Exposing the Limitations of Molecular Machine Learning with Activity Cliffs](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
+* [D van Tilborg, Derek, Alisa Alenicheva, and Francesca Grisoni. "Exposing the limitations of molecular machine learning with activity cliffs." Journal of Chemical Information and Modeling 62.23 (2022): 5938-5951.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01073)
 
 Account on how to treat and analyze activity cliffs in context of developing a predictive model. The authors outline best practices to probe activity cliffs. They show, using 24 DL and ML models and 30 targets, ML approaches based on molecular descriptors outperformed more complex deep learning methods. Activity cliff pairs were defined on similarity of the molecule SMILES and the bioactivity difference.  Compared to most traditional machine learning approaches, deep neural networks seem to fall short at picking up subtle structural differences (and the corresponding property change) that give rise to activity cliffs.
-
-* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
 
 * [Large-scale comparison of  machine learning methods for drug target prediction on ChEMBL - Chemical Science (RSC Publishing)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c8sc00148k)
 
 * [Beyond the hype: deep neural networks outperform established methods using a ChEMBL bioactivity benchmark set, Journal of Cheminformatics](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-017-0232-0)
+
+* [Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties](https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962)
+
+Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs. 
+
+**Datasets**
+
+* [QMugs](https://www.nature.com/articles/s41597-022-01390-7)
+
+QMugs (Quantum mechanical properties of drug-like molecules) collection comprises quantum mechanical properties of more than 665 k biologically and pharmacologically relevant molecules extracted from the ChEMBL database, totaling 2M conformers.
+
+* [MoleculeNet: a benchmark for molecular machine learning (rsc.org)](https://pubs.rsc.org/en/content/articlelanding/2018/sc/c7sc02664a)
+
+* [TDC: Therapeutic Data Commons](https://tdcommons.ai/)
+
+### Multi-parameter optimization 
+
+* [Pareto Optimization to Accelerate Multi-Objective Virtual Screening](https://arxiv.org/abs/2310.10598)
+
+* [Computer-aided multi-objective optimization in small molecule discovery](https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6)
 
 ### Enumeration of chemical space
 
@@ -388,7 +425,7 @@ Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with na
 
 ### Uncertainty quantification
 
-* [Mervin, Lewis H., et al. "Uncertainty quantification in drug design." Drug discovery today 26.2 (2021): 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110)
+* [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
 
@@ -402,7 +439,6 @@ Train network to output the parameters of an evidential distribution. One forwar
 
 * [Differentiable sampling of molecular geometries with uncertainty-based adversarial attacks](https://arxiv.org/pdf/2101.11588.pdf)
 
-
 * [J. P. Janet, S. Ramesh, C. Duan, H. J. Kulik, ACS Cent. Sci. 2020](https://pubs.acs.org/doi/10.1021/acscentsci.0c00026)
 
 Conduct a global multi-objective optimization with expected improvement criterion. Find transition metal complex redox couples for Redox flow batteries that address stability, solubility, and redox potential metric. Use distance of a point from a training data in latent space as a metric to quantify uncertainty. 
@@ -415,6 +451,15 @@ Distance from available data in NN latent space is used as a variable for low-co
 ### Active Learning 
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
+
+**Comparisons**
+
+[Traversing Chemical Space with Active Deep Learning](https://chemrxiv.org/engage/chemrxiv/article-details/655f22eecf8b3c3cd7ef43d7)
+
+The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks.  Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model. 
+
+
+**Articles**
 
 * [Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. "Accelerating high-throughput virtual screening through molecular pool-based active learning." Chemical science 12.22 (2021): 7866-7881.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e). [GitHub](https://github.com/coleygroup/molpal)
 
@@ -769,7 +814,6 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 
 Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
 
-
 **Estimate molecular synthesizability**
 
 The idea of estimating whether a molecule is 'synthesizable' can be thought of from two areas:
@@ -905,20 +949,21 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 ## Conformer generators
 
-**Benchmarks**
-
 * [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
 
 * [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
 
 * [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
 
-**Datasets**
+**Structure Quality Assessment**
 
 * [Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." arXiv preprint arXiv:2308.05777 (2023).](https://arxiv.org/abs/2308.05777)
 
-**Methods**
+Python package for evaluating the quality of docked poses. PoseBusters performs a series of geometry checks on docked poses and also evaluates intra and inter-molecular interactions.  The authors used the Astex Diverse Set and a newly developed PoseBusters benchmark set to evaluate five popular deep learning docking programs and two conventional docking approaches.  The conventional docking programs dramatically outperformed the deep learning methods on both datasets.  In most cases, more than half of the solutions generated by the DL docking programs failed the PoseBusters validity tests.  In contrast, with the conventional docking programs, only 2-3% of the docked poses failed to validate. 
 
+[Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models](https://arxiv.org/abs/2308.07413)
+
+PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
 
 ## Code / Packages:
 
@@ -1026,10 +1071,6 @@ Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond streng
 * [Mcule](https://mcule.com/database/): Used in DEL enumerations 
 
 * [DrugBank](https://go.drugbank.com/)
-
-* [QMugs](https://www.nature.com/articles/s41597-022-01390-7)
-
-QMugs (Quantum mechanical properties of drug-like molecules) collection comprises quantum mechanical properties of more than 665 k biologically and pharmacologically relevant molecules extracted from the ChEMBL database, totaling 2M conformers.
 
 **Reaction Datasets**
 
