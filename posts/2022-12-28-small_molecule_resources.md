@@ -13,7 +13,7 @@ toc: true
 
 ---
 
-Last update: 10th January 2024
+Last update: 12th February 2024
 
 ## Noteworthy blogs to follow:
 
@@ -91,10 +91,6 @@ Paper outlining good practices for interpretating QSAR (Quantative Structure-Pro
 
 Recent review summarising the state of the molecular property prediction and structure generation research. In spite of exciting recent advances in the modeling efforts,  there is a need to generate better (realistic)  training data, assess model prediction confidence, and metrics to quantify molecular generation performance. 
 
-* [Keith, John A., et al. "Combining machine learning and computational chemistry for predictive insights into chemical systems." Chemical reviews 121.16 (2021): 9816-9872.](https://pubs.acs.org/doi/full/10.1021/acs.chemrev.1c00107?utm_source=pcm&utm_medium=twitter&utm_campaign=PUBS_0522_EJK_CR_chreay_CR_Most_Read&src=PUBS_0522_EJK_CR_chreay_CR_Most_Read)
-
-In-depth account of the machine learning and computational methods used in material science and small molecules. Nice introduction to the mathematics and theory behind first-principles based methods. 
-
 * [Navigating through the Maze of Homogeneous Catalyst Design with Machine Learning](https://chemrxiv.org/articles/preprint/Navigating_through_the_Maze_of_Homogeneous_Catalyst_Design_with_Machine_Learning/12786722/1)
 
 * [Coley, C. W. Defining and Exploring Chemical Spaces. Trends in Chemistry 2020](https://doi.org/10.1016/j.trechm.2020.11.004)
@@ -103,7 +99,26 @@ In-depth account of the machine learning and computational methods used in mater
 
 Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged for various tasks in drug formulation tasks. 
 
+## Commentary 
+
+* [Will AI turbocharge the hunt for new drugs?](https://www.ft.com/content/3e57ad6c-493d-4874-a663-0cb200d3cdb5)
+
+* [Comment about generative design from Patrick Walters](https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html)
+
+* [Walters, W. Patrick, and Mark Murcko. "Assessing the impact of generative AI on medicinal chemistry." Nature biotechnology 38.2 (2020): 143-145.](https://www.nature.com/articles/s41587-020-0418-2)
+
+Correspondence on assessing the impact of AI on medicinal chemistry. It is a well written account on practical implication of generative design on pharmaceutical research.They outline two recent cases of 'success' of AI generative design in drug discovery and give more context and propose best practices for furthering the development of algorithms and drug discovery pipelines. 
+
+
+* [We need better benchmarking for machine learning in drug discovery](https://practicalcheminformatics.blogspot.com/2023/08/we-need-better-benchmarks-for-machine.html)
+
+Very good post outlining the focus on the good practices and lack thereof for consistent datasets for comparing different ML algorithms. 
+
 ## Industry-focused drug discovery reviews 
+
+* [Hasselgren, Catrin, and Tudor I. Oprea. "Artificial Intelligence for Drug Discovery: Are We There Yet?." Annual Review of Pharmacology and Toxicology 64 (2024).](https://www.annualreviews.org/doi/10.1146/annurev-pharmtox-040323-040828?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed) [ArXiv](https://arxiv.org/abs/2307.06521)
+
+Latest review of the field and application of AI technologies to various functions of drug discovery. In addition to providing a quick review of the main technology the author list different case studies where AI has proposed clinical candidates across different therapeutic areas. Yet, the need for better data, novelty estimation, and validation in wet lab limit the full scale deployment and accuracy of AI pipelines in drug discovery. In closing they also hint at the limitation of ML model training a single property with single structure, QSAR, while in reality the molecule can exist in different conformers something multi-instance learning (MIL) can address. 'It is reasonable to assume that user expertise, bias, and time constraints play a significant role in early drug discovery, often more so than AI.'
 
 * [Jayatunga, Madura KP, et al. "AI in small-molecule drug discovery: A coming wave." Nat. Rev. Drug Discov 21 (2022): 175-176.](https://www.nature.com/articles/d41573-022-00025-1)
 
@@ -115,26 +130,17 @@ Overview of methods and scope of computational methods used in the drug developm
 
 * [A. Bender and I. Cortés-Ciriano, “Artificial intelligence in drug discovery: what is realistic, what are illusions? Part 1: Ways to make an impact, and why we are not there yet,” Drug Discov. Today, vol. 26, no. 2, pp. 511–524, 2021](https://www.sciencedirect.com/science/article/pii/S1359644620305274)
 
-* [A. H. Göller et al., “Bayer’s in silico ADMET platform: a journey of machine learning over the past two decades,” Drug Discov. Today, vol. 25, no. 9, pp. 1702–1709, 2020.](https://www.sciencedirect.com/science/article/pii/S1359644620302609)
-
-* [J. Shen and C. A. Nicolaou, “Molecular property prediction: recent trends in the era of artificial intelligence,” Drug Discov. Today Technol., vol. 32–33, no. xx, pp. 29–36, 2019.](https://www.sciencedirect.com/science/article/abs/pii/S1740674920300032)
-
-
-* [Congreve, Miles, et al. "Recent developments in fragment-based drug discovery." Journal of medicinal chemistry 51.13 (2008): 3661-3680.](https://pubs.acs.org/doi/10.1021/jm8000373)
-
 ## Special Journal Issues
 
-1. [Nice collection of recent papers in Nature Communications on ML application and modeling](https://www.nature.com/collections/gcijejjahe)
-
-2. [Data Science Meets Chemistry](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
+1. [Data Science Meets Chemistry](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
 
 This issue includes contributions that demonstrate the profound impact data science techniques have had in chemistry including chemical and materials synthesis, catalyst and materials design, and overhauling the models used in traditional theoretical or computational chemistry. 
 
-3. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
+2. [Journal of Medicinal Chemistry compendium of AI in Drug discovery issue](https://pubs.acs.org/doi/full/10.1021/acs.jmedchem.0c01077)
 
-4. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
+3. [Account of Chemical Research Special Issue on advances in data-driven chemistry research](https://pubs.acs.org/page/achre4/data-science-meets-chemistry)
 
-5. [Special Issue on Reaction Informatics and Chemical Space, Journal of Chemical Information and Modeling (2022)](https://pubs.acs.org/toc/jcisd8/62/9)
+4. [Special Issue on Reaction Informatics and Chemical Space, Journal of Chemical Information and Modeling (2022)](https://pubs.acs.org/toc/jcisd8/62/9)
 
 ## Meeting notes 
 
@@ -147,6 +153,8 @@ This issue includes contributions that demonstrate the profound impact data scie
 * [Blanco, Maria-Jesus, and Kevin M. Gardinier. "New chemical modalities and strategic thinking in early drug discovery." ACS medicinal chemistry letters 11.3 (2020): 228-231.](https://pubs.acs.org/doi/pdf/10.1021/acsmedchemlett.9b00582)
 
 Overview of different chemical modalities currently at work to address different disease targets. The article addresses the small molecule medicinal chemists and how they can expand their outlook of small molecules to include other molecular entities when considering the angle of attack for different target engagement strategies. The authors offer a nice set of tools and thought process when selecting possible drug modalities for different target classes and what questions should be asked when zeroing in a possible mode of action. 
+
+* [Targeted Protein Degradation: Advances, Challenges, and Prospects for Computational Methods](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00603)
 
 ## Meta themes on optimizing small molecules 
 
@@ -192,40 +200,6 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Late-stage diversification of indole skeletons through nitrogen atom insertion](https://www.science.org/doi/10.1126/science.add1383)
 
-* [Lenci, Elena, and Andrea Trabocchi. "Smart Design of Small‐Molecule Libraries: When Organic Synthesis Meets Cheminformatics." ChemBioChem 20.9 (2019): 1115-1123.](https://doi.org/10.1002/cbic.201800751)
-
-## Large Language Models (LLMs)
-
-It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.  The other area where LLMs appear to be making inroads is workflow management.  Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate.  While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step.  LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective.  While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon. 
-
-**Reviews**
-
-* [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
-
-* [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
-
-**Agents**
-
-* [PaperQA: Retrieval-Augmented Generative Agent for Scientific Research](https://arxiv.org/abs/2312.07559)
-
-PaperQA, a Retrieval-Augmented Generation (RAG) agent for the scientific literature.  PaperQA begins by constructing LLM search queries from a set of keywords.  The results of these searches are aggregated into a vector database and combined with a pre-trained LLM to create a summary of the search results. In benchmark comparisons, the differences between answers provided by PaperQA and human evaluators were similar to differences between individual human evaluators.  Encouragingly, unlike many other LLMs, PaperQA didn’t hallucinate citations. 
-
-* [Bran, Andres M., et al. "ChemCrow: Augmenting large-language models with chemistry tools." arXiv preprint arXiv:2304.05376 (2023).](https://arxiv.org/abs/2304.05376)
-
-ChemCrow provides software tools for performing domain-specific tasks, including web searches, file format conversions, and similarity searches.  Compared with GPT-4, ChemCrow provided superior performance on tasks like synthetic route planning.  The authors also point to potential misuse of LLMs and suggest mitigation strategies. 
-
-* [Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. "Emergent autonomous scientific research capabilities of large language models." arXiv preprint arXiv:2304.05332 (2023).](https://arxiv.org/abs/2304.05332)
-
-Coscientist, a set of LLMs for designing and executing organic syntheses.  Coscientist consists of four components designed to search the web, write Python code, extract information from documentation, and program laboratory robotics.  The authors test Coscientist using several open and closed-source LLMs and present examples of the system's ability to plan and execute simple organic syntheses. 
-
-**Predictive modeling**
-
-* [Jablonka, Kevin Maik, et al. "Leveraging Large Language Models for Predictive Chemistry." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/652e50b98bab5d2055852dde)
-
-**Data curation**
-
-* [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
-
 ## Large chemical libraries and Virtual Screening
 
 Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
@@ -258,6 +232,12 @@ This paper proposes and studies Bloom filters for testing if a molecule is prese
 
 **Virtual screeening**
 
+* [Deep Learning Strategies for Enhanced Molecular Docking and Virtual Screening](https://chemrxiv.org/engage/chemrxiv/article-details/654a339b48dad2312043870c)
+
+* [A practical guide to machine-learning scoring for structure-based virtual screening](https://www.nature.com/articles/s41596-023-00885-w)
+
+* [Keeping pace with the explosive growth of chemical libraries with structure-based virtual screening](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1678)
+
 * [Lyu, Jiankun, et al. "Ultra-large library docking for discovering new chemotypes." Nature 566.7743 (2019): 224-229.](https://www.nature.com/articles/s41586-019-0917-9)
 
 Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets. 
@@ -272,13 +252,41 @@ The authors use a fragment screening approach to look at hits for protein kinase
 
 ## Binding free energetic calculations 
 
+* [Janela, Tiago, and Jürgen Bajorath. "Rationalizing general limitations in assessing and comparing methods for compound potency prediction." Scientific Reports 13.1 (2023): 17816.](https://www.nature.com/articles/s41598-023-45086-3)
+
+* [Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1](https://www.nature.com/articles/s43588-023-00531-1)
+
 * [Xu, Huafeng. "The slow but steady rise of binding free energy calculations in drug discovery." Journal of Computer-Aided Molecular Design (2022): 1-8.](https://link.springer.com/article/10.1007/s10822-022-00494-x)
 
 * [Thompson, James, et al. "Optimizing active learning for free energy calculations." Artificial Intelligence in the Life Sciences 2 (2022): 100050.](https://www.sciencedirect.com/science/article/pii/S2667318522000204)
 
-* [Pitman, Mary, et al. "To Design Scalable Free Energy Perturbation Networks, Optimal Is Not Enough." (2022).](https://chemrxiv.org/engage/chemrxiv/article-details/63894b1f836ceb6cd16f7987)
+## Protein-ligand interactions 
 
-* [Ganguly, Abir, et al. "AMBER Drug Discovery Boost Tools: Automated Workflow for Production Free-Energy Simulation Setup and Analysis (ProFESSA)." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00879)
+**Docking models**
+
+* [DiffDock](https://arxiv.org/abs/2210.01776)
+
+* [MatchMaker](https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon)
+
+* [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
+
+### Conformer generators
+
+* [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
+
+* [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
+
+* [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
+
+**Structure Quality Assessment**
+
+* [Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." arXiv preprint arXiv:2308.05777 (2023).](https://arxiv.org/abs/2308.05777)
+
+Python package for evaluating the quality of docked poses. PoseBusters performs a series of geometry checks on docked poses and also evaluates intra and inter-molecular interactions.  The authors used the Astex Diverse Set and a newly developed PoseBusters benchmark set to evaluate five popular deep learning docking programs and two conventional docking approaches.  The conventional docking programs dramatically outperformed the deep learning methods on both datasets.  In most cases, more than half of the solutions generated by the DL docking programs failed the PoseBusters validity tests.  In contrast, with the conventional docking programs, only 2-3% of the docked poses failed to validate. 
+
+[Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models](https://arxiv.org/abs/2308.07413)
+
+PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
 
 ## Cheminformatics-focus
 
@@ -296,9 +304,10 @@ Small molecules to be understood by computers and used for model training have t
 
 **Reviews**
 
+* [From intuition to AI: evolution of small molecule representations in drug discovery](https://academic.oup.com/bib/article/25/1/bbad422/7455245)
+
 * [Representation of Molecules in NN: Molecular representation in AI-driven drug discovery: review and guide](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00460-5)
 
-* [Screening of energetic molecules -- comparing different representations](https://www.nature.com/articles/s41598-018-27344-x)
 
 **Articles** 
 
@@ -315,7 +324,6 @@ Comparative study of descriptor-based and graph-based models using public data s
 ### Predictive modeling 
 
 ***Reviews**
-
 
 * [Chemical complexity challenge: Is multi-instance machine learning a solution](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1698)
 
@@ -338,6 +346,9 @@ Benchmark property prediction models on 19 public and 16 proprietary industrial 
 Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.
 
 ### QSAR benchmarks 
+
+
+* [Multi-task ADME/PK Prediction at Industrial Scale: Leveraging Large and Diverse Experimental Datasets](https://chemrxiv.org/engage/chemrxiv/article-details/659d3878e9ebbb4db9c3088f)
 
 * [Deng, Jianyuan, et al. "A systematic study of key elements underlying molecular property prediction." Nature Communications 14.1 (2023): 6395.](https://www.nature.com/articles/s41467-023-41948-6)
 
@@ -373,11 +384,17 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 * [TDC: Therapeutic Data Commons](https://tdcommons.ai/)
 
+### Matched molecular-pair
+
+* [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
+
+* [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
+
 ### Multi-parameter optimization 
 
-* [Pareto Optimization to Accelerate Multi-Objective Virtual Screening](https://arxiv.org/abs/2310.10598)
-
 * [Computer-aided multi-objective optimization in small molecule discovery](https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6)
+
+* [Pareto Optimization to Accelerate Multi-Objective Virtual Screening](https://arxiv.org/abs/2310.10598)
 
 ### Enumeration of chemical space
 
@@ -396,19 +413,11 @@ Interesting work on de-novo design of molecules wherein, the molecules being cre
 
 Open-source tool to generate synthetically accessible chemical spaces using reaction definitions and building blocks. Virtual fragments are generated using one-step reaction and real-world building blocks - the workflow also support 2-3 steps creation. 
 
-### Chemical-space exploration
-
 * [Zabolotna, Yuliana, et al. "NP navigator: a new look at the natural product chemical space." Molecular informatics 40.9 (2021): 2100068.](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100068).
 
 Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with natural products through COCONUT. Generative Topological Mapping is used for the clustering and analysis. Helpful overview of the method with its application to drug discovery can be found [here](https://www.sciencedirect.com/science/article/pii/S1740674920300044)
 
-### Matched molecular-pair
-
-* [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
-
-* [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
-
-### Explainable/Interpretable Machine Learning 
+## Explainable/Interpretable Machine Learning 
 
 **Reviews/Perspectives**
 
@@ -423,7 +432,7 @@ Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with na
 * [Matveieva, Mariia, and Pavel Polishchuk. "Benchmarks for interpretation of QSAR models." Journal of cheminformatics 13.1 (2021): 1-20](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00519-x). [Patrick Walter's blog](https://patwalters.github.io/practicalcheminformatics/jupyter/ml/interpretability/2021/06/03/interpretable.html)
 
 
-### Uncertainty quantification
+## Uncertainty quantification
 
 * [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
 
@@ -443,12 +452,7 @@ Train network to output the parameters of an evidential distribution. One forwar
 
 Conduct a global multi-objective optimization with expected improvement criterion. Find transition metal complex redox couples for Redox flow batteries that address stability, solubility, and redox potential metric. Use distance of a point from a training data in latent space as a metric to quantify uncertainty. 
 
-* [J. P. Janet, C. Duan, T. Yang, A. Nandy, H. J. Kulik, Chem. Sci. 2019, 10, 7913–7922](https://pubs.rsc.org/en/content/articlelanding/2019/sc/c9sc02298h#!divAbstract)
-
-Distance from available data in NN latent space is used as a variable for low-cost, quantitative uncertainty metric that works for both inorganic and organic chemistry. Introduce a technique to calibrate latent distances enabling conversion of distance-based metric to error estimates in units of predicted property 
-
-
-### Active Learning 
+## Active Learning 
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
 
@@ -458,8 +462,11 @@ Active learning provides strategies for efficient screening of subsets of the li
 
 The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks.  Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model. 
 
-
 **Articles**
+
+* [Klarich, Kathryn, et al. "Thompson Sampling─ An Efficient Method for Searching Ultralarge Synthesis on Demand Databases." Journal of Chemical Information and Modeling (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01790)
+
+* [Fromer, Jenna C., David E. Graff, and Connor W. Coley. "Pareto optimization to accelerate multi-objective virtual screening." Digital Discovery (2024).](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00227f)
 
 * [Graff, David E., Eugene I. Shakhnovich, and Connor W. Coley. "Accelerating high-throughput virtual screening through molecular pool-based active learning." Chemical science 12.22 (2021): 7866-7881.](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc06805e). [GitHub](https://github.com/coleygroup/molpal)
 
@@ -477,7 +484,7 @@ Article exploring different active learning strategies for looking at sampling t
 
 Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks. 
 
-### Transfer Learning  
+## Transfer Learning  
 
 **Reviews** 
 
@@ -491,7 +498,7 @@ Transfer learning by training a network to DFT data and then retrain on a datase
 
 * [Improving the generative performance of chemical autoencoders through transfer learning](https://iopscience.iop.org/article/10.1088/2632-2153/abae75/meta)
 
-### Meta Learning 
+## Meta Learning 
 
 * [Altae-Tran, H., Ramsundar, B., Pappu, A. S., & Pande, V. (2017). Low data drug discovery with one-shot learning. ACS central science, 3(4), 283-293.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.6b00367)
 
@@ -501,8 +508,7 @@ Authors demonstrate how one-shot learning can be used to signifinicantly lower t
 
 Use CheMBL dataset to train a gated graph neural network (GGNN) for prediction and classification tasks using meta learning protocols. Show appreciable model performance even with just approx. 256 datapoints.
 
-
-### Federated Learning 
+## Federated Learning 
 
 * [Simm, Jaak, et al. "Splitting chemical structure data sets for federated privacy-preserving machine learning." Journal of Cheminformatics 13.1 (2021): 1-14.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00576-2)
 
@@ -516,19 +522,9 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 * [Anstine, Dylan M., and Olexandr Isayev. "Generative Models as an Emerging Paradigm in the Chemical Sciences." Journal of the American Chemical Society 145.16 (2023): 8736-8750.](https://pubs.acs.org/doi/full/10.1021/jacs.2c13467)
 
-* [Comment about generative design from Patrick Walters](https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html)
-
-* [Walters, W. Patrick, and Mark Murcko. "Assessing the impact of generative AI on medicinal chemistry." Nature biotechnology 38.2 (2020): 143-145.](https://www.nature.com/articles/s41587-020-0418-2)
-
-Correspondence on assessing the impact of AI on medicinal chemistry. It is a well written account on practical implication of generative design on pharmaceutical research.They outline two recent cases of 'success' of AI generative design in drug discovery and give more context and propose best practices for furthering the development of algorithms and drug discovery pipelines. 
-
 * [Mouchlis VD, Afantitis A, Serra A, et al. Advances in de Novo Drug Design: From Conventional to Machine Learning Methods. Int J Mol Sci. 2021;22(4):1676. Published 2021 Feb 7. doi:10.3390/ijms22041676](https://pubmed.ncbi.nlm.nih.gov/33562347/)
 
 * [B. Sanchez-Lengeling and A. Aspuru-Guzik, “Inverse molecular design using machine learning: Generative models for matter engineering,” Science (80)., vol. 361, no. 6400, pp. 360–365, Jul. 2018](https://science.sciencemag.org/content/361/6400/360)
-
-* [Meyers, Joshua, Benedek Fabian, and Nathan Brown. "De novo molecular design and generative models." Drug Discovery Today 26.11 (2021): 2707-2715.](https://www.sciencedirect.com/science/article/pii/S1359644621002531#f0010)
-
-Very nice review of different atom-based, reaction-based, and fragment-based generative design workflows proposed by the community. 
 
 **Benchmarks**
 
@@ -552,32 +548,25 @@ Interesting analysis from team at AstraZeneca R&D. They look at the chemical spa
 
 This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
-* [Comparative analysis of graph traversal schemes for GraphINVENT](https://chemrxiv.org/engage/chemrxiv/article-details/614757fa6fc3a870f6a4bbe2)
+* [REINVENT4: Modern AI–Driven Generative Molecule Design](https://github.com/MolecularAI/REINVENT4)
 
-Bechmark work from AstraZeneca/MIT AI team to document different graph architecture schemes and algorithms for generative models. 
-
+REINVENT is a molecular design tool for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. At its heart, REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules.
 
 **Language models:**
 
+* [Xia, Yingce, et al. "Target-aware Molecule Generation for Drug Design Using a Chemical Language Model." bioRxiv (2024): 2024-01.](https://www.biorxiv.org/content/10.1101/2024.01.08.574635v3.abstract)
+
+Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease. 
+
 * [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
 
-One of the first implementation of a variation auto-encoder for molecule generation
-
-* [Penalized Variational Autoencoder](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/7977131/Penalized_Variational_Autoencoder_for_Molecular_Design_v2.pdf)
+One of the first implementation of a variational auto-encoder for molecule generation. 
 
 * [SELFIES and generative models using STONED](https://chemrxiv.org/articles/preprint/Beyond_Generative_Models_Superfast_Traversal_Optimization_Novelty_Exploration_and_Discovery_STONED_Algorithm_for_Molecules_using_SELFIES/13383266) 
 
+[Reproducibility study of the STONED work from Jablonka et. al.](https://arxiv.org/pdf/2102.00700.pdf)
+
 Representation using SELFIES proposed to make it much more powerful
-
-* [Reproducibility study of the STONED work from Jablonka et. al.](https://arxiv.org/pdf/2102.00700.pdf)
-
-* [LSTM based (RNN) approaches to small molecule generation](https://s3-eu-west-1.amazonaws.com/itempdf74155353254prod/10119299/Generating_Customized_Compound_Libraries_for_Drug_Discovery_with_Machine_Intelligence_v1.pdf). [Github](https://github.com/ETHmodlab/BIMODAL)
-
-* [Chithrananda, S.; Grand, G.; Ramsundar, B. ChemBERTa: Large-Scale Self-Supervised Pretraining for Molecular Property Prediction. arXiv [cs.LG], 2020](https://arxiv.org/abs/2010.09885).
-
-* [SMILES-based deep generative scaffold decorator for de-novo drug design](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00441-8#availability-of-data-and-materials). [Github](https://github.com/undeadpixel/reinvent-randomized)
-
-SMILES-based language model that generates molecules from scaffolds and can be trained from any arbitrary molecular set. Uses randomized SMILES to improve final prediction validity. 
 
 * [Iovanac, Nicolae C., Robert MacKnight, and Brett Savoie. "Actively Searching: Inverse Design of Novel Molecules with Simultaneously Optimized Properties." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60c7591a9abda2847ff8ea1f)
 
@@ -593,36 +582,17 @@ Reinforcement learning-based generative model whici is an update on point cloud 
 
 Junction tree based decoding. Define a grammar for the small molecule and find sub-units based on that grammar to construct a molecule. The molecule is generated in two-steps: first being generating the scaffold or backbone of the molelcule, then the nodes  are added with molecular substructure as identified from the 'molecular grammar'. 
 
-* [MPGVAE: Message passing graph networks for molecular generation, Daniel Flam-Shepherd et al 2021 Mach. Learn.: Sci. Technol.](https://iopscience.iop.org/article/10.1088/2632-2153/abf5b7/pdf)
-
-Introduce a graph generation model by building a Message Passing Neural Network (MPNNs) into the encoder and decoder of a VAE (MPGVAE).
-
-* [ConfVAE: End-to-end framework for molecular conformation generation via bilevel programming](https://arxiv.org/pdf/2105.07246.pdf)
-
-Algorithm to predict 3D conforms from molecular graphs.
-
-* [GraphINVENT: R. Mercado, T. Rastemo, E. Lindelöf, G. Klambauer and O. Engkvist, “Graph networks for molecular design,” Mach. Learn. Sci. Technol., vol. 2, no. 2, p. 25023, 2021](https://iopscience.iop.org/article/10.1088/2632-2153/abcf91/meta). [Github](https://github.com/MolecularAI/GraphINVENT). [Blogpost](https://www.cheminformania.com/using-graphinvent-to-generate-novel-drd2-actives/)
-
-GraphINVENT uses a tiered deep neural network architecture to probabilistically generate new molecules a single bond at a time. 
-
-* [RL-GraphINVENT: Reinforcement learning-based variant of the above code.](https://chemrxiv.org/engage/chemrxiv/article-details/60fc07bd171fc7a0adb87039)
-
-
 **GANs**
 
 * [MolGAN: An implicit generative model for small molecular graphs, N. De Cao and T. Kipf, 2018](https://arxiv.org/abs/1805.11973)
 
 Generative adversarial network for finding small molecules using graph networks, quite interesting. Avoids issues arising from node ordering that are associated with likelihood based methods by using an adversarial loss instead (GAN)
 
-* [LatentGAN: A de novo molecular generation method using latent vector based generative adversarial network](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-019-0397-9)
-
-Molecular generation strategy is described which combines an autoencoder and a GAN. Generator and discriminator network do not use SMILES strings as input, but instead n-dimensional vectors derived from the code-layer of an autoencoder trained as a SMILES heteroencoder that way syntax issues are expected to be addressed. 
-
 **Scaffold-retained** 
 
 * [Kaitoh, Kazuma, and Yoshihiro Yamanishi. "Scaffold-Retained Structure Generator to Exhaustively Create Molecules in an Arbitrary Chemical Space." Journal of Chemical Information and Modeling (2022).](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01130)
 
-* [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf)
+* [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf). [Github](https://github.com/microsoft/molecule-generation)
 
 Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown. 
 
@@ -644,6 +614,8 @@ Authors propose a generative model to generate molecules via multi-step chemical
 
 **3D conformations-aware** 
 
+* [Integrating structure-based approaches in generative molecular design](https://www.sciencedirect.com/science/article/pii/S0959440X23000337)
+
 * [Bolcato, Giovanni, Esther Heid, and Jonas Boström. "On the Value of Using 3D Shape and Electrostatic Similarities in Deep Generative Methods." Journal of chemical information and modeling 62.6 (2022): 1388-1398.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c01535)
 
 Extension to the fragment-based generative design model (DeepFMPO) using reinforcement learning now incorporating 3D electrostatic similarity in the analysis. Ability to replace fragment with similar 3D shape and electrostatics. ESP_sim [tutorial](https://www.youtube.com/watch?v=Ka08REoGYvI) for comparison of electrostatic potential and molecule shape is used for this purpose. The authors find scaffold-hopping bioisoteres for CDK2. 
@@ -651,10 +623,6 @@ Extension to the fragment-based generative design model (DeepFMPO) using reinfor
 * [Imrie, Fergus, et al. "Deep generative design with 3D pharmacophoric constraints." Chemical science 12.43 (2021): 14577-14589.](https://pubs.rsc.org/en/content/articlelanding/2021/sc/d1sc02436a#!)
 
 Method that combines GNNs with CNNs to incorporate 3D pharmacophoric constraints into molecular generation. 
-
-* [Imrie, Fergus, et al. "Deep generative models for 3D linker design." Journal of chemical information and modeling 60.4 (2020): 1983-1995.](https://pubs.acs.org/doi/10.1021/acs.jcim.9b01120 )
-
-Interesting work on designing linkers using conformation aware generative design algorithm. Think of it like fragment-growing. 
 
 **Protein-ligand interactions aware** 
 
@@ -668,9 +636,11 @@ Interesting work on designing linkers using conformation aware generative design
 
 * [Imrie, Fergus, et al. "Deep generative models for 3D linker design." Journal of chemical information and modeling 60.4 (2020): 1983-1995.](https://pubs.acs.org/doi/10.1021/acs.jcim.9b01120). [Blogpost](https://iwatobipen.wordpress.com/2020/05/09/replace-core-with-delinker-rdkit-chemoinformatics-deeplearning/)
 
+Interesting work on designing linkers using conformation aware generative design algorithm. Think of it like fragment-growing. 
+
 * [Nori, Divya, Connor W. Coley, and Rocío Mercado. "De novo PROTAC design using graph-based deep generative models." arXiv preprint arXiv:2211.02660 (2022).](https://arxiv.org/abs/2211.02660)
 
-### Computer Aided Synthesis Planning (CASP) 
+## Computer Aided Synthesis Planning (CASP) 
 
 **Reviews:** 
 
@@ -684,10 +654,6 @@ Perspective on the current SOTA of synthesis planning, automation, and reaction 
 
 * [Struble, T. J., et al. (2020). "Current and Future Roles of Artificial Intelligence in Medicinal Chemistry Synthesis." J Med Chem 63(16): 8667-8682](https://pubs.acs.org/doi/pdf/10.1021/acs.jmedchem.9b02120)
 
-* [Zuranski, Andrzej M., et al. "Predicting reaction yields via supervised learning." Accounts of chemical research 54.8 (2021): 1856-1865.](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00770)
-
-Perspective on ML for organic chemistry reactivity prediction. Group uses DFT-derived physical features of the reaction molecules and conditions for representation. Small data set plus HTE experimentation dataset for yield estimation. 
-
 * [The Exploration of Chemical Reaction Networks](https://arxiv.org/pdf/1906.10223.pdf)
 
 Perspective article summarising their position on the current state of research and future considerations on developing better reaction network models. Break down the analysis of reaction networks as into 3 classes (1) Front Open End: exploration of products from reactants (2) Backward Open Start: Know the product and explore potential reactants (3) Start to End: Product and reactant known, explore the likely intermediates. 
@@ -697,11 +663,6 @@ Nice summary of potential challenges in the field:
 - Validating exploration algorithms on a consistent set of reaction system. 
 - Need to generate a comparative metric to benchmark different algorithms.  
 - Considering effect of solvents and/or protein embeddings in the analysis
-
-    * Previous review article by same group: [Exploration of Reaction Pathways and Chemical Transformation Networks](https://pubs.acs.org/doi/pdf/10.1021/acs.jpca.8b10007)
-
-Technical details of various algorithms being implemented for reaction mechanism discovery at the time of writing the review. 
-
 
 **Best practices** 
 
@@ -727,8 +688,6 @@ Transformer-based model for reaction classification. Compared it with BERT. Besi
 
 * [Probst, Daniel, Philippe Schwaller, and Jean-Louis Reymond. "Reaction Classification and Yield Prediction Using the Differential Reaction Fingerprint DRFP." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60e358fb379e8d3ba9f92d15)
 
-* [Delannée, V., Nicklaus, M.C. ReactionCode: format for reaction searching, analysis, classification, transform, and encoding/decoding. J Cheminform 12, 72 (2020)](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00476-x)
-
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
 
 Reaction classifiction prediction using atom-mapped reaction that are used to generate condensed reaction graphs and passed through a GCN-variant as implemented in chemprop. 
@@ -746,8 +705,6 @@ Data-driven atom mapping schemes which uses transformers for learning the contex
 * [Automatic mapping of atoms across both simple and complex chemical reactions](https://www.nature.com/articles/s41467-019-09440-2)
 
 **Predicting reaction outcomes:** 
-
-* [Jin, Wengong, et al. "Predicting organic reaction outcomes with weisfeiler-lehman network." Advances in neural information processing systems 30 (2017).](https://arxiv.org/abs/1709.04555)
 
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
@@ -780,10 +737,6 @@ Meta analysis on the best set of hyperparameters for retrosynthesis routines. He
 * [Segler, Marwin HS, and Mark P. Waller. "Neural‐symbolic machine learning for retrosynthesis and reaction prediction." Chemistry–A European Journal 23.25 (2017): 5966-5971.](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/chem.201605499)
 
 Hybrid neural-symbolic approach for both retrosynthesis and reaction prediction that can be trained with large reaction sets from databases. Template extraction from known reaction datasets to classify new reaction to known reaction classes. 
-
-* [Fortunato, Michael E., et al. "Data augmentation and pretraining for template-based retrosynthetic prediction in computer-aided synthesis planning." Journal of chemical information and modeling 60.7 (2020): 3398-3407.](https://pubs.acs.org/doi/10.1021/acs.jcim.0c00403)
-
-In template-based retrosynthesis predictions, templates with few examples are excluded from training. This works talks on methods to augment the current set of data to account for the cases where examples for training are few. 
 
 * [Seidl, Philipp, et al. "Improving Few-and Zero-Shot Reaction Template Prediction Using Modern Hopfield Networks." Journal of chemical information and modeling 62.9 (2022): 2111-2120.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01065)
 
@@ -824,7 +777,6 @@ The idea of estimating whether a molecule is 'synthesizable' can be thought of f
 
 Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability. 
 
-
 * [Coley, Connor W., et al. "SCScore: synthetic complexity learned from a reaction corpus." Journal of chemical information and modeling 58.2 (2018): 252-261.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.7b00622). [DeepChem implementation](https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Synthetic_Feasibility_Scoring.ipynb)
 
 SCScore is a learned synthetic complexity score computed as a neural network model trained on reaction data from the Reaxys database. It was designed with synthesis planning in mind to operate on molecules resembling not just drug-like products but intermediates and simpler building blocks as well.
@@ -837,15 +789,21 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 **Review / Perspectives**
 
-* [Williams, Wendy L., et al. "The evolution of data-driven modeling in organic chemistry." ACS central science 7.10 (2021): 1622-1637.](https://pubs.acs.org/doi/full/10.1021/acscentsci.1c00535)
+* [Raghavan, Priyanka, et al. "Dataset design for building models of chemical reactivity." ACS Central Science 9.12 (2023): 2196-2204.](https://pubs.acs.org/doi/full/10.1021/acscentsci.3c01163#)
 
 * [Maloney, Michael P., et al. "Negative Data in Data Sets for Machine Learning Training." Organic Letters (2023).](https://pubs.acs.org/doi/10.1021/acs.joc.3c00844)
 
 Thoughts from industry practioners on how to label low/no yield reactions in electronic lab notebooks (eLNs). This is important when building ML model for reaction outcomes. 
 
+* [Williams, Wendy L., et al. "The evolution of data-driven modeling in organic chemistry." ACS central science 7.10 (2021): 1622-1637.](https://pubs.acs.org/doi/full/10.1021/acscentsci.1c00535)
+
 * [Machine Learning Strategies for Reaction Development: Toward the Low-Data Limit](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00577)
 
 **Articles**
+
+* [Machine learning from quantum chemistry to predict experimental solvent effects on reaction rates](https://pubs.rsc.org/en/Content/ArticleLanding/2024/SC/D3SC05353A)
+
+* [Casetti, Nicholas, et al. "Combining Molecular Quantum Mechanical Modeling and Machine Learning for Accelerated Reaction Screening and Discovery." Chemistry–A European Journal 29.60 (2023): e202301957.](https://chemistry-europe.onlinelibrary.wiley.com/doi/full/10.1002/chem.202301957)
 
 * [B. J. Shields et al., “Bayesian reaction optimization as a tool for chemical synthesis,” Nature, vol. 590, no. June 2020, p. 89, 2021](https://www.nature.com/articles/s41586-021-03213-y). [Github](https://github.com/b-shields/edbo)
 
@@ -861,10 +819,6 @@ Experimental design using Bayesian Optimization. Look at 3 rxn class with multip
 
 Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts -- 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of >550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space. 
 
-* [Zhang, Ying, et al. "Descriptor-Free Design of Multicomponent Catalysts." ACS Catalysis 12 (2022): 10562-10571.](https://pubs.acs.org/doi/10.1021/acscatal.2c02807#.YvpbIMo0Ovw.linkedin)
-
-Bayesian optimization (BO) to improve the experimental measured activity as a direct function of compositional variables without educating physical knowledge to the machine. We applied BO in screening spinel Cr<sub>a</sub>Mn<sub>b</sub>Fe<sub>c</sub>Co<sub>d</sub>Ni<sub>e</sub>Cu<sub>f</sub>Zn<sub>3–a–b–c–d–e–f</sub>O<sub>4</sub> for the decomposition of nitric oxide into environmentally friendly nitrogen.
-
 **Yield prediction**
 
 * [Voinarovska, Varvara, et al. "When yield prediction does not yield prediction: an overview of the current challenges." (2023](https://chemrxiv.org/engage/chemrxiv/article-details/6509a987ed7d0eccc3d2b2c7)
@@ -878,7 +832,6 @@ Bayesian optimization (BO) to improve the experimental measured activity as a di
 * [Schilter, Oliver, et al. "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions." Digital Discovery (2023).](https://pubs.rsc.org/en/content/articlelanding/2023/DD/D2DD00125J)
 
 Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The trained models are used to find catalyst's binding energy and find high percentage of novel and valid designs. 
-
 
 **Databases**
 
@@ -904,16 +857,27 @@ Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The 
 
 ### Automated chemistry workflows 
 
+**Reviews**
+
+* [Self-Driving Laboratories for Chemistry and Materials Science](https://chemrxiv.org/engage/chemrxiv/article-details/65a887f29138d231612bf6df)
+
+This review article provides an in-depth analysis of the state-of-the-art in SDL technology, its applications across various scientific disciplines, and the potential implications for research, and industry. This review additionally provides an overview of the enabling technologies for SDLs, including their hardware, software, and integration with laboratory infrastructure. Most importantly, this review explores the diverse range of scientific domains where SDLs have made significant contributions, from drug discovery and materials science to genomics and chemistry.
+
 * [Seifrid, Martin, et al. "Autonomous Chemical Experiments: Challenges and Perspectives on Establishing a Self-Driving Lab." Accounts of Chemical Research (2022): e0229862-131.](https://pubs.acs.org/doi/abs/10.1021/acs.accounts.2c00220)
+
+* [Godfrey, Alexander G., Thierry Masquelin, and Horst Hemmerle. "A remote-controlled adaptive medchem lab: an innovative approach to enable drug discovery in the 21st Century." Drug Discovery Today 18.17-18 (2013): 795-802.](https://www.sciencedirect.com/science/article/pii/S135964461300069X)
+
+Account of Eli Lilly and Company's ASL (Automated Synthesis Lab)
+
+
+**Articles**
+
+* [Autonomous, multiproperty-driven molecular discovery: From predictions to measurements and back](https://www.science.org/doi/10.1126/science.adi1407)
 
 * [Nambiar, Anirudh MK, et al. "Bayesian Optimization of Computer-Proposed Multistep Synthetic Routes on an Automated Robotic Flow Platform." ACS Central Science (2022).](https://pubs.acs.org/doi/10.1021/acscentsci.2c00207)
 
 * [Wilbraham, Liam, S. Hessam M. Mehr, and Leroy Cronin. "Digitizing chemistry using the chemical processing unit: from synthesis to discovery." Accounts of Chemical Research 54.2 (2020): 253-262.](https://pubs.acs.org/doi/full/10.1021/acs.accounts.0c00674)
 
-
-* [Godfrey, Alexander G., Thierry Masquelin, and Horst Hemmerle. "A remote-controlled adaptive medchem lab: an innovative approach to enable drug discovery in the 21st Century." Drug Discovery Today 18.17-18 (2013): 795-802.](https://www.sciencedirect.com/science/article/pii/S135964461300069X)
-
-Account of Eli Lilly and Company's ASL (Automated Synthesis Lab)
 
 ### DNA-encoded Libraries 
 
@@ -937,33 +901,46 @@ Propose a way to incoporate 3D-spatial information in the DEL read outs to denoi
 
 Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering. Good workflow for implementing 3D-based ROCs filtering. 
 
-## Protein-ligand interactions 
 
-**Docking models**
+## Large Language Models (LLMs)
 
-* [DiffDock](https://arxiv.org/abs/2210.01776)
+It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.  The other area where LLMs appear to be making inroads is workflow management.  Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate.  While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step.  LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective.  While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon. 
 
-* [MatchMaker](https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon)
+**Reviews**
 
-* [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
+* [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
 
-## Conformer generators
+* [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
 
-* [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
+**Agents**
 
-* [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
+* [PaperQA: Retrieval-Augmented Generative Agent for Scientific Research](https://arxiv.org/abs/2312.07559)
 
-* [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
+PaperQA, a Retrieval-Augmented Generation (RAG) agent for the scientific literature.  PaperQA begins by constructing LLM search queries from a set of keywords.  The results of these searches are aggregated into a vector database and combined with a pre-trained LLM to create a summary of the search results. In benchmark comparisons, the differences between answers provided by PaperQA and human evaluators were similar to differences between individual human evaluators.  Encouragingly, unlike many other LLMs, PaperQA didn’t hallucinate citations. 
 
-**Structure Quality Assessment**
+* [Bran, Andres M., et al. "ChemCrow: Augmenting large-language models with chemistry tools." arXiv preprint arXiv:2304.05376 (2023).](https://arxiv.org/abs/2304.05376)
 
-* [Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. "PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences." arXiv preprint arXiv:2308.05777 (2023).](https://arxiv.org/abs/2308.05777)
+ChemCrow provides software tools for performing domain-specific tasks, including web searches, file format conversions, and similarity searches.  Compared with GPT-4, ChemCrow provided superior performance on tasks like synthetic route planning.  The authors also point to potential misuse of LLMs and suggest mitigation strategies. 
 
-Python package for evaluating the quality of docked poses. PoseBusters performs a series of geometry checks on docked poses and also evaluates intra and inter-molecular interactions.  The authors used the Astex Diverse Set and a newly developed PoseBusters benchmark set to evaluate five popular deep learning docking programs and two conventional docking approaches.  The conventional docking programs dramatically outperformed the deep learning methods on both datasets.  In most cases, more than half of the solutions generated by the DL docking programs failed the PoseBusters validity tests.  In contrast, with the conventional docking programs, only 2-3% of the docked poses failed to validate. 
+* [Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. "Emergent autonomous scientific research capabilities of large language models." arXiv preprint arXiv:2304.05332 (2023).](https://arxiv.org/abs/2304.05332). [Peer-review](https://www.nature.com/articles/s41586-023-06792-0)
 
-[Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models](https://arxiv.org/abs/2308.07413)
+Coscientist, a set of LLMs for designing and executing organic syntheses.  Coscientist consists of four components designed to search the web, write Python code, extract information from documentation, and program laboratory robotics.  The authors test Coscientist using several open and closed-source LLMs and present examples of the system's ability to plan and execute simple organic syntheses. 
 
-PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
+**Predictive modeling**
+
+* [Jablonka, Kevin Maik, et al. "Leveraging Large Language Models for Predictive Chemistry." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/652e50b98bab5d2055852dde). [Peer-review](https://www.nature.com/articles/s42256-023-00788-1)
+
+
+Authors show GPT3 based predictive models perform on-par with SOTA with lower data points. Caution is the models are purely text-based and extreme black box and sometimes, while trite, correlation doesnt mean causation might become important here. Finally the fine tuning doesnt do regression on the data in same sense as a linear regression or random forest would do.
+
+**Molecule structure**
+
+* [Liu, Shengchao, et al. "Multi-modal molecule structure–text model for text-based retrieval and editing." Nature Machine Intelligence 5.12 (2023): 1447-1457.](https://www.nature.com/articles/s42256-023-00759-6)
+
+
+**Data curation**
+
+* [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
 
 ## Code / Packages:
 
@@ -983,8 +960,6 @@ Benchmarking platform to implement molecular generative models. It also provides
 
 Production-ready tool for de novo design from Astra Zeneca. It can be effectively applied on drug discovery projects that are striving to resolve either exploration or exploitation problems while navigating the chemical space. Language model with SMILE  output and trained by “randomizing” the SMILES representation of the input data. Implement reinforcement-leraning for directing the model towards relevant area of interest. 
 
-* [Schnet by Jacobsen et. al. (Neural message passing)](https://arxiv.org/abs/1806.03146). [Github](https://github.com/atomistic-machine-learning/G-SchNet). [Tutorial](https://schnetpack.readthedocs.io/en/stable/tutorials/tutorial_03_force_models.html)
-
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
 * [DeepChem (Tensorflow)](https://github.com/deepchem/deepchem). [Website](https://deepchem.io) 
@@ -995,19 +970,11 @@ DeepChem aims to provide a high quality open-source toolchain that democratizes 
 
 Github repository for implmenting message passing neural networks for molecular property prediction as described in the paper [Analyzing Learned Molecular Representations for Property Prediction](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.9b00237) by Yang et. al. 
 
-* [Chainer-Chemistry](https://github.com/chainer/chainer-chemistry)
-
-"Chainer Chemistry is a deep learning framework (based on Chainer) with applications in Biology and Chemistry. It supports various state-of-the-art models (especially GCNN - Graph Convolutional Neural Network) for chemical property prediction" - from their Github repo introduction
-
 * [FastJTNN - python 3 version of the JT-NN](https://github.com/Bibyutatsu/FastJTNNpy3)
 
 * [DimeNet++  - extension of Directional message pasing working (DimeNet)](https://arxiv.org/abs/2003.03123). [Github](https://github.com/klicperajo/dimenet)
 
 * [BondNet - Graph neural network model for predicting bond dissociation energies, considers both homolytic and heterolytic bond breaking](https://github.com/mjwen/bondnet). [Github](https://github.com/mjwen/bondnet)
-
-* [PhysNet](https://arxiv.org/pdf/1902.08408.pdf)
-
-* [RNN based encoder software](https://github.com/ETHmodlab/BIMODAL)
 
 * [AutodE](https://duartegroup.github.io/autodE/)
 
@@ -1039,16 +1006,11 @@ Calculate similarities of shapes and electrostatic potentials between molecules.
 
 * [Generative Toolkit 4 Scientific Discovery](https://github.com/GT4SD/gt4sd-core)
 
-* [Jazzy](https://github.com/AstraZeneca/jazzy)
-
-Fast calculation of H-bond strength and free energy of hydration of small molecules 
-
 * [Jazzy + Chemprop](https://github.com/ghiander/chemprop-jazzy)
 
 Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond strength)
 
 ## Datasets & Chemical libraries 
-
 
 **Molecule datasets**
 
@@ -1094,9 +1056,7 @@ Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond streng
 * [RD-Kit](https://github.com/rdkit/rdkit)
     * [Get Atom Indices in the SMILE:](https://colab.research.google.com/drive/16T6ko0YE5WqIRzL4pwW_nufTDn7F3adw)
     * [Datamol for manipulating RDKit molecules](https://github.com/datamol-org/datamol)
-    
-* [Papers with code benchmark for QM9 energy predictions](https://paperswithcode.com/sota/formation-energy-on-qm9)
-
+ 
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
