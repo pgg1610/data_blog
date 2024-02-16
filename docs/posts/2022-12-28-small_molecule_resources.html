@@ -697,11 +697,12 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease.</p>
 <ul>
-<li><a href="https://pubs.acs.org/doi/10.1021/acscentsci.7b00572">R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol.&nbsp;4, no. 2, pp.&nbsp;268–276, 2018</a></li>
+<li><a href="https://arxiv.org/pdf/2103.03864.pdf">Maziarz, Krzysztof, et al.&nbsp;“Learning to extend molecular scaffolds with structural motifs.” arXiv preprint arXiv:2103.03864 (2021).</a>. <a href="https://github.com/microsoft/molecule-generation">Github</a></li>
 </ul>
-<p>One of the first implementation of a variational auto-encoder for molecule generation.</p>
+<p>Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown.</p>
 <ul>
-<li><a href="https://chemrxiv.org/articles/preprint/Beyond_Generative_Models_Superfast_Traversal_Optimization_Novelty_Exploration_and_Discovery_STONED_Algorithm_for_Molecules_using_SELFIES/13383266">SELFIES and generative models using STONED</a></li>
+<li><p><a href="https://www.nature.com/articles/s42256-022-00580-7.epdf?sharing_token=p5m9Z0797IQeBDOiMGn71dRgN0jAjWel9jnR3ZoTv0MeIJPs9pbG9QLaEN_McFTR3KHv1tHh1FDNJB4ZuILdAmRtINVn6KqXrLkPhEiAZW5mM0dWWKSmPk82eibEUBx01sLTSHx6w903cDaUoXg9lAGzcHY_ifmakrBcIzUUDwI%3D">Ross, Jerret, et al.&nbsp;“Large-scale chemical language representations capture molecular structure and properties.” Nature Machine Intelligence 4.12 (2022): 1256-1264.</a>. [Github]https://github.com/IBM/molformer?tab=readme-ov-file)</p></li>
+<li><p><a href="https://chemrxiv.org/articles/preprint/Beyond_Generative_Models_Superfast_Traversal_Optimization_Novelty_Exploration_and_Discovery_STONED_Algorithm_for_Molecules_using_SELFIES/13383266">SELFIES and generative models using STONED</a></p></li>
 </ul>
 <p><a href="https://arxiv.org/pdf/2102.00700.pdf">Reproducibility study of the STONED work from Jablonka et. al.</a></p>
 <p>Representation using SELFIES proposed to make it much more powerful</p>
@@ -709,6 +710,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c7591a9abda2847ff8ea1f">Iovanac, Nicolae C., Robert MacKnight, and Brett Savoie. “Actively Searching: Inverse Design of Novel Molecules with Simultaneously Optimized Properties.” ChemRxiv (2021)</a></li>
 </ul>
 <p>Using quantum chemistry attributes calculated on-the-fly as scoring functions for sampling the generative model chemical space. Active learning strategy is deployed to explore the area of space where the properties of the molecules are unknown.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acscentsci.7b00572">R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol.&nbsp;4, no. 2, pp.&nbsp;268–276, 2018</a></li>
+</ul>
+<p>One of the first implementation of a variational auto-encoder for molecule generation.</p>
 <p><strong>Graph-based</strong></p>
 <ul>
 <li><a href="https://arxiv.org/abs/2202.00658?">Flam-Shepherd, Daniel, Alexander Zhigalin, and Alán Aspuru-Guzik. “Scalable Fragment-Based 3D Molecular Design with Reinforcement Learning.” arXiv preprint arXiv:2202.00658 (2022)</a></li>
@@ -987,7 +992,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="large-language-models-llms" class="level2">
 <h2 class="anchored" data-anchor-id="large-language-models-llms">Large Language Models (LLMs)</h2>
-<p>It’s a stretch to say that GPT-4 or any other LLM understands Chemistry. At this point, LLMs seem to have two general use cases. First, summarization and information retrieval. LLMs can parse vast collections of text, which can be queried using natural language. These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic. While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses. The other area where LLMs appear to be making inroads is workflow management. Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate. While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step. LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective. While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon.</p>
+<p>It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.</p>
+<p>At this point, LLMs seem to have two general use cases. First, summarization and information retrieval. LLMs can parse vast collections of text, which can be queried using natural language. These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.</p>
+<p>While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.</p>
+<p>The other area where LLMs appear to be making inroads is workflow management or tools orchestration. Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate. These include asking questions about data, analyze results, do routine post processing for comparing with known state of the project.</p>
+<p>While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step. LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective. While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon.</p>
+<p>Previously the field has propose assistants for this job <a href="https://www.science.org/content/blog-post/lilly-s-virtual-med-chem-assistant">here</a> which comprised of pre-scripted set of rules and processes. While tedious, they seem to add lot of value to project teams for quickly analyzing the SAR. The hope is LLMs might make the dream of all encompasing assistant a reality.</p>
 <p><strong>Reviews</strong></p>
 <ul>
 <li><p><a href="https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2">Blogpost on different LLMs in chemistry</a></p></li>
@@ -1019,6 +1029,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://github.com/qai222/LLM_organic_synthesis">Extracting Structured Data from Free-form Organic Synthesis Text</a></li>
 </ul>
+<p>Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information.</p>
 </section>
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>

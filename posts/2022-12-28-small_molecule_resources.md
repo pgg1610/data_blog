@@ -558,9 +558,11 @@ REINVENT is a molecular design tool for de novo design, scaffold hopping, R-grou
 
 Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease. 
 
-* [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
+* [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf). [Github](https://github.com/microsoft/molecule-generation)
 
-One of the first implementation of a variational auto-encoder for molecule generation. 
+Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown. 
+
+* [Ross, Jerret, et al. "Large-scale chemical language representations capture molecular structure and properties." Nature Machine Intelligence 4.12 (2022): 1256-1264.](https://www.nature.com/articles/s42256-022-00580-7.epdf?sharing_token=p5m9Z0797IQeBDOiMGn71dRgN0jAjWel9jnR3ZoTv0MeIJPs9pbG9QLaEN_McFTR3KHv1tHh1FDNJB4ZuILdAmRtINVn6KqXrLkPhEiAZW5mM0dWWKSmPk82eibEUBx01sLTSHx6w903cDaUoXg9lAGzcHY_ifmakrBcIzUUDwI%3D). [Github]https://github.com/IBM/molformer?tab=readme-ov-file)
 
 * [SELFIES and generative models using STONED](https://chemrxiv.org/articles/preprint/Beyond_Generative_Models_Superfast_Traversal_Optimization_Novelty_Exploration_and_Discovery_STONED_Algorithm_for_Molecules_using_SELFIES/13383266) 
 
@@ -571,6 +573,10 @@ Representation using SELFIES proposed to make it much more powerful
 * [Iovanac, Nicolae C., Robert MacKnight, and Brett Savoie. "Actively Searching: Inverse Design of Novel Molecules with Simultaneously Optimized Properties." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60c7591a9abda2847ff8ea1f)
 
 Using quantum chemistry attributes calculated on-the-fly as scoring functions for sampling the generative model chemical space. Active learning strategy is deployed to explore the area of space where the properties of the molecules are unknown. 
+
+* [R. Gómez-Bombarelli et al., “Automatic Chemical Design Using a Data-Driven Continuous Representation of Molecules,” ACS Cent. Sci., vol. 4, no. 2, pp. 268–276, 2018](https://pubs.acs.org/doi/10.1021/acscentsci.7b00572)
+
+One of the first implementation of a variational auto-encoder for molecule generation. 
 
 **Graph-based**
 
@@ -904,7 +910,17 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 ## Large Language Models (LLMs)
 
-It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.  The other area where LLMs appear to be making inroads is workflow management.  Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate.  While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step.  LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective.  While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon. 
+It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  
+
+At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  
+
+While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.  
+
+The other area where LLMs appear to be making inroads is workflow management or tools orchestration.  Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate. These include asking questions about data, analyze results, do routine post processing for comparing with known state of the project. 
+
+While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step.  LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective.  While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon. 
+
+Previously the field has propose assistants for this job [here](https://www.science.org/content/blog-post/lilly-s-virtual-med-chem-assistant) which comprised of pre-scripted set of rules and processes. While tedious, they seem to add lot of value to project teams for quickly analyzing the SAR. The hope is LLMs might make the dream of all encompasing assistant a reality. 
 
 **Reviews**
 
@@ -937,10 +953,11 @@ Authors show GPT3 based predictive models perform on-par with SOTA with lower da
 
 * [Liu, Shengchao, et al. "Multi-modal molecule structure–text model for text-based retrieval and editing." Nature Machine Intelligence 5.12 (2023): 1447-1457.](https://www.nature.com/articles/s42256-023-00759-6)
 
-
 **Data curation**
 
 * [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
+
+Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information. 
 
 ## Code / Packages:
 
