@@ -13,7 +13,7 @@ toc: true
 
 ---
 
-Last update: 12th February 2024
+Last update: 20th February 2024
 
 ## Noteworthy blogs to follow:
 
@@ -232,15 +232,9 @@ This paper proposes and studies Bloom filters for testing if a molecule is prese
 
 **Virtual screeening**
 
-* [Deep Learning Strategies for Enhanced Molecular Docking and Virtual Screening](https://chemrxiv.org/engage/chemrxiv/article-details/654a339b48dad2312043870c)
+* [Vakili, Mohammad Ghazi, et al. "Quantum Computing-Enhanced Algorithm Unveils Novel Inhibitors for KRAS." arXiv preprint arXiv:2402.08210 (2024).](https://arxiv.org/pdf/2402.08210.pdf)
 
-* [A practical guide to machine-learning scoring for structure-based virtual screening](https://www.nature.com/articles/s41596-023-00885-w)
-
-* [Keeping pace with the explosive growth of chemical libraries with structure-based virtual screening](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1678)
-
-* [Lyu, Jiankun, et al. "Ultra-large library docking for discovering new chemotypes." Nature 566.7743 (2019): 224-229.](https://www.nature.com/articles/s41586-019-0917-9)
-
-Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets. 
+First paper to showcase deployment of quantum-based generative models with virtual screening workflow on a target-based compound discovery. Chemistry42 is used for reward function implementation. The authors show that molecule generated from this combined effort are 'better' quality-wise than traditional workflow (LSTM and Genetic algorithm) and the modeling success downstream is roughly correlated with number of qubits employed. This is exciting more from technical standpoint of combining quantum + traditional workflows. 
 
 * [Sadybekov, Anastasiia V., and Vsevolod Katritch. "Computational approaches streamlining drug discovery." Nature 616.7958 (2023): 673-685.](https://www.nature.com/articles/s41586-023-05905-z)
 
@@ -250,15 +244,19 @@ Nice review on virtual screening workflow for streamlining drug discovery
 
 The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.
 
-## Binding free energetic calculations 
+* [Gorgulla, Christoph, et al. "An open-source drug discovery platform enables ultra-large virtual screens." Nature 580.7805 (2020): 663-668.](https://www.nature.com/articles/s41586-020-2117-z)
 
-* [Janela, Tiago, and Jürgen Bajorath. "Rationalizing general limitations in assessing and comparing methods for compound potency prediction." Scientific Reports 13.1 (2023): 17816.](https://www.nature.com/articles/s41598-023-45086-3)
+VirtualFlow as a tool for conducting virtual screening. The authors use VirtualFlow, to prepare one of the largest and freely available ready-to-dock ligand libraries, with more than 1.4 billion commercially available molecules. They screening ~1 billion compounds and identified a set of structurally diverse molecules that bind to KEAP1 with submicromolar affinity.
 
-* [Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1](https://www.nature.com/articles/s43588-023-00531-1)
+* [Deep Learning Strategies for Enhanced Molecular Docking and Virtual Screening](https://chemrxiv.org/engage/chemrxiv/article-details/654a339b48dad2312043870c)
 
-* [Xu, Huafeng. "The slow but steady rise of binding free energy calculations in drug discovery." Journal of Computer-Aided Molecular Design (2022): 1-8.](https://link.springer.com/article/10.1007/s10822-022-00494-x)
+* [A practical guide to machine-learning scoring for structure-based virtual screening](https://www.nature.com/articles/s41596-023-00885-w)
 
-* [Thompson, James, et al. "Optimizing active learning for free energy calculations." Artificial Intelligence in the Life Sciences 2 (2022): 100050.](https://www.sciencedirect.com/science/article/pii/S2667318522000204)
+* [Keeping pace with the explosive growth of chemical libraries with structure-based virtual screening](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1678)
+
+* [Lyu, Jiankun, et al. "Ultra-large library docking for discovering new chemotypes." Nature 566.7743 (2019): 224-229.](https://www.nature.com/articles/s41586-019-0917-9)
+
+Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets. 
 
 ## Protein-ligand interactions 
 
@@ -287,6 +285,17 @@ Python package for evaluating the quality of docked poses. PoseBusters performs 
 [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models](https://arxiv.org/abs/2308.07413)
 
 PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
+
+### Binding free energetic calculations 
+
+* [Janela, Tiago, and Jürgen Bajorath. "Rationalizing general limitations in assessing and comparing methods for compound potency prediction." Scientific Reports 13.1 (2023): 17816.](https://www.nature.com/articles/s41598-023-45086-3)
+
+* [Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1](https://www.nature.com/articles/s43588-023-00531-1)
+
+* [Xu, Huafeng. "The slow but steady rise of binding free energy calculations in drug discovery." Journal of Computer-Aided Molecular Design (2022): 1-8.](https://link.springer.com/article/10.1007/s10822-022-00494-x)
+
+* [Thompson, James, et al. "Optimizing active learning for free energy calculations." Artificial Intelligence in the Life Sciences 2 (2022): 100050.](https://www.sciencedirect.com/science/article/pii/S2667318522000204)
+
 
 ## Cheminformatics-focus
 
@@ -320,6 +329,8 @@ The authors propose a new way to represent molecules, not as chemical bonds, but
 * [Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8)
 
 Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning. 
+
+* [He, Jiazhen, et al. "Molecular optimization by capturing chemist’s intuition using deep neural networks." Journal of cheminformatics 13.1 (2021): 1-17.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00497-0)
 
 ### Predictive modeling 
 
@@ -390,11 +401,6 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 * [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
 
-### Multi-parameter optimization 
-
-* [Computer-aided multi-objective optimization in small molecule discovery](https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6)
-
-* [Pareto Optimization to Accelerate Multi-Objective Virtual Screening](https://arxiv.org/abs/2310.10598)
 
 ### Enumeration of chemical space
 
@@ -483,6 +489,12 @@ Article exploring different active learning strategies for looking at sampling t
 * [A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.](https://pubs.acs.org/doi/10.1021/acscentsci.1c00546). [Slideshare](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
 Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al. Compare Chemprop and SchNet models on different tasks. 
+
+### Multi-parameter optimization 
+
+* [Computer-aided multi-objective optimization in small molecule discovery](https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6)
+
+* [Pareto Optimization to Accelerate Multi-Objective Virtual Screening](https://arxiv.org/abs/2310.10598)
 
 ## Transfer Learning  
 
@@ -779,6 +791,10 @@ The idea of estimating whether a molecule is 'synthesizable' can be thought of f
 1. Complexity based - compare the fragments in the molecule to the known fragments in the chemical space  
 2. Full retrosynthesis based - entire route is considered for molecule generation. Reactant complexity drives route complexity. 
 
+* [Li, Junren, Lei Fang, and Jian-Guang Lou. "Retro-BLEU: quantifying chemical plausibility of retrosynthesis routes through reaction template sequence analysis." Digital Discovery (2024).](https://pubs.rsc.org/en/content/articlehtml/2024/dd/d3dd00219e)
+
+Retro-BLEU, a statistical metric adapted from the well-established BLEU score in machine translation, to evaluate the plausibility of retrosynthesis routes based on reaction template sequences analysis. The authors use PaRoute to validate this approach. 
+
 * [Ertl, Peter, and Ansgar Schuffenhauer. "Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions." Journal of cheminformatics 1.1 (2009): 1-11.](https://jcheminf.biomedcentral.com/articles/10.1186/1758-2946-1-8). [RDkit implementation](https://github.com/rdkit/rdkit/tree/master/Contrib/SA_Score)
 
 Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability. 
@@ -922,6 +938,8 @@ While it is often possible to script the execution of these steps, scripting req
 
 Previously the field has propose assistants for this job [here](https://www.science.org/content/blog-post/lilly-s-virtual-med-chem-assistant) which comprised of pre-scripted set of rules and processes. While tedious, they seem to add lot of value to project teams for quickly analyzing the SAR. The hope is LLMs might make the dream of all encompasing assistant a reality. 
 
+[Total survey of the LLM landscape](https://arxiv.org/abs/2402.06196)
+
 **Reviews**
 
 * [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
@@ -946,18 +964,32 @@ Coscientist, a set of LLMs for designing and executing organic syntheses.  Cosci
 
 * [Jablonka, Kevin Maik, et al. "Leveraging Large Language Models for Predictive Chemistry." (2023).](https://chemrxiv.org/engage/chemrxiv/article-details/652e50b98bab5d2055852dde). [Peer-review](https://www.nature.com/articles/s42256-023-00788-1)
 
-
 Authors show GPT3 based predictive models perform on-par with SOTA with lower data points. Caution is the models are purely text-based and extreme black box and sometimes, while trite, correlation doesnt mean causation might become important here. Finally the fine tuning doesnt do regression on the data in same sense as a linear regression or random forest would do.
 
 **Molecule structure**
 
 * [Liu, Shengchao, et al. "Multi-modal molecule structure–text model for text-based retrieval and editing." Nature Machine Intelligence 5.12 (2023): 1447-1457.](https://www.nature.com/articles/s42256-023-00759-6)
 
+**Protein design and mechanics**
+
+* [Ruffolo, Jeffrey A., and Ali Madani. "Designing proteins with language models." Nature Biotechnology 42.2 (2024): 200-202.](https://www.nature.com/articles/s41587-024-02123-4)
+
+* [Buehler, Eric L., and Markus J. Buehler. "X-LoRA: Mixture of Low-Rank Adapter Experts, a Flexible Framework for Large Language Models with Applications in Protein Mechanics and Design." arXiv preprint arXiv:2402.07148 (2024).](https://arxiv.org/abs/2402.07148)
+
+Mixture of LoRA Experts: Leverage the power of fine-tuned LoRA experts by employing a mixture of experts, or MoE technique.
+
+* [Ghafarollahi, Alireza, and Markus J. Buehler. "ProtAgents: Protein discovery via large language model multi-agent collaborations combining physics and machine learning." arXiv preprint arXiv:2402.04268 (2024).](https://arxiv.org/abs/2402.04268)
+
+
 **Data curation**
 
 * [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
 
 Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information. 
+
+**Material science**
+
+* [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
 
 ## Code / Packages:
 

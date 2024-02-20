@@ -160,10 +160,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#meta-themes-on-optimizing-small-molecules" id="toc-meta-themes-on-optimizing-small-molecules" class="nav-link" data-scroll-target="#meta-themes-on-optimizing-small-molecules">Meta themes on optimizing small molecules</a></li>
   <li><a href="#synthesis-chemistry" id="toc-synthesis-chemistry" class="nav-link" data-scroll-target="#synthesis-chemistry">Synthesis Chemistry</a></li>
   <li><a href="#large-chemical-libraries-and-virtual-screening" id="toc-large-chemical-libraries-and-virtual-screening" class="nav-link" data-scroll-target="#large-chemical-libraries-and-virtual-screening">Large chemical libraries and Virtual Screening</a></li>
-  <li><a href="#binding-free-energetic-calculations" id="toc-binding-free-energetic-calculations" class="nav-link" data-scroll-target="#binding-free-energetic-calculations">Binding free energetic calculations</a></li>
   <li><a href="#protein-ligand-interactions" id="toc-protein-ligand-interactions" class="nav-link" data-scroll-target="#protein-ligand-interactions">Protein-ligand interactions</a>
   <ul class="collapse">
   <li><a href="#conformer-generators" id="toc-conformer-generators" class="nav-link" data-scroll-target="#conformer-generators">Conformer generators</a></li>
+  <li><a href="#binding-free-energetic-calculations" id="toc-binding-free-energetic-calculations" class="nav-link" data-scroll-target="#binding-free-energetic-calculations">Binding free energetic calculations</a></li>
   </ul></li>
   <li><a href="#cheminformatics-focus" id="toc-cheminformatics-focus" class="nav-link" data-scroll-target="#cheminformatics-focus">Cheminformatics-focus</a>
   <ul class="collapse">
@@ -171,12 +171,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#predictive-modeling" id="toc-predictive-modeling" class="nav-link" data-scroll-target="#predictive-modeling">Predictive modeling</a></li>
   <li><a href="#qsar-benchmarks" id="toc-qsar-benchmarks" class="nav-link" data-scroll-target="#qsar-benchmarks">QSAR benchmarks</a></li>
   <li><a href="#matched-molecular-pair" id="toc-matched-molecular-pair" class="nav-link" data-scroll-target="#matched-molecular-pair">Matched molecular-pair</a></li>
-  <li><a href="#multi-parameter-optimization" id="toc-multi-parameter-optimization" class="nav-link" data-scroll-target="#multi-parameter-optimization">Multi-parameter optimization</a></li>
   <li><a href="#enumeration-of-chemical-space" id="toc-enumeration-of-chemical-space" class="nav-link" data-scroll-target="#enumeration-of-chemical-space">Enumeration of chemical space</a></li>
   </ul></li>
   <li><a href="#explainableinterpretable-machine-learning" id="toc-explainableinterpretable-machine-learning" class="nav-link" data-scroll-target="#explainableinterpretable-machine-learning">Explainable/Interpretable Machine Learning</a></li>
   <li><a href="#uncertainty-quantification" id="toc-uncertainty-quantification" class="nav-link" data-scroll-target="#uncertainty-quantification">Uncertainty quantification</a></li>
-  <li><a href="#active-learning" id="toc-active-learning" class="nav-link" data-scroll-target="#active-learning">Active Learning</a></li>
+  <li><a href="#active-learning" id="toc-active-learning" class="nav-link" data-scroll-target="#active-learning">Active Learning</a>
+  <ul class="collapse">
+  <li><a href="#multi-parameter-optimization" id="toc-multi-parameter-optimization" class="nav-link" data-scroll-target="#multi-parameter-optimization">Multi-parameter optimization</a></li>
+  </ul></li>
   <li><a href="#transfer-learning" id="toc-transfer-learning" class="nav-link" data-scroll-target="#transfer-learning">Transfer Learning</a></li>
   <li><a href="#meta-learning" id="toc-meta-learning" class="nav-link" data-scroll-target="#meta-learning">Meta Learning</a></li>
   <li><a href="#federated-learning" id="toc-federated-learning" class="nav-link" data-scroll-target="#federated-learning">Federated Learning</a></li>
@@ -200,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Last update: 12th February 2024</p>
+<p>Last update: 20th February 2024</p>
 <section id="noteworthy-blogs-to-follow" class="level2">
 <h2 class="anchored" data-anchor-id="noteworthy-blogs-to-follow">Noteworthy blogs to follow:</h2>
 <ol type="1">
@@ -405,12 +407,9 @@ ul.task-list li input[type="checkbox"] {
 <p>This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.</p>
 <p><strong>Virtual screeening</strong></p>
 <ul>
-<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/654a339b48dad2312043870c">Deep Learning Strategies for Enhanced Molecular Docking and Virtual Screening</a></p></li>
-<li><p><a href="https://www.nature.com/articles/s41596-023-00885-w">A practical guide to machine-learning scoring for structure-based virtual screening</a></p></li>
-<li><p><a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1678">Keeping pace with the explosive growth of chemical libraries with structure-based virtual screening</a></p></li>
-<li><p><a href="https://www.nature.com/articles/s41586-019-0917-9">Lyu, Jiankun, et al.&nbsp;“Ultra-large library docking for discovering new chemotypes.” Nature 566.7743 (2019): 224-229.</a></p></li>
+<li><a href="https://arxiv.org/pdf/2402.08210.pdf">Vakili, Mohammad Ghazi, et al.&nbsp;“Quantum Computing-Enhanced Algorithm Unveils Novel Inhibitors for KRAS.” arXiv preprint arXiv:2402.08210 (2024).</a></li>
 </ul>
-<p>Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets.</p>
+<p>First paper to showcase deployment of quantum-based generative models with virtual screening workflow on a target-based compound discovery. Chemistry42 is used for reward function implementation. The authors show that molecule generated from this combined effort are ‘better’ quality-wise than traditional workflow (LSTM and Genetic algorithm) and the modeling success downstream is roughly correlated with number of qubits employed. This is exciting more from technical standpoint of combining quantum + traditional workflows.</p>
 <ul>
 <li><a href="https://www.nature.com/articles/s41586-023-05905-z">Sadybekov, Anastasiia V., and Vsevolod Katritch. “Computational approaches streamlining drug discovery.” Nature 616.7958 (2023): 673-685.</a></li>
 </ul>
@@ -419,15 +418,17 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813">Müller, Janis, et al.&nbsp;“Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces.” Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.</a>. <a href="https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist">Blog</a></li>
 </ul>
 <p>The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.</p>
-</section>
-<section id="binding-free-energetic-calculations" class="level2">
-<h2 class="anchored" data-anchor-id="binding-free-energetic-calculations">Binding free energetic calculations</h2>
 <ul>
-<li><p><a href="https://www.nature.com/articles/s41598-023-45086-3">Janela, Tiago, and Jürgen Bajorath. “Rationalizing general limitations in assessing and comparing methods for compound potency prediction.” Scientific Reports 13.1 (2023): 17816.</a></p></li>
-<li><p><a href="https://www.nature.com/articles/s43588-023-00531-1">Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1</a></p></li>
-<li><p><a href="https://link.springer.com/article/10.1007/s10822-022-00494-x">Xu, Huafeng. “The slow but steady rise of binding free energy calculations in drug discovery.” Journal of Computer-Aided Molecular Design (2022): 1-8.</a></p></li>
-<li><p><a href="https://www.sciencedirect.com/science/article/pii/S2667318522000204">Thompson, James, et al.&nbsp;“Optimizing active learning for free energy calculations.” Artificial Intelligence in the Life Sciences 2 (2022): 100050.</a></p></li>
+<li><a href="https://www.nature.com/articles/s41586-020-2117-z">Gorgulla, Christoph, et al.&nbsp;“An open-source drug discovery platform enables ultra-large virtual screens.” Nature 580.7805 (2020): 663-668.</a></li>
 </ul>
+<p>VirtualFlow as a tool for conducting virtual screening. The authors use VirtualFlow, to prepare one of the largest and freely available ready-to-dock ligand libraries, with more than 1.4 billion commercially available molecules. They screening ~1 billion compounds and identified a set of structurally diverse molecules that bind to KEAP1 with submicromolar affinity.</p>
+<ul>
+<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/654a339b48dad2312043870c">Deep Learning Strategies for Enhanced Molecular Docking and Virtual Screening</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s41596-023-00885-w">A practical guide to machine-learning scoring for structure-based virtual screening</a></p></li>
+<li><p><a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1678">Keeping pace with the explosive growth of chemical libraries with structure-based virtual screening</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s41586-019-0917-9">Lyu, Jiankun, et al.&nbsp;“Ultra-large library docking for discovering new chemotypes.” Nature 566.7743 (2019): 224-229.</a></p></li>
+</ul>
+<p>Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets.</p>
 </section>
 <section id="protein-ligand-interactions" class="level2">
 <h2 class="anchored" data-anchor-id="protein-ligand-interactions">Protein-ligand interactions</h2>
@@ -452,6 +453,15 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://arxiv.org/abs/2308.07413">Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models</a></p>
 <p>PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures. In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode. In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design.</p>
 </section>
+<section id="binding-free-energetic-calculations" class="level3">
+<h3 class="anchored" data-anchor-id="binding-free-energetic-calculations">Binding free energetic calculations</h3>
+<ul>
+<li><p><a href="https://www.nature.com/articles/s41598-023-45086-3">Janela, Tiago, and Jürgen Bajorath. “Rationalizing general limitations in assessing and comparing methods for compound potency prediction.” Scientific Reports 13.1 (2023): 17816.</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s43588-023-00531-1">Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1</a></p></li>
+<li><p><a href="https://link.springer.com/article/10.1007/s10822-022-00494-x">Xu, Huafeng. “The slow but steady rise of binding free energy calculations in drug discovery.” Journal of Computer-Aided Molecular Design (2022): 1-8.</a></p></li>
+<li><p><a href="https://www.sciencedirect.com/science/article/pii/S2667318522000204">Thompson, James, et al.&nbsp;“Optimizing active learning for free energy calculations.” Artificial Intelligence in the Life Sciences 2 (2022): 100050.</a></p></li>
+</ul>
+</section>
 </section>
 <section id="cheminformatics-focus" class="level2">
 <h2 class="anchored" data-anchor-id="cheminformatics-focus">Cheminformatics-focus</h2>
@@ -474,6 +484,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00479-8">Could graph neural networks learn better molecular representation for drug discovery? A comparison study of descriptor-based and graph-based models</a></p></li>
 </ul>
 <p>Comparative study of descriptor-based and graph-based models using public data set. Used descriptor-based models (XGBoost, RF, SVM, using ECFP) and compared them to graph-based models (GCN, GAT, AttentiveFP, MPNN). They show descriptor-based models outperform the graph-based models in terms of prediction accuracy and computational efficiency with SVM having best predictions. Graph-based methods are good for multi-task learning.</p>
+<ul>
+<li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00497-0">He, Jiazhen, et al.&nbsp;“Molecular optimization by capturing chemist’s intuition using deep neural networks.” Journal of cheminformatics 13.1 (2021): 1-17.</a></li>
+</ul>
 </section>
 <section id="predictive-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="predictive-modeling">Predictive modeling</h3>
@@ -539,13 +552,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><a href="https://link.springer.com/article/10.1023/A:1021271615909">Raymond, John W., and Peter Willett. “Maximum common subgraph isomorphism algorithms for the matching of chemical structures.” Journal of computer-aided molecular design 16.7 (2002): 521-533.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173">Dalke, Andrew, Jerome Hert, and Christian Kramer. “mmpdb: An open-source matched molecular pair platform for large multiproperty data sets.” Journal of chemical information and modeling 58.5 (2018): 902-910.</a></p></li>
-</ul>
-</section>
-<section id="multi-parameter-optimization" class="level3">
-<h3 class="anchored" data-anchor-id="multi-parameter-optimization">Multi-parameter optimization</h3>
-<ul>
-<li><p><a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6">Computer-aided multi-objective optimization in small molecule discovery</a></p></li>
-<li><p><a href="https://arxiv.org/abs/2310.10598">Pareto Optimization to Accelerate Multi-Objective Virtual Screening</a></p></li>
 </ul>
 </section>
 <section id="enumeration-of-chemical-space" class="level3">
@@ -623,6 +629,13 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.1c00546">A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul.&nbsp;2021.</a>. <a href="https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery">Slideshare</a></p></li>
 </ul>
 <p>Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al.&nbsp;Compare Chemprop and SchNet models on different tasks.</p>
+<section id="multi-parameter-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="multi-parameter-optimization">Multi-parameter optimization</h3>
+<ul>
+<li><p><a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00001-6">Computer-aided multi-objective optimization in small molecule discovery</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2310.10598">Pareto Optimization to Accelerate Multi-Objective Virtual Screening</a></p></li>
+</ul>
+</section>
 </section>
 <section id="transfer-learning" class="level2">
 <h2 class="anchored" data-anchor-id="transfer-learning">Transfer Learning</h2>
@@ -883,6 +896,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The idea of estimating whether a molecule is ‘synthesizable’ can be thought of from two areas: 1. Complexity based - compare the fragments in the molecule to the known fragments in the chemical space<br>
 2. Full retrosynthesis based - entire route is considered for molecule generation. Reactant complexity drives route complexity.</p>
 <ul>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2024/dd/d3dd00219e">Li, Junren, Lei Fang, and Jian-Guang Lou. “Retro-BLEU: quantifying chemical plausibility of retrosynthesis routes through reaction template sequence analysis.” Digital Discovery (2024).</a></li>
+</ul>
+<p>Retro-BLEU, a statistical metric adapted from the well-established BLEU score in machine translation, to evaluate the plausibility of retrosynthesis routes based on reaction template sequences analysis. The authors use PaRoute to validate this approach.</p>
+<ul>
 <li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/1758-2946-1-8">Ertl, Peter, and Ansgar Schuffenhauer. “Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions.” Journal of cheminformatics 1.1 (2009): 1-11.</a>. <a href="https://github.com/rdkit/rdkit/tree/master/Contrib/SA_Score">RDkit implementation</a></li>
 </ul>
 <p>Synthetic Accessbility score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability.</p>
@@ -998,6 +1015,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The other area where LLMs appear to be making inroads is workflow management or tools orchestration. Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate. These include asking questions about data, analyze results, do routine post processing for comparing with known state of the project.</p>
 <p>While it is often possible to script the execution of these steps, scripting requires a detailed knowledge of each step. LLMs have the potential to simplify this process and carry out multi-step procedures given only a set of initial conditions and a final objective. While the amount of progress the field has made in a short time is impressive, I don’t see LLMs replacing scientists any time soon.</p>
 <p>Previously the field has propose assistants for this job <a href="https://www.science.org/content/blog-post/lilly-s-virtual-med-chem-assistant">here</a> which comprised of pre-scripted set of rules and processes. While tedious, they seem to add lot of value to project teams for quickly analyzing the SAR. The hope is LLMs might make the dream of all encompasing assistant a reality.</p>
+<p><a href="https://arxiv.org/abs/2402.06196">Total survey of the LLM landscape</a></p>
 <p><strong>Reviews</strong></p>
 <ul>
 <li><p><a href="https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2">Blogpost on different LLMs in chemistry</a></p></li>
@@ -1025,11 +1043,24 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://www.nature.com/articles/s42256-023-00759-6">Liu, Shengchao, et al.&nbsp;“Multi-modal molecule structure–text model for text-based retrieval and editing.” Nature Machine Intelligence 5.12 (2023): 1447-1457.</a></li>
 </ul>
+<p><strong>Protein design and mechanics</strong></p>
+<ul>
+<li><p><a href="https://www.nature.com/articles/s41587-024-02123-4">Ruffolo, Jeffrey A., and Ali Madani. “Designing proteins with language models.” Nature Biotechnology 42.2 (2024): 200-202.</a></p></li>
+<li><p><a href="https://arxiv.org/abs/2402.07148">Buehler, Eric L., and Markus J. Buehler. “X-LoRA: Mixture of Low-Rank Adapter Experts, a Flexible Framework for Large Language Models with Applications in Protein Mechanics and Design.” arXiv preprint arXiv:2402.07148 (2024).</a></p></li>
+</ul>
+<p>Mixture of LoRA Experts: Leverage the power of fine-tuned LoRA experts by employing a mixture of experts, or MoE technique.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2402.04268">Ghafarollahi, Alireza, and Markus J. Buehler. “ProtAgents: Protein discovery via large language model multi-agent collaborations combining physics and machine learning.” arXiv preprint arXiv:2402.04268 (2024).</a></li>
+</ul>
 <p><strong>Data curation</strong></p>
 <ul>
 <li><a href="https://github.com/qai222/LLM_organic_synthesis">Extracting Structured Data from Free-form Organic Synthesis Text</a></li>
 </ul>
 <p>Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information.</p>
+<p><strong>Material science</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2402.04379">Gruver, Nate, et al.&nbsp;“Fine-Tuned Language Models Generate Stable Inorganic Materials as Text.” arXiv preprint arXiv:2402.04379 (2024).</a></li>
+</ul>
 </section>
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
