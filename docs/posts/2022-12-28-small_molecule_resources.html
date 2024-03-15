@@ -706,7 +706,8 @@ ul.task-list li input[type="checkbox"] {
 <p>REINVENT is a molecular design tool for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. At its heart, REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules.</p>
 <p><strong>Language models:</strong></p>
 <ul>
-<li><a href="https://www.biorxiv.org/content/10.1101/2024.01.08.574635v3.abstract">Xia, Yingce, et al.&nbsp;“Target-aware Molecule Generation for Drug Design Using a Chemical Language Model.” bioRxiv (2024): 2024-01.</a></li>
+<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65e718eee9ebbb4db9f21886">PromptSMILES: Prompting for scaffold decoration and fragment linking in chemical language models</a></p></li>
+<li><p><a href="https://www.biorxiv.org/content/10.1101/2024.01.08.574635v3.abstract">Xia, Yingce, et al.&nbsp;“Target-aware Molecule Generation for Drug Design Using a Chemical Language Model.” bioRxiv (2024): 2024-01.</a></p></li>
 </ul>
 <p>Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease.</p>
 <ul>
@@ -758,6 +759,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Authors propose a generative model to generate molecules via multi-step chemical reaction trees, each campaign first generates a reaction-tree with template transformations as breaking points.</p>
 <ul>
 <li><a href="https://arxiv.org/abs/1906.05221">Bradshaw, John, et al.&nbsp;“A model to search for synthesizable molecules.” Advances in Neural Information Processing Systems 32 (2019).</a></li>
+</ul>
+<p><strong>Diffusion models</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2210.13695">Schneuing, Arne, et al.&nbsp;“Structure-based drug design with equivariant diffusion models.” arXiv preprint arXiv:2210.13695 (2022)</a>. Blog from Pen. <a href="https://iwatobipen.wordpress.com/2024/03/05/pocket-awaer-structure-generation-diffdec-cheminformatics/">Link</a></li>
 </ul>
 <p><strong>3D conformations-aware</strong></p>
 <ul>
@@ -1050,10 +1055,13 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/652e50b98bab5d2055852dde">Jablonka, Kevin Maik, et al.&nbsp;“Leveraging Large Language Models for Predictive Chemistry.” (2023).</a>. <a href="https://www.nature.com/articles/s42256-023-00788-1">Peer-review</a></li>
 </ul>
 <p>Authors show GPT3 based predictive models perform on-par with SOTA with lower data points. Caution is the models are purely text-based and extreme black box and sometimes, while trite, correlation doesnt mean causation might become important here. Finally the fine tuning doesnt do regression on the data in same sense as a linear regression or random forest would do.</p>
-<p><strong>Molecule structure</strong></p>
+<p><strong>Small molecule related tasks</strong></p>
 <ul>
-<li><a href="https://www.nature.com/articles/s42256-023-00759-6">Liu, Shengchao, et al.&nbsp;“Multi-modal molecule structure–text model for text-based retrieval and editing.” Nature Machine Intelligence 5.12 (2023): 1447-1457.</a></li>
+<li><p><a href="https://www.nature.com/articles/s42256-023-00759-6">Liu, Shengchao, et al.&nbsp;“Multi-modal molecule structure–text model for text-based retrieval and editing.” Nature Machine Intelligence 5.12 (2023): 1447-1457.</a></p></li>
+<li><p><a href="https://osu-nlp-group.github.io/LLM4Chem/">Yu, Botao, et al.&nbsp;“LlaSMol: Advancing Large Language Models for Chemistry with a Large-Scale, Comprehensive, High-Quality Instruction Tuning Dataset.” arXiv preprint arXiv:2402.09391 (2024).</a></p></li>
+<li><p><a href="https://arxiv.org/pdf/2402.17810.pdf">Pei, Qizhi, et al.&nbsp;“BioT5+: Towards Generalized Biological Understanding with IUPAC Integration and Multi-task Tuning.” arXiv preprint arXiv:2402.17810 (2024).</a></p></li>
 </ul>
+<p>BioT5+ incorporates several novel features: integration of IUPAC names for molecular understanding, inclusion of extensive bio-text and molecule data from sources like bioRxiv and PubChem, the multi-task in struction tuning for generality across tasks, and a novel numerical tokenization technique for improved processing of numerical data.</p>
 <p><strong>Protein design and mechanics</strong></p>
 <ul>
 <li><p><a href="https://www.nature.com/articles/s41587-024-02123-4">Ruffolo, Jeffrey A., and Ali Madani. “Designing proteins with language models.” Nature Biotechnology 42.2 (2024): 200-202.</a></p></li>
@@ -1132,6 +1140,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/hesther/espsim">ESPsim</a></li>
 </ul>
 <p>Calculate similarities of shapes and electrostatic potentials between molecules. Pen has a nice blogpost on using to estimate electronic similarities of common bioisosteres. <a href="https://iwatobipen.wordpress.com/2022/12/31/calculate-similarity-of-popular-bioisosters-rdkit-espsim-memo/">blog</a></p>
+<ul>
+<li><a href="https://github.com/prcurran/hotspots/tree/master?tab=readme-ov-file#scoring">HotSpots: Curran, Peter R., et al.&nbsp;“Hotspots api: a python package for the detection of small molecule binding hotspots and application to structure-based drug design.” Journal of chemical information and modeling 60.4 (2020): 1911-1916.</a></li>
+</ul>
+<p>Survey protein surfaces for binding hotspots can help to evaluate target tractability and guide exploration of potential ligand binding regions.</p>
 <ul>
 <li><p><a href="https://github.com/digital-chemistry-laboratory/morfeus">Morfeus</a> Machine learning focused descriptors for small molecules with emphasis on 3D information.</p></li>
 <li><p><a href="https://github.com/coleygroup/molpal">MolPal</a></p></li>
