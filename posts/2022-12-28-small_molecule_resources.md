@@ -369,7 +369,9 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 ### QSAR benchmarks 
 
 
-* [Llompart, P., et al. "Will we ever be able to accurately predict solubility?." Scientific Data 11.1 (2024): 303.](https://www.nature.com/articles/s41597-024-03105-6)
+* [Llompart, P., et al. "Will we ever be able to accurately predict solubility?" Scientific Data 11.1 (2024): 303.](https://www.nature.com/articles/s41597-024-03105-6)
+
+The paper discusses challenges in predicting thermodynamic solubility with machine learning. It reviews historical data, analyzes solubility datasets, and assesses model reliability. The authors propose a workflow for data curation and present new models and quality-assessed datasets for public use.
 
 * [Multi-task ADME/PK Prediction at Industrial Scale: Leveraging Large and Diverse Experimental Datasets](https://chemrxiv.org/engage/chemrxiv/article-details/659d3878e9ebbb4db9c3088f)
 
