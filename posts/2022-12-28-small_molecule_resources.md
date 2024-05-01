@@ -369,6 +369,8 @@ Combine structure (Graph-networks) and descriptor based features (QM-derived) to
 ### QSAR benchmarks 
 
 
+* [Llompart, P., et al. "Will we ever be able to accurately predict solubility?." Scientific Data 11.1 (2024): 303.](https://www.nature.com/articles/s41597-024-03105-6)
+
 * [Multi-task ADME/PK Prediction at Industrial Scale: Leveraging Large and Diverse Experimental Datasets](https://chemrxiv.org/engage/chemrxiv/article-details/659d3878e9ebbb4db9c3088f)
 
 * [Deng, Jianyuan, et al. "A systematic study of key elements underlying molecular property prediction." Nature Communications 14.1 (2023): 6395.](https://www.nature.com/articles/s41467-023-41948-6)

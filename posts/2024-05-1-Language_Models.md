@@ -50,8 +50,10 @@ OpenAI Prompt Engineering :
 https://platform.openai.com/docs/guides/prompt-engineering/prompt-engineering
 
 ## Chains
+
 Pre-determined set of steps to undertake a task 
 This is first step in creating a platform 
+
 ### RAGs
 
 RAG for LLMs - A Survey :
@@ -166,16 +168,16 @@ OpenAI's Assistant API vs Langchain Agent : https://blog.langchain.dev/openais-b
 ## Evaluations 
 1) Regas
 2) PromptFlow
+3) StaRK from James Zou lab: https://arxiv.org/abs/2404.13207
 
 Andrej Karpathy : 
 https://nicholas.carlini.com/writing/2024/my-benchmark-for-large-language-models.html
 
 ## Training 
-1) [[DPO]]
-
+1) RLHF 
+2) [[DPO]]
 
 # Applications 
-
 
 LLM Chatbot to converse and answer domain specific questions (think of NPA-space) by providing library and digest the literature
 

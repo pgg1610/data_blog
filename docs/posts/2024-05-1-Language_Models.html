@@ -148,7 +148,10 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#prompt-engineering" id="toc-prompt-engineering" class="nav-link active" data-scroll-target="#prompt-engineering">Prompt engineering</a></li>
-  <li><a href="#chains" id="toc-chains" class="nav-link" data-scroll-target="#chains">Chains</a></li>
+  <li><a href="#chains" id="toc-chains" class="nav-link" data-scroll-target="#chains">Chains</a>
+  <ul class="collapse">
+  <li><a href="#rags" id="toc-rags" class="nav-link" data-scroll-target="#rags">RAGs</a></li>
+  </ul></li>
   <li><a href="#agents" id="toc-agents" class="nav-link" data-scroll-target="#agents">[[Agents]]</a>
   <ul class="collapse">
   <li><a href="#autogen-vs-semantic-kernel" id="toc-autogen-vs-semantic-kernel" class="nav-link" data-scroll-target="#autogen-vs-semantic-kernel">AutoGen vs Semantic Kernel :</a></li>
@@ -180,7 +183,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="chains" class="level2">
 <h2 class="anchored" data-anchor-id="chains">Chains</h2>
-<p>Pre-determined set of steps to undertake a task This is first step in creating a platform ### RAGs</p>
+<p>Pre-determined set of steps to undertake a task This is first step in creating a platform</p>
+<section id="rags" class="level3">
+<h3 class="anchored" data-anchor-id="rags">RAGs</h3>
 <p>RAG for LLMs - A Survey : https://arxiv.org/abs/2312.10997</p>
 <p>Deconstructing RAG <a href="https://twitter.com/RLanceMartin/status/1727019896394207624">https://twitter.com/RLanceMartin/status/1727019896394207624</a></p>
 <p>It can be hard to follow all of the RAG strategies that have come out over the past months.</p>
@@ -207,6 +212,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Self-querying to work with meta data in the document chunks :<a href="https://python.langchain.com/docs/modules/data_connection/retrievers/self_query">https://python.langchain.com/docs/modules/data_connection/retrievers/self_query</a></p>
 <p>Knowledge graph data : <a href="https://www.youtube.com/watch?v=nPG_jKrSpi0&amp;t=11s">https://www.youtube.com/watch?v=nPG_jKrSpi0&amp;t=11s</a></p>
 <p>OpenAI recipe for graphDB implementation : https://github.com/openai/openai-cookbook/blob/main/examples/RAG_with_graph_db.ipynb</p>
+</section>
 </section>
 <section id="agents" class="level2">
 <h2 class="anchored" data-anchor-id="agents">[[Agents]]</h2>
@@ -244,12 +250,14 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Regas</li>
 <li>PromptFlow</li>
+<li>StaRK from James Zou lab: https://arxiv.org/abs/2404.13207</li>
 </ol>
 <p>Andrej Karpathy : https://nicholas.carlini.com/writing/2024/my-benchmark-for-large-language-models.html</p>
 </section>
 <section id="training" class="level2">
 <h2 class="anchored" data-anchor-id="training">Training</h2>
 <ol type="1">
+<li>RLHF</li>
 <li>[[DPO]]</li>
 </ol>
 </section>
