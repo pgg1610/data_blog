@@ -38,6 +38,9 @@ Last update: 1st May 2024
 
 1. [Darryl B McConnell's Medchem blogpost](https://mcconnellsmedchem.com/)
 
+**Computational chemistry**
+2. [Gilles Ouvry](https://www.linkedin.com/in/gilles-ouvry-8b7b2b5/
+
 **General field**
 
 1. [DrugDiscovery.NET - Andreas Bender](http://www.drugdiscovery.net/2019/07/25/new-post1/)
@@ -210,7 +213,7 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Late-stage diversification of indole skeletons through nitrogen atom insertion](https://www.science.org/doi/10.1126/science.add1383)
 
-## Large chemical libraries and Virtual Screening
+## Large chemical libraries
 
 Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
 
@@ -240,7 +243,13 @@ The authors examine the composition of the recently published and, so far, bigge
 
 This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.
 
-**Virtual screeening**
+## Virtual screeening
+
+* [Dodds, Michael, et al. "Sample efficient reinforcement learning with active learning for molecular design." Chemical Science 15.11 (2024): 4146.](https://pubs.rsc.org/en/content/articlelanding/2024/sc/d3sc04653b)
+
+An active learning system linked with an RL model (RL–AL) for molecular design, which aims to improve the sample-efficiency of the optimization process.
+
+AZ group looking at generative design + RL + Virtual screening campaign 
 
 * [Vakili, Mohammad Ghazi, et al. "Quantum Computing-Enhanced Algorithm Unveils Novel Inhibitors for KRAS." arXiv preprint arXiv:2402.08210 (2024).](https://arxiv.org/pdf/2402.08210.pdf)
 
@@ -249,10 +258,6 @@ First paper to showcase deployment of quantum-based generative models with virtu
 * [Sadybekov, Anastasiia V., and Vsevolod Katritch. "Computational approaches streamlining drug discovery." Nature 616.7958 (2023): 673-685.](https://www.nature.com/articles/s41586-023-05905-z)
 
 Nice review on virtual screening workflow for streamlining drug discovery 
-
-* [Müller, Janis, et al. "Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces." Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813). [Blog](https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist)
-
-The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.
 
 * [Gorgulla, Christoph, et al. "An open-source drug discovery platform enables ultra-large virtual screens." Nature 580.7805 (2020): 663-668.](https://www.nature.com/articles/s41586-020-2117-z)
 
@@ -268,13 +273,69 @@ VirtualFlow as a tool for conducting virtual screening. The authors use VirtualF
 
 Researchers at UCSF looking at large scale docking for making ultra-large libraries accessible. They dock 170 million make-on-demand compounds from 130 well characterized reactions. Found new chemotypes that have interaction with 2 targets. 
 
+## Fragment-based drug discovery 
+
+**What is a fragment?**
+
+In fragment-based drug discovery (FBDD), a fragment is a small, low-molecular-weight chemical entity typically ranging from 120-250 Daltons, with properties such as cLogP < 2.5, hydrogen atom count (HAC) of 9-18, hydrogen bond acceptors (HBA) < 7, and hydrogen bond donors (HBD) < 4, as specified by Asinex. These fragments serve as starting points for drug development. They bind to target proteins with low affinity but high efficiency, enabling the identification of key interactions. By optimizing and linking fragments, researchers can develop potent lead compounds, enhancing the efficiency of the drug discovery process and improving hit finding.
+
+**Known collection**
+
+* [Cambridge Chem Consulting](https://www.cambridgemedchemconsulting.com/resources/hit_identification/fragment_collections.html)
+* [Evotec](https://www.evotec.com/en/investor-relations/news/p/evotec-enhances-its-fragment-based-drug-discovery-business-by-the-addition-of-nmr-screening-assets-from-combinature-4496)
+* [Diamond light source](https://www.diamond.ac.uk/Instruments/Mx/Fragment-Screening/Fragment-Libraries.html)
+
+**Blogs**
+
+* [Practical Fragment blog](https://practicalfragments.blogspot.com/2024/03/fragments-2024.html)
+
+**Book Chapters**
+
+* [Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. Fragment-Based Lead Discovery. Nat Rev Drug Discov 2004, 3 (8), 660–672](https://doi.org/10.1038/nrd1467)
+
+The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the 'target-rich, lead-poor' issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.
+
+**Articles**
+
+* [Igashov, Ilia, et al. "Equivariant 3D-conditional diffusion model for molecular linker design." Nature Machine Intelligence (2024): 1-11.](https://www.nature.com/articles/s42256-024-00815-9) [Pen's blog](https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/)
+
+* [Penner, Patrick, et al. "FastGrow: on-the-fly growing and its application to DYRK1A." Journal of Computer-Aided Molecular Design 36.9 (2022): 639-651.](https://pubmed.ncbi.nlm.nih.gov/35989379/) [Pen's blog](https://practicalfragments.blogspot.com/2022/09/growing-fragments-in-silico-with.html
+)
+
+* [Boby, M. L. Open Science Discovery of Potent Noncovalent SARS-CoV-2 Main Protease Inhibitors. Science 2023, 382 (6671)](https://doi.org/10.1126/science.abo7201)
+
+* [Müller, Janis, et al. "Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces." Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813). [Blog](https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist)
+
+The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.
+
+* [BROOD](https://www.eyesopen.com/brood)
+
+Commercial software solution from OpenEye for fragment exchange 
+
 ## Protein-ligand interactions 
 
 **Docking models**
 
+* [Yim, Jason, et al. "Diffusion models in protein structure and docking." Wiley Interdisciplinary Reviews: Computational Molecular Science 14.2 (2024): e1711.](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1711)
+
+Nice review of the field that looks at computational model to predict protein-ligand interaction and molecular docking. In recent times, diffusion-based model have shown promising performance. This review documents the current state of the field and next steps. This survey covers DMs primarily from the point of view of backbone generation, both unconditional and conditional generation. It is interesting to see how modeling the backbone, sequence, and side chains would bring further benefit beyond the current strategy of modeling them one after the other. 
+
 * [DiffDock](https://arxiv.org/abs/2210.01776)
 
-* [MatchMaker](https://www.recursion.com/news/a-deep-dive-into-screening-36-billion-compounds-q-a-with-stephen-mackinnon)
+* [NeuralPlexer](https://www.nature.com/articles/s42256-024-00792-z)
+
+Iambic Therapeutics’ AI model that predicts the combined shape of proteins and small molecules outperforms Google DeepMind’s AlphaFold. Lambic’s newest model, called NeuralPLexer2, had a 75% success rate in predicting these protein-ligand structures. AlphaFold’s latest version, as described last October in a blog post, was 74% successful. But Iambic’s model jumps to a 93% success rate when the model receives additional info on amino acids near the small molecule.
+
+* [RFdiffusion All-Atom](https://www.science.org/doi/10.1126/science.adl2528) [Github](https://github.com/baker-laboratory/rf_diffusion_all_atom)
+
+RoseTTAFold All-Atom (RFAA) was trained to represent amino acids and DNA bases at the residue level and all other chemical groups at the atomic level, allowing it to accurately model proteins and the other chemicals they so often interact with.
+
+RFdiffusion All-Atom: build bespoke protein structures around small molecules. The team designed and experimentally validated, through crystallography and binding measurements, proteins that bind the cardiac disease therapeutic digoxigenin, the enzymatic cofactor heme, and the light-harvesting molecule bilin.
+Although there is still room for improvement in prediction accuracy, we anticipate that RFAA should be broadly useful for modeling full biological assemblies and RFdiffusionAA for designing small molecule–binding proteins and sensors.
+
+* [DynamicBind](https://www.nature.com/articles/s41467-024-45461-2)
+
+DynamicBind, a deep learning method that employs equivariant geometric diffusion networks to construct a smooth energy landscape, promoting efficient transitions between different equilibrium states. DynamicBind accurately recovers ligand-specific conformations from unbound protein structures without the need for holo-structures or extensive sampling.
 
 * [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
 
@@ -576,7 +637,7 @@ Interesting analysis from team at AstraZeneca R&D. They look at the chemical spa
 
 This paper looks at different ways of integrating synthesizability criteria into generative models. 
 
-* [REINVENT4: Modern AI–Driven Generative Molecule Design](https://github.com/MolecularAI/REINVENT4)
+* [REINVENT4: Modern AI–Driven Generative Molecule Design](https://github.com/MolecularAI/REINVENT4) [Supported with PyTorch 2.0]
 
 REINVENT is a molecular design tool for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. At its heart, REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules.
 
@@ -651,6 +712,11 @@ Authors propose a generative model to generate molecules via multi-step chemical
 * [Bradshaw, John, et al. "A model to search for synthesizable molecules." Advances in Neural Information Processing Systems 32 (2019).](https://arxiv.org/abs/1906.05221)
 
 **Diffusion models**
+
+
+* [Mixed Continuous and Categorical Flow Matching for 3D De Novo Molecule Generation](https://arxiv.org/abs/2404.19739v1)
+
+This model extends beyond traditional diffusion models by learning to map samples directly from arbitrary distributions, allowing for greater flexibility and application-specific model design. It is achieving remarkable efficiency (>10-fold reduction in inference time) and accuracy in molecule generation.
 
 * [Igashov, Ilia, et al. "Equivariant 3D-conditional diffusion model for molecular linker design." Nature Machine Intelligence (2024): 1-11.](https://www.nature.com/articles/s42256-024-00815-9). [Blog from Pen](https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/)
 
@@ -1047,6 +1113,10 @@ Mixture of LoRA Experts: Leverage the power of fine-tuned LoRA experts by employ
 
 Authors look at clinical summarization and implement quantitative assesments with synctactic, semantic, and conceptual NLP metrics. A clinical reader study with 10 physicians evaluated summary completeness, correctness and conciseness; in most cases, summaries from our best-adapted LLMs were deemed either equivalent (45%) or superior (36%) compared with summaries from medical experts. The research provides evidence of LLMs outperforming medical experts in clinical text summarization across multiple tasks. This suggests that integrating LLMs into clinical workflows could alleviate documentation burden, allowing clinicians to focus more on patient care.
 
+* [Saab, K.; et. al. Capabilities of Gemini Models in Medicine. arXiv May 1, 2024.](https://doi.org/10.48550/arXiv.2404.18416)
+
+Google's team shows Med-Gemini's real-world utility by surpassing human experts on tasks such as medical text summarization, alongside demonstrations of promising potential for multimodal medical dialogue, medical research and education.
+
 
 **Data curation**
 
@@ -1057,6 +1127,22 @@ Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant 
 **Material science**
 
 * [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
+
+## Patent data extraction 
+
+**Rule-based tool**
+
+* [LeadMine - NextMove](https://www.nextmovesoftware.com/leadmine.html)
+
+**AI-based tool**
+
+Despite so much progress around computer vision and optical character recognition (OCR) the state of the art for molecule image conversion to structure still remains to be manual curation. There have been some interesting tools proposed for automating this using different flavor of computer-vision algorithms. 
+
+* [MolGrapher](https://github.com/DS4SD/MolGrapher)
+
+* [Img2Mol](https://github.com/bayer-science-for-a-better-life/Img2Mol)
+
+One of the core reasons this area has been under explored seems to be molecule patents are MADE to be tough to decipher. The format is non standard and markush enumerations, alongside, their actual chemical space coverage is ill-defined. 
 
 ## Code / Packages:
 
@@ -1072,9 +1158,9 @@ Automates the selection of decision threshold for imbalanced classification task
 
 Benchmarking platform to implement molecular generative models. It also provides a set of metrics to evaluate the quality and diversity of the generated molecules. A benchmark dataset (subset of ZINC) is provided for training the models. 
 
-* [Reinvent 2.0 - an AI tool forr de novo drug design](https://chemrxiv.org/articles/preprint/REINVENT_2_0_an_AI_Tool_for_De_Novo_Drug_Design/12058026/1). [Github](https://github.com/MolecularAI/Reinvent)
+* [Reinvent 4.0 - an AI tool forr de novo drug design](https://chemrxiv.org/articles/preprint/REINVENT_2_0_an_AI_Tool_for_De_Novo_Drug_Design/12058026/1). [Github](https://github.com/MolecularAI/Reinvent)
 
-Production-ready tool for de novo design from Astra Zeneca. It can be effectively applied on drug discovery projects that are striving to resolve either exploration or exploitation problems while navigating the chemical space. Language model with SMILE  output and trained by “randomizing” the SMILES representation of the input data. Implement reinforcement-leraning for directing the model towards relevant area of interest. 
+Production-ready tool for de novo design from Astra Zeneca. It can be effectively applied on drug discovery projects that are striving to resolve either exploration or exploitation problems while navigating the chemical space. Language model with SMILE  output and trained by “randomizing” the SMILES representation of the input data. Implement reinforcement-leraning for directing the model towards relevant area of interest. Now uses PyTorch 2.0! 
 
 * [OpenChem](https://chemrxiv.org/articles/OpenChem_A_Deep_Learning_Toolkit_for_Computational_Chemistry_and_Drug_Design/12691943/1). [Github](https://github.com/Mariewelt/OpenChem)
 
