@@ -207,6 +207,11 @@ Critique on the paper, [interesting take](https://fbdd-lit.blogspot.com/2024/05/
 
 Probably contentious topic but a good short review of the property-based optimization thought process for medicine discovery. 
 
+* [Pennington, Lewis D., and Demetri T. Moustakas. "The necessary nitrogen atom: a versatile high-impact design element for multiparameter optimization." Journal of Medicinal Chemistry 60.9 (2017): 3552-3579.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.6b01807)
+
+Good perspective highlighting the impact of replacing CH group with N in aromatic and heteraromatic ring systems on molecular and physiochemical properties that translate to improved pharmacological properties. 
+
+
 ## Synthesis Chemistry 
 
 Catalog of recent research articles that look at synthesis chemistry from a point of view of computational workflows, how traditional synthetic chemistry methods can be combined with informatics to augment drug discovery and synthesis processes. 
@@ -330,8 +335,6 @@ Commercial software solution from OpenEye for fragment exchange
 
 ## Protein-ligand interactions 
 
-**Docking models**
-
 * [Yim, Jason, et al. "Diffusion models in protein structure and docking." Wiley Interdisciplinary Reviews: Computational Molecular Science 14.2 (2024): e1711.](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1711)
 
 Nice review of the field that looks at computational model to predict protein-ligand interaction and molecular docking. In recent times, diffusion-based model have shown promising performance. This review documents the current state of the field and next steps. This survey covers DMs primarily from the point of view of backbone generation, both unconditional and conditional generation. It is interesting to see how modeling the backbone, sequence, and side chains would bring further benefit beyond the current strategy of modeling them one after the other. 
@@ -354,6 +357,10 @@ Although there is still room for improvement in prediction accuracy, we anticipa
 DynamicBind, a deep learning method that employs equivariant geometric diffusion networks to construct a smooth energy landscape, promoting efficient transitions between different equilibrium states. DynamicBind accurately recovers ligand-specific conformations from unbound protein structures without the need for holo-structures or extensive sampling.
 
 * [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
+
+* [Koh, Huan Yee, et al. "Physicochemical graph neural network for learning protein–ligand interaction fingerprints from sequence data." Nature Machine Intelligence (2024): 1-15.](https://www.nature.com/articles/s42256-024-00847-1). [Github](https://github.com/huankoh/PSICHIC)
+
+PSICHIC (PhySIcoCHemICal graph neural network), a framework incorporating physicochemical constraints to decode interaction fingerprints directly from sequence data alone.
 
 ### Conformer generators
 
@@ -389,6 +396,12 @@ PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular int
 * [Xu, Huafeng. "The slow but steady rise of binding free energy calculations in drug discovery." Journal of Computer-Aided Molecular Design (2022): 1-8.](https://link.springer.com/article/10.1007/s10822-022-00494-x)
 
 * [Thompson, James, et al. "Optimizing active learning for free energy calculations." Artificial Intelligence in the Life Sciences 2 (2022): 100050.](https://www.sciencedirect.com/science/article/pii/S2667318522000204)
+
+## Molecular-dynamics 
+
+* [MDANCE](https://mdance.readthedocs.io/en/latest/about.html)
+
+Molecular Dynamics Analysis with N-ary Clustering Ensembles (MDANCE) is a flexible n-ary clustering package that provides a set of tools for clustering Molecular Dynamics trajectories. 
 
 
 ## Cheminformatics-focus
