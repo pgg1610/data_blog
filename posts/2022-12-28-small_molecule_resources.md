@@ -1162,6 +1162,12 @@ Authors show GPT3 based predictive models perform on-par with SOTA with lower da
 
 * [Nach0](https://arxiv.org/abs/2311.12410)
 
+* [Tx-LLM](https://arxiv.org/html/2406.06316v1)
+
+The team is looking at creating an LLM-based predictive model (regression and classification). They show that one large model can be used to predict multiple end points (think of one model used for all ADME endpoints), and it indicates that training on a variety of tasks can improve overall performance (positive transfer learning). 
+
+I am glad to see this work as it shows how much information and feature-richness can be encoded within the transformer model, especially in the low-data regime; that said,  one caution with this approach is that the models are purely text-based and extremely black box and correlation doesn’t mean causation, more so here since we don’t have good control over features being used to train the model.
+
 **Small molecule related tasks**
 
 * [Liu, Shengchao, et al. "Multi-modal molecule structure–text model for text-based retrieval and editing." Nature Machine Intelligence 5.12 (2023): 1447-1457.](https://www.nature.com/articles/s42256-023-00759-6)
