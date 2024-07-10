@@ -114,6 +114,8 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 ## Commentary 
 
+* [Weaver, Donald F. "Chemists Invent Drugs and Drugs Save Lives." ChemMedChem (2024): e202400074.](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.202400074)
+
 * [Will AI turbocharge the hunt for new drugs?](https://www.ft.com/content/3e57ad6c-493d-4874-a663-0cb200d3cdb5)
 
 * [Comment about generative design from Patrick Walters](https://practicalcheminformatics.blogspot.com/2023/02/generative-molecular-design-we-need-to.html)
@@ -544,7 +546,6 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 Authors propose an algorithmic approach called as SpaceCompare to calculate overlap and diversity of the ultra-large combinatorial chemical libraries. The tool uses topological fragment spaces to capture the subtlties of the reaction having same product but different reactant substructures.
 
-
 * [Nicolaou, Christos A., et al. "The proximal lilly collection: Mapping, exploring and exploiting feasible chemical space." Journal of chemical information and modeling 56.7 (2016): 1253-1266.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.6b00173)
 
 * [Zabolotna, Y., et al. (2021). "SynthI: A New Open-Source Tool for Synthon-Based Library Design." Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.1c00754)
@@ -868,11 +869,15 @@ Benchmarking framework for comparing different multi-step retrosynthesis methods
 
 Transformer-based model for reaction classification. Compared it with BERT. Besides classification, the work also formalizes the reaction fingerprint generation using the learned representations. The reaction fingerprints are visualized using TMAPS.  
 
-* [Probst, Daniel, Philippe Schwaller, and Jean-Louis Reymond. "Reaction Classification and Yield Prediction Using the Differential Reaction Fingerprint DRFP." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60e358fb379e8d3ba9f92d15)
-
 * [Heid, E; Green, W; Machine learning of reaction properties via learned representations of the condensed graph of reaction. ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/6112ac487117507542e68bef)
 
 Reaction classifiction prediction using atom-mapped reaction that are used to generate condensed reaction graphs and passed through a GCN-variant as implemented in chemprop. 
+
+**Reaction-specific features**
+
+* [Heid, E., & Green, W. H. (2021). Machine learning of reaction properties via learned representations of the condensed graph of reaction. Journal of Chemical Information and Modeling, 62(9), 2101-2110.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c00975)
+
+* [Probst, Daniel, Philippe Schwaller, and Jean-Louis Reymond. "Reaction Classification and Yield Prediction Using the Differential Reaction Fingerprint DRFP." ChemRxiv (2021)](https://chemrxiv.org/engage/chemrxiv/article-details/60e358fb379e8d3ba9f92d15)
 
 * [Schneider, N., et al. (2015). "Development of a Novel Fingerprint for Chemical Reactions and Its Application to Large-Scale Reaction Classification and Similarity." Journal of Chemical Information and Modeling 55(1): 39-53.](https://pubs.acs.org/doi/10.1021/ci5006614)
 
@@ -895,6 +900,8 @@ Data-driven atom mapping schemes which uses transformers for learning the contex
 
 * [Data-Efficient, Chemistry-Aware Machine Learning Predictions of Diels–Alder Reaction Outcomes](https://pubs.acs.org/doi/10.1021/jacs.4c03131)
 
+Researchers use NERF that model electron flow in the reaction alongside bond-enviorment to propose diels-alder chemistry products. 
+
 * [C. W. Coley et al., “A graph-convolutional neural network model for the prediction of chemical reactivity,” Chem. Sci., vol. 10, no. 2, pp. 370–377, 2019.](https://pubs.rsc.org/en/content/articlepdf/2019/sc/c8sc04228d)
 
 Template-free prediction of organic reaction outcomes using graph convolutional neural networks
@@ -903,14 +910,36 @@ Template-free prediction of organic reaction outcomes using graph convolutional 
 
 * [Guan, Y., et al. (2021). "Regio-selectivity prediction with a machine-learned reaction representation and on-the-fly quantum mechanical descriptors." Chemical Science 12(6): 2198-2208](https://pubs.rsc.org/en/content/articlehtml/2021/sc/d0sc04823b)
 
-* [Schwaller, P., et al. (2019). "Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction." ACS Central Science 5(9): 1572-1583.](https://pubs.acs.org/doi/10.1021/acscentsci.9b00576) 
-
-* [Schwaller, P., et al. (2021). "Prediction of chemical reaction yields using deep learning." Machine Learning: Science and Technology 2(1)](https://iopscience.iop.org/article/10.1088/2632-2153/abc81d)
-
 * [Multi-Instance Learning Approach to the Modeling of Enantioselectivity of Conformationally Flexible Organic Catalysts](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00393)
 
 Conformational sampling and designing of chiral organic catalysts. 
 
+**Yield prediction**
+
+* [Raghavan, Priyanka, et al. "Incorporating Synthetic Accessibility in Drug Design: Predicting Reaction Yields of Suzuki Cross-Couplings by Leveraging AbbVie’s 15-Year Parallel Library Data Set." Journal of the American Chemical Society (2024).](https://pubs.acs.org/doi/full/10.1021/jacs.4c00098)
+
+Evaluation of AbbVie’s medicinal chemistry library data set to build machine learning models for the prediction of Suzuki coupling reaction yields.
+
+
+* [Ma, Yihong, et al. "Are we making much progress? Revisiting chemical reaction yield prediction from an imbalanced regression perspective." Companion Proceedings of the ACM on Web Conference 2024. 2024.](https://dl.acm.org/doi/pdf/10.1145/3589335.3651470)
+
+Through experiments on real-world datasets, they demonstrate that treating reaction yield prediction as an imbalanced regression problem and incorporating cost-sensitive reweighting methods can significantly improve predictions for underrepresented high-yield reactions. 
+
+* [Voinarovska, Varvara, et al. "When yield prediction does not yield prediction: an overview of the current challenges." (2023](https://chemrxiv.org/engage/chemrxiv/article-details/6509a987ed7d0eccc3d2b2c7)
+
+* [Saebi, Mandana, et al. "On the use of real-world datasets for reaction yield prediction." Chemical science 14.19 (2023): 4997-5005.](https://pubs.rsc.org/en/content/articlehtml/2023/sc/d2sc06041h)
+
+* [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)
+
+* [Multilabel Classification Models for the Prediction of Cross-Coupling Reaction Conditions](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01234)
+
+* [Schwaller, P., et al. (2021). "Prediction of chemical reaction yields using deep learning." Machine Learning: Science and Technology 2(1)](https://iopscience.iop.org/article/10.1088/2632-2153/abc81d). [Tutorial and blogpost](https://rxn4chemistry.github.io/rxn_yields/)
+
+* [Schwaller, P., et al. (2019). "Molecular Transformer: A Model for Uncertainty-Calibrated Chemical Reaction Prediction." ACS Central Science 5(9): 1572-1583.](https://pubs.acs.org/doi/10.1021/acscentsci.9b00576) 
+
+* [Ahneman, D. T., Estrada, J. G., Lin, S., Dreher, S. D., & Doyle, A. G. (2018). Predicting reaction performance in C–N cross-coupling using machine learning. Science, 360(6385), 186-190.](https://www.science.org/doi/full/10.1126/science.aar5169)
+
+Classic paper, one of the firsts to show modeling reaction yields using ML. A random forest algorithm, was used to predict synthetic reaction performance in multidimensional chemical space with high-throughput experimentation data. Descriptors for components in a palladium-catalyzed Buchwald-Hartwig cross-coupling were computed and used as inputs. The random forest model outperformed linear regression in predictive accuracy, even with sparse training sets and out-of-sample predictions, highlighting its potential for synthetic methodology adoption.
 
 **Retrosynthetic routes:** 
 
@@ -1033,15 +1062,6 @@ Also called Kraken - a discovery platform covering monodentate organophosphorus(
 
 Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts -- 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of >550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space. 
 
-**Yield prediction**
-
-* [Saebi, Mandana, et al. "On the use of real-world datasets for reaction yield prediction." Chemical science 14.19 (2023): 4997-5005.](https://pubs.rsc.org/en/content/articlehtml/2023/sc/d2sc06041h)
-
-* [Voinarovska, Varvara, et al. "When yield prediction does not yield prediction: an overview of the current challenges." (2023](https://chemrxiv.org/engage/chemrxiv/article-details/6509a987ed7d0eccc3d2b2c7)
-
-* [Predicting reaction performance in C–N cross-coupling using machine learning](https://www.science.org/doi/10.1126/science.aar5169?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)
-
-* [Multilabel Classification Models for the Prediction of Cross-Coupling Reaction Conditions](https://pubs.acs.org/doi/10.1021/acs.jcim.0c01234)
 
 **Generate catalysts**
 
@@ -1131,7 +1151,9 @@ While it is often possible to script the execution of these steps, scripting req
 
 Previously the field has propose assistants for this job [here](https://www.science.org/content/blog-post/lilly-s-virtual-med-chem-assistant) which comprised of pre-scripted set of rules and processes. While tedious, they seem to add lot of value to project teams for quickly analyzing the SAR. The hope is LLMs might make the dream of all encompasing assistant a reality. 
 
-[Total survey of the LLM landscape](https://arxiv.org/abs/2402.06196)
+* [Total survey of the LLM landscape](https://arxiv.org/abs/2402.06196)
+
+* [General LLM-based multi-agent survey](https://arxiv.org/pdf/2402.01680)
 
 **Reviews**
 
@@ -1183,10 +1205,11 @@ I am glad to see this work as it shows how much information and feature-richness
 
 **Small molecule related tasks**
 
+* [Le, Khiem, et al. "MolX: Enhancing Large Language Models for Molecular Learning with A Multi-Modal Extension." arXiv preprint arXiv:2406.06777 (2024).](https://arxiv.org/pdf/2406.06777)
+
 * [Liu, Shengchao, et al. "Multi-modal molecule structure–text model for text-based retrieval and editing." Nature Machine Intelligence 5.12 (2023): 1447-1457.](https://www.nature.com/articles/s42256-023-00759-6)
 
 * [Yu, Botao, et al. "LlaSMol: Advancing Large Language Models for Chemistry with a Large-Scale, Comprehensive, High-Quality Instruction Tuning Dataset." arXiv preprint arXiv:2402.09391 (2024).](https://osu-nlp-group.github.io/LLM4Chem/)
-
 
 * [Pei, Qizhi, et al. "BioT5+: Towards Generalized Biological Understanding with IUPAC Integration and Multi-task Tuning." arXiv preprint arXiv:2402.17810 (2024).](https://arxiv.org/pdf/2402.17810.pdf)
 
@@ -1214,7 +1237,6 @@ Authors look at clinical summarization and implement quantitative assesments wit
 
 Google's team shows Med-Gemini's real-world utility by surpassing human experts on tasks such as medical text summarization, alongside demonstrations of promising potential for multimodal medical dialogue, medical research and education.
 
-
 **Data curation**
 
 * [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
@@ -1240,6 +1262,10 @@ Despite so much progress around computer vision and optical character recognitio
 * [Img2Mol](https://github.com/bayer-science-for-a-better-life/Img2Mol)
 
 One of the core reasons this area has been under explored seems to be molecule patents are MADE to be tough to decipher. The format is non standard and markush enumerations, alongside, their actual chemical space coverage is ill-defined. 
+
+* [DECIMER](https://github.com/Kohulan/DECIMER-Image_Transformer)
+
+DECIMER Image Transformer: Deep Learning for Chemical Image Recognition using Efficient-Net V2 + Transformer. [V1](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-021-00538-8). Extraction of chemical structure through OSCR (Optical chemical structure recognition) from Steinbeck's group. 
 
 * [Fan, Vincent, et al. "OpenChemIE: An information extraction toolkit for chemistry literature." _Journal of Chemical Information and Modeling_ (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00572)
 
