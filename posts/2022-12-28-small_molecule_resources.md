@@ -360,10 +360,6 @@ DynamicBind, a deep learning method that employs equivariant geometric diffusion
 
 * [Yu, Jie, et al. "Computing the relative binding affinity of ligands based on a pairwise binding comparison network." Nature Computational Science 3.10 (2023): 860-872.](https://www.nature.com/articles/s43588-023-00529-9?#Sec13)
 
-* [Koh, Huan Yee, et al. "Physicochemical graph neural network for learning protein–ligand interaction fingerprints from sequence data." Nature Machine Intelligence (2024): 1-15.](https://www.nature.com/articles/s42256-024-00847-1). [Github](https://github.com/huankoh/PSICHIC)
-
-PSICHIC (PhySIcoCHemICal graph neural network), a framework incorporating physicochemical constraints to decode interaction fingerprints directly from sequence data alone.
-
 ### Conformer generators
 
 * [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
@@ -387,9 +383,15 @@ Suite of tools and workflow to benchmark Deep learning method's ability to predi
 
 PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
 
-### Binding free energetic calculations 
+### Binding energetic prediction 
 
 * [Warren, M., Deane, C., Magarkar, A., Morris, G., & Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.](https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62)
+
+Current SOTA model fail in out of distribution datasets implying overfitting or memorization of ligand-specific features. This paper introduces AEV-PLIG, atomic environment vector with protein-ligand interaction  graphs. They propose new benchmark metrics and data augmentation strategies.A multi-head attention graph NN is trained with the node features of the P-L interaction. They report comparable performance to FEP+ on standard benchmarks.  
+
+* [Koh, Huan Yee, et al. "Physicochemical graph neural network for learning protein–ligand interaction fingerprints from sequence data." Nature Machine Intelligence (2024): 1-15.](https://www.nature.com/articles/s42256-024-00847-1). [Github](https://github.com/huankoh/PSICHIC)
+
+PSICHIC (PhySIcoCHemICal graph neural network), a framework incorporating physicochemical constraints to decode interaction fingerprints directly from sequence data alone.
 
 * [Janela, Tiago, and Jürgen Bajorath. "Rationalizing general limitations in assessing and comparing methods for compound potency prediction." Scientific Reports 13.1 (2023): 17816.](https://www.nature.com/articles/s41598-023-45086-3)
 
@@ -455,6 +457,10 @@ Machine learning focused descriptors for small molecules with emphasis on 3D inf
 * [PMapper](https://github.com/DrrDom/pmapper)
 
 Pmapper is a Python module to generate 3D pharmacophore signatures and fingerprints. Signatures uniquely encode 3D pharmacophores with hashes suitable for fast identification of identical pharmacophores.
+
+* [SteriMol](https://pubs.acs.org/doi/10.1021/acscatal.8b04043)
+
+Generate conformationally sampled descriptors for a molecule. This workflow provides Boltzmann-averaged Sterimol parameters. These descriptors might be useful for problems where spatial orientation inform the selectivity or properties being trained for. [Github](https://github.com/bobbypaton/wSterimol)
 
 ### Predictive modeling 
 
@@ -606,6 +612,10 @@ Active learning provides strategies for efficient screening of subsets of the li
 The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks.  Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model. 
 
 **Articles**
+
+* [Gusev, Filipp, et al. "Active learning guided drug design lead optimization based on relative binding free energy modeling." Journal of Chemical Information and Modeling 63.2 (2023): 583-594.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01052)
+
+Active learning on BDE. 
 
 * [Klarich, Kathryn, et al. "Thompson Sampling─ An Efficient Method for Searching Ultralarge Synthesis on Demand Databases." Journal of Chemical Information and Modeling (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01790). Update on it from AZ folks [Link](https://www.biorxiv.org/content/10.1101/2024.05.16.594622v1.full.pdf)
 
@@ -1031,6 +1041,10 @@ Thoughts from industry practioners on how to label low/no yield reactions in ele
 * [Machine Learning Strategies for Reaction Development: Toward the Low-Data Limit](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00577)
 
 **Articles**
+
+* [Haas, Brittany, et al. "Rapid Prediction of Conformationally-Dependent DFT-Level Descriptors using Graph Neural Networks for Carboxylic Acids and Alkyl Amines." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/65d79de59138d23161bec6e6)
+
+2D and 3D-aware GNNs to predict DFT descriptors for conformationally flexible molecules, focusing on carboxylic acid and amines in particular. 
 
 * [Wang, J.Y., Stevens, J.M., Kariofillis, S.K. et al. Identifying general reaction conditions by bandit optimization. Nature 626, 1025–1033 (2024).](https://www.nature.com/articles/s41586-024-07021-y#citeas)
 

@@ -166,7 +166,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#protein-ligand-interactions" id="toc-protein-ligand-interactions" class="nav-link" data-scroll-target="#protein-ligand-interactions">Protein-ligand interactions</a>
   <ul class="collapse">
   <li><a href="#conformer-generators" id="toc-conformer-generators" class="nav-link" data-scroll-target="#conformer-generators">Conformer generators</a></li>
-  <li><a href="#binding-free-energetic-calculations" id="toc-binding-free-energetic-calculations" class="nav-link" data-scroll-target="#binding-free-energetic-calculations">Binding free energetic calculations</a></li>
+  <li><a href="#binding-energetic-prediction" id="toc-binding-energetic-prediction" class="nav-link" data-scroll-target="#binding-energetic-prediction">Binding energetic prediction</a></li>
   </ul></li>
   <li><a href="#molecular-dynamics" id="toc-molecular-dynamics" class="nav-link" data-scroll-target="#molecular-dynamics">Molecular-dynamics</a></li>
   <li><a href="#cheminformatics-focus" id="toc-cheminformatics-focus" class="nav-link" data-scroll-target="#cheminformatics-focus">Cheminformatics-focus</a>
@@ -525,10 +525,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>DynamicBind, a deep learning method that employs equivariant geometric diffusion networks to construct a smooth energy landscape, promoting efficient transitions between different equilibrium states. DynamicBind accurately recovers ligand-specific conformations from unbound protein structures without the need for holo-structures or extensive sampling.</p>
 <ul>
-<li><p><a href="https://www.nature.com/articles/s43588-023-00529-9?#Sec13">Yu, Jie, et al.&nbsp;“Computing the relative binding affinity of ligands based on a pairwise binding comparison network.” Nature Computational Science 3.10 (2023): 860-872.</a></p></li>
-<li><p><a href="https://www.nature.com/articles/s42256-024-00847-1">Koh, Huan Yee, et al.&nbsp;“Physicochemical graph neural network for learning protein–ligand interaction fingerprints from sequence data.” Nature Machine Intelligence (2024): 1-15.</a>. <a href="https://github.com/huankoh/PSICHIC">Github</a></p></li>
+<li><a href="https://www.nature.com/articles/s43588-023-00529-9?#Sec13">Yu, Jie, et al.&nbsp;“Computing the relative binding affinity of ligands based on a pairwise binding comparison network.” Nature Computational Science 3.10 (2023): 860-872.</a></li>
 </ul>
-<p>PSICHIC (PhySIcoCHemICal graph neural network), a framework incorporating physicochemical constraints to decode interaction fingerprints directly from sequence data alone.</p>
 <section id="conformer-generators" class="level3">
 <h3 class="anchored" data-anchor-id="conformer-generators">Conformer generators</h3>
 <ul>
@@ -548,10 +546,17 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://arxiv.org/abs/2308.07413">Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models</a></p>
 <p>PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures. In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode. In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design.</p>
 </section>
-<section id="binding-free-energetic-calculations" class="level3">
-<h3 class="anchored" data-anchor-id="binding-free-energetic-calculations">Binding free energetic calculations</h3>
+<section id="binding-energetic-prediction" class="level3">
+<h3 class="anchored" data-anchor-id="binding-energetic-prediction">Binding energetic prediction</h3>
 <ul>
-<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62">Warren, M., Deane, C., Magarkar, A., Morris, G., &amp; Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.</a></p></li>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62">Warren, M., Deane, C., Magarkar, A., Morris, G., &amp; Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.</a></li>
+</ul>
+<p>Current SOTA model fail in out of distribution datasets implying overfitting or memorization of ligand-specific features. This paper introduces AEV-PLIG, atomic environment vector with protein-ligand interaction graphs. They propose new benchmark metrics and data augmentation strategies.A multi-head attention graph NN is trained with the node features of the P-L interaction. They report comparable performance to FEP+ on standard benchmarks.</p>
+<ul>
+<li><a href="https://www.nature.com/articles/s42256-024-00847-1">Koh, Huan Yee, et al.&nbsp;“Physicochemical graph neural network for learning protein–ligand interaction fingerprints from sequence data.” Nature Machine Intelligence (2024): 1-15.</a>. <a href="https://github.com/huankoh/PSICHIC">Github</a></li>
+</ul>
+<p>PSICHIC (PhySIcoCHemICal graph neural network), a framework incorporating physicochemical constraints to decode interaction fingerprints directly from sequence data alone.</p>
+<ul>
 <li><p><a href="https://www.nature.com/articles/s41598-023-45086-3">Janela, Tiago, and Jürgen Bajorath. “Rationalizing general limitations in assessing and comparing methods for compound potency prediction.” Scientific Reports 13.1 (2023): 17816.</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s43588-023-00531-1">Efficient prediction of relative ligand binding affinity in drug discovery. Nat Comput Sci 3, 829–830 (2023). https://doi.org/10.1038/s43588-023-00531-1</a></p></li>
 <li><p><a href="https://link.springer.com/article/10.1007/s10822-022-00494-x">Xu, Huafeng. “The slow but steady rise of binding free energy calculations in drug discovery.” Journal of Computer-Aided Molecular Design (2022): 1-8.</a></p></li>
@@ -599,6 +604,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://github.com/DrrDom/pmapper">PMapper</a></p></li>
 </ul>
 <p>Pmapper is a Python module to generate 3D pharmacophore signatures and fingerprints. Signatures uniquely encode 3D pharmacophores with hashes suitable for fast identification of identical pharmacophores.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acscatal.8b04043">SteriMol</a></li>
+</ul>
+<p>Generate conformationally sampled descriptors for a molecule. This workflow provides Boltzmann-averaged Sterimol parameters. These descriptors might be useful for problems where spatial orientation inform the selectivity or properties being trained for. <a href="https://github.com/bobbypaton/wSterimol">Github</a></p>
 </section>
 <section id="predictive-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="predictive-modeling">Predictive modeling</h3>
@@ -738,6 +747,10 @@ ul.task-list li input[type="checkbox"] {
 <p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/655f22eecf8b3c3cd7ef43d7">Traversing Chemical Space with Active Deep Learning</a></p>
 <p>The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks. Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model.</p>
 <p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.2c01052">Gusev, Filipp, et al.&nbsp;“Active learning guided drug design lead optimization based on relative binding free energy modeling.” Journal of Chemical Information and Modeling 63.2 (2023): 583-594.</a></li>
+</ul>
+<p>Active learning on BDE.</p>
 <ul>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01790">Klarich, Kathryn, et al.&nbsp;“Thompson Sampling─ An Efficient Method for Searching Ultralarge Synthesis on Demand Databases.” Journal of Chemical Information and Modeling (2024).</a>. Update on it from AZ folks <a href="https://www.biorxiv.org/content/10.1101/2024.05.16.594622v1.full.pdf">Link</a></p></li>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00227f">Fromer, Jenna C., David E. Graff, and Connor W. Coley. “Pareto optimization to accelerate multi-objective virtual screening.” Digital Discovery (2024).</a></p></li>
@@ -1101,6 +1114,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00577">Machine Learning Strategies for Reaction Development: Toward the Low-Data Limit</a></p></li>
 </ul>
 <p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65d79de59138d23161bec6e6">Haas, Brittany, et al.&nbsp;“Rapid Prediction of Conformationally-Dependent DFT-Level Descriptors using Graph Neural Networks for Carboxylic Acids and Alkyl Amines.” (2024).</a></li>
+</ul>
+<p>2D and 3D-aware GNNs to predict DFT descriptors for conformationally flexible molecules, focusing on carboxylic acid and amines in particular.</p>
 <ul>
 <li><a href="https://www.nature.com/articles/s41586-024-07021-y#citeas">Wang, J.Y., Stevens, J.M., Kariofillis, S.K. et al.&nbsp;Identifying general reaction conditions by bandit optimization. Nature 626, 1025–1033 (2024).</a></li>
 </ul>
