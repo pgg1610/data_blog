@@ -312,6 +312,8 @@ The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the co
 
 **Articles**
 
+* [Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology](https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38)
+
 * [Zhang, Yueqing, et al. "FragGrow: A Web Server for Structure-Based Drug Design by Fragment Growing within Constraints." Journal of Chemical Information and Modeling (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00154)
 
 * [Cree, Ben, et al. "Active learning driven prioritisation of compounds from on-demand libraries targeting the SARS-CoV-2 main protease." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/667699175101a2ffa837f110)[FEGrow Github](https://github.com/cole-group/FEgrow/)
@@ -831,7 +833,9 @@ Interesting work on designing linkers using conformation aware generative design
 
 **Synthetic-cost aware**
 
-* [Fromer, Jenna C., and Connor W. Coley. "An algorithmic framework for synthetic cost-aware decision making in molecular design." _Nature Computational Science_ (2024): 1-11.](https://www.nature.com/articles/s43588-024-00639-y). [Preprint](https://arxiv.org/abs/2311.02187)
+* [Fromer, Jenna C., and Connor W. Coley. "An algorithmic framework for synthetic cost-aware decision making in molecular design. Sparrow" _Nature Computational Science_ (2024): 1-11.](https://www.nature.com/articles/s43588-024-00639-y). [Preprint](https://arxiv.org/abs/2311.02187). [Medium blogpost](https://medium.com/@kapeluha.ann00/cost-aware-prioritization-of-molecules-for-synthesis-with-sparrow-68c453b66f03)
+
+SPARROW prioritizes molecules that both have high rewards and can be synthesized in a few steps from cheap starting materials. It is also shown to combine the library-focused and generative design based compounds in one setting depending on the harmony of the proposed synthetic routes and costs. 
 
 ## Computer Aided Synthesis Planning (CASP) 
 
@@ -895,6 +899,9 @@ Using scrapped US Patent data to classify chemical reactions and deploy various 
 
 
 **Atom mapping:** 
+
+* [Chen, Shuan, et al. "Precise atom-to-atom mapping for organic reactions via human-in-the-loop machine learning." Nature Communications 15.1 (2024): 2250.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10937625/pdf/41467_2024_Article_46364.pdf)
+
 
 * [Lin, A., et al. (2021). "Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies."](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R)
 
@@ -1000,7 +1007,7 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 
 * [Machine learning in chemical reaction space](https://www.nature.com/articles/s41467-020-19267-x)
 
-Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE. 
+Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE.
 
 **Estimate molecular synthesizability**
 
@@ -1023,6 +1030,10 @@ SCScore is a learned synthetic complexity score computed as a neural network mod
 * [Liu, Cheng-Hao, et al. "RetroGNN: Fast Estimation of Synthesizability for Virtual Screening and De Novo Design by Learning from Slow Retrosynthesis Software." Journal of Chemical Information and Modeling 62.10 (2022): 2293-2300.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01476)
 
 RetroGNN is a graph neural network based model to predict outcome of a synthesis planner given the target molecule. Shown to better perform than SAScore. Code is yet to be released. 
+
+* [Chen, Shuan, and Yousung Jung. "Estimating the synthetic accessibility of molecules with building block and reaction-aware SAScore." Journal of Cheminformatics 16 (2024).](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00879-0)
+
+Authors introduce BR-SAScore, an enhanced version of SAScore that integrates the available building block information (B) and reaction knowledge (R) from synthesis planning programs into the scoring process. The score can also identify fragment contributing to the synthetic infeasibility. 
 
 ### Data-driven chemistry modeling and reaction optimization
 
@@ -1150,7 +1161,6 @@ Propose a way to incoporate 3D-spatial information in the DEL read outs to denoi
 
 Set of informatic tools to look at BBs producitivity in DEL screens and guide designs for new DELs. Authors calculate joint probabilities of the BBs for its activity and find increasing binding metric for individual BBs also increases the overall binding energy. The authors then cluster these BBs using 2D and 3D tanimoto FPs (3D Tanimoto Combo) and HDBSCAN clustering. Good workflow for implementing 3D-based ROCs filtering. 
 
-
 ## Large Language Models (LLMs)
 
 It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  
@@ -1168,6 +1178,8 @@ Previously the field has propose assistants for this job [here](https://www.scie
 * [Total survey of the LLM landscape](https://arxiv.org/abs/2402.06196)
 
 * [General LLM-based multi-agent survey](https://arxiv.org/pdf/2402.01680)
+
+* [Scientific Large Language Models: A Survey on Biological & Chemical Domains](https://arxiv.org/pdf/2401.14656)
 
 **Reviews**
 

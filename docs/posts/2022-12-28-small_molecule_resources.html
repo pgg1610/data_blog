@@ -485,6 +485,7 @@ ul.task-list li input[type="checkbox"] {
 <p>The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the ‘target-rich, lead-poor’ issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.</p>
 <p><strong>Articles</strong></p>
 <ul>
+<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38">Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c00154">Zhang, Yueqing, et al.&nbsp;“FragGrow: A Web Server for Structure-Based Drug Design by Fragment Growing within Constraints.” Journal of Chemical Information and Modeling (2024).</a></p></li>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/667699175101a2ffa837f110">Cree, Ben, et al.&nbsp;“Active learning driven prioritisation of compounds from on-demand libraries targeting the SARS-CoV-2 main protease.” (2024).</a><a href="https://github.com/cole-group/FEgrow/">FEGrow Github</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s42256-024-00815-9">Igashov, Ilia, et al.&nbsp;“Equivariant 3D-conditional diffusion model for molecular linker design.” Nature Machine Intelligence (2024): 1-11.</a> <a href="https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/">Pen’s blog</a></p></li>
@@ -938,8 +939,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Synthetic-cost aware</strong></p>
 <ul>
-<li><a href="https://www.nature.com/articles/s43588-024-00639-y">Fromer, Jenna C., and Connor W. Coley. “An algorithmic framework for synthetic cost-aware decision making in molecular design.”&nbsp;<em>Nature Computational Science</em>&nbsp;(2024): 1-11.</a>. <a href="https://arxiv.org/abs/2311.02187">Preprint</a></li>
+<li><a href="https://www.nature.com/articles/s43588-024-00639-y">Fromer, Jenna C., and Connor W. Coley. “An algorithmic framework for synthetic cost-aware decision making in molecular design. Sparrow”&nbsp;<em>Nature Computational Science</em>&nbsp;(2024): 1-11.</a>. <a href="https://arxiv.org/abs/2311.02187">Preprint</a>. <a href="https://medium.com/@kapeluha.ann00/cost-aware-prioritization-of-molecules-for-synthesis-with-sparrow-68c453b66f03">Medium blogpost</a></li>
 </ul>
+<p>SPARROW prioritizes molecules that both have high rewards and can be synthesized in a few steps from cheap starting materials. It is also shown to combine the library-focused and generative design based compounds in one setting depending on the harmony of the proposed synthetic routes and costs.</p>
 </section>
 <section id="computer-aided-synthesis-planning-casp" class="level2">
 <h2 class="anchored" data-anchor-id="computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</h2>
@@ -992,7 +994,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Using scrapped US Patent data to classify chemical reactions and deploy various fingerprints and ML models for classification.</p>
 <p><strong>Atom mapping:</strong></p>
 <ul>
-<li><a href="https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R">Lin, A., et al.&nbsp;(2021). “Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies.”</a></li>
+<li><p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10937625/pdf/41467_2024_Article_46364.pdf">Chen, Shuan, et al.&nbsp;“Precise atom-to-atom mapping for organic reactions via human-in-the-loop machine learning.” Nature Communications 15.1 (2024): 2250.</a></p></li>
+<li><p><a href="https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R">Lin, A., et al.&nbsp;(2021). “Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies.”</a></p></li>
 </ul>
 <p>Comparative analysis of different atom-mapping schemes for generating atom-mapped reaction features. Comments on the state of the art methods and their performance on a curated reaction database.</p>
 <ul>
@@ -1098,6 +1101,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c01476">Liu, Cheng-Hao, et al.&nbsp;“RetroGNN: Fast Estimation of Synthesizability for Virtual Screening and De Novo Design by Learning from Slow Retrosynthesis Software.” Journal of Chemical Information and Modeling 62.10 (2022): 2293-2300.</a></li>
 </ul>
 <p>RetroGNN is a graph neural network based model to predict outcome of a synthesis planner given the target molecule. Shown to better perform than SAScore. Code is yet to be released.</p>
+<ul>
+<li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00879-0">Chen, Shuan, and Yousung Jung. “Estimating the synthetic accessibility of molecules with building block and reaction-aware SAScore.” Journal of Cheminformatics 16 (2024).</a></li>
+</ul>
+<p>Authors introduce BR-SAScore, an enhanced version of SAScore that integrates the available building block information (B) and reaction knowledge (R) from synthesis planning programs into the scoring process. The score can also identify fragment contributing to the synthetic infeasibility.</p>
 <section id="data-driven-chemistry-modeling-and-reaction-optimization" class="level3">
 <h3 class="anchored" data-anchor-id="data-driven-chemistry-modeling-and-reaction-optimization">Data-driven chemistry modeling and reaction optimization</h3>
 <p><strong>Review / Perspectives</strong></p>
@@ -1218,6 +1225,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><a href="https://arxiv.org/abs/2402.06196">Total survey of the LLM landscape</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2402.01680">General LLM-based multi-agent survey</a></p></li>
+<li><p><a href="https://arxiv.org/pdf/2401.14656">Scientific Large Language Models: A Survey on Biological &amp; Chemical Domains</a></p></li>
 </ul>
 <p><strong>Reviews</strong></p>
 <ul>
