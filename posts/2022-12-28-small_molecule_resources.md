@@ -499,8 +499,17 @@ QupKake combines GFN2-xTB calculations with graph-neural-networks to accurately 
 * [Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules](https://www.nature.com/articles/s41598-023-30089-x)
 
 
-### QSAR benchmarks 
+## Pharmacophore / shape searching 
 
+* [Rianjongdee, Francesco, et al. "bbSelect–An Open-Source Tool for Performing a 3D Pharmacophore-Driven Diverse Selection of R-Groups." Journal of Chemical Information and Modeling (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00453). [Pen's blog](https://iwatobipen.wordpress.com/2024/06/25/new-approach-for-selecting-builidng-blocks-from-reagent-set-rdkit-memo-cheminformatics/)
+
+* [PheSA: An Open-Source Tool for Pharmacophore-Enhanced Shape Alignment](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00516)
+
+* [ShaEP](https://users.abo.fi/mivainio/shaep/download.php)
+
+* [Roshambo](https://github.com/molecularinformatics/roshambo)
+
+### QSAR benchmarks 
 
 * [Llompart, P., et al. "Will we ever be able to accurately predict solubility?" Scientific Data 11.1 (2024): 303.](https://www.nature.com/articles/s41597-024-03105-6)
 
@@ -531,6 +540,10 @@ Account on how to treat and analyze activity cliffs in context of developing a p
 * [Systematic Evaluation of Local and Global Machine Learning Models for the Prediction of ADME Properties](https://pubs.acs.org/doi/10.1021/acs.molpharmaceut.2c00962)
 
 Authors provide an evaluation of global and local models for ADME endpoint prediction. They compare the performance of global models and domain-specific local models. 10 different asays and 112 drug discovery projects were analyzed. The results showed consistent superior performance of global ADME models for property prediction. Performance improvement of global models over project-wise local models ranged from 3% to 25% in MAE. Local model improvements higher than 20% were achieved for only 7% of the assay-project pairs. 
+
+* [Swanson, Kyle, et al. "ADMET-AI: A machine learning ADMET platform for evaluation of large-scale chemical libraries." BioRxiv (2023): 2023-12.](https://www.biorxiv.org/content/10.1101/2023.12.28.573531v1.abstract) [Web interface](https://admet.ai.greenstonebio.com/) [Code](https://github.com/swansonk14/admet_ai)
+
+Online web interface to quickly predict ADMET properties using specific AI models trained on Therapeutic Data Commmons dataset. 
 
 **Datasets**
 
