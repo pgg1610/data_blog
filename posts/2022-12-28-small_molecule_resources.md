@@ -505,9 +505,14 @@ QupKake combines GFN2-xTB calculations with graph-neural-networks to accurately 
 
 * [PheSA: An Open-Source Tool for Pharmacophore-Enhanced Shape Alignment](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00516)
 
+PheSA is a CPU bound algorithmic improvement over ROCS shape/color alignment that gives you an option to incorporate binding site knowledge.
+
 * [ShaEP](https://users.abo.fi/mivainio/shaep/download.php)
 
 * [Roshambo](https://github.com/molecularinformatics/roshambo)
+
+ROSHAMBO is a GPU accelerated implementation of ROCS
+
 
 ### QSAR benchmarks 
 
@@ -627,6 +632,10 @@ Active learning provides strategies for efficient screening of subsets of the li
 The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks.  Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model. 
 
 **Articles**
+
+* [Correy, Galen J., Moira M. Rachman, Takaya Togo, Stefan Gahbauer, Yagmur U. Doruk, Maisie GV Stevens, Priyadarshini Jaishankar et al. "Extensive exploration of structure activity relationships for the SARS-CoV-2 macrodomain from shape-based fragment merging and active learning." bioRxiv (2024): 2024-08.](https://www.biorxiv.org/content/10.1101/2024.08.25.609621v1)
+
+Very nice work from Shoichet (Zinc, UCSF) + Relay folks (Pat Walter et al) expanding on their active learning method to SAR CoV2. Use FrankenROCS and Thompson sampling to screen millions of compounds, identifying hits with IC50 values as low as 130 μM + ~100 X-ray crystal structures with binding data. Have been a big fan of active learning esp. multi-armed bandits. 
 
 * [Gusev, Filipp, et al. "Active learning guided drug design lead optimization based on relative binding free energy modeling." Journal of Chemical Information and Modeling 63.2 (2023): 583-594.](https://pubs.acs.org/doi/10.1021/acs.jcim.2c01052)
 
@@ -1048,6 +1057,10 @@ RetroGNN is a graph neural network based model to predict outcome of a synthesis
 
 Authors introduce BR-SAScore, an enhanced version of SAScore that integrates the available building block information (B) and reaction knowledge (R) from synthesis planning programs into the scoring process. The score can also identify fragment contributing to the synthetic infeasibility. 
 
+* [Parrot, Maud, et al. "Integrating synthetic accessibility with AI-based generative drug design." Journal of Cheminformatics 15.1 (2023): 83.](https://link.springer.com/article/10.1186/s13321-023-00742-8)
+
+From team at Iktos for triaging molecule designs. The group introduces (retro-score) RScore and RSPred (derived score from RScore using NN). RScore is computed through a full retrosynthesis analysis. The R2 value for RSPred is 0.75. 
+
 ### Data-driven chemistry modeling and reaction optimization
 
 **Review / Perspectives**
@@ -1064,7 +1077,36 @@ Thoughts from industry practioners on how to label low/no yield reactions in ele
 
 * [Machine Learning Strategies for Reaction Development: Toward the Low-Data Limit](https://pubs.acs.org/doi/full/10.1021/acs.jcim.3c00577)
 
+**Industrial reactions commentary**
+
+* [Expanding the medicinal chemistry synthetic toolbox](https://www.nature.com/articles/nrd.2018.116)
+
+* [The Medicinal Chemist’s Toolbox: An Analysis of Reactions Used in the Pursuit of Drug Candidates](https://doi.org/10.1021/jm200187y)
+
+* [Late-Stage Saturation of Drug Molecules](https://pubs.acs.org/doi/10.1021/jacs.4c00807?ref=recommended)
+
+
+**Substrate Scoping**
+
+Area to understand the coverage of chemical space by a specific reaction transformation. Knowing which substrates can be used for a specific type of reactions can accelerate the generation of HTE datasets, and also reduce wastage and failures in searching for right substrates. Every new reaction protocol which is proposed would have a corresponding set of amenable 'action-space' for the ligands. 
+
+* [Rana, D., Pflüger, P. M., Hölter, N. P., Tan, G., & Glorius, F. (2024). Standardizing Substrate Selection: A Strategy toward Unbiased Evaluation of Reaction Generality. ACS Central Science, 10(4), 899-906.](https://pubs.acs.org/doi/10.1021/acscentsci.3c01638)
+
+The authors report a standardized substrate selection strategy which mitigates biases found in traditional substrate scoping tables. This way the chemists can showcase unbiased applicability of novel methodologies facilitating their practical applications. 
+
+* [Gao, W., Raghavan, P., Shprints, R., & Coley, C. W. (2024). Substrate Scope Contrastive Learning: Repurposing Human Bias to Learn Atomic Representations. arXiv preprint arXiv:2402.16882.](https://arxiv.org/pdf/2402.16882)
+
+* [Kariofillis, Stavros K., et al. "Using data science to guide aryl bromide substrate scope analysis in a Ni/photoredox-catalyzed cross-coupling with acetals as alcohol-derived radical sources." Journal of the American Chemical Society 144.2 (2022): 1045-1055.](https://pubs.acs.org/doi/10.1021/jacs.1c12203)
+
+Integration of data science techniques, including DFT featurization, dimensionality reduction, and hierarchical clustering, to delineate a diverse and succinct collection of aryl bromides that is representative of the chemical space of the substrate class
+
+* [On the Topic of Substrate Scope](https://pubs.acs.org/doi/10.1021/acs.orglett.2c03246)
+
 **Articles**
+
+* [Pomberger, Alexander, et al. "The effect of chemical representation on active machine learning towards closed-loop optimization." Reaction Chemistry & Engineering 7.6 (2022): 1368-1379.](https://pubs.rsc.org/en/content/articlelanding/2022/re/d2re00008c)
+
+Lapkin and co look at the effect of chemical representation on reaction performance and condition prediction tasks. They look at the high throughput experientation generated datasets and the impact of calculated chemical descriptors on the prediction of reaction yields. They show tailored descriptions did not outperform the traditional ones but larger initial data accelerated reaction performance. 
 
 * [Haas, Brittany, et al. "Rapid Prediction of Conformationally-Dependent DFT-Level Descriptors using Graph Neural Networks for Carboxylic Acids and Alkyl Amines." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/65d79de59138d23161bec6e6)
 
@@ -1108,6 +1150,10 @@ Multi-objective optimization of catalytic reactions that employ chiral bisphosph
 Use VAE and RNN to propose new catalyst for Suzuki cross-coupling reaction. The trained models are used to find catalyst's binding energy and find high percentage of novel and valid designs. 
 
 **Databases**
+
+* [Avila, Claudio, et al. "Chemistry in a graph: modern insights into commercial organic synthesis planning." Digital Discovery (2024).](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00120f)
+
+Team from Pfizer use Graph Datasets and Network visualization to show how process chemistry data (GLP1 inhibitor Lotiglipron in this case) can be stored, queried, and used for illustration purposes. They demonstrate the utility of knowledge graph for optimizing the route selection process. Neo4J is used for querying the dataset. 
 
 * [Kearnes, S. M., et al. (2021). "The Open Reaction Database." Journal of the American Chemical Society.](https://pubs.acs.org/doi/full/10.1021/jacs.1c09820?utm_source=pocket_mylist)
 
@@ -1218,6 +1264,8 @@ Coscientist, a set of LLMs for designing and executing organic syntheses.  Cosci
 
 * [ProtAgents](https://github.com/lamm-mit/ProtAgents)
 
+* [AI Scientist from SakanaAI](https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file)
+
 **Generative Design**
 
 * [Wang, Haorui, et al. "Efficient Evolutionary Search Over Chemical Space with Large Language Models." _arXiv preprint arXiv:2406.16976_ (2024).](https://molleo.github.io/)
@@ -1255,6 +1303,10 @@ I am glad to see this work as it shows how much information and feature-richness
 BioT5+ incorporates several novel features: integration of IUPAC names for molecular understanding, inclusion of extensive bio-text and molecule data from sources like bioRxiv and PubChem, the multi-task in struction tuning for generality across tasks, and a novel numerical tokenization technique for improved processing of numerical data. 
 
 * [Irwin, R., Dimitriadis, S., He, J., Bjerrum, E.J., 2021. Chemformer: A Pre-Trained Transformer for Computational Chemistry. Mach. Learn. Sci. Technol.](https://github.com/MolecularAI/Chemformer). Previously called [MolBART](https://github.com/MolecularAI/MolBART)
+
+* [LLM-based generation and benchmarking](https://www.deepmirror.ai/post/one-molecular-generator-to-rule-them-all)
+
+* [Language + Molecule Benchmarks](https://github.com/language-plus-molecules/LPM-24-Tutorial)
 
 **Protein design and mechanics**
 
@@ -1309,6 +1361,10 @@ DECIMER Image Transformer: Deep Learning for Chemical Image Recognition using Ef
 * [Fan, Vincent, et al. "OpenChemIE: An information extraction toolkit for chemistry literature." _Journal of Chemical Information and Modeling_ (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00572)
 
 Focused on the extraction of reaction data from journals. OpenChemIE is most suited for information extraction on organic chemistry literature, where molecules are generally depicted as planar graphs or written in text and can be consolidated into a SMILES format.
+
+* [Ai, Q., Meng, F., Shi, J., Pelkie, B. G., & Coley, C. W. (2024). Extracting structured data from organic synthesis procedures using a fine-tuned large language model. Digital Discovery.](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d4dd00091a)
+
+Using Llama-2 7b to extract entities from synthesis recipes from reactions. 
 
 ## Code / Packages:
 
