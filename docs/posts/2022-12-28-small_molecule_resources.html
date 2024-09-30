@@ -317,6 +317,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="industry-focused-drug-discovery-reviews" class="level2">
 <h2 class="anchored" data-anchor-id="industry-focused-drug-discovery-reviews">Industry-focused drug discovery reviews</h2>
 <ul>
+<li><a href="https://pubs.acs.org/doi/epdf/10.1021/acs.jmedchem.2c00334?ref=article_openPDF">Goldman, B., Kearnes, S., Kramer, T., Riley, P., &amp; Walters, W. P. (2022). Defining levels of automated chemical design. Journal of medicinal chemistry, 65(10), 7073-7087.</a></li>
+</ul>
+<p>Group at Relay Therapeutics propose a framework to categorize automated chemical design paradigm - splitting it into generator and decision axes. They give good example of model systems where the machine generates and human chemist select and more recently machine generated and machine chosen designs. In of these discussion, it is evident we havent achieved the full automated execution of a design cycle.</p>
+<ul>
 <li><a href="https://www.annualreviews.org/doi/10.1146/annurev-pharmtox-040323-040828?url_ver=Z39.88-2003&amp;rfr_id=ori%3Arid%3Acrossref.org&amp;rfr_dat=cr_pub++0pubmed">Hasselgren, Catrin, and Tudor I. Oprea. “Artificial Intelligence for Drug Discovery: Are We There Yet?.” Annual Review of Pharmacology and Toxicology 64 (2024).</a> <a href="https://arxiv.org/abs/2307.06521">ArXiv</a></li>
 </ul>
 <p>Latest review of the field and application of AI technologies to various functions of drug discovery. In addition to providing a quick review of the main technology the author list different case studies where AI has proposed clinical candidates across different therapeutic areas. Yet, the need for better data, novelty estimation, and validation in wet lab limit the full scale deployment and accuracy of AI pipelines in drug discovery. In closing they also hint at the limitation of ML model training a single property with single structure, QSAR, while in reality the molecule can exist in different conformers something multi-instance learning (MIL) can address. ‘It is reasonable to assume that user expertise, bias, and time constraints play a significant role in early drug discovery, often more so than AI.’</p>
@@ -488,11 +492,15 @@ ul.task-list li input[type="checkbox"] {
 <p>The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the ‘target-rich, lead-poor’ issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.</p>
 <p><strong>Articles</strong></p>
 <ul>
-<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38">Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology</a></p></li>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38">Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology</a></li>
+</ul>
+<p>Fragmenstein, stitches ligand atoms from known fragment hits to predict protein-ligand complex conformations more accurately. Fragmenstein uses a Python package to merge or place compounds by stitching together atoms from fragment hits and then energy minimizing them under strong constraints.</p>
+<ul>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.4c00154">Zhang, Yueqing, et al.&nbsp;“FragGrow: A Web Server for Structure-Based Drug Design by Fragment Growing within Constraints.” Journal of Chemical Information and Modeling (2024).</a></p></li>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/667699175101a2ffa837f110">Cree, Ben, et al.&nbsp;“Active learning driven prioritisation of compounds from on-demand libraries targeting the SARS-CoV-2 main protease.” (2024).</a><a href="https://github.com/cole-group/FEgrow/">FEGrow Github</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s42256-024-00815-9">Igashov, Ilia, et al.&nbsp;“Equivariant 3D-conditional diffusion model for molecular linker design.” Nature Machine Intelligence (2024): 1-11.</a> <a href="https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/">Pen’s blog</a></p></li>
 <li><p><a href="https://pubmed.ncbi.nlm.nih.gov/35989379/">Penner, Patrick, et al.&nbsp;“FastGrow: on-the-fly growing and its application to DYRK1A.” Journal of Computer-Aided Molecular Design 36.9 (2022): 639-651.</a> <a href="https://practicalfragments.blogspot.com/2022/09/growing-fragments-in-silico-with.html">Pen’s blog</a></p></li>
+<li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01004">Carbery, Anna, et al.&nbsp;“Fragment libraries designed to be functionally diverse recover protein binding information more efficiently than standard structurally diverse libraries.” Journal of Medicinal Chemistry 65.16 (2022): 11404-11413.</a>. <a href="https://practicalfragments.blogspot.com/2022/08/diverse-function-not-structure-in.html">Practical Fragment Blog</a></p></li>
 <li><p><a href="https://doi.org/10.1126/science.abo7201">Boby, M. L. Open Science Discovery of Potent Noncovalent SARS-CoV-2 Main Protease Inhibitors. Science 2023, 382 (6671)</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813">Müller, Janis, et al.&nbsp;“Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces.” Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.</a>. <a href="https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist">Blog</a></p></li>
 </ul>
@@ -933,6 +941,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://arxiv.org/abs/1906.05221">Bradshaw, John, et al.&nbsp;“A model to search for synthesizable molecules.” Advances in Neural Information Processing Systems 32 (2019).</a></li>
 </ul>
 <p><strong>Diffusion models</strong></p>
+<ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/66a70a1301103d79c51b3220">Sako, Masami, Nobuaki Yasuo, and Masakazu Sekijima. “DiffInt: A Pharmacophore-Aware Diffusion Model for Structure-Based Drug Design with Explicit Hydrogen Bond Interaction Guidance.” (2024).</a>. <a href="https://github.com/sekijima-lab/DiffInt">Github</a></li>
+</ul>
+<p>DiffInt as a novel structure-based approach that explicitly addresses interactions. The model naturally incorporates hydrogen bonds between the protein and ligand by treating them as pseudoparticles.</p>
 <ul>
 <li><a href="https://arxiv.org/abs/2404.19739v1">Mixed Continuous and Categorical Flow Matching for 3D De Novo Molecule Generation</a></li>
 </ul>

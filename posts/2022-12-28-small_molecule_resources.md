@@ -131,6 +131,11 @@ Very good post outlining the focus on the good practices and lack thereof for co
 
 ## Industry-focused drug discovery reviews 
 
+* [Goldman, B., Kearnes, S., Kramer, T., Riley, P., & Walters, W. P. (2022). Defining levels of automated chemical design. Journal of medicinal chemistry, 65(10), 7073-7087.](https://pubs.acs.org/doi/epdf/10.1021/acs.jmedchem.2c00334?ref=article_openPDF)
+
+Group at Relay Therapeutics propose a framework to categorize automated chemical design paradigm - splitting it into generator and decision axes. They give good example of model systems where the machine generates and human chemist select and more recently machine generated and machine chosen designs. In of these discussion, it is evident we havent achieved the full automated execution of a design cycle. 
+
+
 * [Hasselgren, Catrin, and Tudor I. Oprea. "Artificial Intelligence for Drug Discovery: Are We There Yet?." Annual Review of Pharmacology and Toxicology 64 (2024).](https://www.annualreviews.org/doi/10.1146/annurev-pharmtox-040323-040828?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub++0pubmed) [ArXiv](https://arxiv.org/abs/2307.06521)
 
 Latest review of the field and application of AI technologies to various functions of drug discovery. In addition to providing a quick review of the main technology the author list different case studies where AI has proposed clinical candidates across different therapeutic areas. Yet, the need for better data, novelty estimation, and validation in wet lab limit the full scale deployment and accuracy of AI pipelines in drug discovery. In closing they also hint at the limitation of ML model training a single property with single structure, QSAR, while in reality the molecule can exist in different conformers something multi-instance learning (MIL) can address. 'It is reasonable to assume that user expertise, bias, and time constraints play a significant role in early drug discovery, often more so than AI.'
@@ -314,6 +319,8 @@ The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the co
 
 * [Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology](https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38)
 
+Fragmenstein, stitches ligand atoms from known fragment hits to predict protein-ligand complex conformations more accurately. Fragmenstein uses a Python package to merge or place compounds by stitching together atoms from fragment hits and then energy minimizing them under strong constraints.
+
 * [Zhang, Yueqing, et al. "FragGrow: A Web Server for Structure-Based Drug Design by Fragment Growing within Constraints." Journal of Chemical Information and Modeling (2024).](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00154)
 
 * [Cree, Ben, et al. "Active learning driven prioritisation of compounds from on-demand libraries targeting the SARS-CoV-2 main protease." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/667699175101a2ffa837f110)[FEGrow Github](https://github.com/cole-group/FEgrow/)
@@ -321,6 +328,11 @@ The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the co
 * [Igashov, Ilia, et al. "Equivariant 3D-conditional diffusion model for molecular linker design." Nature Machine Intelligence (2024): 1-11.](https://www.nature.com/articles/s42256-024-00815-9) [Pen's blog](https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/)
 
 * [Penner, Patrick, et al. "FastGrow: on-the-fly growing and its application to DYRK1A." Journal of Computer-Aided Molecular Design 36.9 (2022): 639-651.](https://pubmed.ncbi.nlm.nih.gov/35989379/) [Pen's blog](https://practicalfragments.blogspot.com/2022/09/growing-fragments-in-silico-with.html)
+
+* [Carbery, Anna, et al. "Fragment libraries designed to be functionally diverse recover protein binding information more efficiently than standard structurally diverse libraries." Journal of Medicinal Chemistry 65.16 (2022): 11404-11413.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01004). [Practical Fragment Blog](https://practicalfragments.blogspot.com/2022/08/diverse-function-not-structure-in.html)
+
+
+
 
 * [Boby, M. L. Open Science Discovery of Potent Noncovalent SARS-CoV-2 Main Protease Inhibitors. Science 2023, 382 (6671)](https://doi.org/10.1126/science.abo7201)
 
@@ -819,6 +831,10 @@ Authors propose a generative model to generate molecules via multi-step chemical
 * [Bradshaw, John, et al. "A model to search for synthesizable molecules." Advances in Neural Information Processing Systems 32 (2019).](https://arxiv.org/abs/1906.05221)
 
 **Diffusion models**
+
+* [Sako, Masami, Nobuaki Yasuo, and Masakazu Sekijima. "DiffInt: A Pharmacophore-Aware Diffusion Model for Structure-Based Drug Design with Explicit Hydrogen Bond Interaction Guidance." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/66a70a1301103d79c51b3220). [Github](https://github.com/sekijima-lab/DiffInt)
+
+DiffInt as a novel structure-based approach that explicitly addresses interactions. The model naturally incorporates hydrogen bonds between the protein and ligand by treating them as pseudoparticles. 
 
 * [Mixed Continuous and Categorical Flow Matching for 3D De Novo Molecule Generation](https://arxiv.org/abs/2404.19739v1)
 
