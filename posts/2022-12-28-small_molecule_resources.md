@@ -12,7 +12,7 @@ title: Medicine drug discovery resources
 toc: true
 ---
 
-Last update: July 2024
+Last update: November 2024
 
 ## Noteworthy blogs to follow:
 
@@ -331,9 +331,6 @@ Fragmenstein, stitches ligand atoms from known fragment hits to predict protein-
 
 * [Carbery, Anna, et al. "Fragment libraries designed to be functionally diverse recover protein binding information more efficiently than standard structurally diverse libraries." Journal of Medicinal Chemistry 65.16 (2022): 11404-11413.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c01004). [Practical Fragment Blog](https://practicalfragments.blogspot.com/2022/08/diverse-function-not-structure-in.html)
 
-
-
-
 * [Boby, M. L. Open Science Discovery of Potent Noncovalent SARS-CoV-2 Main Protease Inhibitors. Science 2023, 382 (6671)](https://doi.org/10.1126/science.abo7201)
 
 * [Müller, Janis, et al. "Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces." Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813). [Blog](https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist)
@@ -357,7 +354,7 @@ Nice review of the field that looks at computational model to predict protein-li
 
 * [DiffDock](https://arxiv.org/abs/2210.01776)
 
-* [NeuralPlexer](https://www.nature.com/articles/s42256-024-00792-z)
+* [Qiao, Zhuoran, Weili Nie, Arash Vahdat, Thomas F. Miller III, and Animashree Anandkumar. "State-specific protein–ligand complex structure prediction with a multiscale deep generative model." Nature Machine Intelligence 6, no. 2 (2024): 195-208.](https://www.nature.com/articles/s42256-024-00792-z)
 
 Iambic Therapeutics’ AI model that predicts the combined shape of proteins and small molecules outperforms Google DeepMind’s AlphaFold. Lambic’s newest model, called NeuralPLexer2, had a 75% success rate in predicting these protein-ligand structures. AlphaFold’s latest version, as described last October in a blog post, was 74% successful. But Iambic’s model jumps to a 93% success rate when the model receives additional info on amino acids near the small molecule.
 
@@ -391,7 +388,6 @@ Python package for evaluating the quality of docked poses. PoseBusters performs 
 * [Morehead, Alex, et al. "Deep Learning for Protein-Ligand Docking: Are We There Yet?." arXiv preprint arXiv:2405.14108 (2024)](https://arxiv.org/abs/2405.14108)[Github](https://github.com/BioinfoMachineLearning/PoseBench)
 
 Suite of tools and workflow to benchmark Deep learning method's ability to predict protein-ligand interaction modeling - from apo to halo configuration for P/L pairs. The authors find that all but one DL method fail to generalize to multi-ligand protein targets. 
-
 
 [Benchmarking Generated Poses: How Rational is Structure-based Drug Design with Generative Models](https://arxiv.org/abs/2308.07413)
 
@@ -757,12 +753,11 @@ REINVENT is a molecular design tool for de novo design, scaffold hopping, R-grou
 
 **Language models:**
 
-
 * [PromptSMILES: Prompting for scaffold decoration and fragment linking in chemical language models](https://chemrxiv.org/engage/chemrxiv/article-details/65e718eee9ebbb4db9f21886)
 
-* [Xia, Yingce, et al. "Target-aware Molecule Generation for Drug Design Using a Chemical Language Model." bioRxiv (2024): 2024-01.](https://www.biorxiv.org/content/10.1101/2024.01.08.574635v3.abstract)
+* [Wu, K., Xia, Y., Deng, P., Liu, R., Zhang, Y., Guo, H., ... & Liu, T. Y. (2024). TamGen: drug design with target-aware molecule generation through a chemical language model. Nature Communications, 15(1), 9360.](https://www.nature.com/articles/s41467-024-53632-4)
 
-Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease. 
+Collaboration with Microsoft AI and Global Health Drug Discovery Institute. TamGen, a method that employs a GPT-like chemical language model and enables target-aware molecule generation and compound refinement.The authors identified 7 compounds showing compelling inhibitory activity against the Tuberculosis ClpP protease. The model considers 1-D information of the protein and molecule. 
 
 * [Maziarz, Krzysztof, et al. "Learning to extend molecular scaffolds with structural motifs." arXiv preprint arXiv:2103.03864 (2021).](https://arxiv.org/pdf/2103.03864.pdf). [Github](https://github.com/microsoft/molecule-generation)
 
@@ -831,6 +826,10 @@ Authors propose a generative model to generate molecules via multi-step chemical
 * [Bradshaw, John, et al. "A model to search for synthesizable molecules." Advances in Neural Information Processing Systems 32 (2019).](https://arxiv.org/abs/1906.05221)
 
 **Diffusion models**
+
+* [Adams, K., Abeywardane, K., Fromer, J., & Coley, C. W. (2024). ShEPhERD: Diffusing shape, electrostatics, and pharmacophores for bioisosteric drug design. arXiv preprint arXiv:2411.04130.](https://arxiv.org/pdf/2411.04130v1)
+
+A SE(3)-equivariant diffusion model for 3D molecule structures and their interaction profile with the target of choice. The authors show their model application for typical drug design tasks including hit diversification, bioisosteric replacement and fragment merging, and ligand hopping. Shepherd is a joint denoising diffusion probabilistic model (DDPM) that learns the joint distribution over 3D molecules (atom types, bond types, coordinates) and their 3D shapes, ESP surfaces, and pharmacophores.
 
 * [Sako, Masami, Nobuaki Yasuo, and Masakazu Sekijima. "DiffInt: A Pharmacophore-Aware Diffusion Model for Structure-Based Drug Design with Explicit Hydrogen Bond Interaction Guidance." (2024).](https://chemrxiv.org/engage/chemrxiv/article-details/66a70a1301103d79c51b3220). [Github](https://github.com/sekijima-lab/DiffInt)
 
@@ -1260,9 +1259,9 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 * [Ramos, Mayk Caldas, Christopher J. Collison, and Andrew D. White. "A Review of Large Language Models and Autonomous Agents in Chemistry." _arXiv preprint arXiv:2407.01603_ (2024).](https://arxiv.org/abs/2407.01603)
 
-* [Blogpost on different LLMs in chemistry](https://chemicbook.com/2023/04/11/LLMs-in-Chemistry.html#ref2)
-
 * [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
+
+* [Gao, S., Fang, A., Huang, Y., Giunchiglia, V., Noori, A., Schwarz, J. R., Ektefaie, Y., Kondic, J., & Zitnik, M. (2024). Empowering biomedical discovery with AI agents. Cell, 187(22), 6125–6151. https://doi.org/10.1016/j.cell.2024.09.022](https://www.cell.com/cell/fulltext/S0092-8674(24)01070-5)
 
 **Agents**
 
@@ -1281,6 +1280,15 @@ Coscientist, a set of LLMs for designing and executing organic syntheses.  Cosci
 * [ProtAgents](https://github.com/lamm-mit/ProtAgents)
 
 * [AI Scientist from SakanaAI](https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file)
+
+* [Wu, Shirley, et al. "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning." The Thirty-eighth Annual Conference on Neural Information Processing Systems.](https://arxiv.org/abs/2406.11200)
+
+Framework that optimizes an LLM agent to use the provided tools. This framework is integrated in [DSPy](https://github.com/stanfordnlp/dspy)
+
+* [Swanson, Kyle, Wesley Wu, Nash L. Bulaong, John E. Pak, and James Zou. "The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation." bioRxiv (2024): 2024-11.](https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1)
+
+A joint paper from James Zou (Stanford) and Chan-Zuckerberg foundation showcases a virtual lab comprising of AI Agentic personas of typical research group collaborating together to design nanobodies. Interesting idea. 
+
 
 **Generative Design**
 
@@ -1306,7 +1314,13 @@ The team is looking at creating an LLM-based predictive model (regression and cl
 
 I am glad to see this work as it shows how much information and feature-richness can be encoded within the transformer model, especially in the low-data regime; that said,  one caution with this approach is that the models are purely text-based and extremely black box and correlation doesn’t mean causation, more so here since we don’t have good control over features being used to train the model.
 
+* [Sirumalla, S. K., Farina Jr, D. S., Qiao, Z., Di Cesare, D. A., Farias, F. C., O’Connor, M. B., ... & Miller, T. Multi-Modal and Multi-Task Transformer for Small Molecule Drug Discovery. In ICML'24 Workshop ML for Life and Material Science: From Theory to Industry Applications.](https://openreview.net/pdf?id=Ya5OHw7lZ8)
+
+From Iambic team: 1B-parameter transformer model pre-trained on 2.25 trillion tokens from diverse datasets focused on drug discovery. It details a comprehensive data pipeline for standardizing and processing data from various sources. The model architecture is based on LLaMA-2 and includes advanced features like SwishGLU and Rotary Positional Encoding. The fine-tuned model outperforms strong baselines in assay prediction tasks.
+
 **Small molecule related tasks**
+
+* [Liu, Shengchao, et al. "Conversational drug editing using retrieval and domain feedback." The Twelfth International Conference on Learning Representations. 2024.](https://openreview.net/pdf?id=yRrPfKyJQ2)
 
 * [Le, Khiem, et al. "MolX: Enhancing Large Language Models for Molecular Learning with A Multi-Modal Extension." arXiv preprint arXiv:2406.06777 (2024).](https://arxiv.org/pdf/2406.06777)
 
@@ -1353,6 +1367,10 @@ Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant 
 **Material science**
 
 * [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
+
+**Agent knowledge**
+
+* [Zelikman, E., Harik, G., Shao, Y., Jayasiri, V., Haber, N., & Goodman, N. D. (2024). Quiet-star: Language models can teach themselves to think before speaking. arXiv preprint arXiv:2403.09629.](https://arxiv.org/abs/2403.09629)
 
 ##  Data extraction 
 

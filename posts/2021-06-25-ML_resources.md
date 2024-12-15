@@ -40,6 +40,15 @@ Fantastic high-level math focussed introduction to algorithms.
 
 Approachable compendium of key ML concepts boiled down to key insights, offers a nice way to articulate concepts in a concise way. 
 
+### Seminal AI papers 
+
+* [Word2Vec](https://arxiv.org/pdf/1301.3781)
+
+* [Attention Is All You Need](https://arxiv.org/abs/1706.03762)
+
+* [BERT Model](https://arxiv.org/abs/1810.04805)
+
+* [ReACT](https://arxiv.org/abs/2210.03629)
 
 ### Nice (free) online courses: 
 
