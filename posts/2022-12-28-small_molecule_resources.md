@@ -5,14 +5,14 @@ categories:
 - chemical-science
 - machine-learning
 - resources
-date: '2024-01-10'
+date: '2024-12-01'
 description: Compendium of recent articles, resources, and blogs in the area of medicine discovery
 layout: post
 title: Medicine drug discovery resources
 toc: true
 ---
 
-Last update: November 2024
+Last update: December 2024
 
 ## Noteworthy blogs to follow:
 
@@ -611,6 +611,8 @@ Organizing the chemical space of ChEMBL, and ZINC to compare its overlap with na
 
 ## Uncertainty quantification
 
+* [GAUCHE: A Library for Gaussian Processes in Chemistry](https://proceedings.neurips.cc/paper_files/paper/2023/file/f2b1b2e974fa5ea622dd87f22815f423-Paper-Conference.pdf)
+
 * [Mervin, L. H., Johansson, S., Semenova, E., Giblin, K. A., & Engkvist, O. (2021). Uncertainty quantification in drug design. Drug discovery today, 26(2), 474-489.](https://www.sciencedirect.com/science/article/pii/S1359644620305110?via%3Dihub)
 
 * [Alan Aspuru-Guzik perspective on uncertainty and confidence](https://arxiv.org/pdf/2102.11439.pdf)
@@ -938,7 +940,6 @@ Using scrapped US Patent data to classify chemical reactions and deploy various 
 **Atom mapping:** 
 
 * [Chen, Shuan, et al. "Precise atom-to-atom mapping for organic reactions via human-in-the-loop machine learning." Nature Communications 15.1 (2024): 2250.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10937625/pdf/41467_2024_Article_46364.pdf)
-
 
 * [Lin, A., et al. (2021). "Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies."](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R)
 
@@ -1339,6 +1340,10 @@ BioT5+ incorporates several novel features: integration of IUPAC names for molec
 * [Language + Molecule Benchmarks](https://github.com/language-plus-molecules/LPM-24-Tutorial)
 
 **Protein design and mechanics**
+
+* [Queen, Owen, Yepeng Huang, Robert Calef, Valentina Giunchiglia, Tianlong Chen, George Dasoulas, LeAnn Tai et al. "ProCyon: A multimodal foundation model for protein phenotypes." bioRxiv (2024): 2024-12.](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1)
+
+ProCyon integrates phenotypic and protein data. Authors show its use for identifying protein domains that bind small molecule drugs, predicting peptide binding with enzymes, and assessing the functional impact of Alzheimer’s disease mutations. ProCyon enables conditional retrieval of proteins linked to small molecules through complementary mechanisms of action
 
 * [Ruffolo, Jeffrey A., and Ali Madani. "Designing proteins with language models." Nature Biotechnology 42.2 (2024): 200-202.](https://www.nature.com/articles/s41587-024-02123-4)
 
