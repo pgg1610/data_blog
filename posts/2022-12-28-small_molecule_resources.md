@@ -1258,7 +1258,7 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 **Reviews**
 
-* [Ramos, Mayk Caldas, Christopher J. Collison, and Andrew D. White. "A Review of Large Language Models and Autonomous Agents in Chemistry." _arXiv preprint arXiv:2407.01603_ (2024).](https://arxiv.org/abs/2407.01603)
+* [Ramos, Mayk Caldas, Christopher J. Collison, and Andrew D. White. "A Review of Large Language Models and Autonomous Agents in Chemistry." _arXiv preprint arXiv:2407.01603_ (2024).](https://arxiv.org/abs/2407.01603). [Github](https://github.com/ur-whitelab/LLMs-in-science)
 
 * [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
 

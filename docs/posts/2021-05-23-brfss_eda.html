@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2021-05-23">
 
-<title>Omnis tempus datum - Exploratory Data Analysis on Behavioral Risk Factor Surveillance System (BRFSS) dataset</title>
+<title>Exploratory Data Analysis on Behavioral Risk Factor Surveillance System (BRFSS) dataset – Omnis tempus datum</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,11 +18,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +34,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -47,47 +48,17 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -99,19 +70,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-6bd9cfa162949bde0a231f530c97869d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-638ce43a2b8cb8132871590242e342ae.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -120,12 +97,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -134,39 +113,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Omnis tempus datum</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
- <span class="menu-text">About me</span></a>
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About me</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/pgg1610"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/pgg1610"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/mepgg"><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/mepgg"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
-              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -216,6 +195,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
+
 <section id="key-ideas" class="level2">
 <h2 class="anchored" data-anchor-id="key-ideas">Key ideas:</h2>
 <p>Before beginning with any sort of model building work it is important you get to know the data you’re handling. This includes not just understand the columns and row entries in the dataset but also the simple understanding on what each of the variable in the data means.</p>
@@ -237,13 +217,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In this notebook I will cover some of these steps as we explore the Behavioral Risk Factor Surveillance Survey (BRFSS) dataset and try to tease out simple correlations with the variables.</p>
 <p>BRFSS data obtained from: * https://www.kaggle.com/sakinak/behavioral-risk-factor-surveillance-survey-201619</p>
 <p>Code book: This is an <strong>extremely</strong> important document helping us make sense of the data we’ve imported * https://www.cdc.gov/brfss/annual_data/2019/pdf/codebook19_llcp-v2-508.HTML</p>
-<div class="cell" data-execution_count="4">
+<div id="67b0d77d-3afc-40c4-b297-076866acd5bd" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> copy </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="35">
+<div id="5fa67617-400f-4c92-b35b-a8adbe1e5de4" class="cell" data-execution_count="35">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#----- PLOTTING PARAMS ----# </span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.pyplot <span class="im">import</span> cm</span>
@@ -271,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <svg width="550" height="55"><rect x="0" y="0" width="55" height="55" style="fill:#0173b2;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="55" y="0" width="55" height="55" style="fill:#de8f05;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="110" y="0" width="55" height="55" style="fill:#029e73;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="165" y="0" width="55" height="55" style="fill:#d55e00;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="220" y="0" width="55" height="55" style="fill:#cc78bc;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="275" y="0" width="55" height="55" style="fill:#ca9161;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="330" y="0" width="55" height="55" style="fill:#fbafe4;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="385" y="0" width="55" height="55" style="fill:#949494;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="440" y="0" width="55" height="55" style="fill:#ece133;stroke-width:2;stroke:rgb(255,255,255)"></rect><rect x="495" y="0" width="55" height="55" style="fill:#56b4e9;stroke-width:2;stroke:rgb(255,255,255)"></rect></svg>
 </div>
 </div>
-<div class="cell" data-execution_count="36">
+<div id="d518e8b4-d2bc-4b4f-9089-10eefb66298c" class="cell" data-execution_count="36">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Functions for PMF and CDF, we will come to those later in the notebook </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> pmf(pandas_series):</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    values, counts <span class="op">=</span> np.unique(pandas_series, return_counts <span class="op">=</span> <span class="va">True</span>)</span>
@@ -288,11 +268,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>        </span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> cdf </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="37">
+<div id="bb08a8cd-3841-4b75-8029-ea72d23c8540" class="cell" data-execution_count="37">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read archive file -- considering only the 2019 dataset </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">'./archive/2019.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="38">
+<div id="56ace2c1-171f-4742-82d4-9c288022c258" class="cell" data-execution_count="38">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="38">
 <pre><code>Index(['Unnamed: 0', '_STATE', 'FMONTH', 'IDATE', 'IMONTH', 'IDAY', 'IYEAR',
@@ -303,13 +283,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       dtype='object', length=343)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="39">
+<div id="48ea9407-1f24-4d7f-8ae6-b8bd0adf640c" class="cell" data-execution_count="39">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="39">
 <pre><code>(418268, 343)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="40">
+<div id="23ff4ebc-7cf6-481e-9d13-350f4fb960d0" class="cell" data-execution_count="40">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -319,7 +299,7 @@ dtypes: float64(280), int64(63)
 memory usage: 1.1 GB</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="41">
+<div id="27a46bd5-fae2-4458-89d7-ef572a328790" class="cell" data-execution_count="41">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df.columns[ df.isna().<span class="bu">any</span>() ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="41">
 <pre><code>Index(['CTELENM1', 'PVTRESD1', 'COLGHOUS', 'STATERE1', 'CELPHONE', 'LADULT1',
@@ -336,7 +316,7 @@ memory usage: 1.1 GB</code></pre>
 <h2 class="anchored" data-anchor-id="looking-at-individual-columns">1. Looking at individual columns</h2>
 <p><strong>Sex of the respondent</strong></p>
 <p>Data is provided in the column marked as <code>_SEX</code> and the label are: * MALE = 1 * FEMALE = 2</p>
-<div class="cell" data-execution_count="42">
+<div id="73fc1ee5-8b8d-4325-a146-a671d8a256c2" class="cell" data-execution_count="42">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_SEX'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="42">
 <pre><code>2    228433
@@ -348,7 +328,7 @@ Name: _SEX, dtype: int64</code></pre>
 <p><code>INCOME2</code> Question: Is your annual household income from all sources</p>
 <p>Value of <code>77</code> or <code>99</code> in the row is either Refused or Not sure. So take them out</p>
 <p><code>_INCOMG</code> Computed income categories</p>
-<div class="cell" data-execution_count="43">
+<div id="15afc9b5-b17b-4f20-ae0c-63a8e1e698b5" class="cell" data-execution_count="43">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'INCOME2'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="43">
 <pre><code>8.0     117793
@@ -364,7 +344,7 @@ Name: _SEX, dtype: int64</code></pre>
 Name: INCOME2, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="44">
+<div id="ff86a8b5-5259-4a7f-a599-a2a8da70cfb5" class="cell" data-execution_count="44">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_INCOMG'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="44">
 <pre><code>5    172045
@@ -376,11 +356,11 @@ Name: INCOME2, dtype: int64</code></pre>
 Name: _INCOMG, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="45">
+<div id="af290f09-a1ea-4c94-8331-ea5850d0c9c5" class="cell" data-execution_count="45">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Replace 77 99 with NaN</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'INCOME2'</span>].replace([<span class="dv">77</span>, <span class="dv">99</span>], np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="46">
+<div id="88c61d30-395b-4565-856f-55adab4611d4" class="cell" data-execution_count="46">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'INCOME2'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="46">
 <pre><code>8.0    117793
@@ -394,21 +374,21 @@ Name: _INCOMG, dtype: int64</code></pre>
 Name: INCOME2, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="47">
+<div id="f7267f82-ffa9-49aa-8e5b-e576d8aaeffe" class="cell" data-execution_count="47">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="47">
 <pre><code>(418268, 343)</code></pre>
 </div>
 </div>
 <p>Drop the entries with NaN</p>
-<div class="cell" data-execution_count="48">
+<div id="6a3f737f-e6b0-47bf-a05d-fbb287b761af" class="cell" data-execution_count="48">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df_income_no_nan <span class="op">=</span> df.dropna(subset<span class="op">=</span>[<span class="st">'INCOME2'</span>])</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df_income_no_nan.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="48">
 <pre><code>(338487, 343)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="49">
+<div id="8fcc4eea-4639-4f55-854f-d7fb891c0f88" class="cell" data-execution_count="49">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df_income_no_nan[<span class="st">'INCOME2'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="49">
 <pre><code>8.0    117793
@@ -422,10 +402,10 @@ Name: INCOME2, dtype: int64</code></pre>
 Name: INCOME2, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="50">
+<div id="dc8ef350-e55c-4240-8784-7f685d5ee365" class="cell" data-execution_count="50">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>pmf_income <span class="op">=</span> pmf(df_income_no_nan[<span class="st">'INCOME2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="51">
+<div id="dd44804a-638a-438d-887f-b96d9eea78f2" class="cell" data-execution_count="51">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>pmf_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="51">
 <pre><code>array([[1.        , 0.04685557],
@@ -438,7 +418,7 @@ Name: INCOME2, dtype: int64</code></pre>
        [8.        , 0.34799859]])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="52">
+<div id="434df127-e941-4b00-beab-4557d39ea78c" class="cell" data-execution_count="52">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>plt.plot(pmf_income[:,<span class="dv">0</span>], pmf_income[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Income Classes'</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency (normalized)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,13 +426,17 @@ Name: INCOME2, dtype: int64</code></pre>
 <pre><code>Text(0, 0.5, 'Frequency (normalized)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-20-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-20-output-2.png" width="397" height="266" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="53">
+</div>
+<div id="1a10fa77-ab56-4c2d-9c94-78ad09bb699f" class="cell" data-execution_count="53">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>cdf_income <span class="op">=</span> cdf(df_income_no_nan[<span class="st">'INCOME2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="54">
+<div id="4d256ba8-0123-428d-a3ae-4bfff79974fb" class="cell" data-execution_count="54">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>cdf_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="54">
 <pre><code>array([[1.        , 0.04685557],
@@ -465,7 +449,7 @@ Name: INCOME2, dtype: int64</code></pre>
        [8.        , 1.        ]])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="55">
+<div id="3c41cd03-c053-49cf-8210-358d920d231d" class="cell" data-execution_count="55">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_income[:,<span class="dv">0</span>], cdf_income[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Income Classes'</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cumulative Frequency (normalized)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -473,40 +457,45 @@ Name: INCOME2, dtype: int64</code></pre>
 <pre><code>Text(0, 0.5, 'Cumulative Frequency (normalized)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-23-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-23-output-2.png" width="390" height="316" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Looking at annual income classes as per sex of the respondent</p>
-<div class="cell" data-execution_count="61">
+<div id="65c00781-938e-4f22-9136-cfa87c5c5590" class="cell" data-execution_count="61">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df_income_no_nan_male <span class="op">=</span> df_income_no_nan.loc[ df_income_no_nan[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">1</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="62">
+<div id="78e11c79-e93e-47a7-b890-d35bea93c18b" class="cell" data-execution_count="62">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_income_no_nan_female <span class="op">=</span> df_income_no_nan.loc[ df_income_no_nan[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">2</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="63">
+<div id="90603a78-a304-4aad-af8f-1d96ec3a27b8" class="cell" data-execution_count="63">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>cdf_income_male <span class="op">=</span> cdf(df_income_no_nan_male[<span class="st">'INCOME2'</span>])</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>cdf_income_female <span class="op">=</span> cdf(df_income_no_nan_female[<span class="st">'INCOME2'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="64">
+<div id="f3dca201-a0df-4d00-8e79-0c2078b8567e" class="cell" data-execution_count="64">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_income_male[:,<span class="dv">0</span>], cdf_income_male[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Male'</span>)</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_income_female[:,<span class="dv">0</span>], cdf_income_female[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Female'</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_income[:,<span class="dv">0</span>], cdf_income[:,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Total'</span>)</span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Income Classes'</span>)</span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cumulative Frequency (normalized)'</span>)</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="64">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7fb1a8eb5520&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-27-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-27-output-1.png" width="390" height="316" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>Considering the education level of the respondents</strong></p>
 <p><code>EDUCA</code> What is the highest grade or year of school you completed?</p>
 <p>9 and BLANK == Missing and Refused</p>
 <p><code>_EDUCAG</code> Computed level of education completed categories</p>
-<div class="cell" data-execution_count="65">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'EDUCA'</span>].value_counts().sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="70bd8f4e-ee28-49c5-91bb-e254e217c27e" class="cell" data-execution_count="65">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'EDUCA'</span>].value_counts().sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="65">
 <pre><code>1.0       619
 2.0      9940
@@ -518,11 +507,11 @@ Name: INCOME2, dtype: int64</code></pre>
 Name: EDUCA, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="66">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'EDUCA'</span>].replace([<span class="dv">9</span>], np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="398346c1-7f3a-4706-956a-9d7116580ac7" class="cell" data-execution_count="66">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'EDUCA'</span>].replace([<span class="dv">9</span>], np.nan, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="67">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_EDUCAG'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b0933031-104b-4aca-9559-e68f3c2fe86e" class="cell" data-execution_count="67">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_EDUCAG'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="67">
 <pre><code>4    157887
 3    116591
@@ -532,8 +521,8 @@ Name: EDUCA, dtype: int64</code></pre>
 Name: _EDUCAG, dtype: int64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="68">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_EDUCAG'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9882f088-4977-46e2-8732-276edbabcf31" class="cell" data-execution_count="68">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'_EDUCAG'</span>].value_counts(normalize<span class="op">=</span><span class="va">True</span>).sort_index()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="68">
 <pre><code>1    0.071880
 2    0.267508
@@ -543,28 +532,28 @@ Name: _EDUCAG, dtype: int64</code></pre>
 Name: _EDUCAG, dtype: float64</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="69">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na <span class="op">=</span> df.dropna(subset <span class="op">=</span> [<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="d7d398f3-c941-469c-adac-1162eed9cdd3" class="cell" data-execution_count="69">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na <span class="op">=</span> df.dropna(subset <span class="op">=</span> [<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="70">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c2a7369e-e5f0-4912-a702-057ff4da263d" class="cell" data-execution_count="70">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na.shape</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="70">
 <pre><code>(416433, 343)</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="71">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na_male <span class="op">=</span> df_education_no_na.loc[ df_education_no_na[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">1</span> ]</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>df_education_no_na_female <span class="op">=</span> df_education_no_na.loc[ df_education_no_na[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">2</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="f8eef9df-97bc-4bc0-ad55-ed6820a72152" class="cell" data-execution_count="71">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>df_education_no_na_male <span class="op">=</span> df_education_no_na.loc[ df_education_no_na[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">1</span> ]</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>df_education_no_na_female <span class="op">=</span> df_education_no_na.loc[ df_education_no_na[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">2</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="72">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>cdf_educa_male <span class="op">=</span> cdf(df_education_no_na_male[<span class="st">'EDUCA'</span>])</span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>cdf_educa_female <span class="op">=</span> cdf(df_education_no_na_female[<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="df73ee49-3283-4c51-8cb8-130d72bb877d" class="cell" data-execution_count="72">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>cdf_educa_male <span class="op">=</span> cdf(df_education_no_na_male[<span class="st">'EDUCA'</span>])</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>cdf_educa_female <span class="op">=</span> cdf(df_education_no_na_female[<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="73">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>cdf_educa <span class="op">=</span> cdf(df_education_no_na[<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="2a551b5b-cae0-4326-8f9e-4fa1f343914f" class="cell" data-execution_count="73">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>cdf_educa <span class="op">=</span> cdf(df_education_no_na[<span class="st">'EDUCA'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="74">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>cdf_educa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="aace079b-7514-448c-a0a5-c12a5d4e56fd" class="cell" data-execution_count="74">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>cdf_educa</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="74">
 <pre><code>array([[1.00000000e+00, 1.48643359e-03],
        [2.00000000e+00, 2.53558195e-02],
@@ -574,96 +563,118 @@ Name: _EDUCAG, dtype: float64</code></pre>
        [6.00000000e+00, 1.00000000e+00]])</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="76">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa_male[:,<span class="dv">0</span>], cdf_educa_male[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Male'</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa_female[:,<span class="dv">0</span>], cdf_educa_female[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Female'</span>)</span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa[:,<span class="dv">0</span>], cdf_educa[:,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Total'</span>)</span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Level of education'</span>)</span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cumulative Frequency (normalized)'</span>)</span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="76">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7fb0dcfd2160&gt;</code></pre>
-</div>
+<div id="b9e38ed9-b83c-4411-a558-0e24465a08b3" class="cell" data-execution_count="76">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa_male[:,<span class="dv">0</span>], cdf_educa_male[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Male'</span>)</span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa_female[:,<span class="dv">0</span>], cdf_educa_female[:,<span class="dv">1</span>], marker<span class="op">=</span><span class="st">'o'</span>, label<span class="op">=</span><span class="st">'Female'</span>)</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>plt.plot(cdf_educa[:,<span class="dv">0</span>], cdf_educa[:,<span class="dv">1</span>], linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'Total'</span>)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Level of education'</span>)</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Cumulative Frequency (normalized)'</span>)</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-38-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-38-output-1.png" width="390" height="316" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p><strong>Height and Weight</strong></p>
-<div class="cell" data-execution_count="80">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Height in meters </span></span>
-<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'HTM4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="b46a7d54-f72e-48ec-b7c0-25b96a8c9155" class="cell" data-execution_count="80">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Height in meters </span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'HTM4'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="80">
 <pre><code>array([[&lt;AxesSubplot:title={'center':'HTM4'}&gt;]], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-39-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-39-output-2.png" width="394" height="269" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="82">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Weight in kilograms:</span></span>
-<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'WTKG3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="823a4f87-1410-40b8-b4f3-3e49b4fbd022" class="cell" data-execution_count="82">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Weight in kilograms:</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'WTKG3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="82">
 <pre><code>array([[&lt;AxesSubplot:title={'center':'WTKG3'}&gt;]], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-40-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-40-output-2.png" width="394" height="269" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="89">
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'WTKG3'</span>] <span class="op">=</span> df[<span class="st">'WTKG3'</span>] <span class="op">/</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="90">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Weight in kilograms:</span></span>
-<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'WTKG3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="889fa42c-bb54-4952-95ed-1edbfe391966" class="cell" data-execution_count="89">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'WTKG3'</span>] <span class="op">=</span> df[<span class="st">'WTKG3'</span>] <span class="op">/</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="9e555f6f-0574-4c9a-ad6e-1f8e4147e2fd" class="cell" data-execution_count="90">
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Weight in kilograms:</span></span>
+<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'WTKG3'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="90">
 <pre><code>array([[&lt;AxesSubplot:title={'center':'WTKG3'}&gt;]], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-42-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-42-output-2.png" width="394" height="269" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="91">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a>wt_male <span class="op">=</span> df.loc[ df[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">1</span> ][<span class="st">'WTKG3'</span>]</span>
-<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>wt_female <span class="op">=</span> df.loc[ df[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">2</span> ][<span class="st">'WTKG3'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="97">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>plt.hist(wt_male, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'male'</span>)</span>
-<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>plt.hist(wt_female, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'female'</span>)</span>
-<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Weight (kg)'</span>)</span>
-<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="97">
-<pre><code>&lt;matplotlib.legend.Legend at 0x7fafcf2eabe0&gt;</code></pre>
+<div id="cce3c0a3-2f28-4763-b4be-a801db77184f" class="cell" data-execution_count="91">
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a>wt_male <span class="op">=</span> df.loc[ df[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">1</span> ][<span class="st">'WTKG3'</span>]</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a>wt_female <span class="op">=</span> df.loc[ df[<span class="st">'_SEX'</span>] <span class="op">==</span> <span class="dv">2</span> ][<span class="st">'WTKG3'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div id="63d0c203-18e8-43ac-b0f1-a1d9a7404d98" class="cell" data-execution_count="97">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>plt.hist(wt_male, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'male'</span>)</span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>plt.hist(wt_female, alpha<span class="op">=</span><span class="fl">0.6</span>, label<span class="op">=</span><span class="st">'female'</span>)</span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Weight (kg)'</span>)</span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-44-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-44-output-1.png" width="394" height="266" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="98">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Age category -- divided in 5 year interval </span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'_AGEG5YR'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="007fd03a-886c-47e1-9322-b116d5d72d58" class="cell" data-execution_count="98">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Age category -- divided in 5 year interval </span></span>
+<span id="cb67-2"><a href="#cb67-2" aria-hidden="true" tabindex="-1"></a>df.hist(<span class="st">'_AGEG5YR'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="98">
 <pre><code>array([[&lt;AxesSubplot:title={'center':'_AGEG5YR'}&gt;]], dtype=object)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-45-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-45-output-2.png" width="388" height="269" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <section id="quick-plot-for-weight-vs-age-group" class="level3">
 <h3 class="anchored" data-anchor-id="quick-plot-for-weight-vs-age-group">Quick plot for weight vs age-group</h3>
-<div class="cell" data-execution_count="99">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Quick plot for weight as per age </span></span>
-<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>df_no_nans <span class="op">=</span> df.dropna( subset<span class="op">=</span>[<span class="st">'_AGEG5YR'</span>, <span class="st">'WTKG3'</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e33d5982-92a4-428c-b5cf-4d045f4e3647" class="cell" data-execution_count="99">
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Quick plot for weight as per age </span></span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a>df_no_nans <span class="op">=</span> df.dropna( subset<span class="op">=</span>[<span class="st">'_AGEG5YR'</span>, <span class="st">'WTKG3'</span>] )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="100">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( df_no_nans[<span class="st">'_AGEG5YR'</span>], df_no_nans[<span class="st">'WTKG3'</span>], marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Age group'</span>)</span>
-<span id="cb73-4"><a href="#cb73-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="6934ba44-bd3c-414b-941a-decb2f90131d" class="cell" data-execution_count="100">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( df_no_nans[<span class="st">'_AGEG5YR'</span>], df_no_nans[<span class="st">'WTKG3'</span>], marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Age group'</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="100">
 <pre><code>Text(0, 0.5, 'Weight (kg)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-47-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-47-output-2.png" width="393" height="375" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>It makes much more sense to show these as either violin or box plot:</p>
@@ -671,85 +682,101 @@ Name: _EDUCAG, dtype: float64</code></pre>
 <li>Violin plot – KDE for that column around the y Each column is a graphical representation of the distribution of weight in one age group. The width of these shapes is proportional to the estimated density, so it’s like two vertical PDFs plotted back to back. &nbsp;</li>
 <li>Box plot – Each box represents the interquartile range, or IQR, from the 25th to the 75th percentile. The line in the middle of each box is the median. The spines sticking out of the top and bottom show the minimum and maximum values. Looking at the medians, it seems like people in their 40s are the heaviest; younger and older people are lighter. Looking at the sizes of the boxes, it seems like people in their 40s have the most variability in weight, too. These plots also show how skewed the distribution of weight is; that is, the heaviest people are much farther from the median than the lightest people.</li>
 </ul>
-<div class="cell" data-execution_count="101">
-<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(x <span class="op">=</span> <span class="st">'_AGEG5YR'</span>, y <span class="op">=</span> <span class="st">'WTKG3'</span>, whis<span class="op">=</span><span class="dv">10</span>, data <span class="op">=</span> df_no_nans)</span>
-<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'AGE GROUP'</span>)</span>
-<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'WEIGHT (Kgs)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="03fbb654-b642-4466-a61a-0e169500d474" class="cell" data-execution_count="101">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.boxplot(x <span class="op">=</span> <span class="st">'_AGEG5YR'</span>, y <span class="op">=</span> <span class="st">'WTKG3'</span>, whis<span class="op">=</span><span class="dv">10</span>, data <span class="op">=</span> df_no_nans)</span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'AGE GROUP'</span>)</span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'WEIGHT (Kgs)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="101">
 <pre><code>Text(0, 0.5, 'WEIGHT (Kgs)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-48-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-48-output-2.png" width="393" height="266" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="quick-plot-for-height-vs-weight" class="level3">
 <h3 class="anchored" data-anchor-id="quick-plot-for-height-vs-weight">Quick plot for height vs weight</h3>
-<div class="cell" data-execution_count="106">
-<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>df_height_wt <span class="op">=</span> df.dropna( subset<span class="op">=</span>[<span class="st">'HTM4'</span>, <span class="st">'WTKG3'</span>] ).sample(<span class="dv">50000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="97cb7801-9e78-456e-b491-37aec2f79bb1" class="cell" data-execution_count="106">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>df_height_wt <span class="op">=</span> df.dropna( subset<span class="op">=</span>[<span class="st">'HTM4'</span>, <span class="st">'WTKG3'</span>] ).sample(<span class="dv">50000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="107">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( df_height_wt[<span class="st">'HTM4'</span>], df_height_wt[<span class="st">'WTKG3'</span>], marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
-<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="9f360945-5657-4288-abd7-238492d553b7" class="cell" data-execution_count="107">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( df_height_wt[<span class="st">'HTM4'</span>], df_height_wt[<span class="st">'WTKG3'</span>], marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="107">
 <pre><code>Text(0, 0.5, 'Weight (kg)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-50-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-50-output-2.png" width="393" height="375" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<div class="cell" data-execution_count="108">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>height_jitters <span class="op">=</span> df_height_wt[<span class="st">'HTM4'</span>] <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span><span class="bu">len</span>(df_height_wt))</span>
-<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>weight_jitters <span class="op">=</span> df_height_wt[<span class="st">'WTKG3'</span>] <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span><span class="bu">len</span>(df_height_wt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="109">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( height_jitters, weight_jitters, marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.01</span>)</span>
-<span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
-<span id="cb81-4"><a href="#cb81-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="bcfcd735-d3d7-4af5-907f-94e80c330473" class="cell" data-execution_count="108">
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a>height_jitters <span class="op">=</span> df_height_wt[<span class="st">'HTM4'</span>] <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span><span class="bu">len</span>(df_height_wt))</span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>weight_jitters <span class="op">=</span> df_height_wt[<span class="st">'WTKG3'</span>] <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">2</span>, size<span class="op">=</span><span class="bu">len</span>(df_height_wt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="8868553d-1aae-467d-8dcd-37a90c65660a" class="cell" data-execution_count="109">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>ax.scatter( height_jitters, weight_jitters, marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="109">
 <pre><code>Text(0, 0.5, 'Weight (kg)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-52-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-52-output-2.png" width="393" height="375" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Fit a linear regression model</p>
-<div class="cell" data-execution_count="120">
-<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
-<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> height_jitters.values.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> weight_jitters.values.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
-<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> LinearRegression().fit(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="e1458ddc-f13b-44cf-a391-083cc8ba16ba" class="cell" data-execution_count="120">
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression</span>
+<span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> height_jitters.values.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> weight_jitters.values.reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span>
+<span id="cb80-4"><a href="#cb80-4" aria-hidden="true" tabindex="-1"></a>reg <span class="op">=</span> LinearRegression().fit(x, y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="128">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>x.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8678cb73-04d0-4325-a157-2e2c4df1735f" class="cell" data-execution_count="128">
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>x.<span class="bu">min</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="128">
 <pre><code>90.14298210689765</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="139">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reg.coef_, reg.intercept_, reg.score(x,y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="a8b72c40-3ade-4696-b922-68eba4c415f6" class="cell" data-execution_count="139">
+<div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(reg.coef_, reg.intercept_, reg.score(x,y))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[0.90102916]] [-71.05446729] 0.2163310658640062</code></pre>
 </div>
 </div>
-<div class="cell" data-execution_count="131">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>height_test <span class="op">=</span> np.linspace(x.<span class="bu">min</span>(), x.<span class="bu">max</span>()).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="62e3a653-5673-4e73-ad03-7a1bc70eb3a0" class="cell" data-execution_count="131">
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>height_test <span class="op">=</span> np.linspace(x.<span class="bu">min</span>(), x.<span class="bu">max</span>()).reshape(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-execution_count="134">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
-<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>ax.plot( height_test, reg.predict(height_test), <span class="st">'r--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>ax.scatter( height_jitters, weight_jitters, marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.01</span>)</span>
-<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
-<span id="cb89-5"><a href="#cb89-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="c8f4d198-c7a0-40bc-82f7-ad0258be9c23" class="cell" data-execution_count="134">
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(<span class="dv">1</span>,<span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>,<span class="dv">6</span>))</span>
+<span id="cb86-2"><a href="#cb86-2" aria-hidden="true" tabindex="-1"></a>ax.plot( height_test, reg.predict(height_test), <span class="st">'r--'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb86-3"><a href="#cb86-3" aria-hidden="true" tabindex="-1"></a>ax.scatter( height_jitters, weight_jitters, marker<span class="op">=</span><span class="st">'o'</span>, alpha<span class="op">=</span><span class="fl">0.01</span>)</span>
+<span id="cb86-4"><a href="#cb86-4" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Height (m)'</span>)</span>
+<span id="cb86-5"><a href="#cb86-5" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Weight (kg)'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="134">
 <pre><code>Text(0, 0.5, 'Weight (kg)')</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-57-output-2.png" class="img-fluid"></p>
+<div>
+<figure class="figure">
+<p><img src="2021-05-23-brfss_eda_files/figure-html/cell-57-output-2.png" width="393" height="375" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 
@@ -799,6 +826,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -867,13 +921,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -900,12 +956,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
     }
-  });
-  clipboard.on('success', function(e) {
+    return false;
+  }
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -937,11 +996,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -951,8 +1047,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -964,9 +1069,244 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -1007,6 +1347,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
