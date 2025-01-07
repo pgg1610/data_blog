@@ -5,14 +5,14 @@ categories:
 - chemical-science
 - machine-learning
 - resources
-date: '2024-12-01'
+date: '2025-12-01'
 description: Compendium of recent articles, resources, and blogs in the area of medicine discovery
 layout: post
 title: Medicine drug discovery resources
 toc: true
 ---
 
-Last update: December 2024
+Last update: January 2025
 
 ## Noteworthy blogs to follow:
 
@@ -635,6 +635,12 @@ Conduct a global multi-objective optimization with expected improvement criterio
 
 Active learning provides strategies for efficient screening of subsets of the library. In many cases, we can identify a large portion of the most promising molecules with a fraction of the compute cost.
 
+**Blogs**
+
+* [How to drug a novel target in 500 molecules](https://variationalai.substack.com/p/how-to-drug-a-novel-target-in-500?r=p9ku5&utm_campaign=post&utm_medium=web&triedRedirect=true)
+
+
+
 **Comparisons**
 
 [Traversing Chemical Space with Active Deep Learning](https://chemrxiv.org/engage/chemrxiv/article-details/655f22eecf8b3c3cd7ef43d7)
@@ -642,6 +648,10 @@ Active learning provides strategies for efficient screening of subsets of the li
 The authors compared six active learning approaches on three benchmark datasets and concluded that the acquisition function is critical to AL performance. When comparing molecular representations, they found that fingerprints generalized better than graph neural networks.  Consistent with previous studies, they found that the choice of an initial training set had little impact on the outcome of an AL model. 
 
 **Articles**
+
+* [Dodds, M., Guo, J., Löhr, T., Tibo, A., Engkvist, O., & Janet, J. P. (2024). Sample efficient reinforcement learning with active learning for molecular design. Chemical Science, 15(11), 4146-4160.](https://pubs.rsc.org/en/content/articlelanding/2024/sc/d3sc04653b)
+
+Active learning system linked with Reinforcement learning model for molecule design through REINVENT-Active Learning. They aim to improve the sampling efficiency of the generation required to improving the MPO. Compounds discovered through RL-AL approach show significant enrichment in the MPO score. 
 
 * [Correy, Galen J., Moira M. Rachman, Takaya Togo, Stefan Gahbauer, Yagmur U. Doruk, Maisie GV Stevens, Priyadarshini Jaishankar et al. "Extensive exploration of structure activity relationships for the SARS-CoV-2 macrodomain from shape-based fragment merging and active learning." bioRxiv (2024): 2024-08.](https://www.biorxiv.org/content/10.1101/2024.08.25.609621v1)
 
@@ -664,8 +674,6 @@ Article talks about MolPAL as an active learning methodology. The team explores 
 Article exploring different active learning strategies for looking at sampling the congeneric RBFE calculations. The paper explores the impact of several AL design choices. They show that in their case, the overall AL performance is largely insensitive to the specific ML method and acquisition functions used. The significant factor affecting the performance was the number of molecules sampled at each iteration. 
 
 * [Reker, D. Practical Considerations for Active Machine Learning in Drug Discovery. Drug Discov. Today Technol. 2020](https://doi.org/10.1016/j.ddtec.2020.06.001)
-
-* [Janet, J. P., Ramesh, S., Duan, C., & Kulik, H. J. (2020). Accurate multiobjective design in a space of millions of transition metal complexes with neural-network-driven efficient global optimization. ACS central science, 6(4), 513-524.](https://pubs.acs.org/doi/abs/10.1021/acscentsci.0c00026)
 
 * [A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul. 2021.](https://pubs.acs.org/doi/10.1021/acscentsci.1c00546). [Slideshare](https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery)
 
