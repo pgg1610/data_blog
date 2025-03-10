@@ -5,14 +5,14 @@ categories:
 - chemical-science
 - machine-learning
 - resources
-date: '2025-12-01'
+date: '2025-01-01'
 description: Compendium of recent articles, resources, and blogs in the area of medicine discovery
 layout: post
 title: Medicine drug discovery resources
 toc: true
 ---
 
-Last update: January 2025
+Last update: March 2025
 
 ## Noteworthy blogs to follow:
 
@@ -29,9 +29,13 @@ Last update: January 2025
 
 5. [Depth-First](https://depth-first.com)
 
+6. [Noel O'Blog](https://baoilleach.blogspot.com/)
+
+
 **Fragment-based drug dicovery**
 
 1. [Practical Fragments](http://practicalfragments.blogspot.com/) 
+
 
 **Medicinal chemistry**
 
@@ -39,8 +43,10 @@ Last update: January 2025
 
 2. [Chris Swaim's MedChem blogpost](https://www.cambridgemedchemconsulting.com/resources/)
 
+
 **Computational chemistry**
 1. [Gilles Ouvry](https://www.linkedin.com/in/gilles-ouvry-8b7b2b5/)
+
 
 **General field**
 
@@ -233,6 +239,17 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 * [Late-stage diversification of indole skeletons through nitrogen atom insertion](https://www.science.org/doi/10.1126/science.add1383)
 
+
+## Structure elucidation / analytical techniques modeling 
+
+* [](https://arxiv.org/abs/2502.09571)
+
+DiffMS is a novel machine learning framework for generating molecular structures from mass spectra. It uses a formula-restricted encoder-decoder network, achieving state-of-the-art performance. The novelty lies in its discrete graph diffusion model and extensive pretraining. However, gaps remain in fully elucidating exact molecular structures due to inherent ambiguities in mass spectra.
+
+* [Li, Haote, et al. "Rapid Quantification of Protein Secondary Structure Composition from a Single Unassigned 1D 13C Nuclear Magnetic Resonance Spectrum." Journal of the American Chemical Society 146.40 (2024): 27542-27554.](https://pubs.acs.org/doi/10.1021/jacs.4c08300)
+
+Secondary protein structure determination from 1D NMR without chemical shift assignments. Each residue is modeled as ensemble of secondary structure viz. alpha-helix, beta-sheet, random coil. While the approach can hint at residue-level differences, its primary output is the overall ensemble distribution of secondary structural elements. 
+
 ## Large chemical libraries
 
 Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field. 
@@ -341,6 +358,7 @@ The authors use a fragment screening approach to look at hits for protein kinase
 
 Commercial software solution from OpenEye for fragment exchange 
 
+
 ## Protein engineering 
 
 * [PeSTo: parameter-free geometric deep learning for accurate prediction of protein binding interfaces](https://www.nature.com/articles/s41467-023-37701-8)
@@ -373,11 +391,18 @@ DynamicBind, a deep learning method that employs equivariant geometric diffusion
 
 ### Conformer generators
 
+* [The impact of conformer quality on learned representations of molecular conformer ensembles](https://arxiv.org/abs/2502.13220)
+
 * [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
 
 * [Wang, Zhe, et al. "Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519)
 
 * [Zhu, Yanqiao, et al. "Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks." arXiv preprint arXiv:2310.00115 (2023).](https://arxiv.org/pdf/2310.00115.pdf)
+
+
+* [Friedrich, Nils-Ole, et al. "Benchmarking commercial conformer ensemble generators." Journal of chemical information and modeling 57.11 (2017): 2719-2728.](https://pubs.acs.org/doi/abs/10.1021/acs.jcim.7b00505?src=recsys)
+
+The paper benchmarks eight commercial conformer ensemble generators: OMEGA, ConfGenX, iCon, MOE LowModeMD, MacroModel, LigPrep, OpenEye, and Schrödinger, along with RDKit. It finds that commercial algorithms are highly robust and accurate, with OMEGA being the top performer in terms of accuracy and speed. RDKit shows competitive performance compared to mid-ranked commercial algorithms. The study highlights the impact of rotatable bonds on success rates and recommends enabling built-in clustering for better accuracy.
 
 **Structure Quality Assessment**
 
@@ -394,6 +419,9 @@ Suite of tools and workflow to benchmark Deep learning method's ability to predi
 PoseCheck evaluates steric clashes, ligand strain energy, and intramolecular interactions to identify problematic structures.  In addition, structures are redocked with AutoDock Vina to confirm the validity of the proposed binding mode.  In evaluating several recently published generative models, the authors identify failure modes that will hopefully influence future work on structure-based generative design. 
 
 ### Binding energetic prediction 
+
+* [Valsson, Ísak, et al. "Narrowing the gap between machine learning scoring functions and free energy perturbation using augmented data." Communications Chemistry 8.1 (2025): 41.](https://www.nature.com/articles/s42004-025-01428-y)
+
 
 * [Warren, M., Deane, C., Magarkar, A., Morris, G., & Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.](https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62)
 
@@ -573,6 +601,9 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 * [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
 
 * [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
+
+
+### R-group replacement dataset
 
 ### Enumeration of chemical space
 
@@ -761,6 +792,12 @@ This paper looks at different ways of integrating synthesizability criteria into
 
 REINVENT is a molecular design tool for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. At its heart, REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules.
 
+**Genetic algorithms**
+
+* [Tripp, Austin, and José Miguel Hernández-Lobato. "Genetic algorithms are strong baselines for molecule generation." arXiv preprint arXiv:2310.09267 (2023).](https://arxiv.org/abs/2310.09267)
+
+* [Jensen, Jan H. "A graph-based genetic algorithm and generative model/Monte Carlo tree search for the exploration of chemical space." Chemical science 10.12 (2019): 3567-3572.](https://pubs.rsc.org/en/content/articlehtml/2017/sc/c8sc05372c). [Code](https://github.com/AustinT/mol_ga)
+
 **Language models:**
 
 * [PromptSMILES: Prompting for scaffold decoration and fragment linking in chemical language models](https://chemrxiv.org/engage/chemrxiv/article-details/65e718eee9ebbb4db9f21886)
@@ -813,7 +850,10 @@ Generative adversarial network for finding small molecules using graph networks,
 
 Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown. 
 
-**Reaction tranformation-based** 
+**Synthesizable-space aware** 
+
+
+* [Gao, Wenhao, Shitong Luo, and Connor W. Coley. "Generative artificial intelligence for navigating synthesizable chemical space." arXiv preprint arXiv:2410.03494 (2024).](https://arxiv.org/abs/2410.03494)
 
 Here the idea is to constraint the molecules generated by the transformations amenable to a particular platform, like automated synthesis workflow. 
 
@@ -1262,15 +1302,18 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 * [General LLM-based multi-agent survey](https://arxiv.org/pdf/2402.01680)
 
-* [Scientific Large Language Models: A Survey on Biological & Chemical Domains](https://arxiv.org/pdf/2401.14656)
-
 **Reviews**
 
 * [Ramos, Mayk Caldas, Christopher J. Collison, and Andrew D. White. "A Review of Large Language Models and Autonomous Agents in Chemistry." _arXiv preprint arXiv:2407.01603_ (2024).](https://arxiv.org/abs/2407.01603). [Github](https://github.com/ur-whitelab/LLMs-in-science)
 
+* [Scientific Large Language Models: A Survey on Biological & Chemical Domains](https://arxiv.org/pdf/2401.14656)
+
 * [Bran, Andres M., and Philippe Schwaller. "Transformers and Large Language Models for Chemistry and Drug Discovery." arXiv preprint arXiv:2310.06083 (2023).](https://arxiv.org/abs/2310.06083)
 
 * [Gao, S., Fang, A., Huang, Y., Giunchiglia, V., Noori, A., Schwarz, J. R., Ektefaie, Y., Kondic, J., & Zitnik, M. (2024). Empowering biomedical discovery with AI agents. Cell, 187(22), 6125–6151. https://doi.org/10.1016/j.cell.2024.09.022](https://www.cell.com/cell/fulltext/S0092-8674(24)01070-5)
+
+
+* [Pyzer-Knapp, Edward O., et al. "Foundation models for materials discovery–current state and future directions." npj Computational Materials 11.1 (2025): 61.](https://www.nature.com/articles/s41524-025-01538-0)
 
 **Agents**
 
@@ -1288,16 +1331,14 @@ Coscientist, a set of LLMs for designing and executing organic syntheses.  Cosci
 
 * [ProtAgents](https://github.com/lamm-mit/ProtAgents)
 
-* [AI Scientist from SakanaAI](https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file)
-
 * [Wu, Shirley, et al. "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning." The Thirty-eighth Annual Conference on Neural Information Processing Systems.](https://arxiv.org/abs/2406.11200)
 
 Framework that optimizes an LLM agent to use the provided tools. This framework is integrated in [DSPy](https://github.com/stanfordnlp/dspy)
 
-* [Swanson, Kyle, Wesley Wu, Nash L. Bulaong, John E. Pak, and James Zou. "The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation." bioRxiv (2024): 2024-11.](https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1)
 
-A joint paper from James Zou (Stanford) and Chan-Zuckerberg foundation showcases a virtual lab comprising of AI Agentic personas of typical research group collaborating together to design nanobodies. Interesting idea. 
+* [Zhang, Chonghuan, et al. "SynAsk: unleashing the power of large language models in organic synthesis." Chemical Science 16.1 (2025): 43-56.](https://pubs.rsc.org/en/content/articlelanding/2025/sc/d4sc04757e)
 
+New ReAct agent from AIChemEco team. No code or data available. LLM with tool use (langchain + qwen 1.2b). Main value prop. are their bespoke tools (section 2.5.5) yield prediction, condition pred. and retrosynthesis model. 
 
 **Generative Design**
 
@@ -1326,6 +1367,7 @@ I am glad to see this work as it shows how much information and feature-richness
 * [Sirumalla, S. K., Farina Jr, D. S., Qiao, Z., Di Cesare, D. A., Farias, F. C., O’Connor, M. B., ... & Miller, T. Multi-Modal and Multi-Task Transformer for Small Molecule Drug Discovery. In ICML'24 Workshop ML for Life and Material Science: From Theory to Industry Applications.](https://openreview.net/pdf?id=Ya5OHw7lZ8)
 
 From Iambic team: 1B-parameter transformer model pre-trained on 2.25 trillion tokens from diverse datasets focused on drug discovery. It details a comprehensive data pipeline for standardizing and processing data from various sources. The model architecture is based on LLaMA-2 and includes advanced features like SwishGLU and Rotary Positional Encoding. The fine-tuned model outperforms strong baselines in assay prediction tasks.
+
 
 **Small molecule related tasks**
 
@@ -1363,6 +1405,8 @@ Mixture of LoRA Experts: Leverage the power of fine-tuned LoRA experts by employ
 
 **Clinical text**
 
+* [Lopez, Ivan, et al. "Clinical entity augmented retrieval for clinical information extraction." npj Digital Medicine 8.1 (2025): 45.](https://www.nature.com/articles/s41746-024-01377-1)
+
 * [Van Veen, D., Van Uden, C., Blankemeier, L. et al. Adapted large language models can outperform medical experts in clinical text summarization. Nat Med (2024).](https://www.nature.com/articles/s41591-024-02855-5). [Github](https://github.com/StanfordMIMI/clin-summ)
 
 Authors look at clinical summarization and implement quantitative assesments with synctactic, semantic, and conceptual NLP metrics. A clinical reader study with 10 physicians evaluated summary completeness, correctness and conciseness; in most cases, summaries from our best-adapted LLMs were deemed either equivalent (45%) or superior (36%) compared with summaries from medical experts. The research provides evidence of LLMs outperforming medical experts in clinical text summarization across multiple tasks. This suggests that integrating LLMs into clinical workflows could alleviate documentation burden, allowing clinicians to focus more on patient care.
@@ -1381,7 +1425,25 @@ Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant 
 
 * [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
 
-**Agent knowledge**
+**Agent Engineering**
+
+* [Narayanan, Siddharth, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli et al. "Aviary: training language agents on challenging scientific tasks." arXiv preprint arXiv:2412.21154 (2024).](https://arxiv.org/pdf/2412.21154). [Github](https://github.com/Future-House/aviary)
+
+Casting the AI Agentic process as a markov decision process and train language-based AI Agent on biology tasks. They show exceeding human-level performance on SeqQA (dataset consists of MCQs questions, such as counting the fragments after digestion, predicting translated sequences, and identifying polymerase chain reaction primers). The trained Language Agent are compute efficient. 
+
+* [Hu, S., Lu, C., & Clune, J. (2024). Automated design of agentic systems. arXiv preprint arXiv:2408.08435.](https://arxiv.org/abs/2408.08435)[Website](https://www.shengranhu.com/ADAS/)
+
+Framework to automatically creating new agent given appropriate building blocks and combine them in new ways. They proposed Meta-Agent search and show agents can invent novel and power agent designs.  
+
+* [Swanson, Kyle, Wesley Wu, Nash L. Bulaong, John E. Pak, and James Zou. "The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation." bioRxiv (2024): 2024-11.](https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1)
+
+A joint paper from James Zou (Stanford) and Chan-Zuckerberg foundation showcases a virtual lab comprising of AI Agentic personas of typical research group collaborating together to design nanobodies. Interesting idea. 
+
+* [AI Scientist from SakanaAI](https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file)
+
+Automation to encompass end-to-end scientific discovery, including coding, experiment execution, and automated peer review for manuscript generation.
+
+**Model Improvements**
 
 * [Zelikman, E., Harik, G., Shao, Y., Jayasiri, V., Haber, N., & Goodman, N. D. (2024). Quiet-star: Language models can teach themselves to think before speaking. arXiv preprint arXiv:2403.09629.](https://arxiv.org/abs/2403.09629)
 
