@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-12-01">
+<meta name="dcterms.date" content="2025-01-01">
 <meta name="description" content="Compendium of recent articles, resources, and blogs in the area of medicine discovery">
 
 <title>Medicine drug discovery resources – Omnis tempus datum</title>
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">December 1, 2025</p>
+        <p class="date">January 1, 2025</p>
       </div>
     </div>
     
@@ -167,6 +167,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chemical-modalities" id="toc-chemical-modalities" class="nav-link" data-scroll-target="#chemical-modalities">Chemical modalities</a></li>
   <li><a href="#meta-themes-on-optimizing-small-molecules" id="toc-meta-themes-on-optimizing-small-molecules" class="nav-link" data-scroll-target="#meta-themes-on-optimizing-small-molecules">Meta themes on optimizing small molecules</a></li>
   <li><a href="#synthesis-chemistry" id="toc-synthesis-chemistry" class="nav-link" data-scroll-target="#synthesis-chemistry">Synthesis Chemistry</a></li>
+  <li><a href="#structure-elucidation-analytical-techniques-modeling" id="toc-structure-elucidation-analytical-techniques-modeling" class="nav-link" data-scroll-target="#structure-elucidation-analytical-techniques-modeling">Structure elucidation / analytical techniques modeling</a></li>
   <li><a href="#large-chemical-libraries" id="toc-large-chemical-libraries" class="nav-link" data-scroll-target="#large-chemical-libraries">Large chemical libraries</a></li>
   <li><a href="#virtual-screeening" id="toc-virtual-screeening" class="nav-link" data-scroll-target="#virtual-screeening">Virtual screeening</a></li>
   <li><a href="#fragment-based-drug-discovery" id="toc-fragment-based-drug-discovery" class="nav-link" data-scroll-target="#fragment-based-drug-discovery">Fragment-based drug discovery</a></li>
@@ -186,6 +187,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#qsar-benchmarks" id="toc-qsar-benchmarks" class="nav-link" data-scroll-target="#qsar-benchmarks">QSAR benchmarks</a></li>
   <li><a href="#matched-molecular-pair" id="toc-matched-molecular-pair" class="nav-link" data-scroll-target="#matched-molecular-pair">Matched molecular-pair</a></li>
+  <li><a href="#r-group-replacement-dataset" id="toc-r-group-replacement-dataset" class="nav-link" data-scroll-target="#r-group-replacement-dataset">R-group replacement dataset</a></li>
   <li><a href="#enumeration-of-chemical-space" id="toc-enumeration-of-chemical-space" class="nav-link" data-scroll-target="#enumeration-of-chemical-space">Enumeration of chemical space</a></li>
   </ul></li>
   <li><a href="#explainableinterpretable-machine-learning" id="toc-explainableinterpretable-machine-learning" class="nav-link" data-scroll-target="#explainableinterpretable-machine-learning">Explainable/Interpretable Machine Learning</a></li>
@@ -219,7 +221,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Last update: January 2025</p>
+<p>Last update: March 2025</p>
 <section id="noteworthy-blogs-to-follow" class="level2">
 <h2 class="anchored" data-anchor-id="noteworthy-blogs-to-follow">Noteworthy blogs to follow:</h2>
 <p><strong>Cheminformatics</strong></p>
@@ -232,6 +234,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://whitead.github.io/dmol-book/intro.html">Andrew White’s Deep Learning for Molecule and Material</a></p></li>
 <li><p><a href="http://www.cheminformania.com">Cheminformia</a></p></li>
 <li><p><a href="https://depth-first.com">Depth-First</a></p></li>
+<li><p><a href="https://baoilleach.blogspot.com/">Noel O’Blog</a></p></li>
 </ol>
 <p><strong>Fragment-based drug dicovery</strong></p>
 <ol type="1">
@@ -426,6 +429,17 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://www.science.org/doi/10.1126/science.add1383">Late-stage diversification of indole skeletons through nitrogen atom insertion</a></p></li>
 </ul>
 </section>
+<section id="structure-elucidation-analytical-techniques-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="structure-elucidation-analytical-techniques-modeling">Structure elucidation / analytical techniques modeling</h2>
+<ul>
+<li><a href="https://arxiv.org/abs/2502.09571"></a></li>
+</ul>
+<p>DiffMS is a novel machine learning framework for generating molecular structures from mass spectra. It uses a formula-restricted encoder-decoder network, achieving state-of-the-art performance. The novelty lies in its discrete graph diffusion model and extensive pretraining. However, gaps remain in fully elucidating exact molecular structures due to inherent ambiguities in mass spectra.</p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/jacs.4c08300">Li, Haote, et al.&nbsp;“Rapid Quantification of Protein Secondary Structure Composition from a Single Unassigned 1D 13C Nuclear Magnetic Resonance Spectrum.” Journal of the American Chemical Society 146.40 (2024): 27542-27554.</a></li>
+</ul>
+<p>Secondary protein structure determination from 1D NMR without chemical shift assignments. Each residue is modeled as ensemble of secondary structure viz.&nbsp;alpha-helix, beta-sheet, random coil. While the approach can hint at residue-level differences, its primary output is the overall ensemble distribution of secondary structural elements.</p>
+</section>
 <section id="large-chemical-libraries" class="level2">
 <h2 class="anchored" data-anchor-id="large-chemical-libraries">Large chemical libraries</h2>
 <p>Over the past few years several entites offering ultra-large ensembles of chemical libraries which can be made on-demand or purchased immediately have emerged. The existence of such services has reinvigorated the field of virtual screening and combinatorial library design. In addition, research groups have devised novel ways to navigate these libraries, more efficiently and also understand the differences in the chemical space these library cover. Following are some of the key papers in the field.</p>
@@ -551,10 +565,13 @@ ul.task-list li input[type="checkbox"] {
 <section id="conformer-generators" class="level3">
 <h3 class="anchored" data-anchor-id="conformer-generators">Conformer generators</h3>
 <ul>
+<li><p><a href="https://arxiv.org/abs/2502.13220">The impact of conformer quality on learned representations of molecular conformer ensembles</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245">McNutt, Andrew T., et al.&nbsp;“Conformer Generation for Structure-Based Drug Design: How Many and How Good?.” Journal of Chemical Information and Modeling (2023).</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01519">Wang, Zhe, et al.&nbsp;“Small-Molecule Conformer Generators: Evaluation of Traditional Methods and AI Models on High-Quality Data Sets.” Journal of Chemical Information and Modeling (2023).</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2310.00115.pdf">Zhu, Yanqiao, et al.&nbsp;“Learning Over Molecular Conformer Ensembles: Datasets and Benchmarks.” arXiv preprint arXiv:2310.00115 (2023).</a></p></li>
+<li><p><a href="https://pubs.acs.org/doi/abs/10.1021/acs.jcim.7b00505?src=recsys">Friedrich, Nils-Ole, et al.&nbsp;“Benchmarking commercial conformer ensemble generators.” Journal of chemical information and modeling 57.11 (2017): 2719-2728.</a></p></li>
 </ul>
+<p>The paper benchmarks eight commercial conformer ensemble generators: OMEGA, ConfGenX, iCon, MOE LowModeMD, MacroModel, LigPrep, OpenEye, and Schrödinger, along with RDKit. It finds that commercial algorithms are highly robust and accurate, with OMEGA being the top performer in terms of accuracy and speed. RDKit shows competitive performance compared to mid-ranked commercial algorithms. The study highlights the impact of rotatable bonds on success rates and recommends enabling built-in clustering for better accuracy.</p>
 <p><strong>Structure Quality Assessment</strong></p>
 <ul>
 <li><a href="https://arxiv.org/abs/2308.05777">Buttenschoen, Martin, Garrett M. Morris, and Charlotte M. Deane. “PoseBusters: AI-based docking methods fail to generate physically valid poses or generalise to novel sequences.” arXiv preprint arXiv:2308.05777 (2023).</a></li>
@@ -570,7 +587,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="binding-energetic-prediction" class="level3">
 <h3 class="anchored" data-anchor-id="binding-energetic-prediction">Binding energetic prediction</h3>
 <ul>
-<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62">Warren, M., Deane, C., Magarkar, A., Morris, G., &amp; Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.</a></li>
+<li><p><a href="https://www.nature.com/articles/s42004-025-01428-y">Valsson, Ísak, et al.&nbsp;“Narrowing the gap between machine learning scoring functions and free energy perturbation using augmented data.” Communications Chemistry 8.1 (2025): 41.</a></p></li>
+<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/6675a38d5101a2ffa8274f62">Warren, M., Deane, C., Magarkar, A., Morris, G., &amp; Biggin, P. (2024). How to make machine learning scoring functions competitive with FEP.</a></p></li>
 </ul>
 <p>Current SOTA model fail in out of distribution datasets implying overfitting or memorization of ligand-specific features. This paper introduces AEV-PLIG, atomic environment vector with protein-ligand interaction graphs. They propose new benchmark metrics and data augmentation strategies.A multi-head attention graph NN is trained with the node features of the P-L interaction. They report comparable performance to FEP+ on standard benchmarks.</p>
 <ul>
@@ -725,6 +743,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://link.springer.com/article/10.1023/A:1021271615909">Raymond, John W., and Peter Willett. “Maximum common subgraph isomorphism algorithms for the matching of chemical structures.” Journal of computer-aided molecular design 16.7 (2002): 521-533.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173">Dalke, Andrew, Jerome Hert, and Christian Kramer. “mmpdb: An open-source matched molecular pair platform for large multiproperty data sets.” Journal of chemical information and modeling 58.5 (2018): 902-910.</a></p></li>
 </ul>
+</section>
+<section id="r-group-replacement-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="r-group-replacement-dataset">R-group replacement dataset</h3>
 </section>
 <section id="enumeration-of-chemical-space" class="level3">
 <h3 class="anchored" data-anchor-id="enumeration-of-chemical-space">Enumeration of chemical space</h3>
@@ -898,6 +919,11 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/MolecularAI/REINVENT4">REINVENT4: Modern AI–Driven Generative Molecule Design</a> [Supported with PyTorch 2.0]</li>
 </ul>
 <p>REINVENT is a molecular design tool for de novo design, scaffold hopping, R-group replacement, linker design, molecule optimization, and other small molecule design tasks. At its heart, REINVENT uses a Reinforcement Learning (RL) algorithm to generate optimized molecules compliant with a user defined property profile defined as a multi-component score. Transfer Learning (TL) can be used to create or pre-train a model that generates molecules closer to a set of input molecules.</p>
+<p><strong>Genetic algorithms</strong></p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2310.09267">Tripp, Austin, and José Miguel Hernández-Lobato. “Genetic algorithms are strong baselines for molecule generation.” arXiv preprint arXiv:2310.09267 (2023).</a></p></li>
+<li><p><a href="https://pubs.rsc.org/en/content/articlehtml/2017/sc/c8sc05372c">Jensen, Jan H. “A graph-based genetic algorithm and generative model/Monte Carlo tree search for the exploration of chemical space.” Chemical science 10.12 (2019): 3567-3572.</a>. <a href="https://github.com/AustinT/mol_ga">Code</a></p></li>
+</ul>
 <p><strong>Language models:</strong></p>
 <ul>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/65e718eee9ebbb4db9f21886">PromptSMILES: Prompting for scaffold decoration and fragment linking in chemical language models</a></p></li>
@@ -942,7 +968,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://arxiv.org/pdf/2103.03864.pdf">Maziarz, Krzysztof, et al.&nbsp;“Learning to extend molecular scaffolds with structural motifs.” arXiv preprint arXiv:2103.03864 (2021).</a>. <a href="https://github.com/microsoft/molecule-generation">Github</a></p></li>
 </ul>
 <p>Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown.</p>
-<p><strong>Reaction tranformation-based</strong></p>
+<p><strong>Synthesizable-space aware</strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2410.03494">Gao, Wenhao, Shitong Luo, and Connor W. Coley. “Generative artificial intelligence for navigating synthesizable chemical space.” arXiv preprint arXiv:2410.03494 (2024).</a></li>
+</ul>
 <p>Here the idea is to constraint the molecules generated by the transformations amenable to a particular platform, like automated synthesis workflow.</p>
 <ul>
 <li><p><a href="https://arxiv.org/abs/2406.04628">Luo, S., Gao, W., Wu, Z., Peng, J., Coley, C. W., &amp; Ma, J. (2024). Projecting Molecules into Synthesizable Chemical Spaces.&nbsp;<em>arXiv preprint arXiv:2406.04628</em>.</a></p></li>
@@ -1314,13 +1343,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><a href="https://arxiv.org/abs/2402.06196">Total survey of the LLM landscape</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2402.01680">General LLM-based multi-agent survey</a></p></li>
-<li><p><a href="https://arxiv.org/pdf/2401.14656">Scientific Large Language Models: A Survey on Biological &amp; Chemical Domains</a></p></li>
 </ul>
 <p><strong>Reviews</strong></p>
 <ul>
 <li><p><a href="https://arxiv.org/abs/2407.01603">Ramos, Mayk Caldas, Christopher J. Collison, and Andrew D. White. “A Review of Large Language Models and Autonomous Agents in Chemistry.”&nbsp;<em>arXiv preprint arXiv:2407.01603</em>&nbsp;(2024).</a>. <a href="https://github.com/ur-whitelab/LLMs-in-science">Github</a></p></li>
+<li><p><a href="https://arxiv.org/pdf/2401.14656">Scientific Large Language Models: A Survey on Biological &amp; Chemical Domains</a></p></li>
 <li><p><a href="https://arxiv.org/abs/2310.06083">Bran, Andres M., and Philippe Schwaller. “Transformers and Large Language Models for Chemistry and Drug Discovery.” arXiv preprint arXiv:2310.06083 (2023).</a></p></li>
 <li><p><a href="https://www.cell.com/cell/fulltext/S0092-8674(24)01070-5">Gao, S., Fang, A., Huang, Y., Giunchiglia, V., Noori, A., Schwarz, J. R., Ektefaie, Y., Kondic, J., &amp; Zitnik, M. (2024). Empowering biomedical discovery with AI agents. Cell, 187(22), 6125–6151. https://doi.org/10.1016/j.cell.2024.09.022</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s41524-025-01538-0">Pyzer-Knapp, Edward O., et al.&nbsp;“Foundation models for materials discovery–current state and future directions.” npj Computational Materials 11.1 (2025): 61.</a></p></li>
 </ul>
 <p><strong>Agents</strong></p>
 <ul>
@@ -1337,14 +1367,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Coscientist, a set of LLMs for designing and executing organic syntheses. Coscientist consists of four components designed to search the web, write Python code, extract information from documentation, and program laboratory robotics. The authors test Coscientist using several open and closed-source LLMs and present examples of the system’s ability to plan and execute simple organic syntheses.</p>
 <ul>
 <li><p><a href="https://github.com/lamm-mit/ProtAgents">ProtAgents</a></p></li>
-<li><p><a href="https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file">AI Scientist from SakanaAI</a></p></li>
 <li><p><a href="https://arxiv.org/abs/2406.11200">Wu, Shirley, et al.&nbsp;“AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning.” The Thirty-eighth Annual Conference on Neural Information Processing Systems.</a></p></li>
 </ul>
 <p>Framework that optimizes an LLM agent to use the provided tools. This framework is integrated in <a href="https://github.com/stanfordnlp/dspy">DSPy</a></p>
 <ul>
-<li><a href="https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1">Swanson, Kyle, Wesley Wu, Nash L. Bulaong, John E. Pak, and James Zou. “The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation.” bioRxiv (2024): 2024-11.</a></li>
+<li><a href="https://pubs.rsc.org/en/content/articlelanding/2025/sc/d4sc04757e">Zhang, Chonghuan, et al.&nbsp;“SynAsk: unleashing the power of large language models in organic synthesis.” Chemical Science 16.1 (2025): 43-56.</a></li>
 </ul>
-<p>A joint paper from James Zou (Stanford) and Chan-Zuckerberg foundation showcases a virtual lab comprising of AI Agentic personas of typical research group collaborating together to design nanobodies. Interesting idea.</p>
+<p>New ReAct agent from AIChemEco team. No code or data available. LLM with tool use (langchain + qwen 1.2b). Main value prop. are their bespoke tools (section 2.5.5) yield prediction, condition pred. and retrosynthesis model.</p>
 <p><strong>Generative Design</strong></p>
 <ul>
 <li><a href="https://molleo.github.io/">Wang, Haorui, et al.&nbsp;“Efficient Evolutionary Search Over Chemical Space with Large Language Models.”&nbsp;<em>arXiv preprint arXiv:2406.16976</em>&nbsp;(2024).</a></li>
@@ -1396,7 +1425,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Clinical text</strong></p>
 <ul>
-<li><a href="https://www.nature.com/articles/s41591-024-02855-5">Van Veen, D., Van Uden, C., Blankemeier, L. et al.&nbsp;Adapted large language models can outperform medical experts in clinical text summarization. Nat Med (2024).</a>. <a href="https://github.com/StanfordMIMI/clin-summ">Github</a></li>
+<li><p><a href="https://www.nature.com/articles/s41746-024-01377-1">Lopez, Ivan, et al.&nbsp;“Clinical entity augmented retrieval for clinical information extraction.” npj Digital Medicine 8.1 (2025): 45.</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s41591-024-02855-5">Van Veen, D., Van Uden, C., Blankemeier, L. et al.&nbsp;Adapted large language models can outperform medical experts in clinical text summarization. Nat Med (2024).</a>. <a href="https://github.com/StanfordMIMI/clin-summ">Github</a></p></li>
 </ul>
 <p>Authors look at clinical summarization and implement quantitative assesments with synctactic, semantic, and conceptual NLP metrics. A clinical reader study with 10 physicians evaluated summary completeness, correctness and conciseness; in most cases, summaries from our best-adapted LLMs were deemed either equivalent (45%) or superior (36%) compared with summaries from medical experts. The research provides evidence of LLMs outperforming medical experts in clinical text summarization across multiple tasks. This suggests that integrating LLMs into clinical workflows could alleviate documentation burden, allowing clinicians to focus more on patient care.</p>
 <ul>
@@ -1412,7 +1442,24 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://arxiv.org/abs/2402.04379">Gruver, Nate, et al.&nbsp;“Fine-Tuned Language Models Generate Stable Inorganic Materials as Text.” arXiv preprint arXiv:2402.04379 (2024).</a></li>
 </ul>
-<p><strong>Agent knowledge</strong></p>
+<p><strong>Agent Engineering</strong></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2412.21154">Narayanan, Siddharth, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli et al.&nbsp;“Aviary: training language agents on challenging scientific tasks.” arXiv preprint arXiv:2412.21154 (2024).</a>. <a href="https://github.com/Future-House/aviary">Github</a></li>
+</ul>
+<p>Casting the AI Agentic process as a markov decision process and train language-based AI Agent on biology tasks. They show exceeding human-level performance on SeqQA (dataset consists of MCQs questions, such as counting the fragments after digestion, predicting translated sequences, and identifying polymerase chain reaction primers). The trained Language Agent are compute efficient.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2408.08435">Hu, S., Lu, C., &amp; Clune, J. (2024). Automated design of agentic systems. arXiv preprint arXiv:2408.08435.</a><a href="https://www.shengranhu.com/ADAS/">Website</a></li>
+</ul>
+<p>Framework to automatically creating new agent given appropriate building blocks and combine them in new ways. They proposed Meta-Agent search and show agents can invent novel and power agent designs.</p>
+<ul>
+<li><a href="https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1">Swanson, Kyle, Wesley Wu, Nash L. Bulaong, John E. Pak, and James Zou. “The Virtual Lab: AI Agents Design New SARS-CoV-2 Nanobodies with Experimental Validation.” bioRxiv (2024): 2024-11.</a></li>
+</ul>
+<p>A joint paper from James Zou (Stanford) and Chan-Zuckerberg foundation showcases a virtual lab comprising of AI Agentic personas of typical research group collaborating together to design nanobodies. Interesting idea.</p>
+<ul>
+<li><a href="https://github.com/SakanaAI/AI-Scientist?tab=readme-ov-file">AI Scientist from SakanaAI</a></li>
+</ul>
+<p>Automation to encompass end-to-end scientific discovery, including coding, experiment execution, and automated peer review for manuscript generation.</p>
+<p><strong>Model Improvements</strong></p>
 <ul>
 <li><a href="https://arxiv.org/abs/2403.09629">Zelikman, E., Harik, G., Shao, Y., Jayasiri, V., Haber, N., &amp; Goodman, N. D. (2024). Quiet-star: Language models can teach themselves to think before speaking. arXiv preprint arXiv:2403.09629.</a></li>
 </ul>
