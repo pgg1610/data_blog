@@ -470,7 +470,8 @@ ul.task-list li input[type="checkbox"] {
 <section id="virtual-screeening" class="level2">
 <h2 class="anchored" data-anchor-id="virtual-screeening">Virtual screeening</h2>
 <ul>
-<li><a href="https://pubs.rsc.org/en/content/articlelanding/2024/sc/d3sc04653b">Dodds, Michael, et al.&nbsp;“Sample efficient reinforcement learning with active learning for molecular design.” Chemical Science 15.11 (2024): 4146.</a></li>
+<li><p><a href="https://www.nature.com/articles/s43588-025-00777-x">Luttens, A., de Vaca, I. C., Sparring, L., Norinder, U., &amp; Carlsson, J. (2023). Rapid traversal of ultralarge chemical space using machine learning guided docking screens.</a></p></li>
+<li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/sc/d3sc04653b">Dodds, Michael, et al.&nbsp;“Sample efficient reinforcement learning with active learning for molecular design.” Chemical Science 15.11 (2024): 4146.</a></p></li>
 </ul>
 <p>An active learning system linked with an RL model (RL–AL) for molecular design, which aims to improve the sample-efficiency of the optimization process.</p>
 <p>AZ group looking at generative design + RL + Virtual screening campaign</p>
@@ -671,6 +672,11 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://arxiv.org/abs/2107.10402">Stuyver, T. and Coley, C.W., 2021. Quantum chemistry-augmented neural networks for reactivity prediction: Performance, generalizability and interpretability. arXiv preprint arXiv:2107.10402</a></li>
 </ul>
 <p>Combine structure (Graph-networks) and descriptor based features (QM-derived) to predict activation energies (E<sub>2</sub>/SN<sub>2</sub> barrier height prediction) and regioselectivity. Incorporating QM and structure leads to better overall accuracy and generalizability even in low data regions. Atom and bond level features derived using QM and used in the model generation with a smaller dataset.</p>
+<p><strong>Transformer-based</strong></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2406.12056v3">InfoAlign</a></li>
+<li><a href="https://arxiv.org/pdf/2010.09885">ChemBERTa</a></li>
+</ul>
 <p><strong>pKa prediction</strong></p>
 <ul>
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.jctc.4c00328">Abarbanel, Omri, and Geoffrey Hutchison. “QupKake: Integrating Machine Learning and Quantum Chemistry for micro-pKa Predictions.” (2023).</a>. <a href="https://github.com/hutchisonlab/QupKake">Github</a></li>
@@ -838,6 +844,23 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acscentsci.1c00546">A. P. Soleimany, A. Amini, S. Goldman, D. Rus, S. N. Bhatia, and C. W. Coley, “Evidential Deep Learning for Guided Molecular Property Prediction and Discovery,” ACS Cent. Sci., Jul.&nbsp;2021.</a>. <a href="https://slideslive.com/38942396/evidential-deep-learning-for-guided-molecular-property-prediction-and-discovery">Slideshare</a></p></li>
 </ul>
 <p>Train property prediction model to output a distribution statistics in single pass that describes the uncertainty. This is in contrast to using ensemble models like MC dropout. Interesting way to estimate the epistemic (due to / from model) uncertainty in the prediction. Use this approach on antibiotic search problem of Stokes et. al.&nbsp;Compare Chemprop and SchNet models on different tasks.</p>
+<p><strong>Self-contained software</strong></p>
+<ul>
+<li><p><a href="https://pyepal.readthedocs.io/en/latest/">Pyepal</a></p></li>
+<li><p><a href="https://github.com/emdgroup/baybe">BayBE</a></p></li>
+<li><p><a href="https://github.com/aspuru-guzik-group/gryffin">Gryffin</a></p></li>
+<li><p><a href="https://github.com/aspuru-guzik-group/atlas">Atlas</a></p></li>
+<li><p><a href="https://github.com/doyle-lab-ucla/edboplus">EDBO+</a></p></li>
+<li><p>Baird, Sterling G., Andrew R. Falkowski, and Taylor D. Sparks. “Honegumi: An Interface for Accelerating the Adoption of Bayesian Optimization in the Experimental Sciences.”&nbsp;<em>arXiv</em>, February 4, 2025.&nbsp;<a href="https://doi.org/10.48550/arXiv.2502.06815">https://doi.org/10.48550/arXiv.2502.06815</a>.</p></li>
+</ul>
+<p><strong>SaaS companies</strong></p>
+<ul>
+<li><p><a href="https://www.yonedalabs.com/">Yoneda Labs</a></p></li>
+<li><p><a href="https://www.react-wise.com/team">ReactWise</a></p></li>
+<li><p><a href="https://allchemy.net/">Allchemy</a></p></li>
+<li><p><a href="https://atinary.com/solutions/">Atinary</a></p></li>
+<li><p><a href="https://www.chemify.io/">Chemify</a></p></li>
+</ul>
 <section id="multi-parameter-optimization" class="level3">
 <h3 class="anchored" data-anchor-id="multi-parameter-optimization">Multi-parameter optimization</h3>
 <ul>
@@ -970,6 +993,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown.</p>
 <p><strong>Synthesizable-space aware</strong></p>
 <ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67bf3e7efa469535b90be62b">Growing and Linking Optimizers: Synthesis-driven Molecule Design</a></li>
+</ul>
+<p>The team at Iktos suggest a reaction-based generative design. They break down the method into growing and linking steps to emulate real-life process. They compare their approach to REIVENT and show their model is able to design molecule which are not only synthesizable but also closer to the pre-defined desired properties.</p>
+<ul>
 <li><a href="https://arxiv.org/abs/2410.03494">Gao, Wenhao, Shitong Luo, and Connor W. Coley. “Generative artificial intelligence for navigating synthesizable chemical space.” arXiv preprint arXiv:2410.03494 (2024).</a></li>
 </ul>
 <p>Here the idea is to constraint the molecules generated by the transformations amenable to a particular platform, like automated synthesis workflow.</p>
@@ -977,6 +1004,9 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://arxiv.org/abs/2406.04628">Luo, S., Gao, W., Wu, Z., Peng, J., Coley, C. W., &amp; Ma, J. (2024). Projecting Molecules into Synthesizable Chemical Spaces.&nbsp;<em>arXiv preprint arXiv:2406.04628</em>.</a></p></li>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00230f">Expanding the chemical space using a chemical reaction knowledge graph</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s42256-024-00809-7">Swanson, K., Liu, G., Catacutan, D.B. et al.&nbsp;Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).</a></p></li>
+</ul>
+<p>SyntheMol to generate reaction-based molecules by choosing reaction and the building blocks to connect them by. They use this approach for finding novel molecules for antibacterial discovery.</p>
+<ul>
 <li><p><a href="https://onlinelibrary.wiley.com/doi/10.1002/advs.202206674?utm_source=pocket_saves">Seo, Seonghwan, Jaechang Lim, and Woo Youn Kim. “Molecular Generative Model via Retrosynthetically Prepared Chemical Building Block Assembly.” Advanced Science (2023): 2206674.</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2012.11522.pdf">Bradshaw, John, et al.&nbsp;“Barking up the right tree: an approach to search over molecule synthesis dags.” Advances in neural information processing systems 33 (2020): 6852-6866.</a></p></li>
 <li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00469">Fialková, Vendy, et al.&nbsp;“LibINVENT: reaction-based generative scaffold decoration for in silico library design.” Journal of Chemical Information and Modeling 62.9 (2021): 2046-2063.</a></p></li>
@@ -1107,6 +1137,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Conformational sampling and designing of chiral organic catalysts.</p>
 <p><strong>Yield prediction</strong></p>
+<ul>
+<li><a href="https://github.com/gskcheminformatics/SynthCoder/tree/main">Synthcoder</a></li>
+</ul>
+<p>Synthcoder is a GSK’s mini-platform for creating encoder models. The main focus of SynthCoder is a model creation and validation for organic chemistry, however, the platform can be used also with the regular human language or other text-based problems, e.g., protein sequences.</p>
 <ul>
 <li><a href="https://pubs.acs.org/doi/full/10.1021/jacs.4c00098">Raghavan, Priyanka, et al.&nbsp;“Incorporating Synthetic Accessibility in Drug Design: Predicting Reaction Yields of Suzuki Cross-Couplings by Leveraging AbbVie’s 15-Year Parallel Library Data Set.” Journal of the American Chemical Society (2024).</a></li>
 </ul>
@@ -1354,6 +1388,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Agents</strong></p>
 <ul>
+<li><p><a href="https://github.com/snap-stanford/BioDiscoveryAgent">BioDiscoveryAgent</a></p></li>
+<li><p><a href="https://github.com/mims-harvard/TxAgent/tree/main">TxAgent</a></p></li>
+</ul>
+<p>AI Agent for therapeutic reasoning across a universe of tools.</p>
+<ul>
 <li><a href="https://arxiv.org/abs/2312.07559">PaperQA: Retrieval-Augmented Generative Agent for Scientific Research</a></li>
 </ul>
 <p>PaperQA, a Retrieval-Augmented Generation (RAG) agent for the scientific literature. PaperQA begins by constructing LLM search queries from a set of keywords. The results of these searches are aggregated into a vector database and combined with a pre-trained LLM to create a summary of the search results. In benchmark comparisons, the differences between answers provided by PaperQA and human evaluators were similar to differences between individual human evaluators. Encouragingly, unlike many other LLMs, PaperQA didn’t hallucinate citations.</p>
@@ -1379,6 +1418,23 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://molleo.github.io/">Wang, Haorui, et al.&nbsp;“Efficient Evolutionary Search Over Chemical Space with Large Language Models.”&nbsp;<em>arXiv preprint arXiv:2406.16976</em>&nbsp;(2024).</a></li>
 </ul>
 <p>Introduce LLMs for conducting evolutionary algorithm searches.</p>
+<p><strong>Foundation models</strong></p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2311.12410">Nach0</a></p></li>
+<li><p><a href="https://arxiv.org/html/2406.06316v1">Tx-LLM</a></p></li>
+</ul>
+<p>The team is looking at creating an LLM-based predictive model (regression and classification). They show that one large model can be used to predict multiple end points (think of one model used for all ADME endpoints), and it indicates that training on a variety of tasks can improve overall performance (positive transfer learning).</p>
+<p>I am glad to see this work as it shows how much information and feature-richness can be encoded within the transformer model, especially in the low-data regime; that said, one caution with this approach is that the models are purely text-based and extremely black box and correlation doesn’t mean causation, more so here since we don’t have good control over features being used to train the model.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2502.07527">NatureLM</a></li>
+</ul>
+<p>Team at microsoft research introduces introduces Nature Language Model (NatureLM), a sequence-based science foundation model designed for scientific discovery across multiple domains like small molecules, proteins, and materials. NatureLM excels in generating and optimizing scientific entities and offers top performance, matching or surpassing state-of-the-art specialist models.</p>
+<ul>
+<li><p><a href="https://arcinstitute.org/tools/evo">Evo2</a></p></li>
+<li><p><a href="https://www.microsoft.com/en-us/research/blog%20exploring-the-structural-changes-driving-protein-function-with-bioemu-1/">BioEmu-1</a></p></li>
+<li><p><a href="https://openreview.net/pdf?id=Ya5OHw7lZ8">Sirumalla, S. K., Farina Jr, D. S., Qiao, Z., Di Cesare, D. A., Farias, F. C., O’Connor, M. B., … &amp; Miller, T. Multi-Modal and Multi-Task Transformer for Small Molecule Drug Discovery. In ICML’24 Workshop ML for Life and Material Science: From Theory to Industry Applications.</a></p></li>
+</ul>
+<p>From Iambic team: 1B-parameter transformer model pre-trained on 2.25 trillion tokens from diverse datasets focused on drug discovery. It details a comprehensive data pipeline for standardizing and processing data from various sources. The model architecture is based on LLaMA-2 and includes advanced features like SwishGLU and Rotary Positional Encoding. The fine-tuned model outperforms strong baselines in assay prediction tasks.</p>
 <p><strong>Predictive modeling</strong></p>
 <ul>
 <li><p><a href="https://www.nature.com/articles/s42004-024-01220-4">The Goldilocks paradigm: comparing classical machine learning, large language models, and few-shot learning for drug discovery applications</a></p></li>
@@ -1386,16 +1442,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Authors show GPT3 based predictive models perform on-par with SOTA with lower data points. Caution is the models are purely text-based and extreme black box and sometimes, while trite, correlation doesnt mean causation might become important here. Finally the fine tuning doesnt do regression on the data in same sense as a linear regression or random forest would do.</p>
 <ul>
-<li><p><a href="https://arxiv.org/abs/2406.03686">BindGPT</a></p></li>
-<li><p><a href="https://arxiv.org/abs/2311.12410">Nach0</a></p></li>
-<li><p><a href="https://arxiv.org/html/2406.06316v1">Tx-LLM</a></p></li>
+<li><a href="https://arxiv.org/abs/2406.03686">BindGPT</a></li>
 </ul>
-<p>The team is looking at creating an LLM-based predictive model (regression and classification). They show that one large model can be used to predict multiple end points (think of one model used for all ADME endpoints), and it indicates that training on a variety of tasks can improve overall performance (positive transfer learning).</p>
-<p>I am glad to see this work as it shows how much information and feature-richness can be encoded within the transformer model, especially in the low-data regime; that said, one caution with this approach is that the models are purely text-based and extremely black box and correlation doesn’t mean causation, more so here since we don’t have good control over features being used to train the model.</p>
-<ul>
-<li><a href="https://openreview.net/pdf?id=Ya5OHw7lZ8">Sirumalla, S. K., Farina Jr, D. S., Qiao, Z., Di Cesare, D. A., Farias, F. C., O’Connor, M. B., … &amp; Miller, T. Multi-Modal and Multi-Task Transformer for Small Molecule Drug Discovery. In ICML’24 Workshop ML for Life and Material Science: From Theory to Industry Applications.</a></li>
-</ul>
-<p>From Iambic team: 1B-parameter transformer model pre-trained on 2.25 trillion tokens from diverse datasets focused on drug discovery. It details a comprehensive data pipeline for standardizing and processing data from various sources. The model architecture is based on LLaMA-2 and includes advanced features like SwishGLU and Rotary Positional Encoding. The fine-tuned model outperforms strong baselines in assay prediction tasks.</p>
 <p><strong>Small molecule related tasks</strong></p>
 <ul>
 <li><p><a href="https://openreview.net/pdf?id=yRrPfKyJQ2">Liu, Shengchao, et al.&nbsp;“Conversational drug editing using retrieval and domain feedback.” The Twelfth International Conference on Learning Representations. 2024.</a></p></li>
@@ -1435,6 +1483,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Google’s team shows Med-Gemini’s real-world utility by surpassing human experts on tasks such as medical text summarization, alongside demonstrations of promising potential for multimodal medical dialogue, medical research and education.</p>
 <p><strong>Data curation</strong></p>
 <ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67c6170c6dde43c90858b305">Leong, S. X., Pablo-García, S., Wong, B., &amp; Aspuru-Guzik, A. (2025). MERMaid: Universal multimodal mining of chemical reactions from PDFs using vision-language models.</a></li>
+</ul>
+<p>Aspuru-Guzik group releases a full suite of tools to ingest, process, and generate knowledge graphs from scientific publications. They show MERMaid, using the vision language models, demonstrate chemical context awareness and reasoning capabilities from the extracted text.</p>
+<ul>
 <li><a href="https://github.com/qai222/LLM_organic_synthesis">Extracting Structured Data from Free-form Organic Synthesis Text</a></li>
 </ul>
 <p>Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information.</p>
@@ -1442,9 +1494,22 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://arxiv.org/abs/2402.04379">Gruver, Nate, et al.&nbsp;“Fine-Tuned Language Models Generate Stable Inorganic Materials as Text.” arXiv preprint arXiv:2402.04379 (2024).</a></li>
 </ul>
+<p><strong>Reaction development</strong></p>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2503.08537">Bran, Andres M., Theo A. Neukomm, Daniel P. Armstrong, Zlatko Jončev, and Philippe Schwaller. “Chemical reasoning in LLMs unlocks steerable synthesis planning and reaction mechanism elucidation.” arXiv preprint arXiv:2503.08537 (2025).</a></p></li>
+<li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/679a8f11fa469535b958a862">Li, H., Sarkar, S., Lu, W., Loftus, P., Qiu, T., Shee, Y., … &amp; Batista, V. (2025). Collective Intelligence of Specialized Language Models Guides Realization of de novo Chemical Synthesis.</a><a href="https://github.com/haoteli/MOSAIC/tree/main">Code</a></p></li>
+</ul>
+<p>MOSAIC is a fine-tuned LLama 3.1-8b-instruct model for reaction recipe generation.</p>
+<ul>
+<li><a href="https://arxiv.org/abs/2410.04223">Liu, G., Sun, M., Matusik, W., Jiang, M., &amp; Chen, J. (2024). Multimodal Large Language Models for Inverse Molecular Design with Retrosynthetic Planning. arXiv preprint arXiv:2410.04223.</a></li>
+</ul>
+<p>The team introduces Llamole, multimodal LLM capable of generating text and graphs.</p>
 <p><strong>Agent Engineering</strong></p>
 <ul>
-<li><a href="https://arxiv.org/pdf/2412.21154">Narayanan, Siddharth, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli et al.&nbsp;“Aviary: training language agents on challenging scientific tasks.” arXiv preprint arXiv:2412.21154 (2024).</a>. <a href="https://github.com/Future-House/aviary">Github</a></li>
+<li><p>[HiAgent]https://arxiv.org/abs/2408.09559)</p></li>
+<li><p><a href="https://arxiv.org/abs/2502.09858">POPPER</a></p></li>
+<li><p><a href="https://arxiv.org/html/2503.00735v3">LADDER</a></p></li>
+<li><p><a href="https://arxiv.org/pdf/2412.21154">Narayanan, Siddharth, James D. Braza, Ryan-Rhys Griffiths, Manu Ponnapati, Albert Bou, Jon Laurent, Ori Kabeli et al.&nbsp;“Aviary: training language agents on challenging scientific tasks.” arXiv preprint arXiv:2412.21154 (2024).</a>. <a href="https://github.com/Future-House/aviary">Github</a></p></li>
 </ul>
 <p>Casting the AI Agentic process as a markov decision process and train language-based AI Agent on biology tasks. They show exceeding human-level performance on SeqQA (dataset consists of MCQs questions, such as counting the fragments after digestion, predicting translated sequences, and identifying polymerase chain reaction primers). The trained Language Agent are compute efficient.</p>
 <ul>
@@ -1493,6 +1558,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
 <ul>
+<li><p><a href="">SynthCoder</a></p></li>
+<li><p><a href="https://honegumi.readthedocs.io/en/latest/">Honegumi</a></p></li>
+<li><p><a href="https://rxn-insight.readthedocs.io/en/latest/">Rxn-INSIGHT</a></p></li>
 <li><p><a href="https://github.com/MolecularAI">Molecular AI department at AstraZeneca R&amp;D</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s41598-023-30089-x">Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules</a></p></li>
 <li><p><a href="https://github.com/rinikerlab/GHOST">GHOST: Generalized threshold shifting procedure</a>. <a href="https://pubs.acs.org/doi/10.1021/acs.jcim.1c00160">Paper</a>. <a href="https://greglandrum.github.io/rdkit-blog/exploratory/machinelearning/2021/12/23/ternary-ghost.html#Synthetic-datasets">Blogpost</a></p></li>
