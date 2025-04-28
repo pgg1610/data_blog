@@ -883,7 +883,6 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 **Synthesizable-space aware** 
 
-
 * [Growing and Linking Optimizers: Synthesis-driven Molecule Design](https://chemrxiv.org/engage/chemrxiv/article-details/67bf3e7efa469535b90be62b)
 
 The team at Iktos suggest a reaction-based generative design. They break down the method into growing and linking steps to emulate real-life process. They compare their approach to REIVENT and show their model is able to design molecule which are not only synthesizable but also closer to the pre-defined desired properties. 
@@ -929,7 +928,6 @@ This model extends beyond traditional diffusion models by learning to map sample
 * [Igashov, Ilia, et al. "Equivariant 3D-conditional diffusion model for molecular linker design." Nature Machine Intelligence (2024): 1-11.](https://www.nature.com/articles/s42256-024-00815-9). [Blog from Pen](https://iwatobipen.wordpress.com/2024/04/24/generate-new-molecules-from-fragments-with-diffusion-model-cheminformatics-rdkit-difflinker-memo/)
 
 * [Schneuing, Arne, et al. "Structure-based drug design with equivariant diffusion models." arXiv preprint arXiv:2210.13695 (2022)](https://arxiv.org/abs/2210.13695). Blog from Pen. [Link](https://iwatobipen.wordpress.com/2024/03/05/pocket-awaer-structure-generation-diffdec-cheminformatics/)
-
 
 **3D conformations-aware** 
 
@@ -1188,10 +1186,13 @@ Thoughts from industry practioners on how to label low/no yield reactions in ele
 
 * [Late-Stage Saturation of Drug Molecules](https://pubs.acs.org/doi/10.1021/jacs.4c00807?ref=recommended)
 
-
 **Substrate Scoping**
 
 Area to understand the coverage of chemical space by a specific reaction transformation. Knowing which substrates can be used for a specific type of reactions can accelerate the generation of HTE datasets, and also reduce wastage and failures in searching for right substrates. Every new reaction protocol which is proposed would have a corresponding set of amenable 'action-space' for the ligands. 
+
+* [Revealing the Relationship between Publication Bias and Chemical Reactivity with Contrastive Learning](https://pubs.acs.org/doi/full/10.1021/jacs.5c01120)
+
+Coley group explore publication bias in generating substrate scope for known synthetic methods. They devise a substrate scope contrastive learning method that treat reported substrates as +ve samples and unreported as -ve samples. Using an embedding space trained on substrate publication history the model groups them in two classes. They show the learned embeddings correlate with phys-org reactivity descriptiors. 
 
 * [Rana, D., Pflüger, P. M., Hölter, N. P., Tan, G., & Glorius, F. (2024). Standardizing Substrate Selection: A Strategy toward Unbiased Evaluation of Reaction Generality. ACS Central Science, 10(4), 899-906.](https://pubs.acs.org/doi/10.1021/acscentsci.3c01638)
 
@@ -1359,7 +1360,7 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 * [TxAgent](https://github.com/mims-harvard/TxAgent/tree/main)
 
-AI Agent for therapeutic reasoning across a universe of tools. 
+AI Agent for therapeutic reasoning across a universe of tools. I like the Tool-RAG and the plethora of tools that are documented and exposed. 
 
 * [PaperQA: Retrieval-Augmented Generative Agent for Scientific Research](https://arxiv.org/abs/2312.07559)
 
@@ -1474,6 +1475,11 @@ Google's team shows Med-Gemini's real-world utility by surpassing human experts 
 
 Aspuru-Guzik group releases a full suite of tools to ingest, process, and generate knowledge graphs from scientific publications. They show MERMaid, using the vision language models, demonstrate chemical context awareness and reasoning capabilities from the extracted text. 
 
+* [From text to insight: large language models for chemical data extraction](https://pubs.rsc.org/en/content/articlehtml/2025/cs/d4cs00913d)
+
+Jablonka group in Jena shared their early findings in using LLMs for chemical and material data extraction tasks. This is structured as a tutotrial review providing specific workflow examples. 
+
+
 * [Extracting Structured Data from Free-form Organic Synthesis Text](https://github.com/qai222/LLM_organic_synthesis)
 
 Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information. 
@@ -1552,6 +1558,12 @@ Focused on the extraction of reaction data from journals. OpenChemIE is most sui
 Using Llama-2 7b to extract entities from synthesis recipes from reactions. 
 
 ## Code / Packages:
+
+**Peptide Informatics**
+
+I visit first-ever RDKit UGM early April 2025 and was impressed by the tools available for manipulating and analyzing peptide chemical space. Below are few:
+
+* [PepFun](https://github.com/rochoa85/PepFun) - From Novo Nordisk informatics team, they provide functionalities to study peptides at different levels, sequence, structures, and large dataset. It is built on BioPython and RDKit. 
 
 * [SynthCoder]()
 

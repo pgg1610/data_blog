@@ -1253,6 +1253,10 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Substrate Scoping</strong></p>
 <p>Area to understand the coverage of chemical space by a specific reaction transformation. Knowing which substrates can be used for a specific type of reactions can accelerate the generation of HTE datasets, and also reduce wastage and failures in searching for right substrates. Every new reaction protocol which is proposed would have a corresponding set of amenable ‘action-space’ for the ligands.</p>
 <ul>
+<li><a href="https://pubs.acs.org/doi/full/10.1021/jacs.5c01120">Revealing the Relationship between Publication Bias and Chemical Reactivity with Contrastive Learning</a></li>
+</ul>
+<p>Coley group explore publication bias in generating substrate scope for known synthetic methods. They devise a substrate scope contrastive learning method that treat reported substrates as +ve samples and unreported as -ve samples. Using an embedding space trained on substrate publication history the model groups them in two classes. They show the learned embeddings correlate with phys-org reactivity descriptiors.</p>
+<ul>
 <li><a href="https://pubs.acs.org/doi/10.1021/acscentsci.3c01638">Rana, D., Pflüger, P. M., Hölter, N. P., Tan, G., &amp; Glorius, F. (2024). Standardizing Substrate Selection: A Strategy toward Unbiased Evaluation of Reaction Generality. ACS Central Science, 10(4), 899-906.</a></li>
 </ul>
 <p>The authors report a standardized substrate selection strategy which mitigates biases found in traditional substrate scoping tables. This way the chemists can showcase unbiased applicability of novel methodologies facilitating their practical applications.</p>
@@ -1391,7 +1395,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><a href="https://github.com/snap-stanford/BioDiscoveryAgent">BioDiscoveryAgent</a></p></li>
 <li><p><a href="https://github.com/mims-harvard/TxAgent/tree/main">TxAgent</a></p></li>
 </ul>
-<p>AI Agent for therapeutic reasoning across a universe of tools.</p>
+<p>AI Agent for therapeutic reasoning across a universe of tools. I like the Tool-RAG and the plethora of tools that are documented and exposed.</p>
 <ul>
 <li><a href="https://arxiv.org/abs/2312.07559">PaperQA: Retrieval-Augmented Generative Agent for Scientific Research</a></li>
 </ul>
@@ -1487,6 +1491,10 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Aspuru-Guzik group releases a full suite of tools to ingest, process, and generate knowledge graphs from scientific publications. They show MERMaid, using the vision language models, demonstrate chemical context awareness and reasoning capabilities from the extracted text.</p>
 <ul>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2025/cs/d4cs00913d">From text to insight: large language models for chemical data extraction</a></li>
+</ul>
+<p>Jablonka group in Jena shared their early findings in using LLMs for chemical and material data extraction tasks. This is structured as a tutotrial review providing specific workflow examples.</p>
+<ul>
 <li><a href="https://github.com/qai222/LLM_organic_synthesis">Extracting Structured Data from Free-form Organic Synthesis Text</a></li>
 </ul>
 <p>Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant chemistry-related information.</p>
@@ -1557,7 +1565,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
+<p><strong>Peptide Informatics</strong></p>
+<p>I visit first-ever RDKit UGM early April 2025 and was impressed by the tools available for manipulating and analyzing peptide chemical space. Below are few:</p>
 <ul>
+<li><p><a href="https://github.com/rochoa85/PepFun">PepFun</a> - From Novo Nordisk informatics team, they provide functionalities to study peptides at different levels, sequence, structures, and large dataset. It is built on BioPython and RDKit.</p></li>
 <li><p><a href="">SynthCoder</a></p></li>
 <li><p><a href="https://honegumi.readthedocs.io/en/latest/">Honegumi</a></p></li>
 <li><p><a href="https://rxn-insight.readthedocs.io/en/latest/">Rxn-INSIGHT</a></p></li>
