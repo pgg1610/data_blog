@@ -130,7 +130,6 @@ Review from Aspuru-Guzik and Allen's group discussing how ML can be leveraged fo
 
 Correspondence on assessing the impact of AI on medicinal chemistry. It is a well written account on practical implication of generative design on pharmaceutical research.They outline two recent cases of 'success' of AI generative design in drug discovery and give more context and propose best practices for furthering the development of algorithms and drug discovery pipelines. 
 
-
 * [We need better benchmarking for machine learning in drug discovery](https://practicalcheminformatics.blogspot.com/2023/08/we-need-better-benchmarks-for-machine.html)
 
 Very good post outlining the focus on the good practices and lack thereof for consistent datasets for comparing different ML algorithms. 
@@ -183,6 +182,16 @@ Overview of different chemical modalities currently at work to address different
 * [Targeted Protein Degradation: Advances, Challenges, and Prospects for Computational Methods](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00603)
 
 ## Meta themes on optimizing small molecules 
+
+* [Don't Fall in Love with Your Molecule](https://research.dimensioncap.com/p/dont-fall-in-love-with-your-molecule)
+
+Nice primer on target-product profiles for a drug molecule and how clinical relevance and success is predicated by good decision on TPP in addition to technical success on the biology and chemistry front. 
+
+* [Blackwell, J. Henry, Iacovos N. Michaelides, and Floriane Gibault. "A Perspective on the Strategic Application of Deconstruction–Reconstruction in Drug Discovery." Journal of Medicinal Chemistry (2025).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c00036)
+
+* [Free Drug Concepts: A Lingering Problem in Drug Discovery](https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c00725?ref=recommended)
+
+* [Tertiary Alcohol: Reaping the Benefits but Minimizing the Drawbacks of Hydroxy Groups in Drug Discovery](https://pubs.acs.org/doi/10.1021/acs.jmedchem.4c03078)
 
 * [Walters, W. Patrick, and Mark A. Murcko. "Prediction of ‘drug-likeness’." Advanced drug delivery reviews 54.3 (2002): 255-271.](https://www.sciencedirect.com/science/article/abs/pii/S0169409X02000030?via%3Dihub) 
 
@@ -242,7 +251,7 @@ Curated set of substrates to quickly assess the practicality of synthetic method
 
 ## Structure elucidation / analytical techniques modeling 
 
-* [](https://arxiv.org/abs/2502.09571)
+* [Bohde, Montgomery, et al. "DiffMS: Diffusion Generation of Molecules Conditioned on Mass Spectra." arXiv preprint arXiv:2502.09571 (2025).](https://arxiv.org/abs/2502.09571)
 
 DiffMS is a novel machine learning framework for generating molecular structures from mass spectra. It uses a formula-restricted encoder-decoder network, achieving state-of-the-art performance. The novelty lies in its discrete graph diffusion model and extensive pretraining. However, gaps remain in fully elucidating exact molecular structures due to inherent ambiguities in mass spectra.
 
@@ -276,19 +285,13 @@ New version of ZINC with two major new features: billions of new molecules and n
 
 The authors examine the composition of the recently published and, so far, biggest chemical space, “eXplore”, which comprises approximately 2.8 trillion virtual product molecules. The utility of eXplore to retrieve interesting chemistry around approved drugs and common Bemis Murcko scaffolds has been assessed with several methods (FTrees, SpaceLight, SpaceMACS). Further, the overlap between several vendor chemical spaces and a physicochemical property distribution analysis has been performed. Despite the straightforward chemical reactions underlying its setup, eXplore is demonstrated to provide relevant and, most importantly, easily accessible molecules for drug discovery campaigns.
 
-* [Medina, Jorge, and Andrew D. White. "Bloom filters for molecules." arXiv preprint arXiv:2304.05386 (2023).](https://arxiv.org/pdf/2304.05386.pdf)
-
-This paper proposes and studies Bloom filters for testing if a molecule is present in a set using either string or fingerprint representations. Bloom filters are small enough to hold billions of molecules in just a few GB of memory and check membership in sub-milliseconds. The authors found string representations can have a false positive rate below 1% and require significantly less storage than using fingerprints. Canonical SMILES with Bloom filters with the simple FNV hashing function provide fast and accurate membership tests with small memory requirements. They provide a general implementation and specific filters for detecting if a molecule is purchasable, patented, or a natural product according to existing databases at https://github.com/whitead/molbloom.
-
 ## Virtual screeening
 
-* [Luttens, A., de Vaca, I. C., Sparring, L., Norinder, U., & Carlsson, J. (2023). Rapid traversal of ultralarge chemical space using machine learning guided docking screens.](https://www.nature.com/articles/s43588-025-00777-x)
+* [Synthon-Based Strategies Exploiting Molecular Similarity and Protein–Ligand Interactions for Efficient Screening of Ultra-Large Chemical Libraries](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00222)
 
 * [Dodds, Michael, et al. "Sample efficient reinforcement learning with active learning for molecular design." Chemical Science 15.11 (2024): 4146.](https://pubs.rsc.org/en/content/articlelanding/2024/sc/d3sc04653b)
 
-An active learning system linked with an RL model (RL–AL) for molecular design, which aims to improve the sample-efficiency of the optimization process.
-
-AZ group looking at generative design + RL + Virtual screening campaign 
+An active learning system linked with an RL model (RL–AL) for molecular design, which aims to improve the sample-efficiency of the optimization process. AZ group looking at generative design + RL + Virtual screening campaign 
 
 * [Vakili, Mohammad Ghazi, et al. "Quantum Computing-Enhanced Algorithm Unveils Novel Inhibitors for KRAS." arXiv preprint arXiv:2402.08210 (2024).](https://arxiv.org/pdf/2402.08210.pdf)
 
@@ -335,6 +338,8 @@ In fragment-based drug discovery (FBDD), a fragment is a small, low-molecular-we
 The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the 'target-rich, lead-poor' issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.
 
 **Articles**
+
+* [Erlanson, Daniel A., et al. "Where and how to house big data on small fragments." Nature Communications 16.1 (2025): 1-6.](https://www.nature.com/articles/s41467-025-59233-z)
 
 * [Fragmenstein: predicting protein-ligand structures of compounds derived from known crystallographic fragment hits using a strict conserved-binding–based methodology](https://chemrxiv.org/engage/chemrxiv/article-details/65d751ab9138d23161b7ea38)
 
@@ -394,6 +399,10 @@ DynamicBind, a deep learning method that employs equivariant geometric diffusion
 ### Conformer generators
 
 * [The impact of conformer quality on learned representations of molecular conformer ensembles](https://arxiv.org/abs/2502.13220)
+
+* [Raush, Eugene, Ruben Abagyan, and Maxim Totrov. "Efficient generation of conformer ensembles using internal coordinates and a generative directional graph convolution neural network." Journal of Chemical Theory and Computation 20.9 (2024): 4054-4063.](https://pubs.acs.org/doi/10.1021/acs.jctc.4c00280)
+
+From team at MolSoft, this paper introduces GINGER, a GNN trained to predct low-energy conformers using internal coordinate representation. 
 
 * [McNutt, Andrew T., et al. "Conformer Generation for Structure-Based Drug Design: How Many and How Good?." Journal of Chemical Information and Modeling (2023).](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01245)
 
@@ -719,7 +728,7 @@ Train property prediction model to output a distribution statistics in single pa
 
 * [Pyepal](https://pyepal.readthedocs.io/en/latest/)
 
-* [BayBE](https://github.com/emdgroup/baybe)
+* [BayBE](https://github.com/emdgroup/baybe). [Paper](https://pubs.rsc.org/en/content/articlelanding/2025/dd/d5dd00050e). [Examples](https://colab.research.google.com/github/PatWalters/practical_cheminformatics_tutorials/blob/main/reaction/bayesian_reaction_optimization.ipynb)
 
 * [Gryffin](https://github.com/aspuru-guzik-group/gryffin)
 
@@ -893,9 +902,13 @@ SynFormer from Coley group to look at synthesizable space. The idea is to constr
 
 * [Luo, S., Gao, W., Wu, Z., Peng, J., Coley, C. W., & Ma, J. (2024). Projecting Molecules into Synthesizable Chemical Spaces. _arXiv preprint arXiv:2406.04628_.](https://arxiv.org/abs/2406.04628)
 
+* [Generative Flows on Synthetic Pathway for Drug Design](https://arxiv.org/abs/2410.04542). [Code](https://github.com/SeonghwanSeo/RxnFlow)
+
+RxnFlow, building on the GFlowNets (GFNs) framework for molecule generation, the authors use reaction templates and pre-defined molecular building blocks to constrains the synthetic chemical pathway. They employ this method for pocket-specific optimization across various target pockets. 
+
 * [Expanding the chemical space using a chemical reaction knowledge graph](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00230f)
 
-* [Swanson, K., Liu, G., Catacutan, D.B. et al. Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).](https://www.nature.com/articles/s42256-024-00809-7)
+* [Swanson, K., Liu, G., Catacutan, D.B. et al. Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).](https://www.nature.com/articles/s42256-024-00809-7). [RL-version](https://github.com/swansonk14/SyntheMol/blob/main/README.md)
 
 SyntheMol to generate reaction-based molecules by choosing reaction and the building blocks to connect them by. They use this approach for finding novel molecules for antibacterial discovery.
 
@@ -912,6 +925,11 @@ Authors propose a generative model to generate molecules via multi-step chemical
 * [Bradshaw, John, et al. "A model to search for synthesizable molecules." Advances in Neural Information Processing Systems 32 (2019).](https://arxiv.org/abs/1906.05221)
 
 **Diffusion models**
+
+* [Cremer, J., Irwin, R., Tibot, A., Janet, J. P., Olsson, S., & Clevert, D. A. (2025). FLOWR: Flow Matching for Structure-Aware De Novo, Interaction-and Fragment-Based Ligand Generation. arXiv preprint arXiv:2504.10564.](https://arxiv.org/abs/2504.10564)
+
+Team at Pfizer includes FLOWR, a diffusion-based generator to generate pocket-conditioned molecule moieties, and SPINDR a curated dataset of ligand-pocket co-crystal complexes. 
+
 
 * [Adams, K., Abeywardane, K., Fromer, J., & Coley, C. W. (2024). ShEPhERD: Diffusing shape, electrostatics, and pharmacophores for bioisosteric drug design. arXiv preprint arXiv:2411.04130.](https://arxiv.org/pdf/2411.04130v1)
 
@@ -1053,9 +1071,9 @@ Conformational sampling and designing of chiral organic catalysts.
 
 **Yield prediction**
 
-* [Synthcoder](https://github.com/gskcheminformatics/SynthCoder/tree/main)
+* [Krzyzanowski, Adrian, Stephen D. Pickett, and Peter Pogány. "Exploring BERT for Reaction Yield Prediction: Evaluating the Impact of Tokenization, Molecular Representation, and Pretraining Data Augmentation." Journal of Chemical Information and Modeling (2025).](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00359). [Synthcoder](https://github.com/gskcheminformatics/SynthCoder/tree/main)
 
-Synthcoder is a GSK's mini-platform for creating encoder models. The main focus of SynthCoder is a model creation and validation for organic chemistry, however, the platform can be used also with the regular human language or other text-based problems, e.g., protein sequences.
+Synthcoder is a GSK's mini-platform for creating encoder models. The main focus of SynthCoder is a model creation and validation for organic chemistry, however, the platform can be used also with the regular human language or other text-based problems, e.g., protein sequences. The group evaluates the impact of tokenization, featurization, and pre-training data on the yield prediction of Hartwig and Suzuki reactions. They also show pretraining with <100k samples acehieve comparable performance to larger datasets. 
 
 * [Raghavan, Priyanka, et al. "Incorporating Synthetic Accessibility in Drug Design: Predicting Reaction Yields of Suzuki Cross-Couplings by Leveraging AbbVie’s 15-Year Parallel Library Data Set." Journal of the American Chemical Society (2024).](https://pubs.acs.org/doi/full/10.1021/jacs.4c00098)
 
@@ -1132,11 +1150,11 @@ Presents an algorithmic improvement to the reaction network prediction task thro
 
 Look at exploration of reaction space rather than compound space. SOAP kernel for representing the moelcules. Estimate atomization energy for the molecules using ML. Calculate the d(AE) for different ML-estimated AEs. Reaction energies (RE) are estimated and uncertainty propogation is used to estimate the errors. Uncorrelated constant error propogation. 30,000 bond breaking reaction steps Rad-6-RE network used. RE prediction is not as good as AE.
 
-**Estimate molecular synthesizability**
+**Estimate molecular complexity and synthesizability**
 
 The idea of estimating whether a molecule is 'synthesizable' can be thought of from two areas:
-1. Complexity based - compare the fragments in the molecule to the known fragments in the chemical space  
-2. Full retrosynthesis based - entire route is considered for molecule generation. Reactant complexity drives route complexity. 
+1. Structure-based (complexity) - compare the fragments in the molecule to the known fragments in the chemical space  
+2. Full retrosynthesis based (synthesizability) - entire route is considered for molecule generation. Reactant complexity drives route complexity. 
 
 * [Li, Junren, Lei Fang, and Jian-Guang Lou. "Retro-BLEU: quantifying chemical plausibility of retrosynthesis routes through reaction template sequence analysis." Digital Discovery (2024).](https://pubs.rsc.org/en/content/articlehtml/2024/dd/d3dd00219e)
 
@@ -1161,6 +1179,10 @@ Authors introduce BR-SAScore, an enhanced version of SAScore that integrates the
 * [Parrot, Maud, et al. "Integrating synthetic accessibility with AI-based generative drug design." Journal of Cheminformatics 15.1 (2023): 83.](https://link.springer.com/article/10.1186/s13321-023-00742-8)
 
 From team at Iktos for triaging molecule designs. The group introduces (retro-score) RScore and RSPred (derived score from RScore using NN). RScore is computed through a full retrosynthesis analysis. The R2 value for RSPred is 0.75. 
+
+* [A View on Molecular Complexity from the GDB Chemical Space](https://pubs.acs.org/doi/10.1021/acs.jcim.5c00334)
+
+Short perspective from Reymond group on complexity where they compare structural complexity of the molecules in the GDBs for synthesis using the node splits in the molecule. The idea is that as the number or the fraction of non-divalent nodes in the molecule graph increase the more complex the molecules becomes. 
 
 ### Data-driven chemistry modeling and reaction optimization
 
@@ -1354,6 +1376,12 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 * [Pyzer-Knapp, Edward O., et al. "Foundation models for materials discovery–current state and future directions." npj Computational Materials 11.1 (2025): 61.](https://www.nature.com/articles/s41524-025-01538-0)
 
+**Meta-Analysis**
+
+* [Runcie, Nicholas T., Charlotte M. Deane, and Fergus Imrie. "Assessing the Chemical Intelligence of Large Language Models." arXiv preprint arXiv:2505.07735 (2025).](https://arxiv.org/abs/2505.07735)
+
+Nice analysis by folks at [OPIG](https://opig.stats.ox.ac.uk/) asking if LLMs esp. the reasoning-based models understand chemistry. While the results aren't outstanding, they do show improvements in LLMs knowledge of SMILES, chemical stuctures, and NMR spectras. More importantly, this paper proposes a new benchmark, ChemIQ, to assess this features much more robustly moving beyond the usual MCQ based contemporary datasets. 
+
 **Agents**
 
 * [BioDiscoveryAgent](https://github.com/snap-stanford/BioDiscoveryAgent)
@@ -1361,6 +1389,8 @@ Previously the field has propose assistants for this job [here](https://www.scie
 * [TxAgent](https://github.com/mims-harvard/TxAgent/tree/main)
 
 AI Agent for therapeutic reasoning across a universe of tools. I like the Tool-RAG and the plethora of tools that are documented and exposed. 
+
+* [Ghafarollahi, Alireza, and Markus J. Buehler. "ProtAgents: Protein discovery via large language model multi-agent collaborations combining physics and machine learning." arXiv preprint arXiv:2402.04268 (2024).](https://arxiv.org/abs/2402.04268)
 
 * [PaperQA: Retrieval-Augmented Generative Agent for Scientific Research](https://arxiv.org/abs/2312.07559)
 
@@ -1373,8 +1403,6 @@ ChemCrow provides software tools for performing domain-specific tasks, including
 * [Boiko, Daniil A., Robert MacKnight, and Gabe Gomes. "Emergent autonomous scientific research capabilities of large language models." arXiv preprint arXiv:2304.05332 (2023).](https://arxiv.org/abs/2304.05332). [Peer-review](https://www.nature.com/articles/s41586-023-06792-0)
 
 Coscientist, a set of LLMs for designing and executing organic syntheses.  Coscientist consists of four components designed to search the web, write Python code, extract information from documentation, and program laboratory robotics.  The authors test Coscientist using several open and closed-source LLMs and present examples of the system's ability to plan and execute simple organic syntheses. 
-
-* [ProtAgents](https://github.com/lamm-mit/ProtAgents)
 
 * [Wu, Shirley, et al. "AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning." The Thirty-eighth Annual Conference on Neural Information Processing Systems.](https://arxiv.org/abs/2406.11200)
 
@@ -1403,10 +1431,6 @@ I am glad to see this work as it shows how much information and feature-richness
 * [NatureLM](https://arxiv.org/abs/2502.07527)
 
 Team at microsoft research introduces introduces Nature Language Model (NatureLM), a sequence-based science foundation model designed for scientific discovery across multiple domains like small molecules, proteins, and materials. NatureLM excels in generating and optimizing scientific entities and offers top performance, matching or surpassing state-of-the-art specialist models.
-
-* [Evo2](https://arcinstitute.org/tools/evo)
-
-* [BioEmu-1](https://www.microsoft.com/en-us/research/blog exploring-the-structural-changes-driving-protein-function-with-bioemu-1/)
 
 * [Sirumalla, S. K., Farina Jr, D. S., Qiao, Z., Di Cesare, D. A., Farias, F. C., O’Connor, M. B., ... & Miller, T. Multi-Modal and Multi-Task Transformer for Small Molecule Drug Discovery. In ICML'24 Workshop ML for Life and Material Science: From Theory to Industry Applications.](https://openreview.net/pdf?id=Ya5OHw7lZ8)
 
@@ -1445,6 +1469,14 @@ BioT5+ incorporates several novel features: integration of IUPAC names for molec
 
 **Protein design and mechanics**
 
+* [Evo2](https://arcinstitute.org/tools/evo)
+
+* [BioEmu-1](https://www.microsoft.com/en-us/research/blog exploring-the-structural-changes-driving-protein-function-with-bioemu-1/)
+
+* [EvoDiff](https://github.com/microsoft/evodiff)
+
+EvoDiff, a diffusion-based generative model that designs novel proteins directly in sequence space, bypassing limitations of structure-based models. By leveraging large-scale evolutionary data, EvoDiff generates diverse, high-fidelity, and functionally plausible proteins, including those with disordered regions.
+
 * [Queen, Owen, Yepeng Huang, Robert Calef, Valentina Giunchiglia, Tianlong Chen, George Dasoulas, LeAnn Tai et al. "ProCyon: A multimodal foundation model for protein phenotypes." bioRxiv (2024): 2024-12.](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1)
 
 ProCyon integrates phenotypic and protein data. Authors show its use for identifying protein domains that bind small molecule drugs, predicting peptide binding with enzymes, and assessing the functional impact of Alzheimer’s disease mutations. ProCyon enables conditional retrieval of proteins linked to small molecules through complementary mechanisms of action
@@ -1454,8 +1486,6 @@ ProCyon integrates phenotypic and protein data. Authors show its use for identif
 * [Buehler, Eric L., and Markus J. Buehler. "X-LoRA: Mixture of Low-Rank Adapter Experts, a Flexible Framework for Large Language Models with Applications in Protein Mechanics and Design." arXiv preprint arXiv:2402.07148 (2024).](https://arxiv.org/abs/2402.07148)
 
 Mixture of LoRA Experts: Leverage the power of fine-tuned LoRA experts by employing a mixture of experts, or MoE technique.
-
-* [Ghafarollahi, Alireza, and Markus J. Buehler. "ProtAgents: Protein discovery via large language model multi-agent collaborations combining physics and machine learning." arXiv preprint arXiv:2402.04268 (2024).](https://arxiv.org/abs/2402.04268)
 
 **Clinical text**
 
@@ -1682,9 +1712,11 @@ Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond streng
 
 * [RD-Kit](https://github.com/rdkit/rdkit)
     * [Get Atom Indices in the SMILE:](https://colab.research.google.com/drive/16T6ko0YE5WqIRzL4pwW_nufTDn7F3adw)
-
+    
     * [Datamol for manipulating RDKit molecules](https://github.com/datamol-org/datamol)
- 
+
+* [DataMol-SAFE](https://github.com/datamol-io/safe) 
+
 * [MOSES: Molecular generation models benchmark](https://github.com/molecularsets/moses)
 
 * [Therapeutics Data Commons](https://tdcommons.ai)
