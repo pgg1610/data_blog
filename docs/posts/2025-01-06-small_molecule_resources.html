@@ -516,6 +516,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://doi.org/10.1038/nrd1467">Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. Fragment-Based Lead Discovery. Nat Rev Drug Discov 2004, 3 (8), 660–672</a></li>
 </ul>
 <p>The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the ‘target-rich, lead-poor’ issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.</p>
+<p><strong>Reviews</strong></p>
+<ul>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/27417849/">Twenty years on: the impact of fragments on drug discovery</a></li>
+</ul>
 <p><strong>Articles</strong></p>
 <ul>
 <li><p><a href="https://www.nature.com/articles/s41467-025-59233-z">Erlanson, Daniel A., et al.&nbsp;“Where and how to house big data on small fragments.” Nature Communications 16.1 (2025): 1-6.</a></p></li>
@@ -692,6 +696,10 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Hydrogen bond energy</strong></p>
 <ul>
 <li><a href="https://www.nature.com/articles/s41598-023-30089-x">Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules</a></li>
+</ul>
+<p><strong>Solvent prediction</strong></p>
+<ul>
+<li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/68272768927d1c2e6619e850">Machine Learning Models for Solvent Prediction in Organic Reactions: Bridging the Gap between Theory and Practical Efficacy</a></li>
 </ul>
 </section>
 </section>
@@ -1014,7 +1022,7 @@ ul.task-list li input[type="checkbox"] {
 <p>RxnFlow, building on the GFlowNets (GFNs) framework for molecule generation, the authors use reaction templates and pre-defined molecular building blocks to constrains the synthetic chemical pathway. They employ this method for pocket-specific optimization across various target pockets.</p>
 <ul>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00230f">Expanding the chemical space using a chemical reaction knowledge graph</a></p></li>
-<li><p><a href="https://www.nature.com/articles/s42256-024-00809-7">Swanson, K., Liu, G., Catacutan, D.B. et al.&nbsp;Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).</a>. <a href="https://github.com/swansonk14/SyntheMol/blob/main/README.md">RL-version</a></p></li>
+<li><p><a href="https://www.nature.com/articles/s42256-024-00809-7">Swanson, K., Liu, G., Catacutan, D.B. et al.&nbsp;Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).</a>. <a href="https://www.biorxiv.org/content/10.1101/2025.05.17.654017v1">RL-version extension</a> <a href="https://github.com/swansonk14/SyntheMol/blob/main/README.md">RL-version code</a></p></li>
 </ul>
 <p>SyntheMol to generate reaction-based molecules by choosing reaction and the building blocks to connect them by. They use this approach for finding novel molecules for antibacterial discovery.</p>
 <ul>
@@ -1077,6 +1085,10 @@ ul.task-list li input[type="checkbox"] {
 <section id="computer-aided-synthesis-planning-casp" class="level2">
 <h2 class="anchored" data-anchor-id="computer-aided-synthesis-planning-casp">Computer Aided Synthesis Planning (CASP)</h2>
 <p><strong>Reviews:</strong></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2507.21762">Xuan-Vu, Nguyen, Daniel Armstrong, Zlatko Joncev, and Philippe Schwaller. “TempRe: Template generation for single and direct multi-step retrosynthesis.” arXiv preprint arXiv:2507.21762 (2025).</a></li>
+</ul>
+<p>New methodology for template generation where extraction of the template is seen as a language generation tasks instead of selecting from a pre-defined template.</p>
 <ul>
 <li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00252g">Torren-Peraire, Paula, et al.&nbsp;“Models Matter: the impact of single-step retrosynthesis on synthesis planning.” Digital Discovery 3.3 (2024): 558-572.</a></p></li>
 <li><p><a href="https://pubs.rsc.org/en/content/articlehtml/2021/xx/d0re00340a?casa_token=XlT3Q35wF_QAAAAA:Rcge3W9WUQher8k9zVMPBUQJsCeOskpUZOvQShiCcVZw127BHRFMRrZL0X6Upa9eHD-KMYPBNTaPww">Thakkar, Amol, et al.&nbsp;“Artificial intelligence and automation in computer aided synthesis planning.” Reaction chemistry &amp; engineering 6.1 (2021): 27-51.</a></p></li>
@@ -1176,7 +1188,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Classic paper, one of the firsts to show modeling reaction yields using ML. A random forest algorithm, was used to predict synthetic reaction performance in multidimensional chemical space with high-throughput experimentation data. Descriptors for components in a palladium-catalyzed Buchwald-Hartwig cross-coupling were computed and used as inputs. The random forest model outperformed linear regression in predictive accuracy, even with sparse training sets and out-of-sample predictions, highlighting its potential for synthetic methodology adoption.</p>
 <p><strong>Retrosynthetic routes:</strong></p>
 <ul>
-<li><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01685">Do Chemformers Dream of Organic Matter? Evaluating a Transformer Model for Multistep Retrosynthesis</a></li>
+<li><p><a href="https://arxiv.org/abs/2507.21762">TempRe</a></p></li>
+<li><p><a href="https://pubs.acs.org/doi/10.1021/acs.jcim.3c01685">Do Chemformers Dream of Organic Matter? Evaluating a Transformer Model for Multistep Retrosynthesis</a></p></li>
 </ul>
 <p>Transformer model evaluation for retrosynthesis from AZ folks. Template-free method.</p>
 <ul>
@@ -1391,7 +1404,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="large-language-models-llms" class="level2">
 <h2 class="anchored" data-anchor-id="large-language-models-llms">Large Language Models (LLMs)</h2>
-<p>It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.</p>
+<p>It’s a stretch to say that GPT-5 or any other LLM understands Chemistry.</p>
 <p>At this point, LLMs seem to have two general use cases. First, summarization and information retrieval. LLMs can parse vast collections of text, which can be queried using natural language. These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.</p>
 <p>While there are still issues with LLMs hallucinating and providing incorrect information, tools and strategies are being developed to ensure the validity of LLM responses.</p>
 <p>The other area where LLMs appear to be making inroads is workflow management or tools orchestration. Many activities in drug discovery, whether computational or experimental, require long sequences of steps, which can be tedious to orchestrate. These include asking questions about data, analyze results, do routine post processing for comparing with known state of the project.</p>
@@ -1472,6 +1485,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Small molecule related tasks</strong></p>
 <ul>
+<li><p><a href="https://arxiv.org/abs/2502.09565">MDCrow: Automating Molecular Dynamics Workflows with Large Language Models</a></p></li>
+<li><p><a href="https://github.com/Future-House/ether0?tab=readme-ov-file">ether0</a></p></li>
 <li><p><a href="https://openreview.net/pdf?id=yRrPfKyJQ2">Liu, Shengchao, et al.&nbsp;“Conversational drug editing using retrieval and domain feedback.” The Twelfth International Conference on Learning Representations. 2024.</a></p></li>
 <li><p><a href="https://arxiv.org/pdf/2406.06777">Le, Khiem, et al.&nbsp;“MolX: Enhancing Large Language Models for Molecular Learning with A Multi-Modal Extension.” arXiv preprint arXiv:2406.06777 (2024).</a></p></li>
 <li><p><a href="https://www.nature.com/articles/s42256-023-00759-6">Liu, Shengchao, et al.&nbsp;“Multi-modal molecule structure–text model for text-based retrieval and editing.” Nature Machine Intelligence 5.12 (2023): 1447-1457.</a></p></li>
@@ -1486,6 +1501,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><strong>Protein design and mechanics</strong></p>
 <ul>
+<li><p><a href="https://www.biorxiv.org/content/10.1101/2024.08.01.606258v4.full">Pinal</a></p></li>
 <li><p><a href="https://arcinstitute.org/tools/evo">Evo2</a></p></li>
 <li><p><a href="https://www.microsoft.com/en-us/research/blog%20exploring-the-structural-changes-driving-protein-function-with-bioemu-1/">BioEmu-1</a></p></li>
 <li><p><a href="https://github.com/microsoft/evodiff">EvoDiff</a></p></li>
@@ -1528,6 +1544,10 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://arxiv.org/abs/2402.04379">Gruver, Nate, et al.&nbsp;“Fine-Tuned Language Models Generate Stable Inorganic Materials as Text.” arXiv preprint arXiv:2402.04379 (2024).</a></li>
 </ul>
 <p><strong>Reaction development</strong></p>
+<ul>
+<li><a href="https://arxiv.org/pdf/2505.07027">LLM-Augmented Chemical Synthesis and Design Decision Programs</a></li>
+</ul>
+<p>Explore how LLMs can be used as decision making engines.</p>
 <ul>
 <li><p><a href="https://arxiv.org/abs/2503.08537">Bran, Andres M., Theo A. Neukomm, Daniel P. Armstrong, Zlatko Jončev, and Philippe Schwaller. “Chemical reasoning in LLMs unlocks steerable synthesis planning and reaction mechanism elucidation.” arXiv preprint arXiv:2503.08537 (2025).</a></p></li>
 <li><p><a href="https://chemrxiv.org/engage/chemrxiv/article-details/679a8f11fa469535b958a862">Li, H., Sarkar, S., Lu, W., Loftus, P., Qiu, T., Shee, Y., … &amp; Batista, V. (2025). Collective Intelligence of Specialized Language Models Guides Realization of de novo Chemical Synthesis.</a><a href="https://github.com/haoteli/MOSAIC/tree/main">Code</a></p></li>
@@ -1590,11 +1610,21 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="code-packages" class="level2">
 <h2 class="anchored" data-anchor-id="code-packages">Code / Packages:</h2>
+<p><strong>Bioinformatics</strong></p>
+<ul>
+<li><a href="https://www.science.org/doi/10.1126/sciadv.adv5109">Gaia</a></li>
+</ul>
+<p>Protein sequence annotator and finder based on genomic context that outperforms traditional sequence and structure-based methods</p>
+<ul>
+<li><a href="https://www.cell.com/patterns/fulltext/S2666-3899(25)00137-0">CHEAP</a></li>
+</ul>
+<p>Joint embedding model for protein structure and function.</p>
 <p><strong>Peptide Informatics</strong></p>
 <p>I visit first-ever RDKit UGM early April 2025 and was impressed by the tools available for manipulating and analyzing peptide chemical space. Below are few:</p>
 <ul>
 <li><p><a href="https://github.com/rochoa85/PepFun">PepFun</a> - From Novo Nordisk informatics team, they provide functionalities to study peptides at different levels, sequence, structures, and large dataset. It is built on BioPython and RDKit.</p></li>
 <li><p><a href="">SynthCoder</a></p></li>
+<li><p><a href="https://github.com/patonlab/molcomplex">Molcomplex</a> General purpose package to calculate molecule complexity and synthesizability</p></li>
 <li><p><a href="https://honegumi.readthedocs.io/en/latest/">Honegumi</a></p></li>
 <li><p><a href="https://rxn-insight.readthedocs.io/en/latest/">Rxn-INSIGHT</a></p></li>
 <li><p><a href="https://github.com/MolecularAI">Molecular AI department at AstraZeneca R&amp;D</a></p></li>

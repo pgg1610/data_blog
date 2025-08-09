@@ -337,6 +337,10 @@ In fragment-based drug discovery (FBDD), a fragment is a small, low-molecular-we
 
 The paper by Rees, D. C.; Congreve, M.; Murray, C. W.; Carr, R. discusses the concept of fragment-based lead discovery in drug development. The authors highlight the challenges in the drug discovery pipeline, particularly the 'target-rich, lead-poor' issue and the high attrition rate of chemical compounds in preclinical development. They discuss the use of fragment-based approaches as a solution, which involves the selection, screening, and optimization of fragments (also referred to as needles, shapes, binding elements, or seed templates) for lead identification. This approach requires significantly fewer compounds to be screened and synthesized, and has a high success rate in generating chemical series with lead-like properties. The authors also discuss different strategies for developing fragments into high-affinity leads, such as fragment evolution and fragment linking. The paper includes examples from 25 different protein targets to illustrate these strategies.
 
+**Reviews**
+
+* [Twenty years on: the impact of fragments on drug discovery](https://pubmed.ncbi.nlm.nih.gov/27417849/)
+
 **Articles**
 
 * [Erlanson, Daniel A., et al. "Where and how to house big data on small fragments." Nature Communications 16.1 (2025): 1-6.](https://www.nature.com/articles/s41467-025-59233-z)
@@ -550,6 +554,10 @@ QupKake combines GFN2-xTB calculations with graph-neural-networks to accurately 
 
 * [Jazzy: Fast calculation of hydrogen-bond strengths and free energy of hydration of small molecules](https://www.nature.com/articles/s41598-023-30089-x)
 
+
+**Solvent prediction**
+
+* [Machine Learning Models for Solvent Prediction in Organic Reactions: Bridging the Gap between Theory and Practical Efficacy](https://chemrxiv.org/engage/chemrxiv/article-details/68272768927d1c2e6619e850)
 
 ## Pharmacophore / shape searching 
 
@@ -908,7 +916,7 @@ RxnFlow, building on the GFlowNets (GFNs) framework for molecule generation, the
 
 * [Expanding the chemical space using a chemical reaction knowledge graph](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00230f)
 
-* [Swanson, K., Liu, G., Catacutan, D.B. et al. Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).](https://www.nature.com/articles/s42256-024-00809-7). [RL-version](https://github.com/swansonk14/SyntheMol/blob/main/README.md)
+* [Swanson, K., Liu, G., Catacutan, D.B. et al. Generative AI for designing and validating easily synthesizable and structurally novel antibiotics. Nat Mach Intell 6, 338–353 (2024).](https://www.nature.com/articles/s42256-024-00809-7). [RL-version extension](https://www.biorxiv.org/content/10.1101/2025.05.17.654017v1) [RL-version code](https://github.com/swansonk14/SyntheMol/blob/main/README.md)
 
 SyntheMol to generate reaction-based molecules by choosing reaction and the building blocks to connect them by. They use this approach for finding novel molecules for antibacterial discovery.
 
@@ -980,6 +988,10 @@ SPARROW prioritizes molecules that both have high rewards and can be synthesized
 ## Computer Aided Synthesis Planning (CASP) 
 
 **Reviews:** 
+
+* [Xuan-Vu, Nguyen, Daniel Armstrong, Zlatko Joncev, and Philippe Schwaller. "TempRe: Template generation for single and direct multi-step retrosynthesis." arXiv preprint arXiv:2507.21762 (2025).](https://arxiv.org/pdf/2507.21762)
+
+New methodology for template generation where extraction of the template is seen as a language generation tasks instead of selecting from a pre-defined template. 
 
 * [Torren-Peraire, Paula, et al. "Models Matter: the impact of single-step retrosynthesis on synthesis planning." Digital Discovery 3.3 (2024): 558-572.](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00252g)
 
@@ -1100,6 +1112,8 @@ Through experiments on real-world datasets, they demonstrate that treating react
 Classic paper, one of the firsts to show modeling reaction yields using ML. A random forest algorithm, was used to predict synthetic reaction performance in multidimensional chemical space with high-throughput experimentation data. Descriptors for components in a palladium-catalyzed Buchwald-Hartwig cross-coupling were computed and used as inputs. The random forest model outperformed linear regression in predictive accuracy, even with sparse training sets and out-of-sample predictions, highlighting its potential for synthetic methodology adoption.
 
 **Retrosynthetic routes:** 
+
+* [TempRe](https://arxiv.org/abs/2507.21762) 
 
 * [Do Chemformers Dream of Organic Matter? Evaluating a Transformer Model for Multistep Retrosynthesis](https://pubs.acs.org/doi/10.1021/acs.jcim.3c01685)
 
@@ -1268,7 +1282,6 @@ Also called Kraken - a discovery platform covering monodentate organophosphorus(
 
 Multi-objective optimization of catalytic reactions that employ chiral bisphosphine ligands. Optimization of 2 sequential reactions in asymmetric synthesis of API. Classification method identify active catalysts -- 5% yield (user provided) cutoff for binary classification. Linear regression to model reaction selectivity. DFT-derived descriptor dataset of >550 bisphosphine ligands. Develop an interpretable chemical space mapping tool using PCA. Look at the domain of applicability with the euclidean distance in chemical space. 
 
-
 **Generate catalysts**
 
 * [Schilter, Oliver, et al. "Designing catalysts with deep generative models and computational data. A case study for Suzuki cross coupling reactions." Digital Discovery (2023).](https://pubs.rsc.org/en/content/articlelanding/2023/DD/D2DD00125J)
@@ -1348,7 +1361,7 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 ## Large Language Models (LLMs)
 
-It’s a stretch to say that GPT-4 or any other LLM understands Chemistry.  
+It’s a stretch to say that GPT-5 or any other LLM understands Chemistry.  
 
 At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  
 
@@ -1449,6 +1462,10 @@ Authors show GPT3 based predictive models perform on-par with SOTA with lower da
 
 **Small molecule related tasks**
 
+* [MDCrow: Automating Molecular Dynamics Workflows with Large Language Models](https://arxiv.org/abs/2502.09565)
+
+* [ether0](https://github.com/Future-House/ether0?tab=readme-ov-file)
+
 * [Liu, Shengchao, et al. "Conversational drug editing using retrieval and domain feedback." The Twelfth International Conference on Learning Representations. 2024.](https://openreview.net/pdf?id=yRrPfKyJQ2)
 
 * [Le, Khiem, et al. "MolX: Enhancing Large Language Models for Molecular Learning with A Multi-Modal Extension." arXiv preprint arXiv:2406.06777 (2024).](https://arxiv.org/pdf/2406.06777)
@@ -1468,6 +1485,8 @@ BioT5+ incorporates several novel features: integration of IUPAC names for molec
 * [Language + Molecule Benchmarks](https://github.com/language-plus-molecules/LPM-24-Tutorial)
 
 **Protein design and mechanics**
+
+* [Pinal](https://www.biorxiv.org/content/10.1101/2024.08.01.606258v4.full)
 
 * [Evo2](https://arcinstitute.org/tools/evo)
 
@@ -1519,6 +1538,10 @@ Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant 
 * [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
 
 **Reaction development**
+
+* [LLM-Augmented Chemical Synthesis and Design Decision Programs](https://arxiv.org/pdf/2505.07027)
+
+Explore how LLMs can be used as decision making engines. 
 
 * [Bran, Andres M., Theo A. Neukomm, Daniel P. Armstrong, Zlatko Jončev, and Philippe Schwaller. "Chemical reasoning in LLMs unlocks steerable synthesis planning and reaction mechanism elucidation." arXiv preprint arXiv:2503.08537 (2025).](https://arxiv.org/abs/2503.08537)
 
@@ -1589,6 +1612,16 @@ Using Llama-2 7b to extract entities from synthesis recipes from reactions.
 
 ## Code / Packages:
 
+**Bioinformatics**
+
+* [Gaia](https://www.science.org/doi/10.1126/sciadv.adv5109)
+
+Protein sequence annotator and finder based on genomic context that outperforms traditional sequence and structure-based methods 
+
+* [CHEAP](https://www.cell.com/patterns/fulltext/S2666-3899(25)00137-0)
+
+Joint embedding model for protein structure and function. 
+
 **Peptide Informatics**
 
 I visit first-ever RDKit UGM early April 2025 and was impressed by the tools available for manipulating and analyzing peptide chemical space. Below are few:
@@ -1596,6 +1629,8 @@ I visit first-ever RDKit UGM early April 2025 and was impressed by the tools ava
 * [PepFun](https://github.com/rochoa85/PepFun) - From Novo Nordisk informatics team, they provide functionalities to study peptides at different levels, sequence, structures, and large dataset. It is built on BioPython and RDKit. 
 
 * [SynthCoder]()
+
+* [Molcomplex](https://github.com/patonlab/molcomplex) General purpose package to calculate molecule complexity and synthesizability 
 
 * [Honegumi](https://honegumi.readthedocs.io/en/latest/)
 

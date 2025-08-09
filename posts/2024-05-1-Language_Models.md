@@ -9,7 +9,6 @@ description: Resources around LLM development and research
 layout: post
 title: Large Language Models
 toc: true
-
 ---
 
 How LLMs benefit modeling processes:
