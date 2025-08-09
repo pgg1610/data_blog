@@ -104,6 +104,10 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 - [Stanford CS231n](http://cs231n.stanford.edu/) — Computer vision’s modern foundation.  
 - [NYU PyTorch Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/) — Great for PyTorch fluency
 
+### LLMs 
+
+- [Hands-on LLMs](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) - Actionable lessons with practical math and algorithm background 
+
 ### Data Science & Computation
 
 - [MIT Computational Thinking](https://computationalthinking.mit.edu/Fall20/)  
