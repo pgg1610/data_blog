@@ -27,15 +27,15 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 - [Andrew Ng – How AI Could Empower Any Business](https://www.ted.com/talks/andrew_ng_how_ai_could_empower_any_business?referrer=playlist-artificial_intelligence&autoplay=true) — AI as systematic application, not magic.
 
 ### Books
-- *Three Hour Chef* — A manual for learning anything fast, disguised as a cookbook.  
+- *Three Hour Chef* — A manual for learning anything fast, disguised as a cookbook
+- *Thinking, Fast and Slow* 
+- *Stumbling on to Happiness* 
 - *Loonshots* 
 - *Demon Haunted World*   
-- *Thinking, Fast and Slow* 
-- *Stumbling on Happiness* 
 - *Fooled by Randomness* 
 - *A Random Walk Down Wall Street* 
 - *The Way to Love* 
-- *Houston, We Have a Narrative* 
+- *Houston, We Have a Narrative* - Great book on how to improve scientific communication  
 - *Sapiens* 
 
 ### Favorite Blogs
@@ -47,7 +47,7 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 
 ## Machine Learning & Data Science Essentials
 
-My 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
+80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
 
 ### Starter Set
 - [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) ([GitHub](https://github.com/ageron/handson-ml3)) — Still the best structured ML intro.
@@ -65,25 +65,30 @@ My 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
 ## Perspectives, Reviews & Commentaries
 
 **Area Reviews**
+
 - [A Survey of Deep Learning for Scientific Discovery](https://arxiv.org/abs/2003.11755) — How deep learning is reshaping science.  
 - [The Discipline of Machine Learning](http://www.cs.cmu.edu/~tom/pubs/MachineLearning.pdf) — ML’s core principles from one of its founders.
 
 **Best Practices & Pitfalls**
+
 - [How to Avoid Machine Learning Pitfalls](https://arxiv.org/pdf/2108.02497.pdf) — The mistakes researchers keep making.  
 - [Scikit-learn – Common Pitfalls](https://scikit-learn.org/stable/common_pitfalls.html) — Debugging bad ML habits.  
 - [Three Pitfalls to Avoid in Machine Learning](https://www.nature.com/articles/d41586-019-02307-y) — Shortlist of costly errors.  
 - [A Few Useful Things to Know About Machine Learning](https://sites.astro.caltech.edu/~george/ay122/cacm12.pdf) — Timeless, hard-earned lessons.
 
 **Commentaries**
+
 - [Statistical Modeling: The Two Cultures](https://projecteuclid.org/journals/statistical-science/volume-16/issue-3/Statistical-Modeling--The-Two-Cultures-with-comments-and-a/10.1214/ss/1009213726.full) — Why stats and ML often talk past each other.  
 - [The Hardware Lottery](https://arxiv.org/abs/2009.06489) — How progress gets stuck on the wrong tools.  
 - [Why Is AI Harder Than We Think?](https://arxiv.org/pdf/2104.12871.pdf) — The gap between perception and reality.
 
 **In Chemical Sciences**
+
 - [Machine Learning for Materials Scientists – Best Practices](https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.0c01907) — What works (and what doesn’t) in materials ML.  
 - [Machine Learning in Synthetic Chemistry](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1) — Principles and promising directions.
 
 **Graph Networks**
+
 - [Graph Networks: Relational Inductive Biases](https://arxiv.org/abs/1806.01261) — The foundations of graph ML.  
 - [How to Get Started with Graph Machine Learning](https://gordicaleksa.medium.com/how-to-get-started-with-graph-machine-learning-afa53f6f963a) — Beginner’s map to the field.  
 - [Demystifying Graph Deep Learning](https://ericmjl.github.io/essays-on-data-science/machine-learning/graph-nets/?utm_source=pocket_mylist) — Making graphs intuitive.  
@@ -91,36 +96,42 @@ My 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
 ## Courses Worth Finishing
 
 **Machine Learning**
+
 - [MIT Intro to Deep Learning](http://introtodeeplearning.com/)  
 - [Google ML Crash Course](https://developers.google.com/machine-learning/crash-course) — Quick, pragmatic entry point 
 - [Stanford CS231n](http://cs231n.stanford.edu/) — Computer vision’s modern foundation.  
 - [NYU PyTorch Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/) — Great for PyTorch fluency
 
 **Data Science & Computation**
+
 - [MIT Computational Thinking](https://computationalthinking.mit.edu/Fall20/)  
 - [Harvard CS109 Data Science](http://cs109.github.io/2015/pages/videos.html)
 
 ## Python code resources 
 
 **Learning**
+
 - [Automate the Boring Stuff](https://automatetheboringstuff.com/) — Coding utility from day one.  
 - [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) — Essential Pandas, NumPy, Matplotlib.  
 - [Visual Guide to NumPy](http://jalammar.github.io/visual-numpy/) — Arrays explained visually.
 
 **Projects & Practice**
+
 - [Project Euler](https://projecteuler.net/) — Math puzzles that teach coding fluency.  
 - [Calmcode](https://calmcode.io/) — Bite-sized Python tips.
 
 **Writing Better Code**
 - [Corey Schafer – Tips](https://www.youtube.com/watch?v=C-gEQdGVXbk) — Pragmatic code hygiene.  
--
+
 ## Data, Viz & Stats
 
 **Stats**
+
 - [Think Stats](https://greenteapress.com/thinkstats2/thinkstats2.pdf) — Stats for hackers.  
 - [Telling Stories with Data](https://tellingstorieswithdata.com/) — Numbers need a plot.
 
 **Visualization**
+
 - [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) — Clear thinking via clear charts.  
 - [Python Graph Gallery](https://www.python-graph-gallery.com) — Examples by type.
 
@@ -128,21 +139,25 @@ My 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
 ## Videos & Lecture Series
 
 **Science & AI**
+
 - [Medicinal Chemistry Lecture Series](https://youtube.com/playlist?list=PLyqSpQzTE6M9Q9Uo1gEp7B6bLbLFzv27F) 
 - [MIT Deep Learning Series](https://youtube.com/playlist?list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI) 
 - [Andrej Karpathy’s Lectures](https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) — Deep learning taught by a leading industry expert
 - [3Blue1Brown](https://youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab) — Beautiful videos on foundational ML/DS concepts
 
 **Concept Explainers**
+
 - [StatQuest](https://www.youtube.com/user/joshstarmer) — Stats explained like you’re five.  
 
 ## Blogs & Writing
+
 - [Paul Graham Essays](http://www.paulgraham.com/index.html) — Thinking about thinking.  
 - [Farnam Street](https://fs.blog/mental-models/) — Tools for better decisions.  
 - [Wait But Why](https://waitbutwhy.com/) — Long-form deep dives.  
 
 ## Good articles that focus on better writing 
-- [Paul Graham – Writing Usefully](http://www.paulgraham.com/useful.html) — Writing well is thinking well.  
-- *Draft No. 4* — John McPhee on the architecture of writing.  
-- *This Is Your Mind on Plants* — Michael Pollan on altered states and culture.  
-- [Smart Words – Linking Words](https://www.smart-words.org/linking-words/) — Small words, big clarity.  
+
+- [Paul Graham – Writing Usefully](http://www.paulgraham.com/useful.html)   
+- *Draft No. 4* — John McPhee on the architecture of writing
+- *This Is Your Mind on Plants* — Michael Pollan very nicely written account of plants effect on altered states and culture 
+- [Smart Words – Linking Words](https://www.smart-words.org/linking-words/) 

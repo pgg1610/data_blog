@@ -172,42 +172,49 @@
     "href": "posts/2025-08-08-Resources_revisit.html#core-reading-viewing",
     "title": "Resources I Keep Coming Back To",
     "section": "Core Reading & Viewing",
-    "text": "Core Reading & Viewing\n\nNobel Lectures\n\nFrances Arnold – 2018 Chemistry Nobel — How evolution can be engineered.\nJennifer Doudna – 2020 Chemistry Nobel — The CRISPR story and why it matters.\n\n\n\nTalks\n\nAndrew Ng – How AI Could Empower Any Business — AI as systematic application, not magic.\n\n\n\nBooks\n\nThree Hour Chef — A manual for learning anything fast, disguised as a cookbook.\n\nLoonshots\nDemon Haunted World\n\nThinking, Fast and Slow\nStumbling on Happiness\nFooled by Randomness\nA Random Walk Down Wall Street\nThe Way to Love\nHouston, We Have a Narrative\nSapiens\n\n\n\nFavorite Blogs\n\nVenture Capital for Life Scientists\n\nStudying the Studies — Nice overview for understanding statistical studies and how they are reported in peer-reviews, complement this by How to Lie with Statistics\n\nThe AI Revolution – Wait But Why\n\nBiotech Platforms and Taste — Why “taste” matters in science."
+    "text": "Core Reading & Viewing\n\nNobel Lectures\n\nFrances Arnold – 2018 Chemistry Nobel — How evolution can be engineered.\nJennifer Doudna – 2020 Chemistry Nobel — The CRISPR story and why it matters.\n\n\n\nTalks\n\nAndrew Ng – How AI Could Empower Any Business — AI as systematic application, not magic.\n\n\n\nBooks\n\nThree Hour Chef — A manual for learning anything fast, disguised as a cookbook\nThinking, Fast and Slow\nStumbling on to Happiness\nLoonshots\nDemon Haunted World\n\nFooled by Randomness\nA Random Walk Down Wall Street\nThe Way to Love\nHouston, We Have a Narrative - Great book on how to improve scientific communication\n\nSapiens\n\n\n\nFavorite Blogs\n\nVenture Capital for Life Scientists\n\nStudying the Studies — Nice overview for understanding statistical studies and how they are reported in peer-reviews, complement this by How to Lie with Statistics\n\nThe AI Revolution – Wait But Why\n\nBiotech Platforms and Taste — Why “taste” matters in science."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#machine-learning-data-science-essentials",
     "href": "posts/2025-08-08-Resources_revisit.html#machine-learning-data-science-essentials",
     "title": "Resources I Keep Coming Back To",
     "section": "Machine Learning & Data Science Essentials",
-    "text": "Machine Learning & Data Science Essentials\nMy 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.\n\nStarter Set\n\nHands-On Machine Learning with Scikit-Learn & TensorFlow (GitHub) — Still the best structured ML intro.\nData Science from Scratch\nPractical Deep Learning for Coders – fast.ai\nIntroduction to Statistical Learning\nThe 100 Page ML Book — Key ML concepts boiled to the essentials.\n\n\n\nSeminal Papers\n\nWord2Vec — Words as vectors, meaning as geometry.\n\nAttention Is All You Need — The Transformer blueprint.\n\nBERT — Pretraining changes everything.\n\nReACT — LLMs that think and act."
+    "text": "Machine Learning & Data Science Essentials\n80/20 rule: get the core idea, apply it, then fill gaps as you hit them.\n\nStarter Set\n\nHands-On Machine Learning with Scikit-Learn & TensorFlow (GitHub) — Still the best structured ML intro.\nData Science from Scratch\nPractical Deep Learning for Coders – fast.ai\nIntroduction to Statistical Learning\nThe 100 Page ML Book — Key ML concepts boiled to the essentials.\n\n\n\nSeminal Papers\n\nWord2Vec — Words as vectors, meaning as geometry.\n\nAttention Is All You Need — The Transformer blueprint.\n\nBERT — Pretraining changes everything.\n\nReACT — LLMs that think and act."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#perspectives-reviews-commentaries",
     "href": "posts/2025-08-08-Resources_revisit.html#perspectives-reviews-commentaries",
     "title": "Resources I Keep Coming Back To",
     "section": "Perspectives, Reviews & Commentaries",
-    "text": "Perspectives, Reviews & Commentaries\nArea Reviews - A Survey of Deep Learning for Scientific Discovery — How deep learning is reshaping science.\n- The Discipline of Machine Learning — ML’s core principles from one of its founders.\nBest Practices & Pitfalls - How to Avoid Machine Learning Pitfalls — The mistakes researchers keep making.\n- Scikit-learn – Common Pitfalls — Debugging bad ML habits.\n- Three Pitfalls to Avoid in Machine Learning — Shortlist of costly errors.\n- A Few Useful Things to Know About Machine Learning — Timeless, hard-earned lessons.\nCommentaries - Statistical Modeling: The Two Cultures — Why stats and ML often talk past each other.\n- The Hardware Lottery — How progress gets stuck on the wrong tools.\n- Why Is AI Harder Than We Think? — The gap between perception and reality.\nIn Chemical Sciences - Machine Learning for Materials Scientists – Best Practices — What works (and what doesn’t) in materials ML.\n- Machine Learning in Synthetic Chemistry — Principles and promising directions.\nGraph Networks - Graph Networks: Relational Inductive Biases — The foundations of graph ML.\n- How to Get Started with Graph Machine Learning — Beginner’s map to the field.\n- Demystifying Graph Deep Learning — Making graphs intuitive."
+    "text": "Perspectives, Reviews & Commentaries\nArea Reviews\n\nA Survey of Deep Learning for Scientific Discovery — How deep learning is reshaping science.\n\nThe Discipline of Machine Learning — ML’s core principles from one of its founders.\n\nBest Practices & Pitfalls\n\nHow to Avoid Machine Learning Pitfalls — The mistakes researchers keep making.\n\nScikit-learn – Common Pitfalls — Debugging bad ML habits.\n\nThree Pitfalls to Avoid in Machine Learning — Shortlist of costly errors.\n\nA Few Useful Things to Know About Machine Learning — Timeless, hard-earned lessons.\n\nCommentaries\n\nStatistical Modeling: The Two Cultures — Why stats and ML often talk past each other.\n\nThe Hardware Lottery — How progress gets stuck on the wrong tools.\n\nWhy Is AI Harder Than We Think? — The gap between perception and reality.\n\nIn Chemical Sciences\n\nMachine Learning for Materials Scientists – Best Practices — What works (and what doesn’t) in materials ML.\n\nMachine Learning in Synthetic Chemistry — Principles and promising directions.\n\nGraph Networks\n\nGraph Networks: Relational Inductive Biases — The foundations of graph ML.\n\nHow to Get Started with Graph Machine Learning — Beginner’s map to the field.\n\nDemystifying Graph Deep Learning — Making graphs intuitive."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#courses-worth-finishing",
     "href": "posts/2025-08-08-Resources_revisit.html#courses-worth-finishing",
     "title": "Resources I Keep Coming Back To",
     "section": "Courses Worth Finishing",
-    "text": "Courses Worth Finishing\nMachine Learning - MIT Intro to Deep Learning\n- Google ML Crash Course — Quick, pragmatic entry point - Stanford CS231n — Computer vision’s modern foundation.\n- NYU PyTorch Deep Learning — Great for PyTorch fluency\nData Science & Computation - MIT Computational Thinking\n- Harvard CS109 Data Science"
+    "text": "Courses Worth Finishing\nMachine Learning\n\nMIT Intro to Deep Learning\n\nGoogle ML Crash Course — Quick, pragmatic entry point\nStanford CS231n — Computer vision’s modern foundation.\n\nNYU PyTorch Deep Learning — Great for PyTorch fluency\n\nData Science & Computation\n\nMIT Computational Thinking\n\nHarvard CS109 Data Science"
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#python-code-resources",
     "href": "posts/2025-08-08-Resources_revisit.html#python-code-resources",
     "title": "Resources I Keep Coming Back To",
     "section": "Python code resources",
-    "text": "Python code resources\nLearning - Automate the Boring Stuff — Coding utility from day one.\n- Python Data Science Handbook — Essential Pandas, NumPy, Matplotlib.\n- Visual Guide to NumPy — Arrays explained visually.\nProjects & Practice - Project Euler — Math puzzles that teach coding fluency.\n- Calmcode — Bite-sized Python tips.\nWriting Better Code - Corey Schafer – Tips — Pragmatic code hygiene.\n- ## Data, Viz & Stats\nStats - Think Stats — Stats for hackers.\n- Telling Stories with Data — Numbers need a plot.\nVisualization - Fundamentals of Data Visualization — Clear thinking via clear charts.\n- Python Graph Gallery — Examples by type."
+    "text": "Python code resources\nLearning\n\nAutomate the Boring Stuff — Coding utility from day one.\n\nPython Data Science Handbook — Essential Pandas, NumPy, Matplotlib.\n\nVisual Guide to NumPy — Arrays explained visually.\n\nProjects & Practice\n\nProject Euler — Math puzzles that teach coding fluency.\n\nCalmcode — Bite-sized Python tips.\n\nWriting Better Code - Corey Schafer – Tips — Pragmatic code hygiene."
+  },
+  {
+    "objectID": "posts/2025-08-08-Resources_revisit.html#data-viz-stats",
+    "href": "posts/2025-08-08-Resources_revisit.html#data-viz-stats",
+    "title": "Resources I Keep Coming Back To",
+    "section": "Data, Viz & Stats",
+    "text": "Data, Viz & Stats\nStats\n\nThink Stats — Stats for hackers.\n\nTelling Stories with Data — Numbers need a plot.\n\nVisualization\n\nFundamentals of Data Visualization — Clear thinking via clear charts.\n\nPython Graph Gallery — Examples by type."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#videos-lecture-series",
     "href": "posts/2025-08-08-Resources_revisit.html#videos-lecture-series",
     "title": "Resources I Keep Coming Back To",
     "section": "Videos & Lecture Series",
-    "text": "Videos & Lecture Series\nScience & AI - Medicinal Chemistry Lecture Series - MIT Deep Learning Series - Andrej Karpathy’s Lectures — Deep learning taught by a leading industry expert - 3Blue1Brown — Beautiful videos on foundational ML/DS concepts\nConcept Explainers - StatQuest — Stats explained like you’re five."
+    "text": "Videos & Lecture Series\nScience & AI\n\nMedicinal Chemistry Lecture Series\nMIT Deep Learning Series\nAndrej Karpathy’s Lectures — Deep learning taught by a leading industry expert\n3Blue1Brown — Beautiful videos on foundational ML/DS concepts\n\nConcept Explainers\n\nStatQuest — Stats explained like you’re five."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#blogs-writing",
@@ -221,7 +228,7 @@
     "href": "posts/2025-08-08-Resources_revisit.html#good-articles-that-focus-on-better-writing",
     "title": "Resources I Keep Coming Back To",
     "section": "Good articles that focus on better writing",
-    "text": "Good articles that focus on better writing\n\nPaul Graham – Writing Usefully — Writing well is thinking well.\n\nDraft No. 4 — John McPhee on the architecture of writing.\n\nThis Is Your Mind on Plants — Michael Pollan on altered states and culture.\n\nSmart Words – Linking Words — Small words, big clarity."
+    "text": "Good articles that focus on better writing\n\nPaul Graham – Writing Usefully\n\nDraft No. 4 — John McPhee on the architecture of writing\nThis Is Your Mind on Plants — Michael Pollan very nicely written account of plants effect on altered states and culture\nSmart Words – Linking Words"
   },
   {
     "objectID": "posts/2020-03-17-cnn_pytorch_tutorial.html",
