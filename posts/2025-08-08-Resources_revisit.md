@@ -49,13 +49,20 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 
 80/20 rule: get the core idea, apply it, then fill gaps as you hit them.
 
-### Starter Set
+### Data science & ML 
 
-- [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) ([GitHub](https://github.com/ageron/handson-ml3)) — Still the best structured ML intro.
-- [Data Science from Scratch](https://github.com/joelgrus/data-science-from-scratch)
-- [Practical Deep Learning for Coders – fast.ai](https://course19.fast.ai/index.html) 
+- [Data Science from Scratch](https://github.com/joelgrus/data-science-from-scratch) 
 - [Introduction to Statistical Learning](https://www.statlearning.com) 
 - [The 100 Page ML Book](http://themlbook.com) — Key ML concepts boiled to the essentials.
+
+### AI / ML
+
+- [Hands-On Machine Learning with Scikit-Learn & TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) ([GitHub](https://github.com/ageron/handson-ml3)) — Still the best structured ML intro.
+- [Practical Deep Learning for Coders – fast.ai](https://course19.fast.ai/index.html)
+
+### LLMs 
+
+- [Hands-on LLMs](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) - Actionable lessons with practical math and algorithm background 
 
 ### Seminal Papers
 
@@ -103,10 +110,6 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 - [Google ML Crash Course](https://developers.google.com/machine-learning/crash-course) — Quick, pragmatic entry point 
 - [Stanford CS231n](http://cs231n.stanford.edu/) — Computer vision’s modern foundation.  
 - [NYU PyTorch Deep Learning](https://atcold.github.io/pytorch-Deep-Learning/) — Great for PyTorch fluency
-
-### LLMs 
-
-- [Hands-on LLMs](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) - Actionable lessons with practical math and algorithm background 
 
 ### Data Science & Computation
 

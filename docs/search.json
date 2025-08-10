@@ -179,7 +179,7 @@
     "href": "posts/2025-08-08-Resources_revisit.html#machine-learning-data-science-essentials",
     "title": "Resources I Keep Coming Back To",
     "section": "Machine Learning & Data Science Essentials",
-    "text": "Machine Learning & Data Science Essentials\n80/20 rule: get the core idea, apply it, then fill gaps as you hit them.\n\nStarter Set\n\nHands-On Machine Learning with Scikit-Learn & TensorFlow (GitHub) — Still the best structured ML intro.\nData Science from Scratch\nPractical Deep Learning for Coders – fast.ai\nIntroduction to Statistical Learning\nThe 100 Page ML Book — Key ML concepts boiled to the essentials.\n\n\n\nSeminal Papers\n\nWord2Vec — Words as vectors, meaning as geometry.\n\nAttention Is All You Need — The Transformer blueprint.\n\nBERT — Pretraining changes everything.\n\nReACT — LLMs that think and act."
+    "text": "Machine Learning & Data Science Essentials\n80/20 rule: get the core idea, apply it, then fill gaps as you hit them.\n\nData science & ML\n\nData Science from Scratch\nIntroduction to Statistical Learning\nThe 100 Page ML Book — Key ML concepts boiled to the essentials.\n\n\n\nAI / ML\n\nHands-On Machine Learning with Scikit-Learn & TensorFlow (GitHub) — Still the best structured ML intro.\nPractical Deep Learning for Coders – fast.ai\n\n\n\nLLMs\n\nHands-on LLMs - Actionable lessons with practical math and algorithm background\n\n\n\nSeminal Papers\n\nWord2Vec — Words as vectors, meaning as geometry.\n\nAttention Is All You Need — The Transformer blueprint.\n\nBERT — Pretraining changes everything.\n\nReACT — LLMs that think and act."
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#perspectives-reviews-commentaries",
@@ -193,7 +193,7 @@
     "href": "posts/2025-08-08-Resources_revisit.html#courses-worth-finishing",
     "title": "Resources I Keep Coming Back To",
     "section": "Courses Worth Finishing",
-    "text": "Courses Worth Finishing\n\nMachine Learning\n\nMIT Intro to Deep Learning\n\nGoogle ML Crash Course — Quick, pragmatic entry point\nStanford CS231n — Computer vision’s modern foundation.\n\nNYU PyTorch Deep Learning — Great for PyTorch fluency\n\n\n\nLLMs\n\nHands-on LLMs - Actionable lessons with practical math and algorithm background\n\n\n\nData Science & Computation\n\nMIT Computational Thinking\n\nHarvard CS109 Data Science"
+    "text": "Courses Worth Finishing\n\nMachine Learning\n\nMIT Intro to Deep Learning\n\nGoogle ML Crash Course — Quick, pragmatic entry point\nStanford CS231n — Computer vision’s modern foundation.\n\nNYU PyTorch Deep Learning — Great for PyTorch fluency\n\n\n\nData Science & Computation\n\nMIT Computational Thinking\n\nHarvard CS109 Data Science"
   },
   {
     "objectID": "posts/2025-08-08-Resources_revisit.html#python-code-resources",
