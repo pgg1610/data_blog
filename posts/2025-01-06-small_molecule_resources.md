@@ -517,7 +517,12 @@ Generate conformationally sampled descriptors for a molecule. This workflow prov
 
 ### Predictive modeling 
 
-**Reviews**
+**Articles**
+
+
+* [Chen, Jacky, et al. "Data Scaling and Generalization Insights for Medicinal Chemistry Deep Learning Models." Journal of Chemical Information and Modeling (2025).](https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00538)
+
+Benchmarks comparing traditional ML to deep learning methods that also include nice ablation studies on different splitting strategies. The authors look at ADME(T) endpoints and general drug discovery assays. They once again show that for larger datasets GNNs perform well but what they do different from other work is they show the scaling behavior of ADMET models. 
 
 * [Chemical complexity challenge: Is multi-instance machine learning a solution](https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1698)
 
@@ -900,6 +905,11 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 **Synthesizable-space aware** 
 
+
+* [SynFlowNet: Design of Diverse and Novel Molecules with Synthesis Constraints](https://arxiv.org/abs/2405.01155)
+
+From Recursion team - SynFlowNet, a GFlowNet model whose action space uses chemical reactions and purchasable reactants to sequentially build new molecules. [Synflownet-boltz](https://github.com/recursionpharma/synflownet-boltz) is their expansion that combine binding affinity predictions with boltz-2. 
+
 * [Growing and Linking Optimizers: Synthesis-driven Molecule Design](https://chemrxiv.org/engage/chemrxiv/article-details/67bf3e7efa469535b90be62b)
 
 The team at Iktos suggest a reaction-based generative design. They break down the method into growing and linking steps to emulate real-life process. They compare their approach to REIVENT and show their model is able to design molecule which are not only synthesizable but also closer to the pre-defined desired properties. 
@@ -994,6 +1004,8 @@ SPARROW prioritizes molecules that both have high rewards and can be synthesized
 New methodology for template generation where extraction of the template is seen as a language generation tasks instead of selecting from a pre-defined template. 
 
 * [Torren-Peraire, Paula, et al. "Models Matter: the impact of single-step retrosynthesis on synthesis planning." Digital Discovery 3.3 (2024): 558-572.](https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00252g)
+
+How the choice of single-step retrosynthesis models affects multi-step synthesis planning in chemistry. The authors show that high performance on single-step benchmarks doesn't always mean better synthesis planning, and that single-step models should be evaluated within real multi-step tasks, as the choice of model can significantly impact successful synthesis routes and their diversity
 
 * [Thakkar, Amol, et al. "Artificial intelligence and automation in computer aided synthesis planning." Reaction chemistry & engineering 6.1 (2021): 27-51.](https://pubs.rsc.org/en/content/articlehtml/2021/xx/d0re00340a?casa_token=XlT3Q35wF_QAAAAA:Rcge3W9WUQher8k9zVMPBUQJsCeOskpUZOvQShiCcVZw127BHRFMRrZL0X6Upa9eHD-KMYPBNTaPww)
 
@@ -1242,7 +1254,15 @@ Integration of data science techniques, including DFT featurization, dimensional
 
 * [On the Topic of Substrate Scope](https://pubs.acs.org/doi/10.1021/acs.orglett.2c03246)
 
-**Articles**
+**HTE-based Condition Optimization**
+
+* [Souza, Lucas W., et al. "Applying Active Learning toward Building a Generalizable Model for Ni-Photoredox Cross-Electrophile Coupling of Aryl and Alkyl Bromides." Journal of the American Chemical Society 147.22 (2025): 18747-18759.](https://pubs.acs.org/doi/10.1021/jacs.5c02218). [Github](https://github.com/doyle-lab-ucla/XEC-novartis)
+
+Doyle group collaborates with Novartis to generate an active learning strategy to inform reaction condition optimization routines for Ni-Photoredox cross electrophile reaction. They build a model using less than 400 data points, they show the AL-based method is significantly better at predicting which reactions will be successful. 
+
+* [Sin, Joshua W., et al. "Highly parallel optimisation of chemical reactions through automation and machine intelligence." Nature Communications 16.1 (2025): 6464.](https://www.nature.com/articles/s41467-025-61803-0). [Codebase](https://github.com/schwallergroup/minerva)
+
+Phillipe Schwaller's group propose Minerva - an multi-objective reaction optimization routine that uses HTE data to optimze conditions for Ni-catalyzed Suzuki reaction. They use ML model to fill in gaps for the domain that model is trained on to complete the data set and train a better model. 
 
 * [Pomberger, Alexander, et al. "The effect of chemical representation on active machine learning towards closed-loop optimization." Reaction Chemistry & Engineering 7.6 (2022): 1368-1379.](https://pubs.rsc.org/en/content/articlelanding/2022/re/d2re00008c)
 

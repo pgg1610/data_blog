@@ -662,7 +662,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="predictive-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="predictive-modeling">Predictive modeling</h3>
-<p><strong>Reviews</strong></p>
+<p><strong>Articles</strong></p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00538">Chen, Jacky, et al.&nbsp;“Data Scaling and Generalization Insights for Medicinal Chemistry Deep Learning Models.” Journal of Chemical Information and Modeling (2025).</a></li>
+</ul>
+<p>Benchmarks comparing traditional ML to deep learning methods that also include nice ablation studies on different splitting strategies. The authors look at ADME(T) endpoints and general drug discovery assays. They once again show that for larger datasets GNNs perform well but what they do different from other work is they show the scaling behavior of ADMET models.</p>
 <ul>
 <li><a href="https://wires.onlinelibrary.wiley.com/doi/10.1002/wcms.1698">Chemical complexity challenge: Is multi-instance machine learning a solution</a></li>
 </ul>
@@ -1008,6 +1012,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Team at Novartis and Microsoft propose MoLeR, graph based model to generate molecule using scaffold as a seed. Scaffold based SAR speed up shown.</p>
 <p><strong>Synthesizable-space aware</strong></p>
 <ul>
+<li><a href="https://arxiv.org/abs/2405.01155">SynFlowNet: Design of Diverse and Novel Molecules with Synthesis Constraints</a></li>
+</ul>
+<p>From Recursion team - SynFlowNet, a GFlowNet model whose action space uses chemical reactions and purchasable reactants to sequentially build new molecules. <a href="https://github.com/recursionpharma/synflownet-boltz">Synflownet-boltz</a> is their expansion that combine binding affinity predictions with boltz-2.</p>
+<ul>
 <li><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67bf3e7efa469535b90be62b">Growing and Linking Optimizers: Synthesis-driven Molecule Design</a></li>
 </ul>
 <p>The team at Iktos suggest a reaction-based generative design. They break down the method into growing and linking steps to emulate real-life process. They compare their approach to REIVENT and show their model is able to design molecule which are not only synthesizable but also closer to the pre-defined desired properties.</p>
@@ -1090,8 +1098,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>New methodology for template generation where extraction of the template is seen as a language generation tasks instead of selecting from a pre-defined template.</p>
 <ul>
-<li><p><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00252g">Torren-Peraire, Paula, et al.&nbsp;“Models Matter: the impact of single-step retrosynthesis on synthesis planning.” Digital Discovery 3.3 (2024): 558-572.</a></p></li>
-<li><p><a href="https://pubs.rsc.org/en/content/articlehtml/2021/xx/d0re00340a?casa_token=XlT3Q35wF_QAAAAA:Rcge3W9WUQher8k9zVMPBUQJsCeOskpUZOvQShiCcVZw127BHRFMRrZL0X6Upa9eHD-KMYPBNTaPww">Thakkar, Amol, et al.&nbsp;“Artificial intelligence and automation in computer aided synthesis planning.” Reaction chemistry &amp; engineering 6.1 (2021): 27-51.</a></p></li>
+<li><a href="https://pubs.rsc.org/en/content/articlelanding/2024/dd/d3dd00252g">Torren-Peraire, Paula, et al.&nbsp;“Models Matter: the impact of single-step retrosynthesis on synthesis planning.” Digital Discovery 3.3 (2024): 558-572.</a></li>
+</ul>
+<p>How the choice of single-step retrosynthesis models affects multi-step synthesis planning in chemistry. The authors show that high performance on single-step benchmarks doesn’t always mean better synthesis planning, and that single-step models should be evaluated within real multi-step tasks, as the choice of model can significantly impact successful synthesis routes and their diversity</p>
+<ul>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2021/xx/d0re00340a?casa_token=XlT3Q35wF_QAAAAA:Rcge3W9WUQher8k9zVMPBUQJsCeOskpUZOvQShiCcVZw127BHRFMRrZL0X6Upa9eHD-KMYPBNTaPww">Thakkar, Amol, et al.&nbsp;“Artificial intelligence and automation in computer aided synthesis planning.” Reaction chemistry &amp; engineering 6.1 (2021): 27-51.</a></li>
 </ul>
 <p>Perspective on the current SOTA of synthesis planning, automation, and reaction optimization in drug discovery and development phases using AI and ML.</p>
 <ul>
@@ -1300,7 +1311,15 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://pubs.acs.org/doi/10.1021/acs.orglett.2c03246">On the Topic of Substrate Scope</a></li>
 </ul>
-<p><strong>Articles</strong></p>
+<p><strong>HTE-based Condition Optimization</strong></p>
+<ul>
+<li><a href="https://pubs.acs.org/doi/10.1021/jacs.5c02218">Souza, Lucas W., et al.&nbsp;“Applying Active Learning toward Building a Generalizable Model for Ni-Photoredox Cross-Electrophile Coupling of Aryl and Alkyl Bromides.” Journal of the American Chemical Society 147.22 (2025): 18747-18759.</a>. <a href="https://github.com/doyle-lab-ucla/XEC-novartis">Github</a></li>
+</ul>
+<p>Doyle group collaborates with Novartis to generate an active learning strategy to inform reaction condition optimization routines for Ni-Photoredox cross electrophile reaction. They build a model using less than 400 data points, they show the AL-based method is significantly better at predicting which reactions will be successful.</p>
+<ul>
+<li><a href="https://www.nature.com/articles/s41467-025-61803-0">Sin, Joshua W., et al.&nbsp;“Highly parallel optimisation of chemical reactions through automation and machine intelligence.” Nature Communications 16.1 (2025): 6464.</a>. <a href="https://github.com/schwallergroup/minerva">Codebase</a></li>
+</ul>
+<p>Phillipe Schwaller’s group propose Minerva - an multi-objective reaction optimization routine that uses HTE data to optimze conditions for Ni-catalyzed Suzuki reaction. They use ML model to fill in gaps for the domain that model is trained on to complete the data set and train a better model.</p>
 <ul>
 <li><a href="https://pubs.rsc.org/en/content/articlelanding/2022/re/d2re00008c">Pomberger, Alexander, et al.&nbsp;“The effect of chemical representation on active machine learning towards closed-loop optimization.” Reaction Chemistry &amp; Engineering 7.6 (2022): 1368-1379.</a></li>
 </ul>
