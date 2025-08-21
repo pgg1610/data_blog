@@ -44,6 +44,10 @@ Last update: March 2025
 2. [Chris Swaim's MedChem blogpost](https://www.cambridgemedchemconsulting.com/resources/)
 
 
+**Synthesis chemistry**
+
+1. [ChemistryByDesign](https://chemistrybydesign.oia.arizona.edu/)
+
 **Computational chemistry**
 1. [Gilles Ouvry](https://www.linkedin.com/in/gilles-ouvry-8b7b2b5/)
 
@@ -182,6 +186,10 @@ Overview of different chemical modalities currently at work to address different
 * [Targeted Protein Degradation: Advances, Challenges, and Prospects for Computational Methods](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00603)
 
 ## Meta themes on optimizing small molecules 
+
+* [Ring Systems in Medicinal Chemistry: A Cheminformatics Analysis of Ring Popularity in Drug Discovery Over Time](https://chemrxiv.org/engage/chemrxiv/article-details/6891a60123be8e43d6d10ab0)
+
+
 
 * [Don't Fall in Love with Your Molecule](https://research.dimensioncap.com/p/dont-fall-in-love-with-your-molecule)
 
@@ -369,6 +377,12 @@ The authors use a fragment screening approach to look at hits for protein kinase
 
 Commercial software solution from OpenEye for fragment exchange 
 
+
+**Codebase**
+
+* [Syndirella](https://github.com/kate-fie/syndirella/tree/main)
+
+* [HIPPO](https://hippo-docs.winokan.com/en/latest/)
 
 ## Protein engineering 
 
@@ -627,10 +641,13 @@ QMugs (Quantum mechanical properties of drug-like molecules) collection comprise
 
 ### Matched molecular-pair
 
+* [Matched Molecular Pair Analysis in Short: Algorithms, Applications and Limitations](https://pmc.ncbi.nlm.nih.gov/articles/PMC5198793/)
+
 * [Raymond, John W., and Peter Willett. "Maximum common subgraph isomorphism algorithms for the matching of chemical structures." Journal of computer-aided molecular design 16.7 (2002): 521-533.](https://link.springer.com/article/10.1023/A:1021271615909)
 
 * [Dalke, Andrew, Jerome Hert, and Christian Kramer. "mmpdb: An open-source matched molecular pair platform for large multiproperty data sets." Journal of chemical information and modeling 58.5 (2018): 902-910.](https://pubs.acs.org/doi/10.1021/acs.jcim.8b00173)
 
+* [WizePairZ: A Novel Algorithm to Identify, Encode, and Exploit Matched Molecular Pairs with Unspecified Cores in Medicinal Chemistry](https://pubs.acs.org/doi/10.1021/ci100084s)
 
 ### R-group replacement dataset
 
@@ -1381,7 +1398,7 @@ Set of informatic tools to look at BBs producitivity in DEL screens and guide de
 
 ## Large Language Models (LLMs)
 
-It’s a stretch to say that GPT-5 or any other LLM understands Chemistry.  
+It’s a stretch to say that GPT-5 or any other LLM understands Chemistry. They are atleast getting better at it [slowly](https://www.blopig.com/blog/2025/08/gpt-5-achieves-state-of-the-art-chemical-intelligence/).
 
 At this point, LLMs seem to have two general use cases.  First, summarization and information retrieval.  LLMs can parse vast collections of text, which can be queried using natural language.  These information retrieval capabilities have many applications, from writing computer code and collating clinical trial results to summarizing papers on a specific topic.  
 
@@ -1538,6 +1555,12 @@ Authors look at clinical summarization and implement quantitative assesments wit
 
 Google's team shows Med-Gemini's real-world utility by surpassing human experts on tasks such as medical text summarization, alongside demonstrations of promising potential for multimodal medical dialogue, medical research and education.
 
+**Medical tasks**
+
+* [MedHELM](https://crfm.stanford.edu/helm/medhelm/latest/)
+
+MedHELM, an extensible evaluation framework for assessing LLM performance for medical tasks. Building on the HELM framework, MedHELM comprises a structured taxonomy with 5 categories, 22 subcategories, and 121 distinct clinical tasks as well as 35 distinct benchmarks (14 private, 7 gated-access, and 14 public). The benchmarks represent a spectrum of healthcare scenarios, from diagnostic decision-making to patient communication, providing a more nuanced and medically relevant assessment of AI capabilities in healthcare settings
+
 **Data curation**
 
 * [Leong, S. X., Pablo-García, S., Wong, B., & Aspuru-Guzik, A. (2025). MERMaid: Universal multimodal mining of chemical reactions from PDFs using vision-language models.](https://chemrxiv.org/engage/chemrxiv/article-details/67c6170c6dde43c90858b305)
@@ -1611,6 +1634,10 @@ Automation to encompass end-to-end scientific discovery, including coding, exper
 **AI-based tool**
 
 Despite so much progress around computer vision and optical character recognition (OCR) the state of the art for molecule image conversion to structure still remains to be manual curation. There have been some interesting tools proposed for automating this using different flavor of computer-vision algorithms. 
+
+* [Marcus](https://github.com/Kohulan/MARCUS)
+
+MARCUS (molecule annotation and recoginition for curating unravelled structure) is a tool designed to automate the extraction, recognition, and processing of molecular structures from scientific literature. Integrates multiple Optical Chemical Structure Recognition engines (DECIMER, MolNexTR, MolScribe) to convert chemical images into machine-readable formats (SMILES, molfile).
 
 * [MolGrapher](https://github.com/DS4SD/MolGrapher)
 
