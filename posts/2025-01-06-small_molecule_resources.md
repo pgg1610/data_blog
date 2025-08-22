@@ -922,6 +922,9 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 **Synthesizable-space aware** 
 
+* [Directly optimizing for synthesizability in generative molecular design using retrosynthesis models](https://pubs.rsc.org/en/content/articlehtml/2025/sc/d5sc01476j). [Code](https://github.com/schwallergroup/saturn)
+
+This paper introduces a novel approach for generative molecular design that directly optimizes for synthesizability using retrosynthesis models, rather than relying solely on heuristic metrics. By integrating retrosynthesis evaluation into the optimization loop, the authors show that their method (using the Saturn model) can efficiently generate drug-like or functional molecules that are not only high-performing but also predicted to be synthetically feasible.
 
 * [SynFlowNet: Design of Diverse and Novel Molecules with Synthesis Constraints](https://arxiv.org/abs/2405.01155)
 
