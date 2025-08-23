@@ -1,1 +1,14 @@
 /.quarto/
+CLAUDE.md
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Temporary and cache files
+*.pkl
+.DS_Store
+*~
+
+# Large data files (consider external storage)
+*.csv.gz
+*.parquet
