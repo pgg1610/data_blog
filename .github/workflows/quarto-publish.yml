@@ -35,3 +35,13 @@ jobs:
           render: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Add .nojekyll file
+        run: |
+          git checkout gh-pages
+          touch .nojekyll
+          git add .nojekyll
+          git commit -m "Add .nojekyll to disable Jekyll processing" || echo "No changes to commit"
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
