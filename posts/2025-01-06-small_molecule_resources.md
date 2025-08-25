@@ -12,7 +12,7 @@ title: Medicine drug discovery resources
 toc: true
 ---
 
-Last update: March 2025
+Last update: August 2025
 
 ## Noteworthy blogs to follow:
 
@@ -30,6 +30,8 @@ Last update: March 2025
 5. [Depth-First](https://depth-first.com)
 
 6. [Noel O'Blog](https://baoilleach.blogspot.com/)
+
+7. [OPIG](https://www.blopig.com/blog/)
 
 
 **Fragment-based drug dicovery**
