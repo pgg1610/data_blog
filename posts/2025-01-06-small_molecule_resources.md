@@ -19,6 +19,7 @@ Last update: August 2025
 **Cheminformatics** 
 
 1. [Patrick Walters Blog on Cheminformatics](https://https://practicalcheminformatics.blogspot.com/)
+
     * [Cheminformatics Tutorials](https://github.com/PatWalters/practical_cheminformatics_tutorials)
     
 2. [Is Life Worth Living](https://iwatobipen.wordpress.com/)
@@ -33,6 +34,7 @@ Last update: August 2025
 
 7. [OPIG](https://www.blopig.com/blog/)
 
+8. [Hitchhiker's Guide to GNNs for 3D atomic systems](https://www.chaitjo.com/publication/duval-2023-hitchhikers/)
 
 **Fragment-based drug dicovery**
 
@@ -80,6 +82,8 @@ Last update: August 2025
 
 ## Books
 
+* [Zhang, Xuan, Limei Wang, Jacob Helwig, Youzhi Luo, Cong Fu, Yaochen Xie, Meng Liu et al. "Artificial intelligence for science in quantum, atomistic, and continuum systems." Foundations and Trends® in Machine Learning 18, no. 4 (2025): 385-912.](https://arxiv.org/pdf/2307.08423)
+
 * [Bajorath, 2011. Chemoinformatics and Computational Chemical Biology. Methods in Molecular Biology.](https://link.springer.com/book/10.1007/978-1-60761-839-3) 
 
 * [Heifetz, Alexander. (Ed.) (2022). "Artificial Intelligence in Drug Design."](https://link.springer.com/book/10.1007/978-1-0716-1787-8)
@@ -101,6 +105,11 @@ Set of rules, considerations, and caveats to keep in mind when designing ML mode
 * [Paul, Steven M., et al. "How to improve R&D productivity: the pharmaceutical industry's grand challenge." Nature reviews Drug discovery 9.3 (2010): 203-214.](https://www.nature.com/articles/nrd3078)
 
 ## Overviews and Reviews
+
+
+* [Alampara, Nawaf, Anagha Aneesh, Martiño Ríos-García, Adrian Mirza, Mara Schilling-Wilhelmi, Ali Asghar Aghajani, Meiling Sun, Gordan Prastalo, and Kevin Maik Jablonka. "General purpose models for the chemical sciences." arXiv preprint arXiv:2507.07456 (2025).](https://arxiv.org/pdf/2507.07456)
+
+Nice introductory overview of the field to cover models for describing physical phenomena and chemical systems. 
 
 * [F. Strieth-Kalthoff, F. Sandfort, M. H. S. Segler, and F. Glorius, Machine learning the ropes: principles, applications and directions in synthetic chemistry, Chem. Soc. Rev](https://pubs.rsc.org/en/content/articlelanding/2020/CS/C9CS00786E#fn1)
 
@@ -190,8 +199,6 @@ Overview of different chemical modalities currently at work to address different
 ## Meta themes on optimizing small molecules 
 
 * [Ring Systems in Medicinal Chemistry: A Cheminformatics Analysis of Ring Popularity in Drug Discovery Over Time](https://chemrxiv.org/engage/chemrxiv/article-details/6891a60123be8e43d6d10ab0)
-
-
 
 * [Don't Fall in Love with Your Molecule](https://research.dimensioncap.com/p/dont-fall-in-love-with-your-molecule)
 
@@ -374,6 +381,11 @@ Fragmenstein, stitches ligand atoms from known fragment hits to predict protein-
 * [Müller, Janis, et al. "Magnet for the needle in haystack:“crystal structure first” fragment hits unlock active chemical matter using targeted exploration of vast chemical spaces." Journal of Medicinal Chemistry 65.23 (2022): 15663-15678.](https://pubs.acs.org/doi/10.1021/acs.jmedchem.2c00813). [Blog](https://www.science.org/content/blog-post/crystal-fragments?utm_source=pocket_mylist)
 
 The authors use a fragment screening approach to look at hits for protein kinase target and instead of using biophysical assay in fragment screening use crystallographic data directly to learn the conformation of the fragments. They find 4 ‘seed’ substructures which fit nicely in the protein(not affinity) and use those to inform the latter expansion which is done through the Enamine REAL dataset and known reaction classes. What I liked the most and found interesting is the high throughput binding pose and docking workflow of 200k compounds, the large scale crystallographic fragment hit analysis, and the focused curated library generation using Enamine REAL dataset. I was curious to know what seasoned experts had to say about this.
+
+* [Bajusz, Dávid, Warren S. Wade, Grzegorz Satała, Andrzej J. Bojarski, Janez Ilaš, Jessica Ebner, Florian Grebien et al. "Exploring protein hotspots by optimized fragment pharmacophores." Nature Communications 12, no. 1 (2021): 3201.](https://www.nature.com/articles/s41467-021-23443-y)
+
+Authors from Diamond Xchem design a minimal diverse set of commercial fragments called SpotXplorer library analyzing the crticial interactions of the fragment pharmacophores with target proteins. 
+
 
 * [BROOD](https://www.eyesopen.com/brood)
 
@@ -836,6 +848,8 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 **Benchmarks**
 
+* [Retchin, Michael, Yuanqing Wang, Kenichiro Takaba, and John D. Chodera. "DrugGym: A testbed for the economics of autonomous drug discovery." bioRxiv (2024).](https://www.biorxiv.org/content/10.1101/2024.05.28.596296v1.full.pdf)
+
 * [Thomas, Morgan, et al. "MolScore: a scoring, evaluation and benchmarking framework for generative models in de novo drug design." Journal of Cheminformatics 16.1 (2024): 1-20.](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-024-00861-w). [Github](https://github.com/MorganCThomas/MolScore)
 
 MolScore contains code to score and benchmark de novo compounds in the context of generative de novo design by generative models via the subpackage `molscore`, as well as, facilitate downstream evaluation via the subpackage `moleval`. An objective is defined via a JSON file which can be shared to propose new benchmark objectives, or to conduct multi-parameter objectives for drug design. 
@@ -924,7 +938,6 @@ Team at Novartis and Microsoft propose MoLeR, graph based model to generate mole
 
 **Synthesizable-space aware** 
 
-
 * [SynFlowNet: Design of Diverse and Novel Molecules with Synthesis Constraints](https://arxiv.org/abs/2405.01155)
 
 From Recursion team - SynFlowNet, a GFlowNet model whose action space uses chemical reactions and purchasable reactants to sequentially build new molecules. [Synflownet-boltz](https://github.com/recursionpharma/synflownet-boltz) is their expansion that combine binding affinity predictions with boltz-2. 
@@ -966,7 +979,6 @@ Authors propose a generative model to generate molecules via multi-step chemical
 * [Cremer, J., Irwin, R., Tibot, A., Janet, J. P., Olsson, S., & Clevert, D. A. (2025). FLOWR: Flow Matching for Structure-Aware De Novo, Interaction-and Fragment-Based Ligand Generation. arXiv preprint arXiv:2504.10564.](https://arxiv.org/abs/2504.10564)
 
 Team at Pfizer includes FLOWR, a diffusion-based generator to generate pocket-conditioned molecule moieties, and SPINDR a curated dataset of ligand-pocket co-crystal complexes. 
-
 
 * [Adams, K., Abeywardane, K., Fromer, J., & Coley, C. W. (2024). ShEPhERD: Diffusing shape, electrostatics, and pharmacophores for bioisosteric drug design. arXiv preprint arXiv:2411.04130.](https://arxiv.org/pdf/2411.04130v1)
 
@@ -1356,6 +1368,10 @@ Team from Pfizer use Graph Datasets and Network visualization to show how proces
 ### Automated chemistry workflows 
 
 **Reviews**
+
+* [Zhang, S., Yang, S., Xie, T., Xue, X., Hu, Z., Li, R., Qu, W., Yin, Z., Fu, T., Hu, D. and Bran, A.M., 2025. Position: Intelligent Science Laboratory Requires the Integration of Cognitive and Embodied AI. arXiv preprint arXiv:2506.19613.](https://arxiv.org/abs/2506.19613)
+
+Position paper outlining the concept of Intelligent Science Laboratories (ISLs) - a multi-layered, closed loop framework that integates cognitive and embodied intelligence. ISLs unify foundation models for scientific reasoning, agent-based workflow orchestration, and embodied agents for physical experimentation. 
 
 * [Self-Driving Laboratories for Chemistry and Materials Science](https://chemrxiv.org/engage/chemrxiv/article-details/65a887f29138d231612bf6df)
 
