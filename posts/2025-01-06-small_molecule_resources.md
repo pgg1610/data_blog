@@ -36,6 +36,8 @@ Last update: August 2025
 
 8. [Hitchhiker's Guide to GNNs for 3D atomic systems](https://www.chaitjo.com/publication/duval-2023-hitchhikers/)
 
+9. [Chemistry by Design](https://chemistrybydesign.oia.arizona.edu/)
+
 **Fragment-based drug dicovery**
 
 1. [Practical Fragments](http://practicalfragments.blogspot.com/) 
@@ -100,6 +102,8 @@ Set of rules, considerations, and caveats to keep in mind when designing ML mode
 
 ## Pharma R&D Business 
 
+* [The New Paradigm in Pharma R&D](https://pubs.acs.org/doi/10.1021/acsmedchemlett.5c00469)
+
 * [Schuhmacher, Alexander, et al. "Analysis of pharma R&D productivity–a new perspective needed." Drug Discovery Today (2023): 103726.](https://www.sciencedirect.com/science/article/pii/S1359644623002428?via%3Dihub)
 
 * [Paul, Steven M., et al. "How to improve R&D productivity: the pharmaceutical industry's grand challenge." Nature reviews Drug discovery 9.3 (2010): 203-214.](https://www.nature.com/articles/nrd3078)
@@ -151,6 +155,8 @@ Very good post outlining the focus on the good practices and lack thereof for co
 
 ## Industry-focused drug discovery reviews 
 
+* [Target Engagement Assays in Early Drug Discovery](https://pubs.acs.org/doi/10.1021/acs.jmedchem.4c03115?ref=recommended)
+
 * [Goldman, B., Kearnes, S., Kramer, T., Riley, P., & Walters, W. P. (2022). Defining levels of automated chemical design. Journal of medicinal chemistry, 65(10), 7073-7087.](https://pubs.acs.org/doi/epdf/10.1021/acs.jmedchem.2c00334?ref=article_openPDF)
 
 Group at Relay Therapeutics propose a framework to categorize automated chemical design paradigm - splitting it into generator and decision axes. They give good example of model systems where the machine generates and human chemist select and more recently machine generated and machine chosen designs. In of these discussion, it is evident we havent achieved the full automated execution of a design cycle. 
@@ -196,7 +202,15 @@ Overview of different chemical modalities currently at work to address different
 
 * [Targeted Protein Degradation: Advances, Challenges, and Prospects for Computational Methods](https://pubs.acs.org/doi/10.1021/acs.jcim.3c00603)
 
+## Molecule targets 
+
+* [Santos, Rita, Oleg Ursu, Anna Gaulton, A. Patrícia Bento, Ramesh S. Donadi, Cristian G. Bologa, Anneli Karlsson et al. "A comprehensive map of molecular drug targets." Nature reviews Drug discovery 16, no. 1 (2017): 19-34.](https://www.nature.com/articles/nrd.2016.230)
+
 ## Meta themes on optimizing small molecules 
+
+* [Kombo, David C., and Matthew J. LaMarche. "The Logic of Chemical Optimization." Journal of Medicinal Chemistry (2025).](https://pubs.acs.org/doi/10.1021/acs.jmedchem.5c00445)
+
+Authors introduce retro-optimization analysis, a method that deconstructs optimized drug candidates back into earlier-stage leads and hits to reveal the logic of discovery decisions. By mapping matched molecular pair networks and tracking key substructures (“optimizons”), the approach highlights alternative optimization routes and provides prospective guidance for future campaigns.
 
 * [Ring Systems in Medicinal Chemistry: A Cheminformatics Analysis of Ring Popularity in Drug Discovery Over Time](https://chemrxiv.org/engage/chemrxiv/article-details/6891a60123be8e43d6d10ab0)
 
@@ -545,8 +559,17 @@ Generate conformationally sampled descriptors for a molecule. This workflow prov
 
 ### Predictive modeling 
 
-**Articles**
+**Perspective**
 
+* [Ash, J. R., Wognum, C., Rodríguez-Pérez, R., Aldeghi, M., Cheng, A. C., Clevert, D. A., ... & Walters, W. P. (2024). Practically significant method comparison protocols for machine learning in small molecule drug discovery. Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c01609)
+
+Establishes rigorous statistical protocols and domain-appropriate performance metrics for evaluating ML methods in pharmaceutical research, addressing unique challenges of noisy, expensive datasets in drug discovery.
+
+* [Rittig, Jan G., Manuel Dahmen, Martin Grohe, Philippe Schwaller, and Alexander Mitsos. "Molecular Machine Learning in Chemical Process Design." arXiv preprint arXiv:2508.20527 (2025).](https://arxiv.org/pdf/2508.20527)
+
+Reviews state-of-the-art molecular ML models for chemical property prediction and explores integration of graph neural networks and transformers into process-scale design and optimization workflows.
+
+**Articles**
 
 * [Chen, Jacky, et al. "Data Scaling and Generalization Insights for Medicinal Chemistry Deep Learning Models." Journal of Chemical Information and Modeling (2025).](https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c00538)
 
@@ -835,6 +858,8 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 ## Generative design
 
 **Reviews** 
+
+* [van den Broek, R. L., Patel, S., van Westen, G. J., Jespers, W., & Sherman, W. (2025). In Search of Beautiful Molecules: A Perspective on Generative Modeling for Drug Design. Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/10.1021/acs.jcim.5c01203)
 
 * [Du, Y., Jamasb, A. R., Guo, J., Fu, T., Harris, C., Wang, Y., ... & Blundell, T. L. (2024). Machine learning-aided generative molecular design. _Nature Machine Intelligence_, 1-16.](https://www.nature.com/articles/s42256-024-00843-5)
 
@@ -1245,6 +1270,9 @@ Short perspective from Reymond group on complexity where they compare structural
 
 **Review / Perspectives**
 
+
+* [Ke, Qia, and Cory M. Simon. "Guidelines for multi-fidelity Bayesian optimization of molecules and materials: Bayesian optimization." Nature Computational Science (2025): 1-2.](https://www.nature.com/articles/s43588-025-00833-6.epdf?sharing_token=umZpM3zBuUunQQf7A54ok9RgN0jAjWel9jnR3ZoTv0OtOycuKNXq28ut6tldZInvJDyHRpo-oqu9r7i7MqVEHWn_rPx4B-QomcuPnJ4NkhonWS-BBYdC_NXuDMNacC1QQtwUpoZiPWFwJihfF6c4gSejH49UgmYZ3gCiXLM402A%3D)
+
 * [Raghavan, Priyanka, et al. "Dataset design for building models of chemical reactivity." ACS Central Science 9.12 (2023): 2196-2204.](https://pubs.acs.org/doi/full/10.1021/acscentsci.3c01163#)
 
 Authors discuss the design of reaction datasets in ways that are conducive to data-driven modeling, emphasizing the idea that training set diversity and model generalizability rely on the choice of molecular or reaction representation. They lay down the experimental constraints associated with generating common types of chemistry datasets and how these considerations should influence dataset design and model building.
@@ -1504,7 +1532,6 @@ Team at microsoft research introduces introduces Nature Language Model (NatureLM
 
 From Iambic team: 1B-parameter transformer model pre-trained on 2.25 trillion tokens from diverse datasets focused on drug discovery. It details a comprehensive data pipeline for standardizing and processing data from various sources. The model architecture is based on LLaMA-2 and includes advanced features like SwishGLU and Rotary Positional Encoding. The fine-tuned model outperforms strong baselines in assay prediction tasks.
 
-
 **Predictive modeling**
 
 * [The Goldilocks paradigm: comparing classical machine learning, large language models, and few-shot learning for drug discovery applications](https://www.nature.com/articles/s42004-024-01220-4) 
@@ -1577,7 +1604,11 @@ Google's team shows Med-Gemini's real-world utility by surpassing human experts 
 
 * [MedHELM](https://crfm.stanford.edu/helm/medhelm/latest/)
 
-MedHELM, an extensible evaluation framework for assessing LLM performance for medical tasks. Building on the HELM framework, MedHELM comprises a structured taxonomy with 5 categories, 22 subcategories, and 121 distinct clinical tasks as well as 35 distinct benchmarks (14 private, 7 gated-access, and 14 public). The benchmarks represent a spectrum of healthcare scenarios, from diagnostic decision-making to patient communication, providing a more nuanced and medically relevant assessment of AI capabilities in healthcare settings
+MedHELM, an extensible evaluation framework for assessing LLM performance for medical tasks. Building on the HELM framework, MedHELM comprises a structured taxonomy with 5 categories, 22 subcategories, and 121 distinct clinical tasks as well as 35 distinct benchmarks (14 private, 7 gated-access, and 14 public). The benchmarks represent a spectrum of healthcare scenarios, from diagnostic decision-making to patient communication, providing a more nuanced and medically relevant assessment of AI capabilities in healthcare settings. [Med-Nota](https://github.com/som-shahlab/med-nota)
+
+* [The Optimization Paradox in Clinical AI Multi-Agent Systems](https://arxiv.org/abs/2506.06574v1)
+
+* [G-Mode](https://gmode.genhealth.ai/)
 
 **Data curation**
 
@@ -1599,6 +1630,11 @@ Hackathon to quickly fine-tune GPT to parse synthesis data and extract relevant 
 * [Gruver, Nate, et al. "Fine-Tuned Language Models Generate Stable Inorganic Materials as Text." arXiv preprint arXiv:2402.04379 (2024).](https://arxiv.org/abs/2402.04379)
 
 **Reaction development**
+
+* [Pre-trained knowledge elevates large language models
+beyond traditional chemical reaction optimizers](https://arxiv.org/pdf/2509.00103). [Website](https://gomes.andrew.cmu.edu/iron-mind/)
+
+Gabe Gomes presents a novel optimization strategy called LLM-guided optimization (LLM-GO) that leverages large language models to outperform traditional Bayesian optimization methods, especially on complex, high-dimensional chemical reaction datasets. The authors demonstrate that LLM-GO maintains higher exploration entropy than Bayesian optimization, enabling more effective navigation of chemical parameter spaces.
 
 * [LLM-Augmented Chemical Synthesis and Design Decision Programs](https://arxiv.org/pdf/2505.07027)
 
