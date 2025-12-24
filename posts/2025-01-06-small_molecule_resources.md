@@ -66,6 +66,8 @@ Last update: August 2025
 
 3. [Derek Lowe's In the Pipeline](https://www.science.org/blogs/pipeline)
 
+4. [BioPharmGuy](https://biopharmguy.com/index.php)
+
 ## Online resources 
 
 * [Andrea Volkmer, TeachOpenCADD: a teaching platform for computer-aided drug design (CADD)](https://github.com/volkamerlab/TeachOpenCADD) 
@@ -857,6 +859,12 @@ Consortia comprising of leading resarch labs and companies working on decentrali
 
 ## Generative design
 
+
+**Commentary**
+
+* [Generative Molecular Design Isn't As Easy As People Make It Look](https://practicalcheminformatics.blogspot.com/2024/05/generative-molecular-design-isnt-as.html)
+
+
 **Reviews** 
 
 * [van den Broek, R. L., Patel, S., van Westen, G. J., Jespers, W., & Sherman, W. (2025). In Search of Beautiful Molecules: A Perspective on Generative Modeling for Drug Design. Journal of Chemical Information and Modeling.](https://pubs.acs.org/doi/10.1021/acs.jcim.5c01203)
@@ -1021,6 +1029,12 @@ This model extends beyond traditional diffusion models by learning to map sample
 
 * [Schneuing, Arne, et al. "Structure-based drug design with equivariant diffusion models." arXiv preprint arXiv:2210.13695 (2022)](https://arxiv.org/abs/2210.13695). Blog from Pen. [Link](https://iwatobipen.wordpress.com/2024/03/05/pocket-awaer-structure-generation-diffdec-cheminformatics/)
 
+**Flow-based algorithms**
+
+* [Flowr.root – A flow matching based foundation model for joint multi-purpose structure-aware 3D ligand generation and affinity prediction](https://arxiv.org/html/2510.02578v1)
+
+Flow matching pocket aware 3D ligand generator. 
+
 **3D conformations-aware** 
 
 * [Integrating structure-based approaches in generative molecular design](https://www.sciencedirect.com/science/article/pii/S0959440X23000337)
@@ -1123,7 +1137,7 @@ Using scrapped US Patent data to classify chemical reactions and deploy various 
 
 * [Lin, A., et al. (2021). "Atom-to-atom Mapping: A Benchmarking Study of Popular Mapping Algorithms and Consensus Strategies."](https://onlinelibrary.wiley.com/doi/10.1002/minf.202100138?af=R)
 
-Comparative analysis of different atom-mapping schemes for generating atom-mapped reaction features. Comments on the state of the art methods and their performance on a curated reaction database. 
+This paper presents a benchmarking study of popular atom-to-atom mapping (AAM) tools, including ChemAxon, Indigo, RDTool, NameRXN, and RXNMapper. The authors compared the performance of these tools on a curated "Golden" dataset of 1,851 reactions and developed an "AAM Fixer" tool to automatically correct erroneous mappings. The results show that RXNMapper had the highest accuracy, but the lowest chemical distance does not always guarantee correct AAM assignments
 
 * [Extraction of organic chemistry grammar from unsupervised learning of chemical reactions](https://advances.sciencemag.org/content/7/15/eabe4166). [RXMapper](https://github.com/rxn4chemistry/rxnmapper)
 
@@ -1244,11 +1258,16 @@ Retro-BLEU, a statistical metric adapted from the well-established BLEU score in
 
 * [Ertl, Peter, and Ansgar Schuffenhauer. "Estimation of synthetic accessibility score of drug-like molecules based on molecular complexity and fragment contributions." Journal of cheminformatics 1.1 (2009): 1-11.](https://jcheminf.biomedcentral.com/articles/10.1186/1758-2946-1-8). [RDkit implementation](https://github.com/rdkit/rdkit/tree/master/Contrib/SA_Score)
 
-Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability. 
+Synthetic Accessbility  score (SA_Score) is a popular heuristic score for quantifying synthesizability. It computes a score using a fragment-contribution approach, where rarer fragments (as judged by their abundance in the PubChem database of 1mil representative cmpds) are taken as an indication of lower synthesizability. [Sillywalks](https://github.com/PatWalters/silly_walks) this is simpler implementation of the molecule complexity scoring proposed by Pat Walters. Here 
 
 * [Coley, Connor W., et al. "SCScore: synthetic complexity learned from a reaction corpus." Journal of chemical information and modeling 58.2 (2018): 252-261.](https://pubs.acs.org/doi/full/10.1021/acs.jcim.7b00622). [DeepChem implementation](https://github.com/deepchem/deepchem/blob/master/examples/tutorials/Synthetic_Feasibility_Scoring.ipynb)
 
 SCScore is a learned synthetic complexity score computed as a neural network model trained on reaction data from the Reaxys database. It was designed with synthesis planning in mind to operate on molecules resembling not just drug-like products but intermediates and simpler building blocks as well.
+
+* [SuCOS is Better than RMSD for Evaluating Fragment Elaboration and Docking Poses](https://chemrxiv.org/engage/chemrxiv/article-details/60c741a99abda23230f8bed5). [Code](https://github.com/susanhleung/SuCOS)
+
+SuCOS scoring introduced as a way to reconcile shape-based and chemical feature overlap. 
+
 
 * [Liu, Cheng-Hao, et al. "RetroGNN: Fast Estimation of Synthesizability for Virtual Screening and De Novo Design by Learning from Slow Retrosynthesis Software." Journal of Chemical Information and Modeling 62.10 (2022): 2293-2300.](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01476)
 
@@ -1474,7 +1493,7 @@ Previously the field has propose assistants for this job [here](https://www.scie
 
 **Meta-Analysis**
 
-* [Runcie, Nicholas T., Charlotte M. Deane, and Fergus Imrie. "Assessing the Chemical Intelligence of Large Language Models." arXiv preprint arXiv:2505.07735 (2025).](https://arxiv.org/abs/2505.07735)
+* [Runcie, Nicholas T., Charlotte M. Deane, and Fergus Imrie. "Assessing the Chemical Intelligence of Large Language Models." arXiv preprint arXiv:2505.07735 (2025).](https://arxiv.org/abs/2505.07735). [Paper](https://pubs.acs.org/doi/full/10.1021/acs.jcim.5c02145)
 
 Nice analysis by folks at [OPIG](https://opig.stats.ox.ac.uk/) asking if LLMs esp. the reasoning-based models understand chemistry. While the results aren't outstanding, they do show improvements in LLMs knowledge of SMILES, chemical stuctures, and NMR spectras. More importantly, this paper proposes a new benchmark, ChemIQ, to assess this features much more robustly moving beyond the usual MCQ based contemporary datasets. 
 
@@ -1689,6 +1708,8 @@ Automation to encompass end-to-end scientific discovery, including coding, exper
 
 Despite so much progress around computer vision and optical character recognition (OCR) the state of the art for molecule image conversion to structure still remains to be manual curation. There have been some interesting tools proposed for automating this using different flavor of computer-vision algorithms. 
 
+* [BioChemInsight](https://github.com/dahuilangda/BioChemInsight)
+
 * [Marcus](https://github.com/Kohulan/MARCUS)
 
 MARCUS (molecule annotation and recoginition for curating unravelled structure) is a tool designed to automate the extraction, recognition, and processing of molecular structures from scientific literature. Integrates multiple Optical Chemical Structure Recognition engines (DECIMER, MolNexTR, MolScribe) to convert chemical images into machine-readable formats (SMILES, molfile).
@@ -1729,7 +1750,7 @@ I visit first-ever RDKit UGM early April 2025 and was impressed by the tools ava
 
 * [PepFun](https://github.com/rochoa85/PepFun) - From Novo Nordisk informatics team, they provide functionalities to study peptides at different levels, sequence, structures, and large dataset. It is built on BioPython and RDKit. 
 
-* [SynthCoder]()
+* [SynthCoder](https://github.com/gskcheminformatics/SynthCoder)
 
 * [Molcomplex](https://github.com/patonlab/molcomplex) General purpose package to calculate molecule complexity and synthesizability 
 
@@ -1825,6 +1846,8 @@ Chemprop version that combines Jazzy (AZ's workflow for predicting H-bond streng
 * [COCONUT](https://jcheminf.biomedcentral.com/articles/10.1186/s13321-020-00478-9): NP 400k there are some which are not NP 
 * [Mcule](https://mcule.com/database/): Used in DEL enumerations 
 * [DrugBank](https://go.drugbank.com/)
+* [Plinder.sh](https://www.plinder.sh)
+* [SPRINDR: Small Molecule Protein Interaction Dataset](https://zenodo.org/records/16375073)
 
 **Reaction Datasets**
 
