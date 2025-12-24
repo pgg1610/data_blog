@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-12-15">
+<meta name="description" content="Curated resources on LLM agents for drug discovery, synthesis planning, and healthcare applications">
+
+<title>LLMs &amp; Agentic AI for Scientific Discovery – Omnis tempus datum</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-5816f2b0818a5e968c212c2d6010f546.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Omnis tempus datum</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About me</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/pgg1610"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/mepgg"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">LLMs &amp; Agentic AI for Scientific Discovery</h1>
+                  <div>
+        <div class="description">
+          Curated resources on LLM agents for drug discovery, synthesis planning, and healthcare applications
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">chemical-science</div>
+                <div class="quarto-category">machine-learning</div>
+                <div class="quarto-category">resources</div>
+                <div class="quarto-category">AI</div>
+                <div class="quarto-category">healthcare</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 15, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link active" data-scroll-target="#why-this-matters">Why This Matters</a></li>
+  <li><a href="#agents-for-early-phase-discovery" id="toc-agents-for-early-phase-discovery" class="nav-link" data-scroll-target="#agents-for-early-phase-discovery">Agents for Early-Phase Discovery</a>
+  <ul class="collapse">
+  <li><a href="#autonomous-synthesis" id="toc-autonomous-synthesis" class="nav-link" data-scroll-target="#autonomous-synthesis">Autonomous Synthesis</a></li>
+  <li><a href="#molecular-design-optimization" id="toc-molecular-design-optimization" class="nav-link" data-scroll-target="#molecular-design-optimization">Molecular Design &amp; Optimization</a></li>
+  <li><a href="#simulation-dynamics" id="toc-simulation-dynamics" class="nav-link" data-scroll-target="#simulation-dynamics">Simulation &amp; Dynamics</a></li>
+  <li><a href="#biology-protein-engineering" id="toc-biology-protein-engineering" class="nav-link" data-scroll-target="#biology-protein-engineering">Biology &amp; Protein Engineering</a></li>
+  </ul></li>
+  <li><a href="#healthcare-applications" id="toc-healthcare-applications" class="nav-link" data-scroll-target="#healthcare-applications">Healthcare Applications</a>
+  <ul class="collapse">
+  <li><a href="#clinical-reasoning-decision-support" id="toc-clinical-reasoning-decision-support" class="nav-link" data-scroll-target="#clinical-reasoning-decision-support">Clinical Reasoning &amp; Decision Support</a></li>
+  <li><a href="#clinical-text-documentation" id="toc-clinical-text-documentation" class="nav-link" data-scroll-target="#clinical-text-documentation">Clinical Text &amp; Documentation</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
+  </ul></li>
+  <li><a href="#foundation-models-for-discovery" id="toc-foundation-models-for-discovery" class="nav-link" data-scroll-target="#foundation-models-for-discovery">Foundation Models for Discovery</a>
+  <ul class="collapse">
+  <li><a href="#chemistry-small-molecules" id="toc-chemistry-small-molecules" class="nav-link" data-scroll-target="#chemistry-small-molecules">Chemistry &amp; Small Molecules</a></li>
+  <li><a href="#proteins-genomics" id="toc-proteins-genomics" class="nav-link" data-scroll-target="#proteins-genomics">Proteins &amp; Genomics</a></li>
+  </ul></li>
+  <li><a href="#literature-knowledge-systems" id="toc-literature-knowledge-systems" class="nav-link" data-scroll-target="#literature-knowledge-systems">Literature &amp; Knowledge Systems</a>
+  <ul class="collapse">
+  <li><a href="#rag-for-science" id="toc-rag-for-science" class="nav-link" data-scroll-target="#rag-for-science">RAG for Science</a></li>
+  <li><a href="#data-curation" id="toc-data-curation" class="nav-link" data-scroll-target="#data-curation">Data Curation</a></li>
+  </ul></li>
+  <li><a href="#building-agents" id="toc-building-agents" class="nav-link" data-scroll-target="#building-agents">Building Agents</a>
+  <ul class="collapse">
+  <li><a href="#frameworks" id="toc-frameworks" class="nav-link" data-scroll-target="#frameworks">Frameworks</a></li>
+  <li><a href="#engineering-patterns" id="toc-engineering-patterns" class="nav-link" data-scroll-target="#engineering-patterns">Engineering Patterns</a></li>
+  <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure">Infrastructure</a></li>
+  </ul></li>
+  <li><a href="#benchmarks" id="toc-benchmarks" class="nav-link" data-scroll-target="#benchmarks">Benchmarks</a>
+  <ul class="collapse">
+  <li><a href="#chemistry" id="toc-chemistry" class="nav-link" data-scroll-target="#chemistry">Chemistry</a></li>
+  <li><a href="#biology-healthcare" id="toc-biology-healthcare" class="nav-link" data-scroll-target="#biology-healthcare">Biology &amp; Healthcare</a></li>
+  <li><a href="#agent-reliability" id="toc-agent-reliability" class="nav-link" data-scroll-target="#agent-reliability">Agent Reliability</a></li>
+  </ul></li>
+  <li><a href="#current-limitations" id="toc-current-limitations" class="nav-link" data-scroll-target="#current-limitations">Current Limitations</a></li>
+  <li><a href="#key-reading" id="toc-key-reading" class="nav-link" data-scroll-target="#key-reading">Key Reading</a></li>
+  <li><a href="#comprehensive-agent-timeline" id="toc-comprehensive-agent-timeline" class="nav-link" data-scroll-target="#comprehensive-agent-timeline">Comprehensive Agent Timeline</a></li>
+  <li><a href="#industry-products" id="toc-industry-products" class="nav-link" data-scroll-target="#industry-products">Industry &amp; Products</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+
+<p><em>Last updated: December 2025</em></p>
+<p>Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.</p>
+<section id="why-this-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
+<p>LLMs unlock four capabilities for discovery teams:</p>
+<ol type="1">
+<li><strong>Low-data modeling</strong> — Pre-trained representations enable predictions with limited experimental data</li>
+<li><strong>Multi-endpoint prediction</strong> — One model handles ADME, tox, and activity across modalities</li>
+<li><strong>Workflow orchestration</strong> — Natural language interfaces to complex multi-step procedures</li>
+<li><strong>Literature-scale reasoning</strong> — Query and synthesize across millions of papers</li>
+</ol>
+<p>The field is moving from chatbots to agents that plan, execute, and iterate autonomously.</p>
+</section>
+<section id="agents-for-early-phase-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="agents-for-early-phase-discovery">Agents for Early-Phase Discovery</h2>
+<section id="autonomous-synthesis" class="level3">
+<h3 class="anchored" data-anchor-id="autonomous-synthesis">Autonomous Synthesis</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>What It Does</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Coscientist</strong></td>
+<td>Plans and executes organic syntheses via lab robotics</td>
+<td><a href="https://www.nature.com/articles/s41586-023-06792-0">Nature</a> ・ <a href="https://github.com/gomesgroup/coscientist">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>LLM-RDF</strong></td>
+<td>End-to-end reaction development platform</td>
+<td><a href="https://www.nature.com/articles/s41467-024-54457-x">Nature Comms</a> ・ <a href="https://github.com/Ruan-Yixiang/LLM-RDF">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>ChemAgent</strong></td>
+<td>Multiagent robotic chemist for on-demand synthesis</td>
+<td><a href="https://pubs.acs.org/doi/10.1021/jacs.4c17738">JACS</a></td>
+</tr>
+<tr class="even">
+<td><strong>SynAsk</strong></td>
+<td>ReAct agent with yield prediction and retrosynthesis</td>
+<td><a href="https://pubs.rsc.org/en/content/articlelanding/2025/sc/d4sc04757e">Chem Sci</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="molecular-design-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="molecular-design-optimization">Molecular Design &amp; Optimization</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>What It Does</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChemCrow</strong></td>
+<td>Tool-augmented LLM for similarity search, format conversion, route planning</td>
+<td><a href="https://arxiv.org/abs/2304.05376">arXiv</a> ・ <a href="https://github.com/ur-whitelab/chemcrow-public">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>dZiner</strong></td>
+<td>Inverse design of materials with AI agents</td>
+<td><a href="https://arxiv.org/abs/2410.03963">arXiv</a> ・ <a href="https://github.com/mehradans92/dziner">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>CACTUS</strong></td>
+<td>Chemistry agent connecting tool usage to science</td>
+<td><a href="https://pubs.acs.org/doi/10.1021/acsomega.4c08408">ACS Omega</a> ・ <a href="https://github.com/pnnl/cactus">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>Llamole</strong></td>
+<td>Multimodal LLM for inverse design with retrosynthesis</td>
+<td><a href="https://arxiv.org/abs/2410.04223">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="simulation-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="simulation-dynamics">Simulation &amp; Dynamics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>What It Does</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>DynaMate</strong></td>
+<td>Autonomous protein-ligand MD simulations</td>
+<td><a href="https://arxiv.org/abs/2512.10034">arXiv</a> ・ <a href="https://github.com/schwallergroup/DynaMate">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>MDCrow</strong></td>
+<td>Automates molecular dynamics workflows</td>
+<td><a href="https://arxiv.org/abs/2502.09565">arXiv</a> ・ <a href="https://github.com/ur-whitelab/MDCrow">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>El-Agente</strong></td>
+<td>Autonomous quantum chemistry calculations</td>
+<td><a href="https://arxiv.org/pdf/2505.02484">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>DREAMS</strong></td>
+<td>DFT-based agentic materials simulation</td>
+<td><a href="https://arxiv.org/abs/2507.14267">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="biology-protein-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="biology-protein-engineering">Biology &amp; Protein Engineering</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Agent</th>
+<th>What It Does</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Virtual Lab</strong></td>
+<td>Multi-agent nanobody design with experimental validation</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1">bioRxiv</a> ・ <a href="https://github.com/zou-group/virtual-lab">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>ProtAgent</strong></td>
+<td>Protein discovery via multi-agent collaboration</td>
+<td><a href="https://arxiv.org/abs/2402.04268">arXiv</a> ・ <a href="https://github.com/lamm-mit/ProtAgents">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>CRISPR-GPT</strong></td>
+<td>Automated gene-editing experiment design</td>
+<td><a href="https://arxiv.org/abs/2404.18021">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>SpatialAgent</strong></td>
+<td>Autonomous spatial biology analysis</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646459v1">bioRxiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>BioDiscoveryAgent</strong></td>
+<td>Biomedical discovery from Stanford SNAP</td>
+<td><a href="https://github.com/snap-stanford/BioDiscoveryAgent">Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="healthcare-applications" class="level2">
+<h2 class="anchored" data-anchor-id="healthcare-applications">Healthcare Applications</h2>
+<section id="clinical-reasoning-decision-support" class="level3">
+<h3 class="anchored" data-anchor-id="clinical-reasoning-decision-support">Clinical Reasoning &amp; Decision Support</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Application</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>TxAgent</strong></td>
+<td>Therapeutic reasoning across biomedical tools via Tool-RAG</td>
+<td><a href="https://arxiv.org/pdf/2503.10970">arXiv</a> ・ <a href="https://github.com/mims-harvard/TxAgent">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>Personal Health Agent</strong></td>
+<td>Anatomy of a personal health assistant</td>
+<td><a href="https://arxiv.org/abs/2508.20148">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Med-Gemini</strong></td>
+<td>Google’s medical multimodal foundation model</td>
+<td><a href="https://doi.org/10.48550/arXiv.2404.18416">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>G-Mode</strong></td>
+<td>Healthcare AI platform</td>
+<td><a href="https://gmode.genhealth.ai/">Website</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="clinical-text-documentation" class="level3">
+<h3 class="anchored" data-anchor-id="clinical-text-documentation">Clinical Text &amp; Documentation</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Application</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Clinical Summarization</strong></td>
+<td>LLMs outperforming experts in 36% of cases</td>
+<td><a href="https://www.nature.com/articles/s41591-024-02855-5">Nature Med</a> ・ <a href="https://github.com/StanfordMIMI/clin-summ">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>CLEAR</strong></td>
+<td>Clinical entity augmented retrieval for extraction</td>
+<td><a href="https://www.nature.com/articles/s41746-024-01377-1">npj Digital Med</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="evaluation" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation">Evaluation</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Benchmark</th>
+<th>Focus</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>MedHELM</strong></td>
+<td>121 clinical tasks across 35 benchmarks</td>
+<td><a href="https://crfm.stanford.edu/helm/medhelm/latest/">Website</a></td>
+</tr>
+<tr class="even">
+<td><strong>The Optimization Paradox</strong></td>
+<td>Multi-agent clinical systems analysis</td>
+<td><a href="https://arxiv.org/abs/2506.06574v1">arXiv</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="foundation-models-for-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="foundation-models-for-discovery">Foundation Models for Discovery</h2>
+<section id="chemistry-small-molecules" class="level3">
+<h3 class="anchored" data-anchor-id="chemistry-small-molecules">Chemistry &amp; Small Molecules</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Strength</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tx-LLM</strong></td>
+<td>Multi-endpoint ADME prediction, positive transfer learning</td>
+<td><a href="https://arxiv.org/html/2406.06316v1">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>NatureLM</strong></td>
+<td>Cross-domain: molecules, proteins, materials</td>
+<td><a href="https://arxiv.org/abs/2502.07527">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>LlaSMol</strong></td>
+<td>Instruction-tuned for chemistry tasks</td>
+<td><a href="https://osu-nlp-group.github.io/LLM4Chem/">Website</a></td>
+</tr>
+<tr class="even">
+<td><strong>BioT5+</strong></td>
+<td>IUPAC integration, numerical tokenization</td>
+<td><a href="https://arxiv.org/pdf/2402.17810.pdf">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Chemformer</strong></td>
+<td>Pre-trained transformer for computational chemistry</td>
+<td><a href="https://github.com/MolecularAI/Chemformer">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>ether0</strong></td>
+<td>Scientific reasoning model for chemistry (GRPO-trained)</td>
+<td><a href="https://github.com/Future-House/ether0">Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proteins-genomics" class="level3">
+<h3 class="anchored" data-anchor-id="proteins-genomics">Proteins &amp; Genomics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Strength</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Evo2</strong></td>
+<td>Genomic foundation model</td>
+<td><a href="https://arcinstitute.org/tools/evo">Arc Institute</a></td>
+</tr>
+<tr class="even">
+<td><strong>ProCyon</strong></td>
+<td>Multimodal protein phenotype prediction</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1">bioRxiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>EvoDiff</strong></td>
+<td>Diffusion-based protein generation in sequence space</td>
+<td><a href="https://github.com/microsoft/evodiff">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>BioEmu-1</strong></td>
+<td>Protein dynamics and conformational changes</td>
+<td><a href="https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/">Microsoft</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="literature-knowledge-systems" class="level2">
+<h2 class="anchored" data-anchor-id="literature-knowledge-systems">Literature &amp; Knowledge Systems</h2>
+<section id="rag-for-science" class="level3">
+<h3 class="anchored" data-anchor-id="rag-for-science">RAG for Science</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>System</th>
+<th>Application</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PaperQA</strong></td>
+<td>RAG agent that doesn’t hallucinate citations</td>
+<td><a href="https://arxiv.org/abs/2312.07559">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>STORM</strong></td>
+<td>Wikipedia-style article generation from sources</td>
+<td><a href="https://github.com/stanford-oval/storm">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>WikiCrow</strong></td>
+<td>Automated scientific knowledge synthesis</td>
+<td><a href="https://www.futurehouse.org/wikicrow">Website</a></td>
+</tr>
+<tr class="even">
+<td><strong>MERMaid</strong></td>
+<td>Multimodal extraction from PDFs using VLMs</td>
+<td><a href="https://chemrxiv.org/engage/chemrxiv/article-details/67c6170c6dde43c90858b305">ChemRxiv</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="data-curation" class="level3">
+<h3 class="anchored" data-anchor-id="data-curation">Data Curation</h3>
+<ul>
+<li><a href="https://pubs.rsc.org/en/content/articlehtml/2025/cs/d4cs00913d">From text to insight</a> — Tutorial review on LLMs for chemical data extraction (Jablonka group)</li>
+<li><a href="https://github.com/qai222/LLM_organic_synthesis">LLM organic synthesis extraction</a> — Fine-tuned GPT for parsing synthesis procedures</li>
+</ul>
+</section>
+</section>
+<section id="building-agents" class="level2">
+<h2 class="anchored" data-anchor-id="building-agents">Building Agents</h2>
+<section id="frameworks" class="level3">
+<h3 class="anchored" data-anchor-id="frameworks">Frameworks</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>SDK</th>
+<th>Best For</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LangGraph</strong></td>
+<td>Graph-based workflows, multi-agent</td>
+<td><a href="https://github.com/langchain-ai/langgraph">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>PydanticAI</strong></td>
+<td>Type-safe agent development</td>
+<td><a href="https://github.com/pydantic/pydantic-ai">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Smolagents</strong></td>
+<td>Lightweight HuggingFace ecosystem</td>
+<td><a href="https://github.com/huggingface/smolagents">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>CrewAI</strong></td>
+<td>Multi-agent orchestration</td>
+<td><a href="https://www.crewai.com/">Website</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="engineering-patterns" class="level3">
+<h3 class="anchored" data-anchor-id="engineering-patterns">Engineering Patterns</h3>
+<ul>
+<li><strong><a href="https://www.anthropic.com/engineering/claude-think-tool">Claude Think Tool</a></strong> — Dedicated reasoning step for complex tool chains</li>
+<li><strong><a href="https://github.com/zou-group/avatar">AvaTaR</a></strong> — Contrastive learning for tool-use optimization (DSPy integrated)</li>
+<li><strong><a href="https://www.shengranhu.com/ADAS/">ADAS</a></strong> — Automated design of agentic systems</li>
+<li><strong><a href="https://github.com/Future-House/aviary">Aviary</a></strong> — Training language agents as MDPs on scientific tasks</li>
+</ul>
+</section>
+<section id="infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="infrastructure">Infrastructure</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Category</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Code Sandbox</strong></td>
+<td><a href="https://e2b.dev/docs">E2B</a>, <a href="https://github.com/abshkbh/arrakis">Arrakis</a></td>
+</tr>
+<tr class="even">
+<td><strong>Browser</strong></td>
+<td><a href="https://github.com/browser-use/browser-use">browser-use</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Documents</strong></td>
+<td><a href="https://reducto.ai/blog">Reducto</a>, <a href="https://github.com/mendableai/firecrawl">Firecrawl</a></td>
+</tr>
+<tr class="even">
+<td><strong>MCP Servers</strong></td>
+<td><a href="https://github.com/Augmented-Nature/UniProt-MCP-Server">UniProt</a>, <a href="https://github.com/Benchling-Labs/benchling-mcp-server">Benchling</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="benchmarks" class="level2">
+<h2 class="anchored" data-anchor-id="benchmarks">Benchmarks</h2>
+<section id="chemistry" class="level3">
+<h3 class="anchored" data-anchor-id="chemistry">Chemistry</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Benchmark</th>
+<th>Focus</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChemIQ</strong></td>
+<td>Chemical intelligence beyond MCQs</td>
+<td><a href="https://github.com/oxpig/ChemIQ">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>ChemBench</strong></td>
+<td>General chemistry understanding</td>
+<td><a href="https://www.chembench.org/">Website</a></td>
+</tr>
+<tr class="odd">
+<td><strong>MaCBench</strong></td>
+<td>Materials chemistry</td>
+<td><a href="https://huggingface.co/datasets/jablonkagroup/MaCBench">HuggingFace</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="biology-healthcare" class="level3">
+<h3 class="anchored" data-anchor-id="biology-healthcare">Biology &amp; Healthcare</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Benchmark</th>
+<th>Focus</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>LAB-Bench</strong></td>
+<td>Laboratory protocol execution</td>
+<td><a href="https://arxiv.org/abs/2407.10362">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>BixBench</strong></td>
+<td>Bioinformatics tasks</td>
+<td><a href="https://arxiv.org/abs/2503.00096">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Bio-ML</strong></td>
+<td>Biology ML evaluation</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2025.09.01.673319v2">bioRxiv</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="agent-reliability" class="level3">
+<h3 class="anchored" data-anchor-id="agent-reliability">Agent Reliability</h3>
+<ul>
+<li><a href="https://www.swebench.com/">SWE-bench</a> — Software engineering</li>
+<li><a href="https://hal.cs.princeton.edu/">HAL</a> — General agent reliability</li>
+</ul>
+</section>
+</section>
+<section id="current-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="current-limitations">Current Limitations</h2>
+<p><strong>Reliability</strong>: Non-deterministic outputs; query phrasing significantly affects results.</p>
+<p><strong>Tool Selection</strong>: Performance degrades as available tools increase.</p>
+<p><strong>Memory</strong>: Long workflow context management remains challenging.</p>
+<p><strong>Bottom line</strong>: Agents demonstrate impressive capabilities but lack production reliability. Build metrics that capture both.</p>
+</section>
+<section id="key-reading" class="level2">
+<h2 class="anchored" data-anchor-id="key-reading">Key Reading</h2>
+<p><strong>Reviews</strong> - <a href="https://arxiv.org/abs/2407.01603">LLMs and Autonomous Agents in Chemistry</a> — White lab survey - <a href="https://www.cell.com/cell/fulltext/S0092-8674(24)01070-5">Empowering Biomedical Discovery with AI Agents</a> — Zitnik lab (Cell) - <a href="https://www.nature.com/articles/s41524-025-01538-0">Foundation Models for Materials Discovery</a> — npj Computational Materials</p>
+<p><strong>Engineering</strong> - <a href="https://www.anthropic.com/research/building-effective-agents">Building Effective Agents</a> — Anthropic - <a href="https://github.com/humanlayer/12-factor-agents">12-Factor Agents</a> — Human Layer - <a href="https://research.nvidia.com/labs/lpr/slm-agents/">Small Agents Position Paper</a> — NVIDIA</p>
+</section>
+<section id="comprehensive-agent-timeline" class="level2">
+<h2 class="anchored" data-anchor-id="comprehensive-agent-timeline">Comprehensive Agent Timeline</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Date</th>
+<th>Agent</th>
+<th>Description</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2025.12</td>
+<td>DynaMate</td>
+<td>Protein-ligand MD automation</td>
+<td><a href="https://arxiv.org/abs/2512.10034">Paper</a> ・ <a href="https://github.com/schwallergroup/DynaMate">Code</a></td>
+</tr>
+<tr class="even">
+<td>2025.09</td>
+<td>Personal Health Agent</td>
+<td>Health assistant architecture</td>
+<td><a href="https://arxiv.org/abs/2508.20148">Paper</a></td>
+</tr>
+<tr class="odd">
+<td>2025.07</td>
+<td>DREAMS</td>
+<td>DFT-based materials simulation</td>
+<td><a href="https://arxiv.org/abs/2507.14267">Paper</a></td>
+</tr>
+<tr class="even">
+<td>2025.05</td>
+<td>ROBIN</td>
+<td>Multi-agent scientific discovery</td>
+<td><a href="https://arxiv.org/pdf/2505.13400">Paper</a> ・ <a href="https://github.com/Future-House/robin">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2025.05</td>
+<td>El-Agente</td>
+<td>Quantum chemistry automation</td>
+<td><a href="https://arxiv.org/pdf/2505.02484">Paper</a></td>
+</tr>
+<tr class="even">
+<td>2025.04</td>
+<td>SpatialAgent</td>
+<td>Spatial biology</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646459v1">Paper</a></td>
+</tr>
+<tr class="odd">
+<td>2025.03</td>
+<td>TxAgent</td>
+<td>Therapeutic reasoning</td>
+<td><a href="https://arxiv.org/pdf/2503.10970">Paper</a> ・ <a href="https://github.com/mims-harvard/TxAgent">Code</a></td>
+</tr>
+<tr class="even">
+<td>2025.01</td>
+<td>DataAnalysisCrow</td>
+<td>Jupyter notebook agent</td>
+<td><a href="https://github.com/Future-House/data-analysis-crow">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2024.12</td>
+<td>Aviary</td>
+<td>Agent training framework</td>
+<td><a href="https://arxiv.org/abs/2412.21154">Paper</a> ・ <a href="https://github.com/Future-House/aviary">Code</a></td>
+</tr>
+<tr class="even">
+<td>2024.11</td>
+<td>Virtual Lab</td>
+<td>Multi-agent nanobody design</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1">Paper</a> ・ <a href="https://github.com/zou-group/virtual-lab">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2024.11</td>
+<td>DrugAgent</td>
+<td>Drug discovery automation</td>
+<td><a href="https://arxiv.org/abs/2411.15692">Paper</a></td>
+</tr>
+<tr class="even">
+<td>2024.11</td>
+<td>LLM-RDF</td>
+<td>Chemical synthesis platform</td>
+<td><a href="https://www.nature.com/articles/s41467-024-54457-x">Paper</a> ・ <a href="https://github.com/Ruan-Yixiang/LLM-RDF">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2024.10</td>
+<td>dZiner</td>
+<td>Inverse materials design</td>
+<td><a href="https://arxiv.org/abs/2410.03963">Paper</a> ・ <a href="https://github.com/mehradans92/dziner">Code</a></td>
+</tr>
+<tr class="even">
+<td>2024.10</td>
+<td>CACTUS</td>
+<td>Chemistry tool usage</td>
+<td><a href="https://pubs.acs.org/doi/10.1021/acsomega.4c08408">Paper</a> ・ <a href="https://github.com/pnnl/cactus">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2024.06</td>
+<td>LLaMP</td>
+<td>Materials knowledge retrieval</td>
+<td><a href="https://arxiv.org/abs/2401.17244">Paper</a> ・ <a href="https://github.com/chiang-yuan/llamp">Code</a></td>
+</tr>
+<tr class="even">
+<td>2024.04</td>
+<td>CRISPR-GPT</td>
+<td>Gene-editing design</td>
+<td><a href="https://arxiv.org/abs/2404.18021">Paper</a></td>
+</tr>
+<tr class="odd">
+<td>2024.02</td>
+<td>TAIS</td>
+<td>Gene expression discovery</td>
+<td><a href="https://arxiv.org/abs/2402.12391">Paper</a></td>
+</tr>
+<tr class="even">
+<td>2024.02</td>
+<td>WikiCrow</td>
+<td>Scientific knowledge synthesis</td>
+<td><a href="https://www.futurehouse.org/wikicrow">Website</a></td>
+</tr>
+<tr class="odd">
+<td>2024.02</td>
+<td>STORM</td>
+<td>Wikipedia-style generation</td>
+<td><a href="https://arxiv.org/abs/2402.14207">Paper</a> ・ <a href="https://github.com/stanford-oval/storm">Code</a></td>
+</tr>
+<tr class="even">
+<td>2024.02</td>
+<td>SciAgent</td>
+<td>Tool-augmented scientific reasoning</td>
+<td><a href="https://arxiv.org/abs/2402.11451">Paper</a></td>
+</tr>
+<tr class="odd">
+<td>2024.01</td>
+<td>ProtAgent</td>
+<td>Protein discovery multi-agent</td>
+<td><a href="https://arxiv.org/abs/2402.04268">Paper</a> ・ <a href="https://github.com/lamm-mit/ProtAgents">Code</a></td>
+</tr>
+<tr class="even">
+<td>2023.12</td>
+<td>PaperQA</td>
+<td>Scientific literature RAG</td>
+<td><a href="https://arxiv.org/abs/2312.07559">Paper</a></td>
+</tr>
+<tr class="odd">
+<td>2023.12</td>
+<td>Coscientist</td>
+<td>Autonomous chemical research</td>
+<td><a href="https://www.nature.com/articles/s41586-023-06792-0">Paper</a> ・ <a href="https://github.com/gomesgroup/coscientist">Code</a></td>
+</tr>
+<tr class="even">
+<td>2023.12</td>
+<td>Eunomia</td>
+<td>Materials data from literature</td>
+<td><a href="https://arxiv.org/abs/2312.11690">Paper</a> ・ <a href="https://github.com/AI4ChemS/Eunomia">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2023.11</td>
+<td>eXpertAI</td>
+<td>Structure-property XAI</td>
+<td><a href="https://arxiv.org/abs/2311.04047">Paper</a> ・ <a href="https://github.com/geemi725/XpertAI">Code</a></td>
+</tr>
+<tr class="even">
+<td>2023.10</td>
+<td>BioPlanner</td>
+<td>Protocol planning evaluation</td>
+<td><a href="https://arxiv.org/abs/2310.10632">Paper</a> ・ <a href="https://github.com/bioplanner/bioplanner">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2023.09</td>
+<td>IBM ChemChat</td>
+<td>Molecular discovery</td>
+<td><a href="https://arxiv.org/abs/2309.16235">Paper</a></td>
+</tr>
+<tr class="even">
+<td>2023.08</td>
+<td>ChatMOF</td>
+<td>MOF prediction and generation</td>
+<td><a href="https://arxiv.org/abs/2308.01423">Paper</a> ・ <a href="https://github.com/Yeonghun1675/ChatMOF">Code</a></td>
+</tr>
+<tr class="odd">
+<td>2023.06</td>
+<td>AmadeusGPT</td>
+<td>Animal behavior analysis</td>
+<td><a href="https://arxiv.org/abs/2307.04858">Paper</a> ・ <a href="https://github.com/AdaptiveMotorControlLab/AmadeusGPT">Code</a></td>
+</tr>
+<tr class="even">
+<td>2023.04</td>
+<td>ChemCrow</td>
+<td>Chemistry tools for LLMs</td>
+<td><a href="https://arxiv.org/abs/2304.05376">Paper</a> ・ <a href="https://github.com/ur-whitelab/chemcrow-public">Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="industry-products" class="level2">
+<h2 class="anchored" data-anchor-id="industry-products">Industry &amp; Products</h2>
+<p><strong>Lab Automation</strong>: Tetsuwan, Artificial AI, Lila Science, Mithri</p>
+<p><strong>Research Assistants</strong>: LOWE (Recursion), Mara (Nanome), Edison, SuperBio, Sam (ScienceMachine)</p>
+<p><strong>Platforms</strong>: <a href="https://platform.futurehouse.org/">FutureHouse</a>, <a href="https://gmode.genhealth.ai/">G-Mode</a>, <a href="https://biomni.stanford.edu/">Biomni</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/pgg1610\.github\.io\/data_blog\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
