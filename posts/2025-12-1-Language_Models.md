@@ -12,7 +12,7 @@ title: LLMs & Agentic AI for Scientific Discovery
 toc: true
 ---
 
-*Last updated: December 2025*
+*Last updated: January 2026*
 
 Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.
 
@@ -26,6 +26,12 @@ LLMs unlock four capabilities for discovery teams:
 4. **Literature-scale reasoning** — Query and synthesize across millions of papers
 
 The field is moving from chatbots to agents that plan, execute, and iterate autonomously.
+
+## Year-end reviews 
+
+* [Simon Willison's Weblog - 2025: The Year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llms/)
+
+* [Karpathy's 2025 year in review](https://karpathy.bearblog.dev/year-in-review-2025/)
 
 ## Agents for Early-Phase Discovery
 
