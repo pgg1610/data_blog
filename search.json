@@ -361,7 +361,7 @@
     "href": "posts/2025-12-1-Language_Models.html",
     "title": "LLMs & Agentic AI for Scientific Discovery",
     "section": "",
-    "text": "Last updated: December 2025\nLarge language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation."
+    "text": "Last updated: January 2026\nLarge language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation."
   },
   {
     "objectID": "posts/2025-12-1-Language_Models.html#why-this-matters",
@@ -369,6 +369,13 @@
     "title": "LLMs & Agentic AI for Scientific Discovery",
     "section": "Why This Matters",
     "text": "Why This Matters\nLLMs unlock four capabilities for discovery teams:\n\nLow-data modeling — Pre-trained representations enable predictions with limited experimental data\nMulti-endpoint prediction — One model handles ADME, tox, and activity across modalities\nWorkflow orchestration — Natural language interfaces to complex multi-step procedures\nLiterature-scale reasoning — Query and synthesize across millions of papers\n\nThe field is moving from chatbots to agents that plan, execute, and iterate autonomously."
+  },
+  {
+    "objectID": "posts/2025-12-1-Language_Models.html#year-end-reviews",
+    "href": "posts/2025-12-1-Language_Models.html#year-end-reviews",
+    "title": "LLMs & Agentic AI for Scientific Discovery",
+    "section": "Year-end reviews",
+    "text": "Year-end reviews\n\nSimon Willison’s Weblog - 2025: The Year in LLMs\nKarpathy’s 2025 year in review"
   },
   {
     "objectID": "posts/2025-12-1-Language_Models.html#agents-for-early-phase-discovery",
