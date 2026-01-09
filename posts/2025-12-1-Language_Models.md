@@ -52,6 +52,7 @@ The field is moving from chatbots to agents that plan, execute, and iterate auto
 | **dZiner** | Inverse design of materials with AI agents | [arXiv](https://arxiv.org/abs/2410.03963) ・ [Code](https://github.com/mehradans92/dziner) |
 | **CACTUS** | Chemistry agent connecting tool usage to science | [ACS Omega](https://pubs.acs.org/doi/10.1021/acsomega.4c08408) ・ [Code](https://github.com/pnnl/cactus) |
 | **Llamole** | Multimodal LLM for inverse design with retrosynthesis | [arXiv](https://arxiv.org/abs/2410.04223) |
+| **SynCraft** | LLM for given access to molecule edits to make designs more synthesizable | [arXiv](https://arxiv.org/abs/2512.20333) |
 
 ### Simulation & Dynamics
 
@@ -171,6 +172,7 @@ The field is moving from chatbots to agents that plan, execute, and iterate auto
 | **ChemIQ** | Chemical intelligence beyond MCQs | [Code](https://github.com/oxpig/ChemIQ) |
 | **ChemBench** | General chemistry understanding | [Website](https://www.chembench.org/) |
 | **MaCBench** | Materials chemistry | [HuggingFace](https://huggingface.co/datasets/jablonkagroup/MaCBench) |
+| **FGBench** | Molecule functional group-level reasoning using LLMs | [arXiv](https://arxiv.org/abs/2508.01055) | 
 
 ### Biology & Healthcare
 
