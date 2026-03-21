@@ -280,6 +280,13 @@
     "text": "Local Language Models\n\nhf-agents : Huggingface’s CLI extension to detect best LLMs to run on local hardware\n\nState of OSS LMMs from Nathan Lambert\n\nNext-phase of open models\nOpen models in Perpetual Catch-up"
   },
   {
+    "objectID": "posts/2025-12-1-Language_Models.html#general-agentic-capabilities",
+    "href": "posts/2025-12-1-Language_Models.html#general-agentic-capabilities",
+    "title": "Agentic AI for Scientific Discovery",
+    "section": "General agentic capabilities",
+    "text": "General agentic capabilities\n\ndeep-agent\nautoresearch"
+  },
+  {
     "objectID": "posts/2025-12-1-Language_Models.html#agents-for-early-phase-discovery",
     "href": "posts/2025-12-1-Language_Models.html#agents-for-early-phase-discovery",
     "title": "Agentic AI for Scientific Discovery",
