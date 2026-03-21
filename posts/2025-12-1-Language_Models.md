@@ -43,6 +43,11 @@ The field is moving from chatbots to agents that plan, execute, and iterate auto
 
 * [Open models in Perpetual Catch-up](https://www.interconnects.ai/p/open-models-in-perpetual-catch-up)
 
+## General agentic capabilities 
+
+* [deep-agent](https://docs.langchain.com/oss/python/deepagents/overview)
+
+* [autoresearch](https://github.com/karpathy/autoresearch)
 
 ## Agents for Early-Phase Discovery
 
