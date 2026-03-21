@@ -8,11 +8,11 @@ categories:
 date: '2025-12-15'
 description: Curated resources on LLM agents for drug discovery, synthesis planning, and healthcare applications
 layout: post
-title: LLMs & Agentic AI for Scientific Discovery
+title: Agentic AI for Scientific Discovery
 toc: true
 ---
 
-*Last updated: January 2026*
+*Last updated: March 2026*
 
 Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.
 
@@ -32,6 +32,17 @@ The field is moving from chatbots to agents that plan, execute, and iterate auto
 * [Simon Willison's Weblog - 2025: The Year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llms/)
 
 * [Karpathy's 2025 year in review](https://karpathy.bearblog.dev/year-in-review-2025/)
+
+## Local Language Models 
+
+* [`hf-agents`](https://github.com/huggingface/hf-agents) : Huggingface's CLI extension to detect best LLMs to run on local hardware 
+
+**State of OSS LMMs from Nathan Lambert**
+
+* [Next-phase of open models](https://www.interconnects.ai/p/the-next-phase-of-open-models)
+
+* [Open models in Perpetual Catch-up](https://www.interconnects.ai/p/open-models-in-perpetual-catch-up)
+
 
 ## Agents for Early-Phase Discovery
 
