@@ -2,15 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2025-12-15">
 <meta name="description" content="Curated resources on LLM agents for drug discovery, synthesis planning, and healthcare applications">
 
-<title>LLMs &amp; Agentic AI for Scientific Discovery – Omnis tempus datum</title>
+<title>Agentic AI for Scientific Discovery – Omnis tempus datum</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -34,19 +37,18 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5816f2b0818a5e968c212c2d6010f546.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dea667461a5c81afc9ba75ce94cd63f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-a2083802df4d1015f2622e0ce8eed8c8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dea667461a5c81afc9ba75ce94cd63f3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -283,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">LLMs &amp; Agentic AI for Scientific Discovery</h1>
+      <h1 class="title">Agentic AI for Scientific Discovery</h1>
                   <div>
         <div class="description">
           Curated resources on LLM agents for drug discovery, synthesis planning, and healthcare applications
@@ -324,6 +326,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link active" data-scroll-target="#why-this-matters">Why This Matters</a></li>
   <li><a href="#year-end-reviews" id="toc-year-end-reviews" class="nav-link" data-scroll-target="#year-end-reviews">Year-end reviews</a></li>
+  <li><a href="#local-language-models" id="toc-local-language-models" class="nav-link" data-scroll-target="#local-language-models">Local Language Models</a></li>
   <li><a href="#agents-for-early-phase-discovery" id="toc-agents-for-early-phase-discovery" class="nav-link" data-scroll-target="#agents-for-early-phase-discovery">Agents for Early-Phase Discovery</a>
   <ul class="collapse">
   <li><a href="#autonomous-synthesis" id="toc-autonomous-synthesis" class="nav-link" data-scroll-target="#autonomous-synthesis">Autonomous Synthesis</a></li>
@@ -374,7 +377,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>Last updated: January 2026</em></p>
+<p><em>Last updated: March 2026</em></p>
 <p>Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.</p>
 <section id="why-this-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
@@ -392,6 +395,17 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><a href="https://simonwillison.net/2025/Dec/31/the-year-in-llms/">Simon Willison’s Weblog - 2025: The Year in LLMs</a></p></li>
 <li><p><a href="https://karpathy.bearblog.dev/year-in-review-2025/">Karpathy’s 2025 year in review</a></p></li>
+</ul>
+</section>
+<section id="local-language-models" class="level2">
+<h2 class="anchored" data-anchor-id="local-language-models">Local Language Models</h2>
+<ul>
+<li><a href="https://github.com/huggingface/hf-agents"><code>hf-agents</code></a> : Huggingface’s CLI extension to detect best LLMs to run on local hardware</li>
+</ul>
+<p><strong>State of OSS LMMs from Nathan Lambert</strong></p>
+<ul>
+<li><p><a href="https://www.interconnects.ai/p/the-next-phase-of-open-models">Next-phase of open models</a></p></li>
+<li><p><a href="https://www.interconnects.ai/p/open-models-in-perpetual-catch-up">Open models in Perpetual Catch-up</a></p></li>
 </ul>
 </section>
 <section id="agents-for-early-phase-discovery" class="level2">
