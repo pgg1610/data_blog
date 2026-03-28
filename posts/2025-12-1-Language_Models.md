@@ -49,6 +49,16 @@ The field is moving from chatbots to agents that plan, execute, and iterate auto
 
 * [autoresearch](https://github.com/karpathy/autoresearch)
 
+## New evolving fields 
+
+* [Hyperagents](https://arxiv.org/pdf/2603.19461)
+
+Authors introduce a self-referential agents that integrate a task agent and a meta agent (a modifier agent) into a editable program paradigm. 
+
+* [AI can learn scientific taste](https://tongjingqi.github.io/AI-Can-Learn-Scientific-Taste/)
+
+New policy to train agents which can learn 'taste' what of is good science from community's perception of what 'good' looks like. Authors call it 'Reinforcement Learning from Community Feedback' where they use two models, a 'Scientific Judge' to judge the 'quality' of the idea, and a separate 'Scientific Thinker' to propose research ideas with high potential. 
+
 ## Agents for Early-Phase Discovery
 
 ### Autonomous Synthesis
