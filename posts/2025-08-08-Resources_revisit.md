@@ -62,7 +62,15 @@ A non-exhaustive but well-tested set of books, courses, blogs, and talks that ha
 
 ### LLMs 
 
+- [Build A Reasoning Model (From Scratch)](https://github.com/rasbt/reasoning-from-scratch) - Everything by Sebastian Raska is a gem. This book is no different. 
+
 - [Hands-on LLMs](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models) - Actionable lessons with practical math and algorithm background 
+
+- [AI Engineering - Chip Huyen](https://github.com/chiphuyen/aie-book) 
+
+### Data Engineering
+
+- [Designing Data Intensive Applications](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/) 
 
 ### Seminal Papers
 
