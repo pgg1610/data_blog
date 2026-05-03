@@ -12,7 +12,7 @@ title: Agentic AI for Scientific Discovery
 toc: true
 ---
 
-*Last updated: March 2026*
+*Last updated: May 2026*
 
 Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.
 
@@ -27,11 +27,27 @@ LLMs unlock four capabilities for discovery teams:
 
 The field is moving from chatbots to agents that plan, execute, and iterate autonomously.
 
-## Year-end reviews 
+## Foundation Models for Discovery
 
-* [Simon Willison's Weblog - 2025: The Year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llms/)
+### Chemistry & Small Molecules
 
-* [Karpathy's 2025 year in review](https://karpathy.bearblog.dev/year-in-review-2025/)
+| Model | Strength | Links |
+|-------|----------|-------|
+| **Tx-LLM** | Multi-endpoint ADME prediction, positive transfer learning | [arXiv](https://arxiv.org/html/2406.06316v1) |
+| **NatureLM** | Cross-domain: molecules, proteins, materials | [arXiv](https://arxiv.org/abs/2502.07527) |
+| **LlaSMol** | Instruction-tuned for chemistry tasks | [Website](https://osu-nlp-group.github.io/LLM4Chem/) |
+| **BioT5+** | IUPAC integration, numerical tokenization | [arXiv](https://arxiv.org/pdf/2402.17810.pdf) |
+| **Chemformer** | Pre-trained transformer for computational chemistry | [Code](https://github.com/MolecularAI/Chemformer) |
+| **ether0** | Scientific reasoning model for chemistry (GRPO-trained) | [Code](https://github.com/Future-House/ether0) |
+
+### Proteins & Genomics
+
+| Model | Strength | Links |
+|-------|----------|-------|
+| **Evo2** | Genomic foundation model | [Arc Institute](https://arcinstitute.org/tools/evo) |
+| **ProCyon** | Multimodal protein phenotype prediction | [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1) |
+| **EvoDiff** | Diffusion-based protein generation in sequence space | [Code](https://github.com/microsoft/evodiff) |
+| **BioEmu-1** | Protein dynamics and conformational changes | [Microsoft](https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/) |
 
 ## Local Language Models 
 
@@ -69,6 +85,7 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **LLM-RDF** | End-to-end reaction development platform | [Nature Comms](https://www.nature.com/articles/s41467-024-54457-x) ・ [Code](https://github.com/Ruan-Yixiang/LLM-RDF) |
 | **ChemAgent** | Multiagent robotic chemist for on-demand synthesis | [JACS](https://pubs.acs.org/doi/10.1021/jacs.4c17738) |
 | **SynAsk** | ReAct agent with yield prediction and retrosynthesis | [Chem Sci](https://pubs.rsc.org/en/content/articlelanding/2025/sc/d4sc04757e) |
+| **Synthergy** | LLM-guided synthesis plan steering via systematic search | [Cell](https://www.cell.com/matter/fulltext/S2590-2385(26)00175-X) ・ [Code](https://github.com/schwallergroup/steer) |
 
 ### Molecular Design & Optimization
 
@@ -117,35 +134,6 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **Clinical Summarization** | LLMs outperforming experts in 36% of cases | [Nature Med](https://www.nature.com/articles/s41591-024-02855-5) ・ [Code](https://github.com/StanfordMIMI/clin-summ) |
 | **CLEAR** | Clinical entity augmented retrieval for extraction | [npj Digital Med](https://www.nature.com/articles/s41746-024-01377-1) |
 
-### Evaluation
-
-| Benchmark | Focus | Link |
-|-----------|-------|------|
-| **MedHELM** | 121 clinical tasks across 35 benchmarks | [Website](https://crfm.stanford.edu/helm/medhelm/latest/) |
-| **The Optimization Paradox** | Multi-agent clinical systems analysis | [arXiv](https://arxiv.org/abs/2506.06574v1) |
-
-## Foundation Models for Discovery
-
-### Chemistry & Small Molecules
-
-| Model | Strength | Links |
-|-------|----------|-------|
-| **Tx-LLM** | Multi-endpoint ADME prediction, positive transfer learning | [arXiv](https://arxiv.org/html/2406.06316v1) |
-| **NatureLM** | Cross-domain: molecules, proteins, materials | [arXiv](https://arxiv.org/abs/2502.07527) |
-| **LlaSMol** | Instruction-tuned for chemistry tasks | [Website](https://osu-nlp-group.github.io/LLM4Chem/) |
-| **BioT5+** | IUPAC integration, numerical tokenization | [arXiv](https://arxiv.org/pdf/2402.17810.pdf) |
-| **Chemformer** | Pre-trained transformer for computational chemistry | [Code](https://github.com/MolecularAI/Chemformer) |
-| **ether0** | Scientific reasoning model for chemistry (GRPO-trained) | [Code](https://github.com/Future-House/ether0) |
-
-### Proteins & Genomics
-
-| Model | Strength | Links |
-|-------|----------|-------|
-| **Evo2** | Genomic foundation model | [Arc Institute](https://arcinstitute.org/tools/evo) |
-| **ProCyon** | Multimodal protein phenotype prediction | [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1) |
-| **EvoDiff** | Diffusion-based protein generation in sequence space | [Code](https://github.com/microsoft/evodiff) |
-| **BioEmu-1** | Protein dynamics and conformational changes | [Microsoft](https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/) |
-
 ## Literature & Knowledge Systems
 
 ### RAG for Science
@@ -172,6 +160,7 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **PydanticAI** | Type-safe agent development | [Code](https://github.com/pydantic/pydantic-ai) |
 | **Smolagents** | Lightweight HuggingFace ecosystem | [Code](https://github.com/huggingface/smolagents) |
 | **CrewAI** | Multi-agent orchestration | [Website](https://www.crewai.com/) |
+| **Claude Agent SDK** | Same tools, agent loop, and context management powering Claude Code — Python & TypeScript | [Docs](https://code.claude.com/docs/en/agent-sdk/overview) |
 
 ### Engineering Patterns
 
@@ -189,6 +178,29 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **Documents** | [Reducto](https://reducto.ai/blog), [Firecrawl](https://github.com/mendableai/firecrawl) |
 | **MCP Servers** | [UniProt](https://github.com/Augmented-Nature/UniProt-MCP-Server), [Benchling](https://github.com/Benchling-Labs/benchling-mcp-server) |
 
+### Agent Tools
+
+Standalone packages that augment agents with domain-specific skills.
+
+| Tool | What It Adds | Links |
+|------|-------------|-------|
+| **Paperclip** | Stateful access to 8M+ scientific papers — hybrid search, grep, and parallel map over results | [Blog](https://gxl.ai/blog/paperclip#example) |
+| **Blatant-Why** | Antibody, nanobody, and de novo protein binder design via 16 agents and 11 MCP servers | [Code](https://github.com/001TMF/blatant-why) |
+| **ToolUniverse** | 1000+ ML models and APIs standardized for LLM tool-calling; 68 pre-built skills across drug discovery, oncology, and rare disease | [arXiv](https://arxiv.org/abs/2509.23426) ・ [Code](https://github.com/mims-harvard/ToolUniverse) |
+
+## Current Trends
+
+### Agent Harness
+
+A harness is the system built around a core LLM that makes it useful in practice — an abstraction encoding assumptions the model cannot reach on its own. A well-designed harness has four layers:
+
+1. **Session** — Audit trails, conversation state, and context management
+2. **Infrastructure** — Sandboxed code execution, browser access, filesystem
+3. **Prompt & Tools** — Skills, MCP servers, and domain-specific capabilities
+4. **Orchestration** — Subagent handoffs, model routing, and workflow logic
+
+More: [The Anatomy of an Agent Harness](https://www.vtrivedy.com/posts/the-anatomy-of-an-agent-harness) · [Harness Design for Long-Running Apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+
 ## Benchmarks
 
 ### Chemistry
@@ -198,7 +210,7 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **ChemIQ** | Chemical intelligence beyond MCQs | [Code](https://github.com/oxpig/ChemIQ) |
 | **ChemBench** | General chemistry understanding | [Website](https://www.chembench.org/) |
 | **MaCBench** | Materials chemistry | [HuggingFace](https://huggingface.co/datasets/jablonkagroup/MaCBench) |
-| **FGBench** | Molecule functional group-level reasoning using LLMs | [arXiv](https://arxiv.org/abs/2508.01055) | 
+| **FGBench** | Molecule functional group-level reasoning using LLMs | [arXiv](https://arxiv.org/abs/2508.01055) |
 
 ### Biology & Healthcare
 
@@ -207,6 +219,8 @@ New policy to train agents which can learn 'taste' what of is good science from 
 | **LAB-Bench** | Laboratory protocol execution | [arXiv](https://arxiv.org/abs/2407.10362) |
 | **BixBench** | Bioinformatics tasks | [arXiv](https://arxiv.org/abs/2503.00096) |
 | **Bio-ML** | Biology ML evaluation | [bioRxiv](https://www.biorxiv.org/content/10.1101/2025.09.01.673319v2) |
+| **MedHELM** | 121 clinical tasks across 35 benchmarks | [Website](https://crfm.stanford.edu/helm/medhelm/latest/) |
+| **The Optimization Paradox** | Multi-agent clinical systems analysis | [arXiv](https://arxiv.org/abs/2506.06574v1) |
 
 ### Agent Reliability
 
@@ -235,10 +249,15 @@ New policy to train agents which can learn 'taste' what of is good science from 
 - [12-Factor Agents](https://github.com/humanlayer/12-factor-agents) — Human Layer
 - [Small Agents Position Paper](https://research.nvidia.com/labs/lpr/slm-agents/) — NVIDIA
 
+**Year in Review**
+- [Simon Willison — 2025: The Year in LLMs](https://simonwillison.net/2025/Dec/31/the-year-in-llms/)
+- [Karpathy's 2025 year in review](https://karpathy.bearblog.dev/year-in-review-2025/)
+
 ## Comprehensive Agent Timeline
 
 | Date | Agent | Description | Links |
 |------|-------|-------------|-------|
+| 2026.04 | Synthergy | LLM-guided synthesis plan steering | [Paper](https://www.cell.com/matter/fulltext/S2590-2385(26)00175-X) ・ [Code](https://github.com/schwallergroup/steer) |
 | 2025.12 | DynaMate | Protein-ligand MD automation | [Paper](https://arxiv.org/abs/2512.10034) ・ [Code](https://github.com/schwallergroup/DynaMate) |
 | 2025.09 | Personal Health Agent | Health assistant architecture | [Paper](https://arxiv.org/abs/2508.20148) |
 | 2025.07 | DREAMS | DFT-based materials simulation | [Paper](https://arxiv.org/abs/2507.14267) |
