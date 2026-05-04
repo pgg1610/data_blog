@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -41,14 +41,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-f418161beb48e0141c760e455f12af2c.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-be3771519f21acc1c5b6733774c6dcd8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-5ad423e8269b43cf16a175b74e7cdfe9.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-be3771519f21acc1c5b6733774c6dcd8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-4f009d8eac38a30f625ac3155a5b448d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -325,7 +325,11 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#why-this-matters" id="toc-why-this-matters" class="nav-link active" data-scroll-target="#why-this-matters">Why This Matters</a></li>
-  <li><a href="#year-end-reviews" id="toc-year-end-reviews" class="nav-link" data-scroll-target="#year-end-reviews">Year-end reviews</a></li>
+  <li><a href="#foundation-models-for-discovery" id="toc-foundation-models-for-discovery" class="nav-link" data-scroll-target="#foundation-models-for-discovery">Foundation Models for Discovery</a>
+  <ul class="collapse">
+  <li><a href="#chemistry-small-molecules" id="toc-chemistry-small-molecules" class="nav-link" data-scroll-target="#chemistry-small-molecules">Chemistry &amp; Small Molecules</a></li>
+  <li><a href="#proteins-genomics" id="toc-proteins-genomics" class="nav-link" data-scroll-target="#proteins-genomics">Proteins &amp; Genomics</a></li>
+  </ul></li>
   <li><a href="#local-language-models" id="toc-local-language-models" class="nav-link" data-scroll-target="#local-language-models">Local Language Models</a></li>
   <li><a href="#general-agentic-capabilities" id="toc-general-agentic-capabilities" class="nav-link" data-scroll-target="#general-agentic-capabilities">General agentic capabilities</a></li>
   <li><a href="#new-evolving-fields" id="toc-new-evolving-fields" class="nav-link" data-scroll-target="#new-evolving-fields">New evolving fields</a></li>
@@ -340,12 +344,6 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#clinical-reasoning-decision-support" id="toc-clinical-reasoning-decision-support" class="nav-link" data-scroll-target="#clinical-reasoning-decision-support">Clinical Reasoning &amp; Decision Support</a></li>
   <li><a href="#clinical-text-documentation" id="toc-clinical-text-documentation" class="nav-link" data-scroll-target="#clinical-text-documentation">Clinical Text &amp; Documentation</a></li>
-  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
-  </ul></li>
-  <li><a href="#foundation-models-for-discovery" id="toc-foundation-models-for-discovery" class="nav-link" data-scroll-target="#foundation-models-for-discovery">Foundation Models for Discovery</a>
-  <ul class="collapse">
-  <li><a href="#chemistry-small-molecules" id="toc-chemistry-small-molecules" class="nav-link" data-scroll-target="#chemistry-small-molecules">Chemistry &amp; Small Molecules</a></li>
-  <li><a href="#proteins-genomics" id="toc-proteins-genomics" class="nav-link" data-scroll-target="#proteins-genomics">Proteins &amp; Genomics</a></li>
   </ul></li>
   <li><a href="#literature-knowledge-systems" id="toc-literature-knowledge-systems" class="nav-link" data-scroll-target="#literature-knowledge-systems">Literature &amp; Knowledge Systems</a>
   <ul class="collapse">
@@ -357,6 +355,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#frameworks" id="toc-frameworks" class="nav-link" data-scroll-target="#frameworks">Frameworks</a></li>
   <li><a href="#engineering-patterns" id="toc-engineering-patterns" class="nav-link" data-scroll-target="#engineering-patterns">Engineering Patterns</a></li>
   <li><a href="#infrastructure" id="toc-infrastructure" class="nav-link" data-scroll-target="#infrastructure">Infrastructure</a></li>
+  <li><a href="#agent-tools" id="toc-agent-tools" class="nav-link" data-scroll-target="#agent-tools">Agent Tools</a></li>
+  </ul></li>
+  <li><a href="#current-trends" id="toc-current-trends" class="nav-link" data-scroll-target="#current-trends">Current Trends</a>
+  <ul class="collapse">
+  <li><a href="#agent-harness" id="toc-agent-harness" class="nav-link" data-scroll-target="#agent-harness">Agent Harness</a></li>
   </ul></li>
   <li><a href="#benchmarks" id="toc-benchmarks" class="nav-link" data-scroll-target="#benchmarks">Benchmarks</a>
   <ul class="collapse">
@@ -379,7 +382,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><em>Last updated: March 2026</em></p>
+<p><em>Last updated: May 2026</em></p>
 <p>Large language models are reshaping how we approach early-phase discovery. This guide covers practical applications in synthesis planning, molecular design, clinical workflows, and autonomous experimentation.</p>
 <section id="why-this-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-matters">Why This Matters</h2>
@@ -392,12 +395,86 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>The field is moving from chatbots to agents that plan, execute, and iterate autonomously.</p>
 </section>
-<section id="year-end-reviews" class="level2">
-<h2 class="anchored" data-anchor-id="year-end-reviews">Year-end reviews</h2>
-<ul>
-<li><p><a href="https://simonwillison.net/2025/Dec/31/the-year-in-llms/">Simon Willison’s Weblog - 2025: The Year in LLMs</a></p></li>
-<li><p><a href="https://karpathy.bearblog.dev/year-in-review-2025/">Karpathy’s 2025 year in review</a></p></li>
-</ul>
+<section id="foundation-models-for-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="foundation-models-for-discovery">Foundation Models for Discovery</h2>
+<section id="chemistry-small-molecules" class="level3">
+<h3 class="anchored" data-anchor-id="chemistry-small-molecules">Chemistry &amp; Small Molecules</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Strength</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Tx-LLM</strong></td>
+<td>Multi-endpoint ADME prediction, positive transfer learning</td>
+<td><a href="https://arxiv.org/html/2406.06316v1">arXiv</a></td>
+</tr>
+<tr class="even">
+<td><strong>NatureLM</strong></td>
+<td>Cross-domain: molecules, proteins, materials</td>
+<td><a href="https://arxiv.org/abs/2502.07527">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>LlaSMol</strong></td>
+<td>Instruction-tuned for chemistry tasks</td>
+<td><a href="https://osu-nlp-group.github.io/LLM4Chem/">Website</a></td>
+</tr>
+<tr class="even">
+<td><strong>BioT5+</strong></td>
+<td>IUPAC integration, numerical tokenization</td>
+<td><a href="https://arxiv.org/pdf/2402.17810.pdf">arXiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Chemformer</strong></td>
+<td>Pre-trained transformer for computational chemistry</td>
+<td><a href="https://github.com/MolecularAI/Chemformer">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>ether0</strong></td>
+<td>Scientific reasoning model for chemistry (GRPO-trained)</td>
+<td><a href="https://github.com/Future-House/ether0">Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="proteins-genomics" class="level3">
+<h3 class="anchored" data-anchor-id="proteins-genomics">Proteins &amp; Genomics</h3>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Strength</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Evo2</strong></td>
+<td>Genomic foundation model</td>
+<td><a href="https://arcinstitute.org/tools/evo">Arc Institute</a></td>
+</tr>
+<tr class="even">
+<td><strong>ProCyon</strong></td>
+<td>Multimodal protein phenotype prediction</td>
+<td><a href="https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1">bioRxiv</a></td>
+</tr>
+<tr class="odd">
+<td><strong>EvoDiff</strong></td>
+<td>Diffusion-based protein generation in sequence space</td>
+<td><a href="https://github.com/microsoft/evodiff">Code</a></td>
+</tr>
+<tr class="even">
+<td><strong>BioEmu-1</strong></td>
+<td>Protein dynamics and conformational changes</td>
+<td><a href="https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/">Microsoft</a></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="local-language-models" class="level2">
 <h2 class="anchored" data-anchor-id="local-language-models">Local Language Models</h2>
@@ -460,6 +537,11 @@ ul.task-list li input[type="checkbox"] {
 <td><strong>SynAsk</strong></td>
 <td>ReAct agent with yield prediction and retrosynthesis</td>
 <td><a href="https://pubs.rsc.org/en/content/articlelanding/2025/sc/d4sc04757e">Chem Sci</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Synthergy</strong></td>
+<td>LLM-guided synthesis plan steering via systematic search</td>
+<td><a href="https://www.cell.com/matter/fulltext/S2590-2385(26)00175-X">Cell</a> ・ <a href="https://github.com/schwallergroup/steer">Code</a></td>
 </tr>
 </tbody>
 </table>
@@ -637,111 +719,6 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="evaluation" class="level3">
-<h3 class="anchored" data-anchor-id="evaluation">Evaluation</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Benchmark</th>
-<th>Focus</th>
-<th>Link</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>MedHELM</strong></td>
-<td>121 clinical tasks across 35 benchmarks</td>
-<td><a href="https://crfm.stanford.edu/helm/medhelm/latest/">Website</a></td>
-</tr>
-<tr class="even">
-<td><strong>The Optimization Paradox</strong></td>
-<td>Multi-agent clinical systems analysis</td>
-<td><a href="https://arxiv.org/abs/2506.06574v1">arXiv</a></td>
-</tr>
-</tbody>
-</table>
-</section>
-</section>
-<section id="foundation-models-for-discovery" class="level2">
-<h2 class="anchored" data-anchor-id="foundation-models-for-discovery">Foundation Models for Discovery</h2>
-<section id="chemistry-small-molecules" class="level3">
-<h3 class="anchored" data-anchor-id="chemistry-small-molecules">Chemistry &amp; Small Molecules</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Strength</th>
-<th>Links</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Tx-LLM</strong></td>
-<td>Multi-endpoint ADME prediction, positive transfer learning</td>
-<td><a href="https://arxiv.org/html/2406.06316v1">arXiv</a></td>
-</tr>
-<tr class="even">
-<td><strong>NatureLM</strong></td>
-<td>Cross-domain: molecules, proteins, materials</td>
-<td><a href="https://arxiv.org/abs/2502.07527">arXiv</a></td>
-</tr>
-<tr class="odd">
-<td><strong>LlaSMol</strong></td>
-<td>Instruction-tuned for chemistry tasks</td>
-<td><a href="https://osu-nlp-group.github.io/LLM4Chem/">Website</a></td>
-</tr>
-<tr class="even">
-<td><strong>BioT5+</strong></td>
-<td>IUPAC integration, numerical tokenization</td>
-<td><a href="https://arxiv.org/pdf/2402.17810.pdf">arXiv</a></td>
-</tr>
-<tr class="odd">
-<td><strong>Chemformer</strong></td>
-<td>Pre-trained transformer for computational chemistry</td>
-<td><a href="https://github.com/MolecularAI/Chemformer">Code</a></td>
-</tr>
-<tr class="even">
-<td><strong>ether0</strong></td>
-<td>Scientific reasoning model for chemistry (GRPO-trained)</td>
-<td><a href="https://github.com/Future-House/ether0">Code</a></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="proteins-genomics" class="level3">
-<h3 class="anchored" data-anchor-id="proteins-genomics">Proteins &amp; Genomics</h3>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Model</th>
-<th>Strength</th>
-<th>Links</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Evo2</strong></td>
-<td>Genomic foundation model</td>
-<td><a href="https://arcinstitute.org/tools/evo">Arc Institute</a></td>
-</tr>
-<tr class="even">
-<td><strong>ProCyon</strong></td>
-<td>Multimodal protein phenotype prediction</td>
-<td><a href="https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1">bioRxiv</a></td>
-</tr>
-<tr class="odd">
-<td><strong>EvoDiff</strong></td>
-<td>Diffusion-based protein generation in sequence space</td>
-<td><a href="https://github.com/microsoft/evodiff">Code</a></td>
-</tr>
-<tr class="even">
-<td><strong>BioEmu-1</strong></td>
-<td>Protein dynamics and conformational changes</td>
-<td><a href="https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/">Microsoft</a></td>
-</tr>
-</tbody>
-</table>
-</section>
 </section>
 <section id="literature-knowledge-systems" class="level2">
 <h2 class="anchored" data-anchor-id="literature-knowledge-systems">Literature &amp; Knowledge Systems</h2>
@@ -820,6 +797,11 @@ ul.task-list li input[type="checkbox"] {
 <td>Multi-agent orchestration</td>
 <td><a href="https://www.crewai.com/">Website</a></td>
 </tr>
+<tr class="odd">
+<td><strong>Claude Agent SDK</strong></td>
+<td>Same tools, agent loop, and context management powering Claude Code — Python &amp; TypeScript</td>
+<td><a href="https://code.claude.com/docs/en/agent-sdk/overview">Docs</a></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -860,6 +842,50 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </tbody>
 </table>
+</section>
+<section id="agent-tools" class="level3">
+<h3 class="anchored" data-anchor-id="agent-tools">Agent Tools</h3>
+<p>Standalone packages that augment agents with domain-specific skills.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tool</th>
+<th>What It Adds</th>
+<th>Links</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Paperclip</strong></td>
+<td>Stateful access to 8M+ scientific papers — hybrid search, grep, and parallel map over results</td>
+<td><a href="https://gxl.ai/blog/paperclip#example">Blog</a></td>
+</tr>
+<tr class="even">
+<td><strong>Blatant-Why</strong></td>
+<td>Antibody, nanobody, and de novo protein binder design via 16 agents and 11 MCP servers</td>
+<td><a href="https://github.com/001TMF/blatant-why">Code</a></td>
+</tr>
+<tr class="odd">
+<td><strong>ToolUniverse</strong></td>
+<td>1000+ ML models and APIs standardized for LLM tool-calling; 68 pre-built skills across drug discovery, oncology, and rare disease</td>
+<td><a href="https://arxiv.org/abs/2509.23426">arXiv</a> ・ <a href="https://github.com/mims-harvard/ToolUniverse">Code</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="current-trends" class="level2">
+<h2 class="anchored" data-anchor-id="current-trends">Current Trends</h2>
+<section id="agent-harness" class="level3">
+<h3 class="anchored" data-anchor-id="agent-harness">Agent Harness</h3>
+<p>A harness is the system built around a core LLM that makes it useful in practice — an abstraction encoding assumptions the model cannot reach on its own. A well-designed harness has four layers:</p>
+<ol type="1">
+<li><strong>Session</strong> — Audit trails, conversation state, and context management</li>
+<li><strong>Infrastructure</strong> — Sandboxed code execution, browser access, filesystem</li>
+<li><strong>Prompt &amp; Tools</strong> — Skills, MCP servers, and domain-specific capabilities</li>
+<li><strong>Orchestration</strong> — Subagent handoffs, model routing, and workflow logic</li>
+</ol>
+<p>More: <a href="https://www.vtrivedy.com/posts/the-anatomy-of-an-agent-harness">The Anatomy of an Agent Harness</a> · <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">Harness Design for Long-Running Apps</a></p>
 </section>
 </section>
 <section id="benchmarks" class="level2">
@@ -924,6 +950,16 @@ ul.task-list li input[type="checkbox"] {
 <td>Biology ML evaluation</td>
 <td><a href="https://www.biorxiv.org/content/10.1101/2025.09.01.673319v2">bioRxiv</a></td>
 </tr>
+<tr class="even">
+<td><strong>MedHELM</strong></td>
+<td>121 clinical tasks across 35 benchmarks</td>
+<td><a href="https://crfm.stanford.edu/helm/medhelm/latest/">Website</a></td>
+</tr>
+<tr class="odd">
+<td><strong>The Optimization Paradox</strong></td>
+<td>Multi-agent clinical systems analysis</td>
+<td><a href="https://arxiv.org/abs/2506.06574v1">arXiv</a></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -946,6 +982,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="key-reading">Key Reading</h2>
 <p><strong>Reviews</strong> - <a href="https://arxiv.org/abs/2407.01603">LLMs and Autonomous Agents in Chemistry</a> — White lab survey - <a href="https://www.cell.com/cell/fulltext/S0092-8674(24)01070-5">Empowering Biomedical Discovery with AI Agents</a> — Zitnik lab (Cell) - <a href="https://www.nature.com/articles/s41524-025-01538-0">Foundation Models for Materials Discovery</a> — npj Computational Materials</p>
 <p><strong>Engineering</strong> - <a href="https://www.anthropic.com/research/building-effective-agents">Building Effective Agents</a> — Anthropic - <a href="https://github.com/humanlayer/12-factor-agents">12-Factor Agents</a> — Human Layer - <a href="https://research.nvidia.com/labs/lpr/slm-agents/">Small Agents Position Paper</a> — NVIDIA</p>
+<p><strong>Year in Review</strong> - <a href="https://simonwillison.net/2025/Dec/31/the-year-in-llms/">Simon Willison — 2025: The Year in LLMs</a> - <a href="https://karpathy.bearblog.dev/year-in-review-2025/">Karpathy’s 2025 year in review</a></p>
 </section>
 <section id="comprehensive-agent-timeline" class="level2">
 <h2 class="anchored" data-anchor-id="comprehensive-agent-timeline">Comprehensive Agent Timeline</h2>
@@ -960,180 +997,186 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
+<td>2026.04</td>
+<td>Synthergy</td>
+<td>LLM-guided synthesis plan steering</td>
+<td><a href="https://www.cell.com/matter/fulltext/S2590-2385(26)00175-X">Paper</a> ・ <a href="https://github.com/schwallergroup/steer">Code</a></td>
+</tr>
+<tr class="even">
 <td>2025.12</td>
 <td>DynaMate</td>
 <td>Protein-ligand MD automation</td>
 <td><a href="https://arxiv.org/abs/2512.10034">Paper</a> ・ <a href="https://github.com/schwallergroup/DynaMate">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2025.09</td>
 <td>Personal Health Agent</td>
 <td>Health assistant architecture</td>
 <td><a href="https://arxiv.org/abs/2508.20148">Paper</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2025.07</td>
 <td>DREAMS</td>
 <td>DFT-based materials simulation</td>
 <td><a href="https://arxiv.org/abs/2507.14267">Paper</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2025.05</td>
 <td>ROBIN</td>
 <td>Multi-agent scientific discovery</td>
 <td><a href="https://arxiv.org/pdf/2505.13400">Paper</a> ・ <a href="https://github.com/Future-House/robin">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2025.05</td>
 <td>El-Agente</td>
 <td>Quantum chemistry automation</td>
 <td><a href="https://arxiv.org/pdf/2505.02484">Paper</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2025.04</td>
 <td>SpatialAgent</td>
 <td>Spatial biology</td>
 <td><a href="https://www.biorxiv.org/content/10.1101/2025.04.03.646459v1">Paper</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2025.03</td>
 <td>TxAgent</td>
 <td>Therapeutic reasoning</td>
 <td><a href="https://arxiv.org/pdf/2503.10970">Paper</a> ・ <a href="https://github.com/mims-harvard/TxAgent">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2025.01</td>
 <td>DataAnalysisCrow</td>
 <td>Jupyter notebook agent</td>
 <td><a href="https://github.com/Future-House/data-analysis-crow">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.12</td>
 <td>Aviary</td>
 <td>Agent training framework</td>
 <td><a href="https://arxiv.org/abs/2412.21154">Paper</a> ・ <a href="https://github.com/Future-House/aviary">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.11</td>
 <td>Virtual Lab</td>
 <td>Multi-agent nanobody design</td>
 <td><a href="https://www.biorxiv.org/content/10.1101/2024.11.11.623004v1">Paper</a> ・ <a href="https://github.com/zou-group/virtual-lab">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.11</td>
 <td>DrugAgent</td>
 <td>Drug discovery automation</td>
 <td><a href="https://arxiv.org/abs/2411.15692">Paper</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.11</td>
 <td>LLM-RDF</td>
 <td>Chemical synthesis platform</td>
 <td><a href="https://www.nature.com/articles/s41467-024-54457-x">Paper</a> ・ <a href="https://github.com/Ruan-Yixiang/LLM-RDF">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.10</td>
 <td>dZiner</td>
 <td>Inverse materials design</td>
 <td><a href="https://arxiv.org/abs/2410.03963">Paper</a> ・ <a href="https://github.com/mehradans92/dziner">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.10</td>
 <td>CACTUS</td>
 <td>Chemistry tool usage</td>
 <td><a href="https://pubs.acs.org/doi/10.1021/acsomega.4c08408">Paper</a> ・ <a href="https://github.com/pnnl/cactus">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.06</td>
 <td>LLaMP</td>
 <td>Materials knowledge retrieval</td>
 <td><a href="https://arxiv.org/abs/2401.17244">Paper</a> ・ <a href="https://github.com/chiang-yuan/llamp">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.04</td>
 <td>CRISPR-GPT</td>
 <td>Gene-editing design</td>
 <td><a href="https://arxiv.org/abs/2404.18021">Paper</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.02</td>
 <td>TAIS</td>
 <td>Gene expression discovery</td>
 <td><a href="https://arxiv.org/abs/2402.12391">Paper</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.02</td>
 <td>WikiCrow</td>
 <td>Scientific knowledge synthesis</td>
 <td><a href="https://www.futurehouse.org/wikicrow">Website</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.02</td>
 <td>STORM</td>
 <td>Wikipedia-style generation</td>
 <td><a href="https://arxiv.org/abs/2402.14207">Paper</a> ・ <a href="https://github.com/stanford-oval/storm">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2024.02</td>
 <td>SciAgent</td>
 <td>Tool-augmented scientific reasoning</td>
 <td><a href="https://arxiv.org/abs/2402.11451">Paper</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2024.01</td>
 <td>ProtAgent</td>
 <td>Protein discovery multi-agent</td>
 <td><a href="https://arxiv.org/abs/2402.04268">Paper</a> ・ <a href="https://github.com/lamm-mit/ProtAgents">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2023.12</td>
 <td>PaperQA</td>
 <td>Scientific literature RAG</td>
 <td><a href="https://arxiv.org/abs/2312.07559">Paper</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2023.12</td>
 <td>Coscientist</td>
 <td>Autonomous chemical research</td>
 <td><a href="https://www.nature.com/articles/s41586-023-06792-0">Paper</a> ・ <a href="https://github.com/gomesgroup/coscientist">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2023.12</td>
 <td>Eunomia</td>
 <td>Materials data from literature</td>
 <td><a href="https://arxiv.org/abs/2312.11690">Paper</a> ・ <a href="https://github.com/AI4ChemS/Eunomia">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2023.11</td>
 <td>eXpertAI</td>
 <td>Structure-property XAI</td>
 <td><a href="https://arxiv.org/abs/2311.04047">Paper</a> ・ <a href="https://github.com/geemi725/XpertAI">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2023.10</td>
 <td>BioPlanner</td>
 <td>Protocol planning evaluation</td>
 <td><a href="https://arxiv.org/abs/2310.10632">Paper</a> ・ <a href="https://github.com/bioplanner/bioplanner">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2023.09</td>
 <td>IBM ChemChat</td>
 <td>Molecular discovery</td>
 <td><a href="https://arxiv.org/abs/2309.16235">Paper</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2023.08</td>
 <td>ChatMOF</td>
 <td>MOF prediction and generation</td>
 <td><a href="https://arxiv.org/abs/2308.01423">Paper</a> ・ <a href="https://github.com/Yeonghun1675/ChatMOF">Code</a></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>2023.06</td>
 <td>AmadeusGPT</td>
 <td>Animal behavior analysis</td>
 <td><a href="https://arxiv.org/abs/2307.04858">Paper</a> ・ <a href="https://github.com/AdaptiveMotorControlLab/AmadeusGPT">Code</a></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>2023.04</td>
 <td>ChemCrow</td>
 <td>Chemistry tools for LLMs</td>
