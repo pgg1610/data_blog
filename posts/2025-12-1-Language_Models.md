@@ -27,31 +27,15 @@ LLMs unlock four capabilities for discovery teams:
 
 The field is moving from chatbots to agents that plan, execute, and iterate autonomously.
 
-## Foundation Models for Discovery
+## Key ideas gaining traction now 
 
-### Chemistry & Small Molecules
+Recently there has been some nice progress on three key vectors that may have a compounded impact on the ability and efficiency of agentic science applications: (1) Local LLMs becoming efficient and performant so that they can run on-device (edge models) (2) Reinforcement learning environment becoming easier to generate, also related is interest in recursive self-improvement models (3) Better runtime harness for agents 
 
-| Model | Strength | Links |
-|-------|----------|-------|
-| **Tx-LLM** | Multi-endpoint ADME prediction, positive transfer learning | [arXiv](https://arxiv.org/html/2406.06316v1) |
-| **NatureLM** | Cross-domain: molecules, proteins, materials | [arXiv](https://arxiv.org/abs/2502.07527) |
-| **LlaSMol** | Instruction-tuned for chemistry tasks | [Website](https://osu-nlp-group.github.io/LLM4Chem/) |
-| **BioT5+** | IUPAC integration, numerical tokenization | [arXiv](https://arxiv.org/pdf/2402.17810.pdf) |
-| **Chemformer** | Pre-trained transformer for computational chemistry | [Code](https://github.com/MolecularAI/Chemformer) |
-| **ether0** | Scientific reasoning model for chemistry (GRPO-trained) | [Code](https://github.com/Future-House/ether0) |
-
-### Proteins & Genomics
-
-| Model | Strength | Links |
-|-------|----------|-------|
-| **Evo2** | Genomic foundation model | [Arc Institute](https://arcinstitute.org/tools/evo) |
-| **ProCyon** | Multimodal protein phenotype prediction | [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1) |
-| **EvoDiff** | Diffusion-based protein generation in sequence space | [Code](https://github.com/microsoft/evodiff) |
-| **BioEmu-1** | Protein dynamics and conformational changes | [Microsoft](https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/) |
-
-## Local Language Models 
+### Local Language Models 
 
 * [`hf-agents`](https://github.com/huggingface/hf-agents) : Huggingface's CLI extension to detect best LLMs to run on local hardware 
+
+* [LitRT-LM](https://github.com/google-ai-edge/LiteRT-LM) Google's production-ready on-device LM deployment framework 
 
 **State of OSS LMMs from Nathan Lambert**
 
@@ -74,6 +58,29 @@ Authors introduce a self-referential agents that integrate a task agent and a me
 * [AI can learn scientific taste](https://tongjingqi.github.io/AI-Can-Learn-Scientific-Taste/)
 
 New policy to train agents which can learn 'taste' what of is good science from community's perception of what 'good' looks like. Authors call it 'Reinforcement Learning from Community Feedback' where they use two models, a 'Scientific Judge' to judge the 'quality' of the idea, and a separate 'Scientific Thinker' to propose research ideas with high potential. 
+
+
+## Foundation Models for Discovery
+
+### Chemistry & Small Molecules
+
+| Model | Strength | Links |
+|-------|----------|-------|
+| **Tx-LLM** | Multi-endpoint ADME prediction, positive transfer learning | [arXiv](https://arxiv.org/html/2406.06316v1) |
+| **NatureLM** | Cross-domain: molecules, proteins, materials | [arXiv](https://arxiv.org/abs/2502.07527) |
+| **LlaSMol** | Instruction-tuned for chemistry tasks | [Website](https://osu-nlp-group.github.io/LLM4Chem/) |
+| **BioT5+** | IUPAC integration, numerical tokenization | [arXiv](https://arxiv.org/pdf/2402.17810.pdf) |
+| **Chemformer** | Pre-trained transformer for computational chemistry | [Code](https://github.com/MolecularAI/Chemformer) |
+| **ether0** | Scientific reasoning model for chemistry (GRPO-trained) | [Code](https://github.com/Future-House/ether0) |
+
+### Proteins & Genomics
+
+| Model | Strength | Links |
+|-------|----------|-------|
+| **Evo2** | Genomic foundation model | [Arc Institute](https://arcinstitute.org/tools/evo) |
+| **ProCyon** | Multimodal protein phenotype prediction | [bioRxiv](https://www.biorxiv.org/content/10.1101/2024.12.10.627665v1) |
+| **EvoDiff** | Diffusion-based protein generation in sequence space | [Code](https://github.com/microsoft/evodiff) |
+| **BioEmu-1** | Protein dynamics and conformational changes | [Microsoft](https://www.microsoft.com/en-us/research/blog/exploring-the-structural-changes-driving-protein-function-with-bioemu-1/) |
 
 ## Agents for Early-Phase Discovery
 
