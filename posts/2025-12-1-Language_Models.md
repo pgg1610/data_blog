@@ -59,6 +59,9 @@ Authors introduce a self-referential agents that integrate a task agent and a me
 
 New policy to train agents which can learn 'taste' what of is good science from community's perception of what 'good' looks like. Authors call it 'Reinforcement Learning from Community Feedback' where they use two models, a 'Scientific Judge' to judge the 'quality' of the idea, and a separate 'Scientific Thinker' to propose research ideas with high potential. 
 
+* [Tool Attention Is All You Need: Dynamic Tool Gating and Lazy Schema Loading for Eliminating the MCP/Tools Tax in Scalable Agentic Workflows](https://arxiv.org/abs/2604.21816)
+
+Instead of eager loading all the tools in the context through MCPs - here the team uses sentence embeddings to identify the right tools which are state-based and only attach those to the LLM's context. 
 
 ## Foundation Models for Discovery
 
